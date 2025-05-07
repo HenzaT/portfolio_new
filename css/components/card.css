@@ -1,0 +1,62 @@
+.project-card {
+  /* width: 50%; */
+  border-radius: 10px;
+  background-color: var(--blue);
+  text-align: center;
+  /* display: flex; */
+}
+
+.project-info img {
+  width: 35vw;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.project-info {
+  display: flex;
+}
+
+.project-info p {
+  margin: auto;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 20px 20px 20px;
+  border-radius: 20px;
+  background-color: var(--dark-blue);
+  color: white;
+}
+
+.about-card {
+  background-color: var(--blue);
+  padding: 20px;
+  border-radius: 20px;
+  width: 40vw;
+  margin: auto;
+}
+
+.contact-card {
+  background-color: var(--blue);
+  padding: 20px;
+  border-radius: 20px;
+  margin: auto;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.music-card {
+  background-color: var(--blue);
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+iframe {
+  width: 30vw;
+}

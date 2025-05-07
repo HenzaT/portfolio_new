@@ -1,0 +1,34 @@
+.skills-container i {
+  font-size: 50px;
+}
+
+.icons-container i {
+  font-size: 50px;
+}
+
+.devicon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: 50%;
+  width: 50%;
+}
+
+.contact i {
+ font-size: 50px;
+}
+
+.contact-icons-all {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.music-icons {
+  margin: auto;
+  width: 10vw;
+  font-size: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}

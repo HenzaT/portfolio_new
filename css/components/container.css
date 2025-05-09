@@ -48,16 +48,9 @@
   margin: auto;
 }
 
-fieldset {
-  width: 10vw;
-  height: 10vh;
-  border-radius: 20px;
-  align-self: center;
-}
-
 .contact {
   border: 1px black solid;
-  height: 20vh;
+  height: 40vh;
   width: 100vw;
   padding: 55px 0px 45px 0px;
   text-align: center;

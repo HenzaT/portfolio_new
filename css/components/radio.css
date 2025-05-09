@@ -1,0 +1,15 @@
+fieldset {
+  width: 10vw;
+  height: 10vh;
+  border-radius: 20px;
+  align-self: center;
+  display: inline-block;
+}
+
+input {
+  margin-left: 0;
+}
+
+.radio, input, label {
+  cursor: pointer;
+}

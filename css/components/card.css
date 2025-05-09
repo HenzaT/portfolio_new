@@ -1,23 +1,35 @@
+.small {
+  line-height: 30%;
+}
+
 .project-card {
   /* width: 50%; */
   border-radius: 10px;
   background-color: var(--blue);
-  text-align: center;
+  /* text-align: center; */
   /* display: flex; */
+}
+
+.project-card-title-text {
+  text-align: center;
+}
+
+.project-info .slides {
+  display: flex;
 }
 
 .project-info img {
   width: 35vw;
-  padding: 20px;
-  border-radius: 20px;
+  padding: 10px 0px 10px 26px;
+  object-fit: contain;
 }
 
-.project-info {
-  display: flex;
+.project-info ul {
+  padding-right: 10px;
 }
 
 .project-info p {
-  margin: auto;
+  /* margin: auto; */
 }
 
 .icons-container {
@@ -27,7 +39,6 @@
   margin: 0px 20px 20px 20px;
   border-radius: 20px;
   background-color: var(--dark-blue);
-  color: white;
 }
 
 .about-card {
@@ -35,7 +46,6 @@
   padding: 20px;
   border-radius: 20px;
   width: 40vw;
-  margin: auto;
 }
 
 .contact-card {
@@ -51,6 +61,7 @@
 
 .music-card {
   background-color: var(--blue);
+  width: 25vw;
   padding: 20px;
   border-radius: 20px;
   display: flex;

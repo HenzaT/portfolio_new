@@ -14,32 +14,66 @@
 <body>
   <div class="main">
     <!-- <canvas id="canvas-main" width="200" height="100" style="border: 1px solid orange"> -->
-      <section class="banner" id="banner-section">
-        <canvas id="banner-canvas"></canvas>
-        <h1>Henry Thomas</h1>
-        <h1>Software Engineer</h1>
+      <section class="banner" id="home">
+        <!-- <canvas id="banner-canvas"></canvas> -->
+         <span class="banner-text">
+           <h1>Henry Thomas</h1>
+         </span>
+         <span class="banner-text">
+           <h1>Software</h1>
+           <h1 class="upright-text">Developer</h1>
+         </span>
       </section>
 
       <nav class="navbar">
         <div class="navbar-links">
-          <a class="nav-link active" href="#banner-section"><h3>Home</h3></a>
-          <a class="nav-link" href="#projects-section"><h3>Projects</h3></a>
-          <a class="nav-link" href="#about-section"><h3>About Me</h3></a>
-          <a class="nav-link" href="#skills-section"><h3>Skills</h3></a>
-          <a class="nav-link" href="#contact-section"><h3>Contact Me</h3></a>
-          <a class="nav-link" href="#music-section"><h3>My Music</h3></a>
+          <a class="nav-link active" href="#home"><h3>Home</h3></a>
+          <a class="nav-link"href="#projects"><h3>Projects</h3></a>
+          <a class="nav-link"href="#about"><h3>About</h3></a>
+          <a class="nav-link" href="#skills"><h3>Skills</h3></a>
+          <a class="nav-link" href="#contact"><h3>Contact</h3></a>
+          <a class="nav-link" href="#music"><h3>Music</h3></a>
         </div>
       </nav>
 
-      <section class="projects" id="projects-section">
+      <section class="projects" id="projects">
         <div class="project-all">
           <h1>Projects</h1>
           <div class="projects-container">
             <div class="project-card">
-              <h2>Gimme a Song!</h2>
+              <div class="project-card-title-text">
+                <h2 class="small">Gimme a Song!</h2>
+                <p class="small">song idea app for musicians and bands</p>
+              </div>
               <div class="project-info">
-                <img src="./css/assets/gimme-a-song.jpeg" alt="gimme a song project homepage">
-                <p>info</p>
+                <div class="slides">
+                  <img src="./css/assets/gimme-a-song-1.jpeg" alt="gimme a song project homepage">
+                  <ul>
+                    <li>Generates a song idea, giving you a time signature, instrument, key, mood and BPM to start with</li>
+                    <li>User can save generated ideas</li>
+                    <li>Responsive design</li>
+                  </ul>
+                </div>
+                <div class="slides">
+                  <img src="./css/assets/gimme-a-song-2.jpeg" alt="gimme a song project new idea page">
+                  <ul>
+                    <li>Test</li>
+                    <li>User can save generated ideas</li>
+                    <li>Responsive design</li>
+                  </ul>
+                </div>
+                <div class="slides">
+                  <img src="./css/assets/gimme-a-song-3.jpeg" alt="gimme a song project dashboard page">
+                  <ul>
+                    <li>Generates a song idea, giving you a time signature, instrument, key, mood and BPM to start with</li>
+                    <li>Test</li>
+                    <li>Responsive design</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="arrows">
+                <i id="arrow" class="fa-solid fa-less-than" onclick="plusDivs(-1)"></i>
+                <i id="arrow" class="fa-solid fa-greater-than" onclick="plusDivs(+1)"></i>
               </div>
               <div class="icons-container">
                 <div class="devicon">
@@ -87,13 +121,27 @@
         </div>
       </section>
 
-      <section class="about" id="about-section">
+      <section class="about" id="about">
         <h1>About Me</h1>
         <div class="about-container">
-          <div class="about-card">
+          <fieldset>
+            <div>
+              <input type="radio" id="experience" name="about" value="experience">
+              <label for="experience">About</label>
+            </div>
+            <div>
+              <input type="radio" id="interests" name="about" value="interests">
+              <label for="interests">Interests</label>
+            </div>
+          </fieldset>
+          <div class="about-card" id="experience-card">
             <h2>About Me</h2>
             <div class="about-info">
-              <p>My experiences</p>
+              <p>
+                I am a software developer with a previous career in teaching. <br>
+                What drew me to coding and software developing were the same things that drew me to teaching: <br>
+                creativity, the importance of lifelong learning, and how every day is different.
+              </p>
             </div>
             <div class="icons-container">
               <div class="devicon">
@@ -107,11 +155,11 @@
               </div>
             </div>
           </div>
-          <div class="about-card">
+          <div class="about-card" id="interests-card">
             <h2>Interests</h2>
             <div class="about-info">
               <p>
-                Outside of coding and tech, I write my own music under the name 'aptist' (go to 'my music' section to hear it!) <br>
+                Outside of coding and tech, I write my own music under the name 'aptist' (go to 'my music' section to check it out!) <br>
                 I also love to climb and travel - I'm half Japanese, so I try to go to Japan at least once a year to visit family/eat/stock up on green tea
               </p>
             </div>
@@ -130,58 +178,47 @@
         </div>
       </section>
 
-      <section class="skills" id="skills-section">
+      <section class="skills" id="skills">
         <h1>Skills</h1>
         <div class="skills-container">
           <div class="devicon">
-            <i class="devicon-ruby-plain colored"></i>
-            <p>Ruby</p>
+            <i class="devicon-ruby-plain-wordmark"></i>
           </div>
           <div class="devicon">
-            <i class="devicon-rails-plain colored"></i>
-            <p>Rails</p>
+            <i class="devicon-rails-plain-wordmark"></i>
           </div>
           <div class="devicon">
-            <i class="devicon-javascript-plain colored"></i>
-            <p>JavaScript</p>
+            <i class="devicon-javascript-plain"></i>
           </div>
           <div class="devicon">
-            <i class="devicon-html5-plain colored"></i>
-            <p>HTML5</p>
+            <i class="devicon-html5-plain-wordmark"></i>
           </div>
           <div class="devicon">
-            <i class="devicon-css3-plain colored"></i>
-            <p>CSS3</p>
+            <i class="devicon-css3-plain-wordmark"></i>
           </div>
           <div class="devicon">
-            <i class="devicon-git-plain colored"></i>
-            <p>Git</p>
+            <i class="devicon-git-plain-wordmark"></i>
           </div>
           <div class="devicon">
-            <i class="devicon-github-original colored"></i>
-            <p>GitHub</p>
+            <i class="devicon-github-original-wordmark"></i>
           </div>
           <div class="devicon">
-            <i class="devicon-heroku-original colored"></i>
-            <p>Heroku</p>
+            <i class="devicon-heroku-original-wordmark"></i>
           </div>
           <div class="devicon">
-            <i class="devicon-postgresql-plain colored"></i>
-            <p>PostgreSQL</p>
+            <i class="devicon-postgresql-plain-wordmark"></i>
           </div>
           <div class="devicon">
-            <i class="devicon-bootstrap-plain colored"></i>
-            <p>Bootstrap</p>
+            <i class="devicon-bootstrap-plain-wordmark"></i>
           </div>
           <div class="devicon">
-            <i class="devicon-typescript-plain colored"></i>
-            <p>TypeScript</p>
+            <i class="devicon-typescript-plain"></i>
           </div>
         </div>
       </section>
 
 
-      <section class="contact" id="contact-section">
+      <section class="contact" id="contact">
         <h1>Contact Me</h1>
         <div class="contact-card">
           <div class="contact-icons-all">
@@ -204,11 +241,11 @@
         </div>
       </section>
 
-      <section class="music" id="music-section">
+      <section class="music" id="music">
         <h1>My Music</h1>
         <div class="music-container">
-          <iframe style="border-radius: 20px"
-                  src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
+          <iframe style="border-radius:12px"
+                  src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
                   width="100%" height="352" frameBorder="0"
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   allowfullscreen=""
@@ -229,7 +266,8 @@
               </div>
             </div>
             <p>
-              My solo music project in which I write and record electronic music
+              My solo music project in which I write and record electronic music <br>
+              I incorporate 'organic' instruments like electric and bass guitar with electronic instruments like synths and drum machines
             </p>
           </div>
           <iframe style="border-radius: 20px"

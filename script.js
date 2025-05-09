@@ -1,32 +1,33 @@
-// const bufferDivider = 2;
-// const sectionHighlightBufferAmount = window.innerHeight / bufferDivider;
+let slideIndex = 1;
+showDivs(slideIndex);
 
-// const sections = document.querySelectorAll("section");
-// const navLinks = document.querySelectorAll(".nav-link")
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
 
-// window.addEventListener("scroll", () => {
-//   sections.forEach((section) => {
-//     const scrollDistance = scrollY;
-//     const sectionTop = section.offsetTop;
+function showDivs(n) {
+  let i;
+  const slides = document.querySelectorAll(".slides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length} ;
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
 
-//     if (scrollDistance >= sectionTop - sectionHighlightBufferAmount) {
-//       navLinks.forEach(link =>
-//         link.classList.remove("active"));
+// navbar select
+document.addEventListener('DOMContentLoaded', selectLink);
 
-//       const activeId = section.getAttribute("id")
+function selectLink() {
+  const navLinks = document.querySelectorAll('.nav-link');
 
-//       navLinks.forEach((link) => {
-//         if (link.classList.contains(activeId))
-//           link.classList.add("active");
-//       });
-//     }
-//   });
-// })
-
-let c = document.getElementById("banner-canvas");
-let ctx = c.getContext("2d");
-ctx.font = "30px Arial";
-ctx.fillText("Henry Thomas", 10, 50);
-ctx.moveTo(0, 0);
-ctx.lineTo(200, 100);
-ctx.stroke();
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      // remove 'active' from each link
+      navLinks.forEach(l => l.classList.remove('active'));
+      // add only to one link
+      link.classList.add('active');
+    });
+  });
+};

@@ -6,6 +6,16 @@
   font-size: 50px;
 }
 
+.icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 20px 20px 20px;
+  border-radius: 20px;
+  border: 3px solid var(--dark-blue);
+  background-color: var(--blue);
+}
+
 .arrows {
   font-size: 30px;
   display: flex;
@@ -47,4 +57,9 @@
   font-size: 50px;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  margin: 0px 20px 20px 20px;
+  border-radius: 20px;
+  border: 3px solid var(--dark-blue);
 }

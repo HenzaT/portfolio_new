@@ -34,21 +34,36 @@ function showDivs(n) {
 }
 
 // about toggle
-const expRadio = document.getElementById('experience');
-const intRadio = document.getElementById('interests');
-const expCard = document.getElementById('experience-card');
-const intCard = document.getElementById('interests-card');
 const radioButtons = document.querySelectorAll('.radio');
 
-radioButtons.forEach((radio) => {
-  radio.addEventListener('click', () => {
-    if (expRadio.checked) {
-      expCard.style.display = 'block';
-      intCard.style.display = 'none';
+const radio = {
+  experience: document.getElementById('experience'),
+  interests: document.getElementById('interests'),
+  education: document.getElementById('education')
+}
+
+const card = {
+  experience: document.getElementById('experience-card'),
+  interests: document.getElementById('interests-card'),
+  education: document.getElementById('education-card')
+}
+
+radioButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    if (radio.experience.checked) {
+      card.experience.style.display = 'block';
+      card.interests.style.display = 'none';
+      card.education.style.display = 'none';
     }
-    else if (intRadio.checked) {
-      intCard.style.display = 'block';
-      expCard.style.display = 'none';
+    else if (radio.interests.checked) {
+      card.interests.style.display = 'block';
+      card.experience.style.display = 'none';
+      card.education.style.display = 'none';
+    }
+     else if (radio.education.checked) {
+      card.education.style.display = 'block';
+      card.experience.style.display = 'none';
+      card.interests.style.display = 'none';
     }
   })
 })

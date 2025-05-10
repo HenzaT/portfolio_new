@@ -1,0 +1,7 @@
+.iframes {
+  display: flex;
+}
+
+iframe {
+  width: 20vw;
+}

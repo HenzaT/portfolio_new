@@ -32,15 +32,6 @@
   /* margin: auto; */
 }
 
-.icons-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 20px 20px 20px;
-  border-radius: 20px;
-  background-color: var(--dark-blue);
-}
-
 .about-card {
   background-color: var(--blue);
   padding: 20px;
@@ -48,7 +39,11 @@
   width: 40vw;
 }
 
-#interests-card {
+.about-card h2 {
+  text-align: center;
+}
+
+#interests-card, #education-card {
   display: none;
 }
 
@@ -60,18 +55,15 @@
   width: 20vw;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
 .music-card {
   background-color: var(--blue);
-  width: 25vw;
-  padding: 20px;
+  width: 60vw;
+  /* padding: 20px; */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-}
-
-iframe {
-  width: 30vw;
 }

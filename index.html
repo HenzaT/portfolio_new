@@ -27,12 +27,16 @@
 
       <nav class="navbar">
         <div class="navbar-links">
-          <a class="nav-link active" href="#home"><h3>Home</h3></a>
-          <a class="nav-link"href="#projects"><h3>Projects</h3></a>
-          <a class="nav-link"href="#about"><h3>About</h3></a>
-          <a class="nav-link" href="#skills"><h3>Skills</h3></a>
-          <a class="nav-link" href="#contact"><h3>Contact</h3></a>
-          <a class="nav-link" href="#music"><h3>Music</h3></a>
+          <div class="my-projects-links">
+            <a class="nav-link active" href="#home"><h3>Home</h3></a>
+            <a class="nav-link"href="#projects"><h3>Projects</h3></a>
+            <a class="nav-link" href="#skills"><h3>Skills</h3></a>
+            <a class="nav-link" href="#music"><h3>Music</h3></a>
+          </div>
+          <div class="about-contact-links">
+            <a class="nav-link" href="#contact"><h3>Contact</h3></a>
+            <a class="nav-link"href="#about"><h3>About</h3></a>
+          </div>
         </div>
       </nav>
 
@@ -121,63 +125,6 @@
         </div>
       </section>
 
-      <section class="about" id="about">
-        <h1>About Me</h1>
-        <div class="about-container">
-          <fieldset>
-            <div class="radio">
-              <input type="radio" id="experience" name="about" value="experience" checked>
-              <label for="experience">About</label>
-            </div>
-            <div class="radio">
-              <input type="radio" id="interests" name="about" value="interests">
-              <label for="interests">Interests</label>
-            </div>
-          </fieldset>
-          <div class="about-card" id="experience-card">
-            <h2>About Me</h2>
-            <div class="about-info">
-              <p>
-                I am a software developer with a previous career in teaching. <br>
-                What drew me to coding and software developing were the same things that drew me to teaching: <br>
-                creativity, the importance of lifelong learning, and how every day is different.
-              </p>
-            </div>
-            <div class="icons-container">
-              <div class="devicon">
-                <i class="fa-solid fa-person-chalkboard"></i>
-              </div>
-              <div class="devicon">
-                <i class="fa-solid fa-computer"></i>
-              </div>
-              <div class="devicon">
-                <i class="devicon-html5-plain-wordmark"></i>
-              </div>
-            </div>
-          </div>
-          <div class="about-card" id="interests-card">
-            <h2>Interests</h2>
-            <div class="about-info">
-              <p>
-                Outside of coding and tech, I write my own music under the name 'aptist' (go to 'my music' section to check it out!) <br>
-                I also love to climb and travel - I'm half Japanese, so I try to go to Japan at least once a year to visit family/eat/stock up on green tea
-              </p>
-            </div>
-            <div class="icons-container">
-              <div class="devicon">
-                <i class="fa-solid fa-music"></i>
-              </div>
-              <div class="devicon">
-                <i class="fa-solid fa-hill-rockslide"></i>
-              </div>
-              <div class="devicon">
-                <i class="fa-solid fa-plane"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="skills" id="skills">
         <h1>Skills</h1>
         <div class="skills-container">
@@ -217,6 +164,137 @@
         </div>
       </section>
 
+      <section class="music" id="music">
+        <h1>My Music</h1>
+        <div class="music-container">
+          <div class="music-card">
+            <h2 class="small" >aptist</h2>
+            <p>
+              My solo music project in which I write and record electronic music <br>
+              I incorporate 'organic' instruments like electric and bass guitar <br>with electronic instruments like synths and drum machines
+            </p>
+            <div class="music-icons">
+              <div class="music-icon">
+                <a href="https://open.spotify.com/artist/3iUZV8FaZhxoteUhmkvTy3?si=dKoyUjo7SeO21tr9JB35wA">
+                  <i class="fa-brands fa-spotify"></i>
+                </a>
+              </div>
+              <div class="music-icon">
+                <a href="https://music.apple.com/us/artist/aptist/1555855403">
+                  <i class="fa-brands fa-itunes"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="iframes">
+            <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
+                    width="100%" height="352" frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    allowfullscreen=""
+                    loading="lazy">
+            </iframe>
+            <iframe style="border-radius: 20px"
+                    src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
+                    width="100%" height="352" frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    allowfullscreen=""
+                    loading="lazy">
+            </iframe>
+            <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
+                    width="100%" height="352" frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    allowfullscreen=""
+                    loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about-header">
+          <h1>About Me</h1>
+          <div class="radio">
+            <input class="radio-input" type="radio" id="experience" name="about" value="experience" checked>
+            <label class="radio-label" for="experience">About</label>
+            <input class="radio-input" type="radio" id="interests" name="about" value="interests">
+            <label class="radio-label" for="interests">Interests</label>
+            <input class="radio-input" type="radio" id="education" name="about" value="education">
+            <label class="radio-label" for="education">Education</label>
+          </div>
+        </div>
+        <div class="about-container">
+          <div class="about-card" id="experience-card">
+            <h2>About Me</h2>
+            <div class="about-info">
+              <p>
+                I am a software developer with a previous career in teaching. <br>
+                What drew me to coding and software developing were the same things that drew me to teaching: <br>
+                creativity, the importance of lifelong learning, and how every day is different.
+              </p>
+            </div>
+            <div class="icons-container">
+              <div class="devicon">
+                <i class="fa-solid fa-person-chalkboard"></i>
+              </div>
+              <div class="devicon">
+                <i class="fa-solid fa-computer"></i>
+              </div>
+              <div class="devicon">
+                <i class="devicon-html5-plain-wordmark"></i>
+              </div>
+            </div>
+          </div>
+          <div class="about-card" id="interests-card">
+            <h2>Interests</h2>
+            <div class="about-info">
+              <p>
+                Outside of coding and tech, I write my own music under the name 'aptist' (go to my 'music' section to check it out!) <br>
+                I also love to climb and travel - I'm half Japanese, so I try to go to Japan at least once a year to visit family/eat/stock up on green tea
+              </p>
+            </div>
+            <div class="icons-container">
+              <div class="devicon">
+                <i class="fa-solid fa-music"></i>
+              </div>
+              <div class="devicon">
+                <i class="fa-solid fa-hill-rockslide"></i>
+              </div>
+              <div class="devicon">
+                <i class="fa-solid fa-plane"></i>
+              </div>
+            </div>
+          </div>
+          <div class="about-card" id="education-card">
+            <h2>Education</h2>
+            <div class="about-info">
+              <ul>
+                <li>
+                  Le Wagon - Web Development Bootcamp
+                </li>
+                <li>
+                  University of Bristol - Classical Studies BA
+                </li>
+                <li>
+                  The Institute of Education, UCL - PGCE in Primary Education
+                </li>
+              </ul>
+            </div>
+            <div class="icons-container">
+              <div class="devicon">
+                <i class="fa-solid fa-computer"></i>
+              </div>
+              <div class="devicon">
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <div class="devicon">
+                <i class="fa-solid fa-person-chalkboard"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="contact" id="contact">
         <h1>Contact Me</h1>
@@ -241,44 +319,6 @@
         </div>
       </section>
 
-      <section class="music" id="music">
-        <h1>My Music</h1>
-        <div class="music-container">
-          <iframe style="border-radius:12px"
-                  src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
-                  width="100%" height="352" frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  allowfullscreen=""
-                  loading="lazy">
-          </iframe>
-          <div class="music-card">
-            <h2>aptist</h2>
-            <div class="music-icons">
-              <div class="music-icon">
-                <a href="https://open.spotify.com/artist/3iUZV8FaZhxoteUhmkvTy3?si=dKoyUjo7SeO21tr9JB35wA">
-                  <i class="fa-brands fa-spotify"></i>
-                </a>
-              </div>
-              <div class="music-icon">
-                <a href="https://music.apple.com/us/artist/aptist/1555855403">
-                  <i class="fa-brands fa-itunes"></i>
-                </a>
-              </div>
-            </div>
-            <p>
-              My solo music project in which I write and record electronic music <br>
-              I incorporate 'organic' instruments like electric and bass guitar with electronic instruments like synths and drum machines
-            </p>
-          </div>
-          <iframe style="border-radius: 20px"
-                  src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
-                  width="100%" height="352" frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  allowfullscreen=""
-                  loading="lazy">
-          </iframe>
-        </div>
-      </section>
     <!-- </canvas> -->
   </div>
   <script src="script.js"></script>

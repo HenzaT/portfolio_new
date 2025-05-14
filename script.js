@@ -67,3 +67,14 @@ radioButtons.forEach((button) => {
     }
   })
 })
+
+// petal moving
+const interval = setInterval(movePetal(), 1000);
+
+function movePetal() {
+  let petal = document.querySelector('.petal');
+  petal.style.top = petal.offsetTop + 1 + "px";
+  petal.style.left = petal.offsetLeft + 1 + "px";
+};
+
+// canvas

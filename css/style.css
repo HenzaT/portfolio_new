@@ -3,6 +3,7 @@
 @import url("components/container.css");
 @import url("components/card.css");
 @import url("components/navbar.css");
+@import url("components/petal.css");
 @import url("components/radio.css");
 @import url("components/iframe.css");
 
@@ -15,9 +16,10 @@
 :root {
   --blue: #A9BCD0;
   --grey: #5E6572;
-  --selected: #df91c0;
   --dark-blue: #58688d;
   --dark-grey: #2a3445;
+  --selected: #df91c0;
+  --pink: #fbd7ed;
   --black: #1B1B1E;
   --light: rgb(232, 245, 248);
 }
@@ -30,6 +32,7 @@ body {
   background-color: var(--dark-blue);
   margin: 0;
   width: 100%;
+  position: relative;
 }
 
 .main {

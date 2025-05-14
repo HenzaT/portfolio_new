@@ -1,0 +1,8 @@
+.petal {
+  height: 20px;
+  width: 60px;
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--pink);
+  background-image: url("../assets/brushed-alum-dark.png")
+}

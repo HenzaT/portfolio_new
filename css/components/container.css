@@ -4,7 +4,6 @@
 }
 
 .projects {
-  border: 1px black solid;
   width: 100vw;
   padding: 55px 0px 45px 0px;
   display: flex;
@@ -20,7 +19,6 @@
 }
 
 .skills {
-  border: 1px black solid;
   width: 100vw;
   padding: 55px 0px 45px 0px;
   text-align: center;
@@ -36,7 +34,6 @@
 }
 
 .about {
-  border: 1px black solid;
   width: 100vw;
   padding: 55px 0px 45px 0px;
 }
@@ -52,7 +49,6 @@
 }
 
 .contact {
-  border: 1px black solid;
   height: 40vh;
   width: 100vw;
   padding: 55px 0px 45px 0px;
@@ -60,7 +56,6 @@
 }
 
 .music {
-  border: 1px black solid;
   width: 100vw;
   padding: 55px 0px 45px 0px;
   text-align: center;

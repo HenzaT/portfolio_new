@@ -6,6 +6,26 @@
   font-size: 50px;
 }
 
+.home-arrow {
+  padding: 10px;
+  margin: 30px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--dark-grey);
+  display: inline-block;
+  position: sticky;
+  bottom: 0px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.home-arrow i {
+  font-size: 20px;
+  color: white;
+}
+
 .icons-container {
   display: flex;
   justify-content: center;
@@ -58,8 +78,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: auto;
-  margin: 0px 20px 20px 20px;
   border-radius: 20px;
   border: 3px solid var(--dark-blue);
 }

@@ -24,6 +24,10 @@
   text-align: center;
 }
 
+.skills-header {
+  text-align: center;
+}
+
 .skills-container {
   background-color: var(--blue);
   padding: 20px;
@@ -67,3 +71,7 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+/* .music-album-carousel {
+
+} */

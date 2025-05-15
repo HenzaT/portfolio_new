@@ -4,10 +4,11 @@
   justify-content: center;
   align-items: center;
   position: sticky;
+  z-index: 1;
   top: 0px;
   overflow: hidden;
   background-color: var(--dark-grey);
-  opacity: 1;
+  transition: background-color 0.3s ease;
 }
 
 .my-projects-links, .about-contact-links {
@@ -36,7 +37,6 @@
 .navbar-links a {
   color: azure;
   cursor: pointer;
-  /* text-transform: uppercase; */
 }
 
 .nav-link {
@@ -47,4 +47,5 @@
   background-color: var(--selected);
   border-radius: 10px;
   color: black;
+  opacity: 0.5s;
 }

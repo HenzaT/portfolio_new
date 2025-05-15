@@ -13,9 +13,7 @@
 </head>
 <body>
   <div class="main">
-    <!-- <canvas id="canvas-main" width="200" height="100" style="border: 1px solid orange"> -->
       <section class="banner" id="home">
-        <!-- <canvas id="banner-canvas"></canvas> -->
          <span class="banner-text">
            <h1>Henry Thomas</h1>
          </span>
@@ -128,39 +126,51 @@
       </section>
 
       <section class="skills" id="skills">
-        <h1>Skills</h1>
+        <div class="skills-header">
+          <h1>Skills</h1>
+          <div class="skills-radio">
+            <input class="radio-input" type="radio" id="languages" name="about" value="languages">
+            <label class="radio-label" for="languages">Languages</label>
+            <input class="radio-input" type="radio" id="frameworks" name="about" value="frameworks">
+            <label class="radio-label" for="frameworks">Frameworks</label>
+            <input class="radio-input" type="radio" id="tools" name="about" value="tools">
+            <label class="radio-label" for="tools">Tools</label>
+            <input class="radio-input" type="radio" id="databases" name="about" value="databases">
+            <label class="radio-label" for="databases">Databases</label>
+          </div>
+        </div>
         <div class="skills-container">
-          <div class="devicon">
+          <div class="devicon" id="ruby">
             <i class="devicon-ruby-plain-wordmark"></i>
           </div>
-          <div class="devicon">
+          <div class="devicon" id="rails">
             <i class="devicon-rails-plain-wordmark"></i>
           </div>
-          <div class="devicon">
+          <div class="devicon" id="js">
             <i class="devicon-javascript-plain"></i>
           </div>
-          <div class="devicon">
+          <div class="devicon" id="html">
             <i class="devicon-html5-plain-wordmark"></i>
           </div>
-          <div class="devicon">
+          <div class="devicon" id="css">
             <i class="devicon-css3-plain-wordmark"></i>
           </div>
-          <div class="devicon">
+          <div class="devicon" id="git">
             <i class="devicon-git-plain-wordmark"></i>
           </div>
-          <div class="devicon">
+          <div class="devicon" id="github">
             <i class="devicon-github-original-wordmark"></i>
           </div>
-          <div class="devicon">
+          <div class="devicon" id="heroku">
             <i class="devicon-heroku-original-wordmark"></i>
           </div>
-          <div class="devicon">
+          <div class="devicon" id="postgres">
             <i class="devicon-postgresql-plain-wordmark"></i>
           </div>
-          <div class="devicon">
+          <div class="devicon" id="bootstrap">
             <i class="devicon-bootstrap-plain-wordmark"></i>
           </div>
-          <div class="devicon">
+          <div class="devicon" id="ts">
             <i class="devicon-typescript-plain"></i>
           </div>
         </div>
@@ -191,28 +201,55 @@
               </div>
             </div>
           </div>
-          <div class="iframes">
-            <iframe style="border-radius:12px"
-                    src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
-                    width="100%" height="352" frameBorder="0"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    allowfullscreen=""
-                    loading="lazy">
-            </iframe>
-            <iframe style="border-radius: 20px"
-                    src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
-                    width="100%" height="352" frameBorder="0"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    allowfullscreen=""
-                    loading="lazy">
-            </iframe>
-            <iframe style="border-radius:12px"
-                    src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
-                    width="100%" height="352" frameBorder="0"
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    allowfullscreen=""
-                    loading="lazy">
-            </iframe>
+          <div class="arrows">
+            <i id="arrow" class="fa-solid fa-less-than" onclick="plusDivs(-1)"></i>
+            <i id="arrow" class="fa-solid fa-greater-than" onclick="plusDivs(+1)"></i>
+          </div>
+          <div class="music-album-carousel">
+            <div class="flip-album-cards">
+              <div class="flip-album tilt">
+                <div class="flip-album-front">
+                  <img class="album-art" src="./css/assets/sundown.png" alt="album cover for Sundown">
+                </div>
+                <div class="flip-album-back">
+                  <iframe style="border-radius: 12px"
+                          src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
+                          width="100%" height="352" frameBorder="0"
+                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                          allowfullscreen=""
+                          loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+              <div class="flip-album">
+                <div class="flip-album-front">
+                  <img class="album-art" src="./css/assets/april-tea.jpg" alt="album cover for April Tea">
+                </div>
+                <div class="flip-album-back">
+                  <iframe style="border-radius: 12px"
+                          src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
+                          width="100%" height="352" frameBorder="0"
+                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                          allowfullscreen=""
+                          loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+              <div class="flip-album tilt">
+                <div class="flip-album-front">
+                  <img class="album-art" src="./css/assets/reflections.jpeg" alt="album cover for Reflections">
+                </div>
+                <div class="flip-album-back">
+                  <iframe style="border-radius: 12px"
+                          src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
+                          width="100%" height="352" frameBorder="0"
+                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                          allowfullscreen=""
+                          loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -59,6 +59,11 @@
   height: 50%;
   width: 50%;
   color: black;
+  transition: opacity 0.5s;
+}
+
+.devicon.fade {
+  opacity: 0.2;
 }
 
 .contact i {

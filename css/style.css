@@ -6,6 +6,7 @@
 @import url("components/petal.css");
 @import url("components/radio.css");
 @import url("components/iframe.css");
+@import url("components/album-image.css");
 
 * {
   font-family: "Roboto", sans-serif;
@@ -22,6 +23,7 @@
   --pink: #fbd7ed;
   --black: #1B1B1E;
   --light: rgb(232, 245, 248);
+  --shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
 }
 
 h1 {

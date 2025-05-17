@@ -38,18 +38,30 @@
   padding: 20px;
   border-radius: 20px;
   width: 40vw;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s ease;
+  box-shadow: var(--shadow);
+}
+
+.about-card.visible {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.about-card.hidden {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .about-card h2 {
   text-align: center;
 }
 
-#interests-card, #education-card {
-  display: none;
-}
 
 .contact-card {
-  background-color: var(--blue);
   padding: 20px;
   border-radius: 20px;
   margin: auto;

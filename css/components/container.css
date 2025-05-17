@@ -35,6 +35,15 @@
   display: inline-grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
+  box-shadow: var(--shadow);
+}
+
+.skills-and-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 .about {
@@ -53,9 +62,10 @@
 }
 
 .contact {
-  height: 40vh;
+  height: 20vh;
   width: 100vw;
-  padding: 55px 0px 45px 0px;
+  padding: 10px 0px 45px 0px;
+  background-color: var(--black);
   text-align: center;
 }
 

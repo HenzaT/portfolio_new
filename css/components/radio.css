@@ -15,7 +15,7 @@
   padding: 8px 14px;
   width: 5vw;
   font-size: 14px;
-  color: white;
+  color: var(--light);
   background-color: var(--dark-grey);
   cursor: pointer;
   transition: background-color 0.3s ease;

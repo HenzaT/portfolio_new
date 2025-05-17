@@ -36,6 +36,7 @@ function showDivs(n) {
 // about and skills toggle
 const aboutRadioButtons = document.querySelectorAll('.radio');
 const skillsRadioButtons = document.querySelectorAll('.skills-radio');
+const skillsContainer = document.querySelector('.skills-container');
 
 const radioButtons = {
   experience: document.getElementById('experience'),
@@ -52,7 +53,9 @@ const card = {
   interests: document.getElementById('interests-card'),
   education: document.getElementById('education-card')
 };
+const allCards = [card.experience, card.interests, card.education];
 
+// icons
 const languageIcons = [
   document.getElementById('ruby'),
   document.getElementById('js'),
@@ -76,53 +79,77 @@ const dbIcons = [
   document.getElementById('postgres')
 ];
 
+const iconGroups = {
+  languages: languageIcons,
+  frameworks: frameworkIcons,
+  tools: toolIcons,
+  databases: dbIcons
+};
+
+const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons];
 
 aboutRadioButtons.forEach((button) => {
   button.addEventListener('click', () => {
+    let selectedCard = null;
+
     if (radioButtons.experience.checked) {
-      card.experience.style.display = 'block';
-      card.interests.style.display = 'none';
-      card.education.style.display = 'none';
+      selectedCard = card.experience;
+    } else if (radioButtons.interests.checked) {
+      selectedCard = card.interests;
+    } else if (radioButtons.education.checked) {
+      selectedCard = card.education;
     }
-    else if (radioButtons.interests.checked) {
-      card.interests.style.display = 'block';
-      card.experience.style.display = 'none';
-      card.education.style.display = 'none';
-    }
-     else if (radioButtons.education.checked) {
-      card.education.style.display = 'block';
-      card.experience.style.display = 'none';
-      card.interests.style.display = 'none';
-    }
-  })
-})
+
+    allCards.forEach((card) => {
+      if (card === selectedCard) {
+        card.classList.remove('hidden');
+        card.classList.add('visible');
+      } else {
+        card.classList.remove('visible');
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
 
 function clearFade() {
-  [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons].forEach((icon) => icon.classList.remove('fade'));
+  Object.values(iconGroups).forEach(group => {
+    group.forEach(icon => icon.classList.remove('fade'));
+  });
 }
 
 skillsRadioButtons.forEach((button) => {
   button.addEventListener('click', () => {
     clearFade();
-    if (radioButtons.languages.checked) {
-      frameworkIcons.forEach((icon) => icon.classList.add('fade'));
-      toolIcons.forEach((icon) => icon.classList.add('fade'));
-      dbIcons.forEach((icon) => icon.classList.add('fade'));
-    } else if (radioButtons.frameworks.checked) {
-      languageIcons.forEach((icon) => icon.classList.add('fade'));
-      toolIcons.forEach((icon) => icon.classList.add('fade'));
-      dbIcons.forEach((icon) => icon.classList.add('fade'));
-    } else if (radioButtons.tools.checked) {
-      languageIcons.forEach((icon) => icon.classList.add('fade'));
-      frameworkIcons.forEach((icon) => icon.classList.add('fade'));
-      dbIcons.forEach((icon) => icon.classList.add('fade'));
-    } else if (radioButtons.databases.checked) {
-      languageIcons.forEach((icon) => icon.classList.add('fade'));
-      frameworkIcons.forEach((icon) => icon.classList.add('fade'));
-      toolIcons.forEach((icon) => icon.classList.add('fade'));
-    }
+
+    const selected = Object.keys(radioButtons).find(key => radioButtons[key].checked);
+
+    Object.entries(iconGroups).forEach(([group, icons]) => {
+      if (group !== selected) {
+        icons.forEach(icon => icon.classList.add('fade'));
+      };
+    });
   });
 });
+
+// skills icons shuffle
+const shuffleBtn = document.querySelector('.shuffle-btn');
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function shuffleIcons() {
+  clearFade();
+  shuffle(allIcons);
+  allIcons.forEach((icon) => skillsContainer.appendChild(icon));
+}
+
+shuffleBtn.addEventListener('click', shuffleIcons);
+
 
 // petal moving
 const interval = setInterval(movePetal(), 1000);

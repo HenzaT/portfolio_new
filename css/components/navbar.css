@@ -7,8 +7,8 @@
   z-index: 1;
   top: 0px;
   overflow: hidden;
-  background-color: var(--dark-grey);
-  transition: background-color 0.3s ease;
+  background-color: var(--black);
+  transition: background-color 0.5s ease;
 }
 
 .my-projects-links, .about-contact-links {
@@ -49,3 +49,24 @@
   color: black;
   opacity: 0.5s;
 }
+
+/* .burger-menu {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger-menu.line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: white;
+} */

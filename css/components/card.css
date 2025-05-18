@@ -39,7 +39,7 @@
   border-radius: 20px;
   width: 40vw;
   opacity: 0;
-  transition: opacity 0.5s, visibility 0.5s ease;
+  transition: opacity 0.3s, visibility 0.3s ease;
   box-shadow: var(--shadow);
 }
 
@@ -62,7 +62,6 @@
 
 
 .contact-card {
-  padding: 20px;
   border-radius: 20px;
   margin: auto;
   width: 20vw;
@@ -74,7 +73,7 @@
 
 .music-card {
   background-color: var(--blue);
-  width: 60vw;
+  width: 40vw;
   /* padding: 20px; */
   border-radius: 20px;
   display: flex;
@@ -83,11 +82,9 @@
 }
 
 .flip-album-cards {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
   perspective: 1000px;
   transform-style: preserve-3d;
 }
@@ -107,10 +104,6 @@
   transform-origin: center center;
 }
 
-.flip-album.tilt {
-  transform: rotateY(40deg) scale(0.8);
-}
-
 .flip-album.flip {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
@@ -123,7 +116,7 @@
 
 .flip-album-front img{
   margin: 0;
-  height: 350px;
+  height: 260px;
 }
 
 .flip-album-front, .flip-album-back {

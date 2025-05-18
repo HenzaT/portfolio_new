@@ -1,12 +1,12 @@
-@import url("components/icon.css");
+@import url("components/album-image.css");
 @import url("components/button.css");
-@import url("components/container.css");
+@import url("components/canvas.css");
 @import url("components/card.css");
+@import url("components/container.css");
+@import url("components/icon.css");
+@import url("components/iframe.css");
 @import url("components/navbar.css");
 @import url("components/petal.css");
-@import url("components/radio.css");
-@import url("components/iframe.css");
-@import url("components/album-image.css");
 
 * {
   font-family: "Roboto", sans-serif;
@@ -17,7 +17,7 @@
 :root {
   --blue: #A9BCD0;
   --grey: #5E6572;
-  --dark-blue: #58688d;
+  --dark-blue: #4d5f89;
   --dark-grey: #2a3445;
   --selected: #ed9ccd;
   --pink: #fbd7ed;

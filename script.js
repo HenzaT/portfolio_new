@@ -1,3 +1,14 @@
+// canvas
+let canvas = document.getElementById("banner-canvas");
+let ctx = canvas.getContext("2d");
+
+let grd = ctx.createLinearGradient(0, 0, 200, 0);
+grd.addColorStop(0, "lightblue");
+grd.addColorStop(1, "darkblue");
+
+ctx.fillStyle = grd;
+ctx.fillRect(0, 0, 1388, 900);
+
 // navbar select
 document.addEventListener('DOMContentLoaded', selectLink);
 

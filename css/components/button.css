@@ -1,13 +1,42 @@
-input {
-  margin: 0.4rem;
-}
-
 .shuffle-btn {
   border-radius: 20px;
   border: none;
   padding: 10px 20px 10px 20px;
   font-size: 1rem;
   background-color: var(--dark-grey);
+  box-shadow: 0 0 5px var(--dark-grey);
   color: var(--light);
   cursor: pointer;
+}
+
+.radio, .skills-radio {
+  display: inline-flex;
+  overflow: hidden;
+  margin: 0px 0px 20px 0px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px var(--dark-grey);
+  text-align: center;
+}
+
+.radio-input {
+  display: none;
+}
+
+.radio-label {
+  padding: 8px 14px;
+  width: 5vw;
+  font-size: 14px;
+  color: var(--light);
+  background-color: var(--dark-grey);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.radio-label:not(:last-of-type) {
+  border-right: 1px solid var(--grey);
+}
+
+.radio-input:checked + .radio-label {
+  background-color: var(--selected);
+  color: black;
 }

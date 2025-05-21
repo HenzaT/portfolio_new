@@ -1,10 +1,7 @@
-.shuffle-btn {
-  border-radius: 20px;
-  border: none;
-  padding: 10px 20px 10px 20px;
-  font-size: 1rem;
-  background-color: var(--dark-grey);
-  box-shadow: 0 0 5px var(--dark-grey);
+#shuffle-btn {
+  max-width: 5%;
+  margin: auto;
+  font-size: 2.5rem;
   color: var(--light);
   cursor: pointer;
 }
@@ -16,6 +13,7 @@
   border-radius: 15px;
   box-shadow: 0 0 5px var(--dark-grey);
   text-align: center;
+  height: 100%;
 }
 
 .radio-input {
@@ -27,7 +25,7 @@
   width: 5vw;
   font-size: 14px;
   color: var(--light);
-  background-color: var(--dark-grey);
+  background-color: var(--black);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

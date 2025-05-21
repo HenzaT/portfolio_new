@@ -12,9 +12,29 @@
   <title>Henry Thomas Portfolio</title>
 </head>
 <body>
-  <div class="main">
+  <nav class="navbar">
+    <div class="navbar-links">
+      <div class="my-projects-links">
+        <a class="nav-link active" href="#home"><h3>Home</h3></a>
+        <a class="nav-link"href="#projects"><h3>Projects</h3></a>
+        <a class="nav-link" href="#skills"><h3>Skills</h3></a>
+        <a class="nav-link" href="#music"><h3>Music</h3></a>
+      </div>
+      <div class="about-contact-links">
+        <a class="nav-link" href="#contact"><h3>Contact</h3></a>
+        <a class="nav-link"href="#about"><h3>About</h3></a>
+      </div>
+      <!-- <div class="burger-menu">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div> -->
+    </div>
+  </nav>
+
+  <section class="main">
+    <section class="above-content">
       <section class="banner" id="home">
-        <canvas class="canvas" id="banner-canvas"></canvas>
         <div class="banner-text-section">
           <span class="banner-text">
             <h1>Henry Thomas</h1>
@@ -24,32 +44,13 @@
           </span>
         </div>
       </section>
+    </section>
 
-      <nav class="navbar">
-        <div class="navbar-links">
-          <div class="my-projects-links">
-            <a class="nav-link active" href="#home"><h3>Home</h3></a>
-            <a class="nav-link"href="#projects"><h3>Projects</h3></a>
-            <a class="nav-link" href="#skills"><h3>Skills</h3></a>
-            <a class="nav-link" href="#music"><h3>Music</h3></a>
-          </div>
-          <div class="about-contact-links">
-            <a class="nav-link" href="#contact"><h3>Contact</h3></a>
-            <a class="nav-link"href="#about"><h3>About</h3></a>
-          </div>
-          <!-- <div class="burger-menu">
-            <span class="line line1"></span>
-            <span class="line line2"></span>
-            <span class="line line3"></span>
-          </div> -->
-        </div>
-      </nav>
-
+    <section class="below-content">
       <div class="petal"></div>
-
       <section class="projects" id="projects">
         <div class="project-all">
-          <h1>Projects</h1>
+          <h1 class="section-title small">Projects</h1>
           <div class="projects-container">
             <div class="project-card">
               <div class="project-card-title-text">
@@ -132,21 +133,13 @@
         </div>
       </section>
 
+      <div class="dividing-bar"></div>
+
       <section class="skills" id="skills">
         <div class="skills-header">
-          <h1>Skills</h1>
-          <div class="skills-radio">
-            <input class="radio-input" type="radio" id="languages" name="about" value="languages">
-            <label class="radio-label" for="languages">Languages</label>
-            <input class="radio-input" type="radio" id="frameworks" name="about" value="frameworks">
-            <label class="radio-label" for="frameworks">Frameworks</label>
-            <input class="radio-input" type="radio" id="tools" name="about" value="tools">
-            <label class="radio-label" for="tools">Tools</label>
-            <input class="radio-input" type="radio" id="databases" name="about" value="databases">
-            <label class="radio-label" for="databases">Databases</label>
-          </div>
+          <h1 class="section-title small">Skills</h1>
         </div>
-        <div class="skills-and-button-container">
+        <div class="card-and-button-container">
           <div class="skills-container">
             <div class="devicon" id="ruby">
               <i class="devicon-ruby-plain-wordmark"></i>
@@ -162,6 +155,9 @@
             </div>
             <div class="devicon" id="css">
               <i class="devicon-css3-plain-wordmark"></i>
+            </div>
+            <div class="devicon" id="sass">
+              <i class="devicon-sass-original"></i>
             </div>
             <div class="devicon" id="git">
               <i class="devicon-git-plain-wordmark"></i>
@@ -182,13 +178,70 @@
               <i class="devicon-typescript-plain"></i>
             </div>
           </div>
-          <button class="shuffle-btn">shuffle</button>
+          <div class="skills-radio">
+            <input class="radio-input" type="radio" id="languages" name="about" value="languages">
+            <label class="radio-label" for="languages">Languages</label>
+            <input class="radio-input" type="radio" id="frameworks" name="about" value="frameworks">
+            <label class="radio-label" for="frameworks">Frameworks</label>
+            <input class="radio-input" type="radio" id="tools" name="about" value="tools">
+            <label class="radio-label" for="tools">Tools</label>
+            <input class="radio-input" type="radio" id="databases" name="about" value="databases">
+            <label class="radio-label" for="databases">Databases</label>
+          </div>
         </div>
       </section>
 
+      <div class="dividing-bar"></div>
+
       <section class="music" id="music">
-        <h1>My Music</h1>
+        <h1 class="section-title small">My Music</h1>
         <div class="music-container">
+          <div class="music-album-carousel">
+            <div class="flip-album-cards">
+              <div class="flip-album">
+                <div class="flip-album-front">
+                  <img class="album-art" src="./css/assets/april-tea.jpg" alt="album cover for April Tea">
+                </div>
+                <div class="flip-album-back">
+                  <iframe style="border-radius: 12px"
+                          src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
+                          frameBorder="0"
+                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                          allowfullscreen=""
+                          loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+              <div class="flip-album">
+                <div class="flip-album-front">
+                  <img class="album-art" src="./css/assets/sundown.png" alt="album cover for Sundown">
+                </div>
+                <div class="flip-album-back">
+                  <iframe style="border-radius: 12px"
+                          src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
+                          frameBorder="0"
+                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                          allowfullscreen=""
+                          loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+              <div class="flip-album tilt">
+                <div class="flip-album-front">
+                  <img class="album-art" src="./css/assets/reflections.jpeg" alt="album cover for Reflections">
+                </div>
+                <div class="flip-album-back">
+                  <iframe style="border-radius: 12px"
+                          src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
+                          frameBorder="0"
+                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                          allowfullscreen=""
+                          loading="lazy">
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="music-card">
             <h2 class="small" >aptist</h2>
             <p>
@@ -211,58 +264,86 @@
               </div>
             </div>
           </div>
-          <div class="music-album-carousel">
-            <div class="flip-album-cards">
-              <div class="flip-album">
-                <div class="flip-album-front">
-                  <img class="album-art" src="./css/assets/april-tea.jpg" alt="album cover for April Tea">
+        </div>
+      </section>
+
+      <div class="dividing-bar"></div>
+
+      <section class="about" id="about">
+        <div class="about-header">
+          <h1 class="section-title small">About Me</h1>
+        </div>
+        <div class="card-and-button-container">
+          <div class="about-container">
+            <div class="about-card visible" id="experience-card">
+              <h2>About Me</h2>
+              <div class="about-info">
+                <p>
+                  I am a software developer with a previous career in teaching. <br>
+                  What drew me to coding and software developing were the same things that drew me to teaching: <br>
+                  creativity, the importance of lifelong learning, and how every day is different.
+                </p>
+              </div>
+              <div class="icons-container">
+                <div class="devicon">
+                  <i class="fa-solid fa-person-chalkboard"></i>
                 </div>
-                <div class="flip-album-back">
-                  <iframe style="border-radius: 12px"
-                          src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
-                          width="100%" height="352" frameBorder="0"
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          allowfullscreen=""
-                          loading="lazy">
-                  </iframe>
+                <div class="devicon">
+                  <i class="fa-solid fa-computer"></i>
+                </div>
+                <div class="devicon">
+                  <i class="devicon-html5-plain-wordmark"></i>
                 </div>
               </div>
-              <div class="flip-album">
-                <div class="flip-album-front">
-                  <img class="album-art" src="./css/assets/sundown.png" alt="album cover for Sundown">
+            </div>
+            <div class="about-card hidden" id="interests-card">
+              <h2>Interests</h2>
+              <div class="about-info">
+                <p>
+                  Outside of coding and tech, I write my own music under the name 'aptist' (go to my 'music' section to check it out!) <br>
+                  I also love to climb and travel - I'm half Japanese, so I try to go to Japan at least once a year to visit family/eat/stock up on green tea
+                </p>
+              </div>
+              <div class="icons-container">
+                <div class="devicon">
+                  <i class="fa-solid fa-music"></i>
                 </div>
-                <div class="flip-album-back">
-                  <iframe style="border-radius: 12px"
-                          src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
-                          width="100%" height="352" frameBorder="0"
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          allowfullscreen=""
-                          loading="lazy">
-                  </iframe>
+                <div class="devicon">
+                  <i class="fa-solid fa-hill-rockslide"></i>
+                </div>
+                <div class="devicon">
+                  <i class="fa-solid fa-plane"></i>
                 </div>
               </div>
-              <div class="flip-album tilt">
-                <div class="flip-album-front">
-                  <img class="album-art" src="./css/assets/reflections.jpeg" alt="album cover for Reflections">
+            </div>
+            <div class="about-card hidden" id="education-card">
+              <h2>Education</h2>
+              <div class="about-info">
+                <ul>
+                  <li>
+                    Le Wagon - Web Development Bootcamp
+                  </li>
+                  <li>
+                    University of Bristol - Classical Studies BA
+                  </li>
+                  <li>
+                    The Institute of Education, UCL - PGCE in Primary Education
+                  </li>
+                </ul>
+              </div>
+              <div class="icons-container">
+                <div class="devicon">
+                  <i class="fa-solid fa-computer"></i>
                 </div>
-                <div class="flip-album-back">
-                  <iframe style="border-radius: 12px"
-                          src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
-                          width="100%" height="352" frameBorder="0"
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          allowfullscreen=""
-                          loading="lazy">
-                  </iframe>
+                <div class="devicon">
+                  <i class="fa-solid fa-building-columns"></i>
+                </div>
+                <div class="devicon">
+                  <i class="fa-solid fa-person-chalkboard"></i>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="about" id="about">
-        <div class="about-header">
-          <h1>About Me</h1>
           <div class="radio">
             <input class="radio-input" type="radio" id="experience" name="about" value="experience" checked>
             <label class="radio-label" for="experience">About</label>
@@ -272,80 +353,10 @@
             <label class="radio-label" for="education">Education</label>
           </div>
         </div>
-        <div class="about-container">
-          <div class="about-card visible" id="experience-card">
-            <h2>About Me</h2>
-            <div class="about-info">
-              <p>
-                I am a software developer with a previous career in teaching. <br>
-                What drew me to coding and software developing were the same things that drew me to teaching: <br>
-                creativity, the importance of lifelong learning, and how every day is different.
-              </p>
-            </div>
-            <div class="icons-container">
-              <div class="devicon">
-                <i class="fa-solid fa-person-chalkboard"></i>
-              </div>
-              <div class="devicon">
-                <i class="fa-solid fa-computer"></i>
-              </div>
-              <div class="devicon">
-                <i class="devicon-html5-plain-wordmark"></i>
-              </div>
-            </div>
-          </div>
-          <div class="about-card hidden" id="interests-card">
-            <h2>Interests</h2>
-            <div class="about-info">
-              <p>
-                Outside of coding and tech, I write my own music under the name 'aptist' (go to my 'music' section to check it out!) <br>
-                I also love to climb and travel - I'm half Japanese, so I try to go to Japan at least once a year to visit family/eat/stock up on green tea
-              </p>
-            </div>
-            <div class="icons-container">
-              <div class="devicon">
-                <i class="fa-solid fa-music"></i>
-              </div>
-              <div class="devicon">
-                <i class="fa-solid fa-hill-rockslide"></i>
-              </div>
-              <div class="devicon">
-                <i class="fa-solid fa-plane"></i>
-              </div>
-            </div>
-          </div>
-          <div class="about-card hidden" id="education-card">
-            <h2>Education</h2>
-            <div class="about-info">
-              <ul>
-                <li>
-                  Le Wagon - Web Development Bootcamp
-                </li>
-                <li>
-                  University of Bristol - Classical Studies BA
-                </li>
-                <li>
-                  The Institute of Education, UCL - PGCE in Primary Education
-                </li>
-              </ul>
-            </div>
-            <div class="icons-container">
-              <div class="devicon">
-                <i class="fa-solid fa-computer"></i>
-              </div>
-              <div class="devicon">
-                <i class="fa-solid fa-building-columns"></i>
-              </div>
-              <div class="devicon">
-                <i class="fa-solid fa-person-chalkboard"></i>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section class="contact" id="contact">
-        <h1>Contact Me</h1>
+        <h1 class="section-title">Contact Me</h1>
         <div class="contact-card">
           <div class="contact-icons-all">
             <div class="contact-icon">
@@ -370,9 +381,8 @@
       <div class="home-arrow">
         <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
       </div>
-
-    <!-- </canvas> -->
-  </div>
+    </section>
+  </section>
   <script src="script.js"></script>
 </body>
 </html>

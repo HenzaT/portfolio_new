@@ -1,13 +1,48 @@
 // canvas
-let canvas = document.getElementById("banner-canvas");
-let ctx = canvas.getContext("2d");
+// let canvas = document.getElementById("banner-canvas");
+// let ctx = canvas.getContext("2d");
 
-let grd = ctx.createLinearGradient(0, 0, 200, 0);
-grd.addColorStop(0, "lightblue");
-grd.addColorStop(1, "darkblue");
+// let grd = ctx.createLinearGradient(0, 0, 200, 0);
+// grd.addColorStop(0, "lightblue");
+// grd.addColorStop(1, "darkblue");
 
-ctx.fillStyle = grd;
-ctx.fillRect(0, 0, 1388, 900);
+// ctx.fillStyle = grd;
+// ctx.fillRect(0, 0, 1388, 900);
+
+// intersection observer - elements IN viewport
+function widenBar(entries){
+  entries.map((entry)=> {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('widen');
+    }
+  })
+};
+
+const barObserver = new IntersectionObserver(widenBar);
+
+let dividingBars = document.querySelectorAll('.dividing-bar');
+dividingBars.forEach(bar => {
+  if (bar) {
+    barObserver.observe(bar);
+  }
+});
+
+// intersection observer - element OUT of viewport
+function clear(entries){
+  entries.map((entry)=> {
+    if (!entry.isIntersecting) {
+      clearFadeExpand()
+      skillsRadioButtons.forEach(button => {
+        button.removeAttribute('checked');
+      });
+    }
+  })
+};
+
+const skillsObserver = new IntersectionObserver(clear);
+
+let skills = document.querySelector('.skills-container');
+skillsObserver.observe(skills);
 
 // navbar select
 document.addEventListener('DOMContentLoaded', selectLink);
@@ -66,39 +101,6 @@ const card = {
 };
 const allCards = [card.experience, card.interests, card.education];
 
-// icons
-const languageIcons = [
-  document.getElementById('ruby'),
-  document.getElementById('js'),
-  document.getElementById('html'),
-  document.getElementById('css'),
-  document.getElementById('ts')
-];
-
-const frameworkIcons = [
-  document.getElementById('rails'),
-  document.getElementById('bootstrap'),
-];
-
-const toolIcons = [
-  document.getElementById('git'),
-  document.getElementById('github'),
-  document.getElementById('heroku'),
-];
-
-const dbIcons = [
-  document.getElementById('postgres')
-];
-
-const iconGroups = {
-  languages: languageIcons,
-  frameworks: frameworkIcons,
-  tools: toolIcons,
-  databases: dbIcons
-};
-
-const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons];
-
 aboutRadioButtons.forEach((button) => {
   button.addEventListener('click', () => {
     let selectedCard = null;
@@ -123,44 +125,64 @@ aboutRadioButtons.forEach((button) => {
   });
 });
 
-function clearFade() {
+// icons
+const languageIcons = [
+  document.getElementById('ruby'),
+  document.getElementById('js'),
+  document.getElementById('ts')
+];
+
+const frameworkIcons = [
+  document.getElementById('rails'),
+  document.getElementById('bootstrap')
+];
+
+const toolIcons = [
+  document.getElementById('git'),
+  document.getElementById('github'),
+  document.getElementById('heroku'),
+  document.getElementById('html'),
+  document.getElementById('css'),
+  document.getElementById('sass')
+];
+
+const dbIcons = [
+  document.getElementById('postgres')
+];
+
+const iconGroups = {
+  languages: languageIcons,
+  frameworks: frameworkIcons,
+  tools: toolIcons,
+  databases: dbIcons
+};
+
+const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons];
+
+function clearFadeExpand() {
   Object.values(iconGroups).forEach(group => {
-    group.forEach(icon => icon.classList.remove('fade'));
+    group.forEach((icon) => {
+      icon.classList.remove('fade');
+      icon.classList.remove('expand');
+    });
   });
-}
+};
 
 skillsRadioButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    clearFade();
+    clearFadeExpand();
 
-    const selected = Object.keys(radioButtons).find(key => radioButtons[key].checked);
+    const selected = Object.keys(radioButtons).find(buttonName => radioButtons[buttonName].checked);
 
     Object.entries(iconGroups).forEach(([group, icons]) => {
       if (group !== selected) {
-        icons.forEach(icon => icon.classList.add('fade'));
-      };
+        icons.forEach((icon) => icon.classList.add('fade'));
+      } if (group === selected) {
+        icons.forEach((icon) => icon.classList.add('expand'));
+      }
     });
   });
 });
-
-// skills icons shuffle
-const shuffleBtn = document.querySelector('.shuffle-btn');
-
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
-function shuffleIcons() {
-  clearFade();
-  shuffle(allIcons);
-  allIcons.forEach((icon) => skillsContainer.appendChild(icon));
-}
-
-shuffleBtn.addEventListener('click', shuffleIcons);
-
 
 // petal moving
 const interval = setInterval(movePetal(), 1000);

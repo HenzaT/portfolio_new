@@ -14,16 +14,13 @@
 <body>
   <nav class="navbar">
     <div class="navbar-links">
-      <div class="my-projects-links">
-        <a class="nav-link active" href="#home"><h3>Home</h3></a>
-        <a class="nav-link"href="#projects"><h3>Projects</h3></a>
-        <a class="nav-link" href="#skills"><h3>Skills</h3></a>
-        <a class="nav-link" href="#music"><h3>Music</h3></a>
-      </div>
-      <div class="about-contact-links">
-        <a class="nav-link" href="#contact"><h3>Contact</h3></a>
-        <a class="nav-link"href="#about"><h3>About</h3></a>
-      </div>
+      <div class="highlight"></div>
+      <a class="nav-link active" href="#"><h3>Home</h3></a>
+      <a class="nav-link"href="#projects"><h3>Projects</h3></a>
+      <a class="nav-link" href="#skills"><h3>Skills</h3></a>
+      <a class="nav-link" href="#music"><h3>Music</h3></a>
+      <a class="nav-link"href="#about"><h3>About</h3></a>
+      <a class="nav-link" href="#contact"><h3>Contact</h3></a>
       <!-- <div class="burger-menu">
         <span class="line line1"></span>
         <span class="line line2"></span>
@@ -38,16 +35,13 @@
         <div class="banner-text-section">
           <span class="banner-text">
             <h1>Henry Thomas</h1>
-          </span>
-          <span class="banner-text">
-            <h1>Software Developer</h1>
+            <h1>Full Stack <br>Web <span class="highlighted-word">Developer</span></h1>
           </span>
         </div>
       </section>
     </section>
 
     <section class="below-content">
-      <div class="petal"></div>
       <section class="projects" id="projects">
         <div class="project-all">
           <h1 class="section-title small">Projects</h1>
@@ -58,34 +52,7 @@
                 <p class="small">song idea app for musicians and bands</p>
               </div>
               <div class="project-info">
-                <div class="slides">
-                  <img src="./css/assets/gimme-a-song-1.jpeg" alt="gimme a song project homepage">
-                  <ul>
-                    <li>Generates a song idea, giving you a time signature, instrument, key, mood and BPM to start with</li>
-                    <li>User can save generated ideas</li>
-                    <li>Responsive design</li>
-                  </ul>
-                </div>
-                <div class="slides">
-                  <img src="./css/assets/gimme-a-song-2.jpeg" alt="gimme a song project new idea page">
-                  <ul>
-                    <li>Test</li>
-                    <li>User can save generated ideas</li>
-                    <li>Responsive design</li>
-                  </ul>
-                </div>
-                <div class="slides">
-                  <img src="./css/assets/gimme-a-song-3.jpeg" alt="gimme a song project dashboard page">
-                  <ul>
-                    <li>Generates a song idea, giving you a time signature, instrument, key, mood and BPM to start with</li>
-                    <li>Test</li>
-                    <li>Responsive design</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="arrows">
-                <i id="arrow" class="fa-solid fa-less-than" onclick="plusDivs(-1)"></i>
-                <i id="arrow" class="fa-solid fa-greater-than" onclick="plusDivs(+1)"></i>
+                <img src="./css/assets/gimme-a-song-1.jpeg" alt="gimme a song project homepage">
               </div>
               <div class="icons-container">
                 <div class="devicon">
@@ -196,60 +163,55 @@
       <section class="music" id="music">
         <h1 class="section-title small">My Music</h1>
         <div class="music-container">
-          <div class="music-album-carousel">
-            <div class="flip-album-cards">
-              <div class="flip-album">
-                <div class="flip-album-front">
-                  <img class="album-art" src="./css/assets/april-tea.jpg" alt="album cover for April Tea">
-                </div>
-                <div class="flip-album-back">
-                  <iframe style="border-radius: 12px"
-                          src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
-                          frameBorder="0"
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          allowfullscreen=""
-                          loading="lazy">
-                  </iframe>
-                </div>
+          <div class="flip-album-cards">
+            <div class="flip-album">
+              <div class="flip-album-front">
+                <img class="album-art" src="./css/assets/april-tea.jpg" alt="album cover for April Tea">
+                <a href="#" class="card-trigger link--styled">listen</a>
               </div>
-              <div class="flip-album">
-                <div class="flip-album-front">
-                  <img class="album-art" src="./css/assets/sundown.png" alt="album cover for Sundown">
-                </div>
-                <div class="flip-album-back">
-                  <iframe style="border-radius: 12px"
-                          src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
-                          frameBorder="0"
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          allowfullscreen=""
-                          loading="lazy">
-                  </iframe>
-                </div>
+              <div class="flip-album-back">
+                <div class="card-close"></div>
+                <iframe style="border-radius: 12px"
+                        src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
+                        frameBorder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        allowfullscreen=""
+                        loading="lazy">
+                </iframe>
               </div>
-              <div class="flip-album tilt">
-                <div class="flip-album-front">
-                  <img class="album-art" src="./css/assets/reflections.jpeg" alt="album cover for Reflections">
-                </div>
-                <div class="flip-album-back">
-                  <iframe style="border-radius: 12px"
-                          src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
-                          frameBorder="0"
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          allowfullscreen=""
-                          loading="lazy">
-                  </iframe>
-                </div>
+            </div>
+            <div class="flip-album">
+              <div class="flip-album-front">
+                <img class="album-art" src="./css/assets/sundown.png" alt="album cover for Sundown">
+              </div>
+              <div class="flip-album-back">
+                <iframe style="border-radius: 12px"
+                        src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
+                        frameBorder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        allowfullscreen=""
+                        loading="lazy">
+                </iframe>
+              </div>
+            </div>
+            <div class="flip-album tilt">
+              <div class="flip-album-front">
+                <img class="album-art" src="./css/assets/reflections.jpeg" alt="album cover for Reflections">
+              </div>
+              <div class="flip-album-back">
+                <iframe style="border-radius: 12px"
+                        src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
+                        frameBorder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        allowfullscreen=""
+                        loading="lazy">
+                </iframe>
               </div>
             </div>
           </div>
           <div class="music-card">
-            <h2 class="small" >aptist</h2>
             <p>
-              My solo music project in which I write and record electronic music <br>
-              I incorporate 'organic' instruments like electric and bass guitar <br>with electronic instruments like synths and drum machines
-              <br>
-              <br>
-              Written, recorded and produced on Logic Pro at my home
+              Aside from coding, I write and produce my own music under the name <span class="highlighted-word">aptist</span>
             </p>
             <div class="music-icons">
               <div class="music-icon">
@@ -356,7 +318,7 @@
       </section>
 
       <section class="contact" id="contact">
-        <h1 class="section-title">Contact Me</h1>
+        <h1 class="section-title small">Contact Me</h1>
         <div class="contact-card">
           <div class="contact-icons-all">
             <div class="contact-icon">

@@ -11,23 +11,8 @@
   transition: background-color 0.5s ease;
 }
 
-.my-projects-links, .about-contact-links {
-  display: flex;
-}
-
-.my-projects-links {
-  width: 50vw;
-  justify-content: space-between;
-}
-
-.about-contact-links {
-  width: 30vw;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
-  margin-right: 0;
-}
-
 .navbar-links {
+  position: relative;
   width: 90%;
   display: flex;
   flex-direction: row;
@@ -35,19 +20,29 @@
 }
 
 .navbar-links a {
-  color: azure;
+  color: var(--light);
   cursor: pointer;
 }
 
 .nav-link {
+  position: relative;
   padding: 0px 10px 0px 10px;
+  border-radius: 10px;
+  transition: background-color 0.5s;
+  transition: color 0.5s;
 }
 
 .nav-link.active {
-  background-color: var(--selected);
-  border-radius: 10px;
   color: black;
-  opacity: 0.5s;
+}
+
+.highlight {
+  position: absolute;
+  background-color: var(--selected);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* .burger-menu {

@@ -5,7 +5,7 @@
 .project-card {
   /* width: 50%; */
   border-radius: 10px;
-  background-color: var(--blue);
+  background-color: var(--light);
   box-shadow: var(--shadow);
   /* text-align: center; */
   /* display: flex; */
@@ -34,7 +34,7 @@
 }
 
 .about-card {
-  background-color: var(--blue);
+  background-color: var(--light);
   padding: 20px;
   border-radius: 20px;
   width: 40vw;
@@ -84,7 +84,7 @@
 }
 
 .music-card {
-  background-color: var(--blue);
+  background-color: var(--light);
   width: 30vw;
   padding: 20px;
   border-radius: 20px;

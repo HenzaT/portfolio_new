@@ -1,17 +1,43 @@
-// canvas
-// let canvas = document.getElementById("banner-canvas");
-// let ctx = canvas.getContext("2d");
+// section variables
+const homeSection = document.getElementById('home');
+const projectsSection = document.getElementById('projects');
+const skillsSection = document.getElementById('skills');
+const musicSection = document.getElementById('music');
+const aboutSection = document.getElementById('about');
+const contactSection = document.getElementById('contact');
 
-// let grd = ctx.createLinearGradient(0, 0, 200, 0);
-// grd.addColorStop(0, "lightblue");
-// grd.addColorStop(1, "darkblue");
+const allSections = [
+  homeSection,
+  projectsSection,
+  skillsSection,
+  musicSection,
+  aboutSection,
+  contactSection
+];
 
-// ctx.fillStyle = grd;
-// ctx.fillRect(0, 0, 1388, 900);
+// section specific containers
+const skillsIcons = document.querySelector('.skills-container');
+
 
 // intersection observer - elements IN viewport
+function sectionViewChangeNav(entries) {
+  entries.map((entry) => {
+    if (entry.isintersecting) {
+      moveHighlight(entry);
+    }
+  });
+};
+
+const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
+
+allSections.forEach(section=> {
+  if (section) {
+    console.log(section);
+  }
+});
+
 function widenBar(entries){
-  entries.map((entry)=> {
+  entries.map((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('widen');
     }
@@ -41,43 +67,56 @@ function clear(entries){
 
 const skillsObserver = new IntersectionObserver(clear);
 
-let skills = document.querySelector('.skills-container');
-skillsObserver.observe(skills);
+skillsObserver.observe(skillsIcons);
+
 
 // navbar select
-document.addEventListener('DOMContentLoaded', selectLink);
+const highlight = document.querySelector('.highlight');
+const navLinks = document.querySelectorAll('.nav-link');
 
-function selectLink() {
-  const navLinks = document.querySelectorAll('.nav-link');
+function moveHighlight(target) {
+  // get position and size of clicked link
+  const rect = target.getBoundingClientRect();
+  // get position of navbar-links container
+  const containerRect = target.parentElement.getBoundingClientRect();
 
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      // remove 'active' from each link
-      navLinks.forEach(l => l.classList.remove('active'));
-      // add only to one link
-      link.classList.add('active');
-    });
+  highlight.style.width = `${rect.width}px`;
+  highlight.style.height = `${rect.height}px`;
+  highlight.style.left = `${rect.left - containerRect.left}px`;
+  highlight.style.top = `${rect.top - containerRect.top}px`;
+}
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-link.active')?.classList.remove('active');
+    link.classList.add('active');
+    moveHighlight(link);
   });
-};
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const activeLink = document.querySelector('.nav-link.active');
+  if (activeLink) moveHighlight(activeLink);
+});
 
 // projects slide
-let slideIndex = 1;
-showDivs(slideIndex);
+// let slideIndex = 1;
+// showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+// function plusDivs(n) {
+//   showDivs(slideIndex += n);
+// }
 
-function showDivs(n) {
-  let i;
-  const slides = document.querySelectorAll(".slides");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length} ;
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex-1].style.display = "block";
-}
+// function showDivs(n) {
+//   let i;
+//   const slides = document.querySelectorAll(".slides");
+//   if (n > slides.length) {slideIndex = 1}
+//   if (n < 1) {slideIndex = slides.length} ;
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";
+//   }
+//   slides[slideIndex-1].style.display = "block";
+// }
 
 // about and skills toggle
 const aboutRadioButtons = document.querySelectorAll('.radio');
@@ -183,15 +222,6 @@ skillsRadioButtons.forEach((button) => {
     });
   });
 });
-
-// petal moving
-const interval = setInterval(movePetal(), 1000);
-
-function movePetal() {
-  let petal = document.querySelector('.petal');
-  petal.style.top = petal.offsetTop + 1 + "px";
-  petal.style.left = petal.offsetLeft + 1 + "px";
-};
 
 // music album flip
 const albumCards = document.querySelectorAll(".flip-album");

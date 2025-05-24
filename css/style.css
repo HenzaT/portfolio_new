@@ -31,7 +31,7 @@
   --shadow: 0 0px 15px rgba(0, 0, 0, 0.6);
 }
 
-h1 {
+h1, .contact h3 {
   color: var(--light);
 }
 
@@ -44,6 +44,7 @@ body {
 }
 
 .main {
+  overflow: auto;
   scroll-snap-type: y mandatory;
   background-size: 400% 400%;
   animation: gradient 20s ease infinite;

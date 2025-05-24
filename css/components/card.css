@@ -38,22 +38,28 @@
   padding: 20px;
   border-radius: 20px;
   width: 40vw;
-  opacity: 0;
+  flex: 1;
+  /* opacity: 0; */
   transition: opacity 0.3s, visibility 0.3s ease;
   box-shadow: var(--shadow);
+  position: relative;
 }
 
-/* #experience-card {
-  position: absolute;
+.about-card + .about-card {
+  margin-top: -260px;
+}
+
+#experience-card {
+  z-index: 3;
 }
 
 #interests-card {
-  position: absolute;
+  z-index: 2;
 }
 
 #education-card {
-  position: absolute;
-} */
+  z-index: 1;
+}
 
 .about-card.visible {
   opacity: 1;
@@ -61,7 +67,7 @@
   /* z-index: 1; */
 }
 
-.about-card.hidden {
+.hidden {
   opacity: 0;
   visibility: hidden;
   /* z-index: 0; */

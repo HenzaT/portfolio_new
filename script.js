@@ -15,15 +15,80 @@ const allSections = [
   contactSection
 ];
 
-// section specific containers
-const skillsIcons = document.querySelector('.skills-container');
+const sectionsNoHome = document.querySelector('.below-content');
 
+// section specific containers
+const skillsIconsContainer = document.querySelector('.skills-container');
+
+const highlight = document.querySelector('.highlight');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// radio buttons
+const aboutRadioButtons = document.querySelectorAll('.radio');
+const skillsRadioButtons = document.querySelectorAll('.skills-radio');
+
+const radioButtons = {
+  experience: document.getElementById('experience'),
+  interests: document.getElementById('interests'),
+  education: document.getElementById('education'),
+  languages: document.getElementById('languages'),
+  frameworks: document.getElementById('frameworks'),
+  tools: document.getElementById('tools'),
+  databases: document.getElementById('databases')
+};
+
+// about cards
+const card = {
+  experience: document.getElementById('experience-card'),
+  interests: document.getElementById('interests-card'),
+  education: document.getElementById('education-card')
+};
+
+const allCards = [card.experience, card.interests, card.education];
+
+// icons
+const languageIcons = [
+  document.getElementById('ruby'),
+  document.getElementById('js'),
+  document.getElementById('ts')
+];
+
+const frameworkIcons = [
+  document.getElementById('rails'),
+  document.getElementById('bootstrap')
+];
+
+const toolIcons = [
+  document.getElementById('git'),
+  document.getElementById('github'),
+  document.getElementById('heroku'),
+  document.getElementById('html'),
+  document.getElementById('css'),
+  document.getElementById('sass')
+];
+
+const dbIcons = [
+  document.getElementById('postgres')
+];
+
+const iconGroups = {
+  languages: languageIcons,
+  frameworks: frameworkIcons,
+  tools: toolIcons,
+  databases: dbIcons
+};
+
+const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons];
+
+const homeArrow = document.querySelector('.home-arrow');
 
 // intersection observer - elements IN viewport
+
+// highlight nav when each section is in viewport
 function sectionViewChangeNav(entries) {
   entries.map((entry) => {
     if (entry.isintersecting) {
-      moveHighlight(entry);
+      moveHighlight(entry.target);
     }
   });
 };
@@ -32,10 +97,27 @@ const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
 
 allSections.forEach(section=> {
   if (section) {
-    console.log(section);
+    sectionObserver.observe(section);
   }
 });
 
+// show home arrow button when sections in view
+function homeArrowInView(entries) {
+  entries.map((entry) => {
+    if (entry.isIntersecting) {
+      homeArrow.classList.remove('hidden');
+    } else if (!entry.isIntersecting) {
+      homeArrow.classList.add('hidden');
+    }
+  })
+}
+
+const arrowObserver = new IntersectionObserver(homeArrowInView);
+
+arrowObserver.observe(sectionsNoHome);
+
+
+// widen separation bars
 function widenBar(entries){
   entries.map((entry) => {
     if (entry.isIntersecting) {
@@ -53,7 +135,10 @@ dividingBars.forEach(bar => {
   }
 });
 
+
 // intersection observer - element OUT of viewport
+
+// clear skills container
 function clear(entries){
   entries.map((entry)=> {
     if (!entry.isIntersecting) {
@@ -67,13 +152,10 @@ function clear(entries){
 
 const skillsObserver = new IntersectionObserver(clear);
 
-skillsObserver.observe(skillsIcons);
+skillsObserver.observe(skillsIconsContainer);
 
 
 // navbar select
-const highlight = document.querySelector('.highlight');
-const navLinks = document.querySelectorAll('.nav-link');
-
 function moveHighlight(target) {
   // get position and size of clicked link
   const rect = target.getBoundingClientRect();
@@ -118,28 +200,7 @@ window.addEventListener('DOMContentLoaded', () => {
 //   slides[slideIndex-1].style.display = "block";
 // }
 
-// about and skills toggle
-const aboutRadioButtons = document.querySelectorAll('.radio');
-const skillsRadioButtons = document.querySelectorAll('.skills-radio');
-const skillsContainer = document.querySelector('.skills-container');
-
-const radioButtons = {
-  experience: document.getElementById('experience'),
-  interests: document.getElementById('interests'),
-  education: document.getElementById('education'),
-  languages: document.getElementById('languages'),
-  frameworks: document.getElementById('frameworks'),
-  tools: document.getElementById('tools'),
-  databases: document.getElementById('databases')
-};
-
-const card = {
-  experience: document.getElementById('experience-card'),
-  interests: document.getElementById('interests-card'),
-  education: document.getElementById('education-card')
-};
-const allCards = [card.experience, card.interests, card.education];
-
+// about cards toggle
 aboutRadioButtons.forEach((button) => {
   button.addEventListener('click', () => {
     let selectedCard = null;
@@ -164,40 +225,7 @@ aboutRadioButtons.forEach((button) => {
   });
 });
 
-// icons
-const languageIcons = [
-  document.getElementById('ruby'),
-  document.getElementById('js'),
-  document.getElementById('ts')
-];
-
-const frameworkIcons = [
-  document.getElementById('rails'),
-  document.getElementById('bootstrap')
-];
-
-const toolIcons = [
-  document.getElementById('git'),
-  document.getElementById('github'),
-  document.getElementById('heroku'),
-  document.getElementById('html'),
-  document.getElementById('css'),
-  document.getElementById('sass')
-];
-
-const dbIcons = [
-  document.getElementById('postgres')
-];
-
-const iconGroups = {
-  languages: languageIcons,
-  frameworks: frameworkIcons,
-  tools: toolIcons,
-  databases: dbIcons
-};
-
-const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons];
-
+// skills icons toggle
 function clearFadeExpand() {
   Object.values(iconGroups).forEach(group => {
     group.forEach((icon) => {

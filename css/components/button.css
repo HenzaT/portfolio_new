@@ -1,11 +1,3 @@
-#shuffle-btn {
-  max-width: 5%;
-  margin: auto;
-  font-size: 2.5rem;
-  color: var(--light);
-  cursor: pointer;
-}
-
 .radio, .skills-radio {
   display: inline-flex;
   overflow: hidden;

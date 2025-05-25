@@ -88,7 +88,7 @@ const homeArrowIcon = document.getElementById('arrow-icon');
 // intersection observer - element IN viewport
 // show home arrow button when sections in view
 function homeArrowInView(entries) {
-    entries.map((entry) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
             if (homeArrow) {
                 homeArrow.classList.remove('hidden');
@@ -102,25 +102,26 @@ function homeArrowInView(entries) {
     });
 }
 const arrowObserver = new IntersectionObserver(homeArrowInView);
-arrowObserver.observe(sectionsNoHome);
-// highlight nav when each section is in viewport
-function sectionViewChangeNav(entries) {
-    entries.map((entry) => {
-        if (entry.isIntersecting) {
-            moveHighlight(entry);
-        }
-    });
+if (sectionsNoHome) {
+    arrowObserver.observe(sectionsNoHome);
 }
-;
-const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
-allSections.forEach(section => {
-    if (section) {
-        sectionObserver.observe(section);
-    }
-});
+// highlight nav when each section is in viewport
+// function sectionViewChangeNav(entries: IntersectionObserverEntry[]) {
+//   entries.forEach((entry: IntersectionObserverEntry) => {
+//     if (entry.isIntersecting) {
+//       navLinkClick(entry)
+//     }
+//   });
+// };
+// const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
+// allSections.forEach(section=> {
+//   if (section) {
+//     sectionObserver.observe(section);
+//   }
+// });
 // widen separation bars
 function widenBar(entries) {
-    entries.map((entry) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('widen');
         }
@@ -137,7 +138,7 @@ dividingBars.forEach(bar => {
 // intersection observer - element OUT of viewport
 // clear skills container
 function clear(entries) {
-    entries.map((entry) => {
+    entries.forEach((entry) => {
         if (!entry.isIntersecting) {
             clearFadeExpand();
             skillsRadioButtons.forEach(button => {
@@ -196,6 +197,10 @@ aboutRadioButtons.forEach((button) => {
             selectedCard = card.education;
         }
         allCards.forEach((card) => {
+            if (!card) {
+                console.error("There is not card");
+                return;
+            }
             if (card === selectedCard) {
                 card.classList.remove('hidden');
                 card.classList.add('visible');

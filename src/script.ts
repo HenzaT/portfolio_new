@@ -15,7 +15,7 @@ const allSections = [
   contactSection
 ];
 
-const sectionsNoHome = document.querySelector('.below-content');
+const sectionsNoHome: HTMLElement | null = document.querySelector('.below-content');
 
 // section specific containers
 const skillsIconsContainer = document.querySelector('.skills-container');
@@ -119,7 +119,7 @@ const homeArrowIcon = document.getElementById('arrow-icon');
 
 // show home arrow button when sections in view
 function homeArrowInView(entries: IntersectionObserverEntry[]) {
-  entries.forEach((entry: IntersectionObserverEntry) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       if (homeArrow) {
         homeArrow.classList.remove('hidden');
@@ -133,26 +133,28 @@ function homeArrowInView(entries: IntersectionObserverEntry[]) {
 }
 
 const arrowObserver = new IntersectionObserver(homeArrowInView);
-arrowObserver.observe(sectionsNoHome);
+if (sectionsNoHome) {
+  arrowObserver.observe(sectionsNoHome);
+}
 
 // highlight nav when each section is in viewport
-function sectionViewChangeNav(entries: IntersectionObserverEntry[]) {
-  entries.forEach((entry: IntersectionObserverEntry) => {
-    if (entry.isIntersecting) {
-      navLinkClick(entry)
-    }
-  });
-};
+// function sectionViewChangeNav(entries: IntersectionObserverEntry[]) {
+//   entries.forEach((entry: IntersectionObserverEntry) => {
+//     if (entry.isIntersecting) {
+//       navLinkClick(entry)
+//     }
+//   });
+// };
 
-const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
-allSections.forEach(section=> {
-  if (section) {
-    sectionObserver.observe(section);
-  }
-});
+// const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
+// allSections.forEach(section=> {
+//   if (section) {
+//     sectionObserver.observe(section);
+//   }
+// });
 
 // widen separation bars
-function widenBar(entries){
+function widenBar(entries: IntersectionObserverEntry[]){
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('widen');
@@ -172,7 +174,7 @@ dividingBars.forEach(bar => {
 // intersection observer - element OUT of viewport
 
 // clear skills container
-function clear(entries){
+function clear(entries: IntersectionObserverEntry[]){
   entries.forEach((entry)=> {
     if (!entry.isIntersecting) {
       clearFadeExpand()
@@ -238,6 +240,10 @@ aboutRadioButtons.forEach((button) => {
     }
 
     allCards.forEach((card) => {
+      if (!card) {
+        console.error("There is not card")
+        return
+      }
       if (card === selectedCard) {
         card.classList.remove('hidden');
         card.classList.add('visible');

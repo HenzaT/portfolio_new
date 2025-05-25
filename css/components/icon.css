@@ -29,8 +29,9 @@
   font-size: 3rem;
   color: var(--light);
   text-align: center;
-  position: absolute;
-  bottom: 0;
+  margin-top: 40px;
+  /* position: absolute;
+  bottom: 0; */
 }
 
 .projects-chevron i {
@@ -39,7 +40,7 @@
 
 @keyframes slideUp {
   from {
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 70%, 0);
     visibility: visible;
   }
 
@@ -49,7 +50,7 @@
 }
 
 .slideUp {
-  animation: slideUp 0.8s ease-in;
+  animation: slideUp 0.4s ease-in;
 }
 
 .icons-container {

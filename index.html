@@ -10,16 +10,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap" rel="stylesheet">
   <title>Henry Thomas Portfolio</title>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <nav class="navbar">
     <div class="navbar-links">
       <div class="highlight"></div>
-      <a class="nav-link active" href="#"><h3>Home</h3></a>
-      <a class="nav-link"href="#projects"><h3>Projects</h3></a>
+      <a class="nav-link active" id="home-link" href="#"><h3>Home</h3></a>
+      <a class="nav-link" href="#projects"><h3>Projects</h3></a>
       <a class="nav-link" href="#skills"><h3>Skills</h3></a>
       <a class="nav-link" href="#music"><h3>Music</h3></a>
-      <a class="nav-link"href="#about"><h3>About</h3></a>
+      <a class="nav-link" href="#about"><h3>About</h3></a>
       <a class="nav-link" href="#contact"><h3>Contact</h3></a>
       <!-- <div class="burger-menu">
         <span class="line line1"></span>
@@ -44,7 +45,7 @@
     </section>
 
     <div class="home-arrow hidden">
-      <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
+      <a id="arrow-icon" href="#"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
 
     <section class="below-content">
@@ -58,7 +59,7 @@
                 <p class="small">song idea app for musicians and bands</p>
               </div>
               <div class="project-info">
-                <img src="./css/assets/gimme-a-song-1.jpeg" alt="gimme a song project homepage">
+                <!-- <img src="./css/assets/gimme-a-song-1.jpeg" alt="gimme a song project homepage"> -->
               </div>
               <div class="icons-container">
                 <div class="devicon">
@@ -70,8 +71,8 @@
                 <div class="devicon">
                   <i class="devicon-html5-plain-wordmark"></i>
                 </div>
-                <div class="devicon">
-                  <i class="devicon-css3-plain-wordmark"></i>
+                <div class="devicon" id="sass">
+                  <i class="devicon-sass-original"></i>
                 </div>
                 <div class="devicon">
                   <i class="devicon-bootstrap-plain-wordmark"></i>
@@ -82,24 +83,81 @@
               </div>
             </div>
             <div class="project-card">
-              <img src="" alt="">
+              <div class="project-card-title-text">
+                <h2 class="small">Morning Burrito</h2>
+                <p class="small">song idea app for musicians and bands</p>
+              </div>
               <div class="project-info">
-                <h2>Morning Burrito</h2>
-                <p>info</p>
+                <img src=>
+              </div>
+              <div class="icons-container">
+                <div class="devicon">
+                  <i class="devicon-rails-plain-wordmark"></i>
+                </div>
+                <div class="devicon">
+                  <i class="devicon-javascript-plain"></i>
+                </div>
+                <div class="devicon">
+                  <i class="devicon-html5-plain-wordmark"></i>
+                </div>
+                <div class="devicon" id="sass">
+                  <i class="devicon-sass-original"></i>
+                </div>
+                <div class="devicon">
+                  <i class="devicon-bootstrap-plain-wordmark"></i>
+                </div>
+                <div class="devicon">
+                  <i class="devicon-postgresql-plain-wordmark"></i>
+                </div>
               </div>
             </div>
             <div class="project-card">
-              <img src="" alt="">
+              <div class="project-card-title-text">
+                <h2 class="small">Blue Horizon</h2>
+                <p class="small">song idea app for musicians and bands</p>
+              </div>
               <div class="project-info">
-                <h2>Blue Horizon</h2>
-                <p>info</p>
+                <img src=>
+              </div>
+              <div class="icons-container">
+                <div class="devicon">
+                  <i class="devicon-rails-plain-wordmark"></i>
+                </div>
+                <div class="devicon">
+                  <i class="devicon-javascript-plain"></i>
+                </div>
+                <div class="devicon">
+                  <i class="devicon-html5-plain-wordmark"></i>
+                </div>
+                <div class="devicon" id="sass">
+                  <i class="devicon-sass-original"></i>
+                </div>
+                <div class="devicon">
+                  <i class="devicon-bootstrap-plain-wordmark"></i>
+                </div>
+                <div class="devicon">
+                  <i class="devicon-postgresql-plain-wordmark"></i>
+                </div>
               </div>
             </div>
             <div class="project-card">
-              <img src="" alt="">
+              <div class="project-card-title-text">
+                <h2 class="small">Portfolio</h2>
+                <p class="small">personal portfolio</p>
+              </div>
               <div class="project-info">
-                <h2>Tasku</h2>
-                <p>info</p>
+                <img src=>
+              </div>
+              <div class="icons-container">
+                <div class="devicon">
+                  <i class="devicon-html5-plain-wordmark"></i>
+                </div>
+                <div class="devicon" id="css">
+                  <i class="devicon-css3-plain-wordmark"></i>
+                </div>
+                <div class="devicon" id="ts">
+                  <i class="devicon-typescript-plain"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -348,6 +406,5 @@
 
     </section>
   </section>
-  <script src="script.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 
 .project-card {
   /* width: 50%; */
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: var(--light);
   box-shadow: var(--shadow);
   /* text-align: center; */

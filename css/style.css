@@ -9,16 +9,6 @@
 @import url("components/navbar.css");
 @import url("components/petal.css");
 
-html {
-  scroll-behavior: smooth;
-}
-
-* {
-  font-family: "Roboto", sans-serif;
-  scroll-behavior: smooth;
-}
-
-
 :root {
   --blue: #eef6fe;
   --grey: #5E6572;
@@ -28,15 +18,16 @@ html {
   --grad-dark-blue: #2b366e;
   --grad-darker-blue: #1d1a7b;
   --grad-darkest-blue: #172783;
-  --selected: #ed9ccd;
+  --selected: #d695bb;
   --pink: #fbd7ed;
   --black: #1B1B1E;
   --light: rgb(232, 245, 248);
   --shadow: 0 0px 15px rgba(0, 0, 0, 0.6);
 }
 
-h1, .contact h3 {
-  color: var(--light);
+html {
+  scroll-behavior: smooth;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
@@ -46,6 +37,29 @@ body {
   position: relative;
   overscroll-behavior-y: none;
 }
+
+h1, .contact h3 {
+  color: var(--light);
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h3 {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 .main {
   overflow: auto;
@@ -82,7 +96,7 @@ body {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 a {
@@ -92,11 +106,39 @@ a {
 
 .highlighted-word {
   color: var(--selected);
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .banner h1 {
   font-size: 5rem;
   color: white;
+  margin: 60px 0px 0px 0px;
+}
+
+.banner-text-section {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text-section > * {
+  margin: 0;
+}
+
+.banner-text-left {
+  margin: 0px;
+  transform: translateX(-207px);
+}
+
+.banner-text-right {
+  margin: 0px;
+  transform: translateX(189px);
 }
 
 .project-all h1 {

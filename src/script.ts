@@ -28,7 +28,7 @@ const homeNavLink = document.getElementById('home-link');
 const aboutRadioButtons = document.querySelectorAll('.radio');
 const skillsRadioButtons = document.querySelectorAll('.skills-radio');
 
-type RadioButtons = {
+interface RadioButtons {
   experience: HTMLElement | null
   interests: HTMLElement | null
   education: HTMLElement | null
@@ -56,6 +56,24 @@ const card = {
 };
 
 const allCards = [card.experience, card.interests, card.education];
+
+const experienceInfo = {
+  title: document.getElementById('experience-title'),
+  text: document.getElementById('experience-text'),
+  icons: document.getElementById('experience-icons')
+}
+
+const interestsInfo = {
+  title: document.getElementById('interests-title'),
+  text: document.getElementById('interests-text'),
+  icons: document.getElementById('interests-icons')
+}
+
+const educationInfo = {
+  title: document.getElementById('experience-title'),
+  text: document.getElementById('experience-text'),
+  icons: document.getElementById('experience-icons')
+}
 
 // icons
 const languageIcons = [
@@ -92,19 +110,24 @@ const iconGroups = {
 const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons];
 
 // home arrow to top
-const homeArrow = document.querySelector('.home-arrow');
+const homeArrow = document.querySelector('.home-arrow') as HTMLElement;
 const homeArrowIcon = document.getElementById('arrow-icon');
 
 
-// intersection observer - elements IN viewport
+
+// intersection observer - element IN viewport
 
 // show home arrow button when sections in view
-function homeArrowInView(entries) {
-  entries.map((entry) => {
+function homeArrowInView(entries: IntersectionObserverEntry[]) {
+  entries.forEach((entry: IntersectionObserverEntry) => {
     if (entry.isIntersecting) {
-      homeArrow.classList.remove('hidden');
+      if (homeArrow) {
+        homeArrow.classList.remove('hidden');
+        homeArrow.classList.add('slideUp');
+      }
     } else if (!entry.isIntersecting) {
       homeArrow.classList.add('hidden');
+      homeArrow.classList.remove('slideUp');
     }
   })
 }
@@ -113,10 +136,10 @@ const arrowObserver = new IntersectionObserver(homeArrowInView);
 arrowObserver.observe(sectionsNoHome);
 
 // highlight nav when each section is in viewport
-function sectionViewChangeNav(entries) {
-  entries.map((entry) => {
-    if (entry.isintersecting) {
-      moveHighlight(entry.target);
+function sectionViewChangeNav(entries: IntersectionObserverEntry[]) {
+  entries.forEach((entry: IntersectionObserverEntry) => {
+    if (entry.isIntersecting) {
+      navLinkClick(entry)
     }
   });
 };
@@ -130,7 +153,7 @@ allSections.forEach(section=> {
 
 // widen separation bars
 function widenBar(entries){
-  entries.map((entry) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('widen');
     }
@@ -150,7 +173,7 @@ dividingBars.forEach(bar => {
 
 // clear skills container
 function clear(entries){
-  entries.map((entry)=> {
+  entries.forEach((entry)=> {
     if (!entry.isIntersecting) {
       clearFadeExpand()
       skillsRadioButtons.forEach(button => {
@@ -165,11 +188,13 @@ skillsObserver.observe(skillsIconsContainer);
 
 
 // navbar select
-function moveHighlight(target) {
+function moveHighlight(target: HTMLElement) {
   // get position and size of clicked link
   const rect = target.getBoundingClientRect();
+  const container = document.querySelector('.navbar-links')
   // get position of navbar-links container
-  const containerRect = target.parentElement.getBoundingClientRect();
+  if (!container) return;
+  const containerRect = container.getBoundingClientRect();
 
   highlight.style.width = `${rect.width}px`;
   highlight.style.height = `${rect.height}px`;

@@ -39,6 +39,21 @@ const card = {
     education: document.getElementById('education-card')
 };
 const allCards = [card.experience, card.interests, card.education];
+const experienceInfo = {
+    title: document.getElementById('experience-title'),
+    text: document.getElementById('experience-text'),
+    icons: document.getElementById('experience-icons')
+};
+const interestsInfo = {
+    title: document.getElementById('interests-title'),
+    text: document.getElementById('interests-text'),
+    icons: document.getElementById('interests-icons')
+};
+const educationInfo = {
+    title: document.getElementById('experience-title'),
+    text: document.getElementById('experience-text'),
+    icons: document.getElementById('experience-icons')
+};
 // icons
 const languageIcons = [
     document.getElementById('ruby'),
@@ -70,15 +85,19 @@ const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons]
 // home arrow to top
 const homeArrow = document.querySelector('.home-arrow');
 const homeArrowIcon = document.getElementById('arrow-icon');
-// intersection observer - elements IN viewport
+// intersection observer - element IN viewport
 // show home arrow button when sections in view
 function homeArrowInView(entries) {
     entries.map((entry) => {
         if (entry.isIntersecting) {
-            homeArrow.classList.remove('hidden');
+            if (homeArrow) {
+                homeArrow.classList.remove('hidden');
+                homeArrow.classList.add('slideUp');
+            }
         }
         else if (!entry.isIntersecting) {
             homeArrow.classList.add('hidden');
+            homeArrow.classList.remove('slideUp');
         }
     });
 }
@@ -87,8 +106,8 @@ arrowObserver.observe(sectionsNoHome);
 // highlight nav when each section is in viewport
 function sectionViewChangeNav(entries) {
     entries.map((entry) => {
-        if (entry.isintersecting) {
-            moveHighlight(entry.target);
+        if (entry.isIntersecting) {
+            moveHighlight(entry);
         }
     });
 }
@@ -134,8 +153,11 @@ skillsObserver.observe(skillsIconsContainer);
 function moveHighlight(target) {
     // get position and size of clicked link
     const rect = target.getBoundingClientRect();
+    const container = document.querySelector('.navbar-links');
     // get position of navbar-links container
-    const containerRect = target.parentElement.getBoundingClientRect();
+    if (!container)
+        return;
+    const containerRect = container.getBoundingClientRect();
     highlight.style.width = `${rect.width}px`;
     highlight.style.height = `${rect.height}px`;
     highlight.style.left = `${rect.left - containerRect.left}px`;

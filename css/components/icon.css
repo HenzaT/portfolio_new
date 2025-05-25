@@ -22,7 +22,34 @@
 
 .home-arrow i {
   font-size: 20px;
-  color: white;
+  color: var(--light);
+}
+
+.projects-chevron {
+  font-size: 3rem;
+  color: var(--light);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.projects-chevron i {
+
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideUp {
+  animation: slideUp 0.8s ease-in;
 }
 
 .icons-container {

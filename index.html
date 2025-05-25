@@ -8,9 +8,9 @@
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap" rel="stylesheet">
   <title>Henry Thomas Portfolio</title>
-  <script src="script.js" defer></script>
+  <script src="src/script.js" defer></script>
 </head>
 <body>
   <nav class="navbar">
@@ -35,11 +35,17 @@
       <section class="banner" id="home">
         <div class="banner-text-section">
           <div class="banner-text-left">
-            <h1>Henry Thomas</h1>
+            <h1><span class="highlighted-word">Henry </span>Thomas</h1>
+          </div>
+          <div class="banner-text-center">
+            <h1>Full Stack</h1>
           </div>
           <div class="banner-text-right">
-            <h1><span class="text-end">Full Stack </span><br>Web <span class="highlighted-word">Developer</span></h1>
+            <h1>Web <span class="highlighted-word">Developer</span></h1>
           </div>
+        </div>
+        <div class="projects-chevron">
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
       </section>
     </section>
@@ -59,7 +65,7 @@
                 <p class="small">song idea app for musicians and bands</p>
               </div>
               <div class="project-info">
-                <!-- <img src="./css/assets/gimme-a-song-1.jpeg" alt="gimme a song project homepage"> -->
+                <img src=>
               </div>
               <div class="icons-container">
                 <div class="devicon">
@@ -71,7 +77,7 @@
                 <div class="devicon">
                   <i class="devicon-html5-plain-wordmark"></i>
                 </div>
-                <div class="devicon" id="sass">
+                <div class="devicon">
                   <i class="devicon-sass-original"></i>
                 </div>
                 <div class="devicon">
@@ -100,7 +106,7 @@
                 <div class="devicon">
                   <i class="devicon-html5-plain-wordmark"></i>
                 </div>
-                <div class="devicon" id="sass">
+                <div class="devicon">
                   <i class="devicon-sass-original"></i>
                 </div>
                 <div class="devicon">
@@ -129,7 +135,7 @@
                 <div class="devicon">
                   <i class="devicon-html5-plain-wordmark"></i>
                 </div>
-                <div class="devicon" id="sass">
+                <div class="devicon">
                   <i class="devicon-sass-original"></i>
                 </div>
                 <div class="devicon">
@@ -152,11 +158,14 @@
                 <div class="devicon">
                   <i class="devicon-html5-plain-wordmark"></i>
                 </div>
-                <div class="devicon" id="css">
+                <div class="devicon">
                   <i class="devicon-css3-plain-wordmark"></i>
                 </div>
-                <div class="devicon" id="ts">
+                <div class="devicon">
                   <i class="devicon-typescript-plain"></i>
+                </div>
+                <div class="devicon">
+                  <i class="devicon-javascript-plain"></i>
                 </div>
               </div>
             </div>
@@ -302,15 +311,15 @@
         <div class="card-and-button-container">
           <div class="about-container">
             <div class="about-card" id="experience-card">
-              <h2>About Me</h2>
+              <h2 id="experience-title">About Me</h2>
               <div class="about-info">
-                <p>
+                <p id="experience-text">
                   I am a software developer with a previous career in teaching. <br>
                   What drew me to coding and software developing were the same things that drew me to teaching: <br>
                   creativity, the importance of lifelong learning, and how every day is different.
                 </p>
               </div>
-              <div class="icons-container">
+              <div class="icons-container" id="experience-icons">
                 <div class="devicon">
                   <i class="fa-solid fa-person-chalkboard"></i>
                 </div>
@@ -323,14 +332,14 @@
               </div>
             </div>
             <div class="about-card" id="interests-card">
-              <h2>Interests</h2>
+              <h2 id="interests-title">Interests</h2>
               <div class="about-info">
-                <p>
+                <p id="interests-text">
                   Outside of coding and tech, I write my own music under the name 'aptist' (go to my 'music' section to check it out!) <br>
                   I also love to climb and travel - I'm half Japanese, so I try to go to Japan at least once a year to visit family/eat/stock up on green tea
                 </p>
               </div>
-              <div class="icons-container">
+              <div class="icons-container" id="interests-icons">
                 <div class="devicon">
                   <i class="fa-solid fa-music"></i>
                 </div>
@@ -343,9 +352,9 @@
               </div>
             </div>
             <div class="about-card" id="education-card">
-              <h2>Education</h2>
+              <h2 id="education-title">Education</h2>
               <div class="about-info">
-                <ul>
+                <ul id="education-text">
                   <li>
                     Le Wagon - Web Development Bootcamp
                   </li>
@@ -357,7 +366,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="icons-container">
+              <div class="icons-container" id="education-icons">
                 <div class="devicon">
                   <i class="fa-solid fa-computer"></i>
                 </div>

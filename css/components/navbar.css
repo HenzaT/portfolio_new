@@ -1,3 +1,4 @@
+/* navbar */
 .navbar {
   width: 100%;
   display: flex;
@@ -30,6 +31,11 @@
   border-radius: 10px;
   transition: background-color 0.5s;
   transition: color 0.5s;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
 }
 
 .nav-link.active {

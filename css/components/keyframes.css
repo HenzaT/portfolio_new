@@ -1,0 +1,86 @@
+/* color gradient */
+@keyframes gradient {
+  0% {
+    background-position: 0% 25%;
+  }
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 25% 50%;
+  }
+  100% {
+    background-position: 0% 25%;
+  }
+}
+
+/* darken element */
+@keyframes darken {
+  0% {
+    filter: brightness(1)
+  }
+  25% {
+    filter: brightness(0.8)
+  }
+  50% {
+    filter: brightness(0.6)
+  }
+  75% {
+    filter: brightness(0.4)
+  }
+  100% {
+    filter: brightness(0.2)
+  }
+}
+
+/* slide element up */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 70%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideUpDark {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 70%, 0);
+  }
+
+  to {
+    opacity: 0.5;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* slide element to right */
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-900px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-207px);
+  }
+}
+
+/* slide element to left */
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(900px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(192px);
+  }
+}

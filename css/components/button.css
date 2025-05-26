@@ -10,6 +10,7 @@
   position: fixed;
   bottom: 0.5rem;
   right: 0.5rem;
+  z-index: 100;
   transition: opacity 0.3s, visibility 0.3s ease;
 }
 
@@ -18,33 +19,26 @@
   color: var(--light);
 }
 
-@keyframes slideUp {
-  from {
-    transform: translate3d(0, 70%, 0);
-    visibility: visible;
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.slideUp {
-  animation: slideUp 0.4s ease-in;
+.home-arrow.slide-up-dark {
+  animation: slideUpDark 0.8s ease;
 }
 
 /* to about section arrow */
 .about-chevron {
   font-size: 3rem;
   color: var(--light);
+  opacity: 0.5;
   text-align: center;
   margin-top: 40px;
-  /* position: absolute;
-  bottom: 0; */
+}
+
+.about-chevron.slide-up-dark {
+  animation-delay: 5s;
+  animation: slideUpDark 3s ease;
 }
 
 /* plus button project */
-.plus {
+.plus, .music-plus {
   font-size: 30px;
   cursor: pointer;
   color: var(--black);
@@ -78,7 +72,8 @@
   color: var(--light);
   background-color: var(--black);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .radio-label:not(:last-of-type) {

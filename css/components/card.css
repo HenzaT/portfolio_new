@@ -3,83 +3,17 @@
   line-height: 30%;
 }
 
-/* project card */
-.project-card {
-  position: relative;
-  border-radius: 20px;
-  background-color: var(--light);
-  box-shadow: var(--shadow);
-}
-
-.project-card-header {
-  /* text-align: center; */
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.project-title {
-  width: 70%;
-}
-
-.project-image img {
-  border-radius: 0px 0px 20px 20px;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.project-image.darken {
-  animation: darken 0.4s ease
-}
-
-@keyframes darken {
-  0% {
-    filter: brightness(1)
-  }
-  25% {
-    filter: brightness(0.8)
-  }
-  50% {
-    filter: brightness(0.6)
-  }
-  75% {
-    filter: brightness(0.4)
-  }
-  100% {
-    filter: brightness(0.2)
-  }
-}
-
-.project-card-overlay {
-  position: absolute;
-  bottom: 85%;
-  left: 0;
-  right: 0;
-  background-color: var(--light);
-  border-radius: 0px 0px 20px 20px;
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  transition: 0.5s ease;
-}
-
-.project-card-overlay.show {
-  bottom: 0;
-  height: 85%;
-}
-
 /* about card */
 .about-card {
   background-color: var(--light);
   padding: 20px;
   border-radius: 20px;
   width: 40vw;
+  box-shadow: var(--shadow);
+  position: relative;
   flex: 1;
   /* opacity: 0; */
   transition: opacity 0.3s, visibility 0.3s ease;
-  box-shadow: var(--shadow);
-  position: relative;
 }
 
 .about-card + .about-card {
@@ -115,6 +49,104 @@
   text-align: center;
 }
 
+/* project card and music album card */
+.project-card, .album-card {
+  position: relative;
+  border-radius: 20px;
+  background-color: var(--light);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover, .album-card:hover {
+  transform: scale(1.03);
+}
+
+.project-card-header, .album-card-header {
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.project-title, .album-title {
+  width: 70%;
+}
+
+.project-info {
+  width: 90%;
+  height: 50%;
+  margin: auto;
+}
+
+.project-image, .album-art {
+  overflow: hidden;
+}
+
+.project-image img, .album-art img {
+  border-radius: 0px 0px 20px 20px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  background-size: cover;
+}
+
+.project-image img {
+  height: 350px;
+}
+
+.album-art img {
+  height: auto
+}
+
+.project-image.darken, .album-art.darken {
+  animation: darken 0.4s ease
+}
+
+.project-card-overlay, .album-card-overlay {
+  position: absolute;
+  bottom: 85%;
+  left: 0;
+  right: 0;
+  background-color: var(--light);
+  border-radius: 0px 0px 20px 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.project-card-overlay.show, .album-card-overlay.show {
+  bottom: 0;
+  height: 85%;
+}
+
+.album-card-overlay {
+  text-align: center;
+}
+
+/* music card */
+.music-card {
+  background-color: var(--light);
+  padding: 20px;
+  border-radius: 20px;
+  width: 40vw;
+  box-shadow: var(--shadow);
+  position: relative;
+  margin: auto;
+}
+
+.iframe-box {
+  margin-top: 10px;
+  height: 60%;
+  border: 1px solid black;
+}
+
+iframe {
+  width: 90%;
+  height: 300px;
+}
+
 /* contact card */
 .contact-card {
   border-radius: 20px;
@@ -124,81 +156,4 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
-
-/* music card */
-.music-card {
-  background-color: var(--light);
-  width: 30vw;
-  padding: 20px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.flip-album-cards {
-  display: inline-grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
-  perspective: 1000px;
-  transform-style: preserve-3d;
-}
-
-.flip-album {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  text-align: center;
-  -webkit-transform: transform 0.6s;
-  transform: transform 0.6;
-  transform-style: preserve-3d;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  transform-origin: center center;
-}
-
-.flip-album.flip {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-}
-
-.album-art {
-  width: 100%;
-  border-radius: 12px;
-}
-
-.flip-album-front img{
-  margin: 0;
-  height: 260px;
-}
-
-.flip-album-front, .flip-album-back {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.flip-album-front {
-  height: 100%;
-  -webkit-transform: rotateX(0deg);
-  transform: rotateX(0deg);
-}
-
-.flip-album-back {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-  position: absolute;
-  text-align: center;
-  right: 0;
-  left: 0;
-  top: 10px;
-}
-
-iframe {
-  width: 100%;
-  height: 300px;
 }

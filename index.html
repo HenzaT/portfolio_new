@@ -13,6 +13,7 @@
   <script src="src/script.js" defer></script>
 </head>
 <body>
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-links">
       <div class="highlight"></div>
@@ -30,6 +31,7 @@
     </div>
   </nav>
 
+  <!-- Banner -->
   <section class="main">
     <section class="above-content">
       <section class="banner" id="home">
@@ -54,6 +56,7 @@
       <a id="arrow-icon" href="#"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
 
+    <!-- About -->
     <section class="below-content">
        <section class="about" id="about">
         <div class="about-header">
@@ -62,7 +65,7 @@
         <div class="card-and-button-container">
           <div class="about-container">
             <div class="about-card" id="experience-card">
-              <h2 id="experience-title">About Me</h2>
+              <h2 class="about-title" id="experience-title">About Me</h2>
               <div class="about-info">
                 <p id="experience-text">
                   I am a software developer with a previous career in teaching. <br>
@@ -83,7 +86,7 @@
               </div>
             </div>
             <div class="about-card" id="interests-card">
-              <h2 id="interests-title">Interests</h2>
+              <h2 class="about-title" id="interests-title">Interests</h2>
               <div class="about-info">
                 <p id="interests-text">
                   Outside of coding and tech, I write my own music under the name 'aptist' (go to my 'music' section to check it out!) <br>
@@ -103,7 +106,7 @@
               </div>
             </div>
             <div class="about-card" id="education-card">
-              <h2 id="education-title">Education</h2>
+              <h2 class="about-title" id="education-title">Education</h2>
               <div class="about-info">
                 <ul id="education-text">
                   <li>
@@ -143,6 +146,7 @@
 
       <div class="dividing-bar"></div>
 
+      <!-- Projects -->
       <section class="projects" id="projects">
         <div class="project-all">
           <h1 class="section-title small">Projects</h1>
@@ -156,7 +160,7 @@
                     <h2 class="small">Gimme a Song!</h2>
                     <p class="small">song idea app for musicians and bands</p>
                   </div>
-                  <div class="plus">
+                  <div class="plus" data-id="1">
                     <i class="fa-solid fa-plus"></i>
                   </div>
                 </div>
@@ -164,12 +168,12 @@
                   <img src="css/assets/gimme-a-song-1.jpeg" alt="gimme a song website picture">
                 </div>
               </div>
-              <div class="project-card-overlay">
+              <div class="project-card-overlay" data-id="1">
                 <div class="project-info">
                   <p>I built this website in response to a common problem I and many other musicians have faced: how to start a song.
                     My website randomly gives you elements of a song to start off with, for example the time signature and key.
-                    This was my first solo project started during Le Wagon,
-                    and I heavily utilised PostgreSQL and fetch API through JavaScript.
+                    This was my first solo project started which I started during Le Wagon,
+                    and I heavily utilised PostgreSQL and the fetch API through JavaScript.
                   </p>
                 </div>
                 <div class="icons-container">
@@ -211,7 +215,7 @@
                     <h2 class="small">Morning Burrito</h2>
                     <p class="small">mobile app for creative activities</p>
                   </div>
-                  <div class="plus">
+                  <div class="plus" data-id="2">
                     <i class="fa-solid fa-plus"></i>
                   </div>
                 </div>
@@ -219,9 +223,13 @@
                   <!-- <img src="css/assets/morning-burrito.jpg" alt="morning burrito app picture"> -->
                 </div>
               </div>
-              <div class="project-card-overlay">
+              <div class="project-card-overlay" data-id="2">
                 <div class="project-info">
-                  <p>I built this website in response to a common problem I and many other musicians have faced: how to start a song. My website randomly gives you elements of a song to start off with, for example the time signature and key. This was my first solo project started during Le Wagon, and I heavily utilised PostgreSQL and fetch API through JavaScript.
+                  <p>
+                    My final team project at Le Wagon. This app is intended to help people to be more
+                    creative throughout the day by completing activities like writing a Haiku,
+                    or drawing something inspired by found sounds. I utilised JavaScript (Rails' Stimulus framework)
+                    heavily to improve the user experience on the preferences and dashboard pages.
                   </p>
                 </div>
                 <div class="icons-container">
@@ -263,7 +271,7 @@
                     <h2 class="small">Blue Horizon</h2>
                     <p class="small">rental market space for yachts</p>
                   </div>
-                  <div class="plus">
+                  <div class="plus" data-id="3">
                     <i class="fa-solid fa-plus"></i>
                   </div>
                 </div>
@@ -271,9 +279,14 @@
                   <img src="css/assets/blue-horizon.jpg" alt="blue horizon website picture">
                 </div>
               </div>
-              <div class="project-card-overlay">
+              <div class="project-card-overlay" data-id="3">
                 <div class="project-info">
-                  <p>I built this website in response to a common problem I and many other musicians have faced: how to start a song. My website randomly gives you elements of a song to start off with, for example the time signature and key. This was my first solo project started during Le Wagon, and I heavily utilised PostgreSQL and fetch API through JavaScript.
+                  <p>
+                    My first team project at Le Wagon. We were tasked with building an airbnb style website and so
+                    naturally we settled on renting yachts. I focused mainly on the frontend,
+                    working with Bootstrap and JavaScript to style multiple pages according to the lead designer's designs.
+                    Using PostgreSQL, I also built the backend of the dashboard page,
+                    connecting the Booking and Yacht models with the User model.
                   </p>
                 </div>
                 <div class="icons-container">
@@ -315,7 +328,7 @@
                     <h2 class="small">Portfolio</h2>
                     <p class="small">personal portfolio for projects</p>
                   </div>
-                  <div class="plus">
+                  <div class="plus" data-id="4">
                     <i class="fa-solid fa-plus"></i>
                   </div>
                 </div>
@@ -323,7 +336,7 @@
                   <img src="css/assets/portfolio.jpg" alt="portfolio website picture">
                 </div>
               </div>
-              <div class="project-card-overlay">
+              <div class="project-card-overlay" data-id="4">
                 <div class="project-info">
                   <p>
                     Although admittedly this is not a product, I used this portfolio as an opportunity to consolidate my HTML,
@@ -363,6 +376,7 @@
 
       <div class="dividing-bar"></div>
 
+      <!-- Skills -->
       <section class="skills" id="skills">
         <div class="skills-header">
           <h1 class="section-title small">Skills</h1>
@@ -421,72 +435,128 @@
 
       <div class="dividing-bar"></div>
 
+      <!-- Music -->
       <section class="music" id="music">
-        <h1 class="section-title small">My Music</h1>
-        <div class="music-container">
-          <div class="flip-album-cards">
-            <div class="flip-album">
-              <div class="flip-album-front">
-                <img class="album-art" src="./css/assets/april-tea.jpg" alt="album cover for April Tea" loading="lazy">
-                <a href="#" class="card-trigger link--styled">listen</a>
+        <div class="music-all">
+          <h1 class="section-title small">My Music</h1>
+          <div class="music-container">
+            <div class="all-albums">
+
+              <!-- April Tea Single -->
+              <div class="album-card">
+                <div class="album-card-under">
+                  <div class="album-card-header">
+                    <div class="album-title">
+                      <h2 class="small">April Tea</h2>
+                      <p class="small">2025</p>
+                    </div>
+                    <div class="music-plus" data-id="5">
+                      <i class="fa-solid fa-plus"></i>
+                    </div>
+                  </div>
+                  <div class="album-art">
+                    <img src="./css/assets/april-tea.jpg" alt="album cover for April Tea" loading="lazy">
+                  </div>
+                </div>
+                <div class="album-card-overlay" data-id="5">
+                  <div class="iframe-box">
+                    <iframe
+                      src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
+                      loading="lazy"
+                      frameBorder="0"
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                      allowfullscreen=""
+                      loading="lazy">
+                    </iframe>
+                  </div>
+                <div class="album-info">
+                  <p>2025</p>
+                </div>
+                </div>
               </div>
-              <div class="flip-album-back">
-                <div class="card-close"></div>
-                <iframe style="border-radius: 12px"
-                        src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
-                        loading="lazy"
-                        frameBorder="0"
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        allowfullscreen=""
-                        loading="lazy">
-                </iframe>
+
+              <!-- Sundown EP -->
+              <div class="album-card">
+                <div class="album-card-under">
+                  <div class="album-card-header">
+                    <div class="album-title">
+                      <h2 class="small">Sundown</h2>
+                      <p class="small">2024</p>
+                    </div>
+                    <div class="music-plus" data-id="6">
+                      <i class="fa-solid fa-plus"></i>
+                    </div>
+                  </div>
+                  <div class="album-art">
+                    <img src="./css/assets/sundown.png" alt="album cover for Sundown" loading="lazy">
+                  </div>
+                </div>
+                <div class="album-card-overlay" data-id="6">
+                  <div class="iframe-box">
+                    <iframe
+                      src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
+                      loading="lazy"
+                      frameBorder="0"
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                      allowfullscreen=""
+                      loading="lazy">
+                    </iframe>
+                  </div>
+                  <div class="album-info">
+                    <p>2024</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reflections Single -->
+              <div class="album-card">
+                <div class="album-card-under">
+                  <div class="album-card-header">
+                    <div class="album-title">
+                      <h2 class="small">Reflections</h2>
+                      <p class="small">2021</p>
+                    </div>
+                    <div class="music-plus" data-id="7">
+                      <i class="fa-solid fa-plus"></i>
+                    </div>
+                  </div>
+                  <div class="album-art">
+                    <img src="./css/assets/reflections.jpeg" alt="album cover for Reflections" loading="lazy">
+                  </div>
+                </div>
+                <div class="album-card-overlay" data-id="7">
+                  <div class="iframe-box">
+                    <iframe
+                      src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
+                      loading="lazy"
+                      frameBorder="0"
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                      allowfullscreen=""
+                      loading="lazy">
+                    </iframe>
+                  </div>
+                  <div class="album-info">
+                    <p>2021</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="flip-album">
-              <div class="flip-album-front">
-                <img class="album-art" src="./css/assets/sundown.png" alt="album cover for Sundown" loading="lazy">
-              </div>
-              <div class="flip-album-back">
-                <iframe style="border-radius: 12px"
-                        src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
-                        loading="lazy"
-                        frameBorder="0"
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        allowfullscreen=""
-                        loading="lazy">
-                </iframe>
-              </div>
-            </div>
-            <div class="flip-album tilt">
-              <div class="flip-album-front">
-                <img class="album-art" src="./css/assets/reflections.jpeg" alt="album cover for Reflections" loading="lazy">
-              </div>
-              <div class="flip-album-back">
-                <iframe style="border-radius: 12px"
-                        src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
-                        loading="lazy"
-                        frameBorder="0"
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        allowfullscreen=""
-                        loading="lazy">
-                </iframe>
-              </div>
-            </div>
-          </div>
-          <div class="music-card">
-            <p>
-              Aside from coding, I write and produce my own music under the name <span class="highlighted-word">aptist</span>
-            </p>
-            <div class="music-icons">
-              <div class="music-icon">
-                <a href="https://open.spotify.com/artist/3iUZV8FaZhxoteUhmkvTy3?si=dKoyUjo7SeO21tr9JB35wA" target="_blank">
-                  <i class="fa-brands fa-spotify"></i>
-                </a>
-              </div>
-              <div class="music-icon">
-                <a href="https://music.apple.com/us/artist/aptist/1555855403" target="_blank">
-                  <i class="fa-brands fa-itunes"></i>
-                </a>
+
+            <div class="music-card">
+              <p>
+                Aside from coding, I write and produce my own music under the name <span class="highlighted-word">aptist</span>
+              </p>
+              <div class="music-icons">
+                <div class="music-icon">
+                  <a href="https://open.spotify.com/artist/3iUZV8FaZhxoteUhmkvTy3?si=dKoyUjo7SeO21tr9JB35wA" target="_blank">
+                    <i class="fa-brands fa-spotify"></i>
+                  </a>
+                </div>
+                <div class="music-icon">
+                  <a href="https://music.apple.com/us/artist/aptist/1555855403" target="_blank">
+                    <i class="fa-brands fa-itunes"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

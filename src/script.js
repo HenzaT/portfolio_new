@@ -15,13 +15,22 @@ const allSections = [
     contactSection
 ];
 const sectionsNoHome = document.querySelector('.below-content');
-// section specific containers
+// section specific
 const skillsIconsContainer = document.querySelector('.skills-container');
+// nav
 const highlight = document.querySelector('.highlight');
 const navLinks = document.querySelectorAll('.nav-link');
 const homeNavLink = document.getElementById('home-link');
+// banner
+const bannerLeft = document.querySelector('.banner-text-left');
+const bannerCenter = document.querySelector('.banner-text-center');
+const bannerRight = document.querySelector('.banner-text-right');
+// projects
 const projectImages = document.querySelectorAll('.project-image');
 const projectOverlays = document.querySelectorAll('.project-card-overlay');
+// music
+const albumImages = document.querySelectorAll('.album-art');
+const albumOverlays = document.querySelectorAll('.album-card-overlay');
 // radio buttons
 const aboutRadioButtons = document.querySelectorAll('.radio');
 const skillsRadioButtons = document.querySelectorAll('.skills-radio');
@@ -87,21 +96,31 @@ const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons]
 // home arrow to top
 const homeArrow = document.querySelector('.home-arrow');
 const homeArrowIcon = document.getElementById('arrow-icon');
+// about chevron
+const chevron = document.querySelector('.about-chevron');
 // plus button
 const plusButtons = document.querySelectorAll('.plus');
+const musicPlusButtons = document.querySelectorAll('.music-plus');
+// on page load
+window.addEventListener('DOMContentLoaded', () => {
+    bannerLeft === null || bannerLeft === void 0 ? void 0 : bannerLeft.classList.add('slide-right');
+    bannerRight === null || bannerRight === void 0 ? void 0 : bannerRight.classList.add('slide-left');
+    bannerCenter === null || bannerCenter === void 0 ? void 0 : bannerCenter.classList.add('slide-up');
+    chevron === null || chevron === void 0 ? void 0 : chevron.classList.add('slide-up-dark');
+});
 // intersection observer - element IN viewport
 // show home arrow button when sections in view
 function homeArrowInView(entries) {
     entries.forEach((entry) => {
+        if (!homeArrow)
+            return;
         if (entry.isIntersecting) {
-            if (homeArrow) {
-                homeArrow.classList.remove('hidden');
-                homeArrow.classList.add('slideUp');
-            }
+            homeArrow.classList.remove('hidden');
+            homeArrow.classList.add('slide-up-dark');
         }
         else if (!entry.isIntersecting) {
             homeArrow.classList.add('hidden');
-            homeArrow.classList.remove('slideUp');
+            homeArrow.classList.remove('slide-up-dark');
         }
     });
 }
@@ -202,7 +221,7 @@ aboutRadioButtons.forEach((button) => {
         }
         allCards.forEach((card) => {
             if (!card) {
-                console.error("There is not card");
+                console.error(`there is no ${card}`);
                 return;
             }
             if (card === selectedCard) {
@@ -216,20 +235,39 @@ aboutRadioButtons.forEach((button) => {
         });
     });
 });
-// project plus toggle to show more info
+// plus toggle to show more info
+function openOverlay(button) {
+    const id = button.dataset.id;
+    if (!id)
+        return;
+    button.classList.toggle('rotate');
+    const projectOverlay = document.querySelector(`.project-card-overlay[data-id="${id}"]`);
+    const projectImage = document.querySelector(`.project-image[data-id="${id}"]`);
+    const musicOverlay = document.querySelector(`.album-card-overlay[data-id="${id}"]`);
+    const musicImage = document.querySelector(`.album-art[data-id="${id}"]`);
+    if (projectOverlay) {
+        projectOverlay.classList.toggle('show');
+    }
+    if (projectImage) {
+        projectImage.classList.toggle('darken');
+    }
+    if (musicOverlay) {
+        musicOverlay.classList.toggle('show');
+    }
+    if (musicImage) {
+        musicImage === null || musicImage === void 0 ? void 0 : musicImage.classList.toggle('darken');
+    }
+}
+;
 plusButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        button.classList.toggle('rotate');
-        projectOverlays.forEach((overlay) => {
-            if (!overlay) {
-                console.error('there is no project card overlay');
-                return;
-            }
-            projectImages.forEach((image) => {
-                image.classList.toggle('darken');
-            });
-            overlay.classList.toggle('show');
-        });
+        openOverlay(button);
+    });
+});
+// music plus toggle to show iFrame
+musicPlusButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        openOverlay(button);
     });
 });
 // skills icons toggle
@@ -255,12 +293,4 @@ skillsRadioButtons.forEach((button) => {
             }
         });
     });
-});
-// music album flip
-const albumCards = document.querySelectorAll(".flip-album");
-function flipCard() {
-    this.classList.toggle("flip");
-}
-albumCards.forEach((card) => {
-    card.addEventListener("click", flipCard);
 });

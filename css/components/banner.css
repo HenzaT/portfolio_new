@@ -1,0 +1,40 @@
+.banner h1 {
+  font-size: 5rem;
+  color: white;
+  margin: 60px 0px 0px 0px;
+}
+
+.banner-text-section {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text-section > * {
+  margin: 0;
+}
+
+.banner-text-left {
+  margin: 0px;
+  transform: translateX(-207px);
+}
+
+.banner-text-right {
+  margin: 0px;
+  transform: translateX(192px);
+}
+
+.banner-text-left.slide-right {
+  animation: slideRight 3s ease;
+}
+
+.banner-text-center.slide-up {
+  animation: slideUp 3s ease;
+}
+
+.banner-text-right.slide-left {
+  animation: slideLeft 3s ease;
+}

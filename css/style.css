@@ -1,13 +1,13 @@
 @import url("components/album-image.css");
+@import url("components/banner.css");
 @import url("components/button.css");
-@import url("components/canvas.css");
 @import url("components/card.css");
 @import url("components/container.css");
 @import url("components/dividing-bar.css");
 @import url("components/icon.css");
 @import url("components/iframe.css");
+@import url("components/keyframes.css");
 @import url("components/navbar.css");
-@import url("components/petal.css");
 
 :root {
   --blue: #eef6fe;
@@ -60,7 +60,6 @@ h3 {
   font-style: normal;
 }
 
-
 .main {
   overflow: auto;
   scroll-snap-type: y mandatory;
@@ -75,24 +74,6 @@ h3 {
     rgba(113, 14, 93, 0.35),
     var(--grad-darkest-blue)
   );
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 25%;
-  }
-  25% {
-    background-position: 25% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 25% 50%;
-  }
-  100% {
-    background-position: 0% 25%;
-  }
 }
 
 .section-title {
@@ -112,44 +93,10 @@ a {
   font-style: normal;
 }
 
-.banner h1 {
-  font-size: 5rem;
-  color: white;
-  margin: 60px 0px 0px 0px;
-}
-
-.banner-text-section {
-  margin-top: 44px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  align-items: center;
-  justify-content: center;
-}
-
-.banner-text-section > * {
-  margin: 0;
-}
-
-.banner-text-left {
-  margin: 0px;
-  transform: translateX(-207px);
-}
-
-.banner-text-right {
-  margin: 0px;
-  transform: translateX(189px);
-}
-
-.project-all h1 {
+.project-all h1, .music-all h1 {
   text-align: center;
 }
 
-
-.project-all {
+.project-all, .music-all {
   width: 70%;
-}
-
-.music h1 {
-  margin-bottom: 20px;
 }

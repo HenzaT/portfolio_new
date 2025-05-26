@@ -1,3 +1,62 @@
+/* back to home arrow */
+.home-arrow {
+  padding: 10px;
+  margin: 30px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--black);
+  display: inline-block;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  transition: opacity 0.3s, visibility 0.3s ease;
+}
+
+.home-arrow i {
+  font-size: 20px;
+  color: var(--light);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate3d(0, 70%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideUp {
+  animation: slideUp 0.4s ease-in;
+}
+
+/* to about section arrow */
+.about-chevron {
+  font-size: 3rem;
+  color: var(--light);
+  text-align: center;
+  margin-top: 40px;
+  /* position: absolute;
+  bottom: 0; */
+}
+
+/* plus button project */
+.plus {
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--black);
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+}
+
+.rotate {
+  transform: rotate(45deg);
+}
+
+/* radio buttons */
 .radio, .skills-radio {
   display: inline-flex;
   overflow: hidden;

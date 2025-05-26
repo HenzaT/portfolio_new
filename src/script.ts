@@ -23,6 +23,8 @@ const skillsIconsContainer = document.querySelector('.skills-container');
 const highlight = document.querySelector('.highlight');
 const navLinks = document.querySelectorAll('.nav-link');
 const homeNavLink = document.getElementById('home-link');
+const projectImages = document.querySelectorAll('.project-image');
+const projectOverlays = document.querySelectorAll('.project-card-overlay');
 
 // radio buttons
 const aboutRadioButtons = document.querySelectorAll('.radio');
@@ -113,6 +115,8 @@ const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons]
 const homeArrow = document.querySelector('.home-arrow') as HTMLElement;
 const homeArrowIcon = document.getElementById('arrow-icon');
 
+// plus button
+const plusButtons = document.querySelectorAll('.plus');
 
 
 // intersection observer - element IN viewport
@@ -254,6 +258,23 @@ aboutRadioButtons.forEach((button) => {
     });
   });
 });
+
+// project plus toggle to show more info
+plusButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('rotate');
+    projectOverlays.forEach((overlay) => {
+      if (!overlay) {
+        console.error('there is no project card overlay')
+        return
+      }
+      projectImages.forEach((image) => {
+        image.classList.toggle('darken');
+      })
+      overlay.classList.toggle('show');
+    })
+  });
+})
 
 // skills icons toggle
 function clearFadeExpand() {

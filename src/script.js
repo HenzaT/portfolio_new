@@ -20,6 +20,8 @@ const skillsIconsContainer = document.querySelector('.skills-container');
 const highlight = document.querySelector('.highlight');
 const navLinks = document.querySelectorAll('.nav-link');
 const homeNavLink = document.getElementById('home-link');
+const projectImages = document.querySelectorAll('.project-image');
+const projectOverlays = document.querySelectorAll('.project-card-overlay');
 // radio buttons
 const aboutRadioButtons = document.querySelectorAll('.radio');
 const skillsRadioButtons = document.querySelectorAll('.skills-radio');
@@ -85,6 +87,8 @@ const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons]
 // home arrow to top
 const homeArrow = document.querySelector('.home-arrow');
 const homeArrowIcon = document.getElementById('arrow-icon');
+// plus button
+const plusButtons = document.querySelectorAll('.plus');
 // intersection observer - element IN viewport
 // show home arrow button when sections in view
 function homeArrowInView(entries) {
@@ -209,6 +213,22 @@ aboutRadioButtons.forEach((button) => {
                 card.classList.remove('visible');
                 card.classList.add('hidden');
             }
+        });
+    });
+});
+// project plus toggle to show more info
+plusButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('rotate');
+        projectOverlays.forEach((overlay) => {
+            if (!overlay) {
+                console.error('there is no project card overlay');
+                return;
+            }
+            projectImages.forEach((image) => {
+                image.classList.toggle('darken');
+            });
+            overlay.classList.toggle('show');
         });
     });
 });

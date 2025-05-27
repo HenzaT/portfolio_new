@@ -19,6 +19,7 @@ const sectionsNoHome: HTMLElement | null = document.querySelector('.below-conten
 
 // section specific
 const skillsIconsContainer = document.querySelector('.skills-container');
+const sectionTitles: NodeListOf<HTMLElement> = document.querySelectorAll('.section-title');
 
 // nav
 const highlight = document.querySelector('.highlight');
@@ -88,6 +89,8 @@ const educationInfo = {
   text: document.getElementById('experience-text'),
   icons: document.getElementById('experience-icons')
 }
+
+const aboutInfo = document.querySelectorAll('.about-info');
 
 // icons
 const languageIcons = [
@@ -165,26 +168,44 @@ if (sectionsNoHome) {
 }
 
 // highlight nav when each section is in viewport
-// function sectionViewChangeNav(entries: IntersectionObserverEntry[]) {
-//   entries.forEach((entry: IntersectionObserverEntry) => {
-//     if (entry.isIntersecting) {
-//       navLinkClick(entry)
-//     }
-//   });
-// };
+function sectionViewChangeNav(entries: IntersectionObserverEntry[]) {
+  entries.forEach((entry: IntersectionObserverEntry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+};
 
-// const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
-// allSections.forEach(section=> {
-//   if (section) {
-//     sectionObserver.observe(section);
-//   }
-// });
+const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
+allSections.forEach((section) => {
+  if (section) {
+    console.log(section)
+  }
+})
+
+// title in view
+function titleSlideIn(entries: IntersectionObserverEntry[]): void {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('hide');
+      entry.target.classList.add('slide-up');
+    }
+  });
+};
+
+const titleObserver = new IntersectionObserver(titleSlideIn);
+sectionTitles.forEach((section) => {
+  if (section) {
+    titleObserver.observe(section);
+  }
+});
 
 // widen separation bars
 function widenBar(entries: IntersectionObserverEntry[]): void {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('widen');
+      entry.target.classList.add('final-width');
     }
   })
 };
@@ -217,24 +238,9 @@ skillsObserver.observe(skillsIconsContainer);
 
 
 // navbar select
-function moveHighlight(target: HTMLElement): void {
-  // get position and size of clicked link
-  const rect = target.getBoundingClientRect();
-  const container = document.querySelector('.navbar-links')
-  // get position of navbar-links container
-  if (!container) return;
-  const containerRect = container.getBoundingClientRect();
-
-  highlight.style.width = `${rect.width}px`;
-  highlight.style.height = `${rect.height}px`;
-  highlight.style.left = `${rect.left - containerRect.left}px`;
-  highlight.style.top = `${rect.top - containerRect.top}px`;
-}
-
 function navLinkClick(link): void {
   document.querySelector('.nav-link.active')?.classList.remove('active');
   link.classList.add('active');
-  moveHighlight(link);
 }
 
 navLinks.forEach(link => {
@@ -245,11 +251,6 @@ navLinks.forEach(link => {
 
 homeArrowIcon.addEventListener('click', () => {
   navLinkClick(homeNavLink);
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  const activeLink = document.querySelector('.nav-link.active');
-  if (activeLink) moveHighlight(activeLink);
 });
 
 // about cards toggle
@@ -303,7 +304,7 @@ function openOverlay(button: HTMLElement): void {
     musicOverlay.classList.toggle('show');
   }
   if (musicImage) {
-    musicImage?.classList.toggle('darken');
+    musicImage.classList.toggle('darken');
   }
 };
 

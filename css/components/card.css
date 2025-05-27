@@ -16,20 +16,8 @@
   transition: opacity 0.3s, visibility 0.3s ease;
 }
 
-.about-card + .about-card {
-  margin-top: -260px;
-}
-
-#experience-card {
-  z-index: 3;
-}
-
-#interests-card {
-  z-index: 2;
-}
-
-#education-card {
-  z-index: 1;
+.about-info {
+  height: 40%;
 }
 
 .about-card.visible {
@@ -99,10 +87,6 @@
   height: auto
 }
 
-.project-image.darken, .album-art.darken {
-  animation: darken 0.4s ease
-}
-
 .project-card-overlay, .album-card-overlay {
   position: absolute;
   bottom: 85%;
@@ -132,8 +116,8 @@
   border-radius: 20px;
   width: 40vw;
   box-shadow: var(--shadow);
-  position: relative;
   margin: auto;
+  margin-top: 20px;
 }
 
 .iframe-box {

@@ -1,3 +1,27 @@
+.darken {
+  animation: darken 0.4s ease;
+}
+
+.brighten {
+  animation: brighten 0.4s ease;
+}
+
+.slide-right {
+  animation: slideRight 3s ease;
+}
+
+.slide-up {
+  animation: slideUp 3s ease;
+}
+
+.slide-left {
+  animation: slideLeft 3s ease;
+}
+
+.widen {
+  animation: widen 2s ease;
+}
+
 /* color gradient */
 @keyframes gradient {
   0% {
@@ -33,6 +57,25 @@
   }
   100% {
     filter: brightness(0.2)
+  }
+}
+
+/* brighten element */
+@keyframes brighten {
+  0% {
+    filter: brightness(0.2)
+  }
+  25% {
+    filter: brightness(0.4)
+  }
+  50% {
+    filter: brightness(0.6)
+  }
+  75% {
+    filter: brightness(0.8)
+  }
+  100% {
+    filter: brightness(1)
   }
 }
 
@@ -82,5 +125,17 @@
   100% {
     opacity: 1;
     transform: translateX(192px);
+  }
+}
+
+/* widen */
+@keyframes widen {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+  100% {
+    opacity: 0.5;
+    width: 50%;
   }
 }

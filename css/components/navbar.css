@@ -27,28 +27,21 @@
 
 .nav-link {
   position: relative;
-  padding: 0px 10px 0px 10px;
-  border-radius: 10px;
-  transition: background-color 0.5s;
-  transition: color 0.5s;
+  transition: color 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
 }
 
 .nav-link:hover {
   transform: scale(1.1);
+  color: var(--pink);
 }
 
 .nav-link.active {
-  color: black;
+  color: var(--selected);
 }
 
-.highlight {
-  position: absolute;
-  background-color: var(--selected);
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  z-index: 0;
-  pointer-events: none;
+.nav-link.active h3 {
+  font-weight: 500;
 }
 
 /* .burger-menu {

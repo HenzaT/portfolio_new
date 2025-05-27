@@ -17,6 +17,7 @@ const allSections = [
 const sectionsNoHome = document.querySelector('.below-content');
 // section specific
 const skillsIconsContainer = document.querySelector('.skills-container');
+const sectionTitles = document.querySelectorAll('.section-title');
 // nav
 const highlight = document.querySelector('.highlight');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -65,6 +66,7 @@ const educationInfo = {
     text: document.getElementById('experience-text'),
     icons: document.getElementById('experience-icons')
 };
+const aboutInfo = document.querySelectorAll('.about-info');
 // icons
 const languageIcons = [
     document.getElementById('ruby'),
@@ -129,24 +131,42 @@ if (sectionsNoHome) {
     arrowObserver.observe(sectionsNoHome);
 }
 // highlight nav when each section is in viewport
-// function sectionViewChangeNav(entries: IntersectionObserverEntry[]) {
-//   entries.forEach((entry: IntersectionObserverEntry) => {
-//     if (entry.isIntersecting) {
-//       navLinkClick(entry)
-//     }
-//   });
-// };
-// const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
-// allSections.forEach(section=> {
-//   if (section) {
-//     sectionObserver.observe(section);
-//   }
-// });
+function sectionViewChangeNav(entries) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}
+;
+const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
+allSections.forEach((section) => {
+    if (section) {
+        console.log(section);
+    }
+});
+// title in view
+function titleSlideIn(entries) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.remove('hide');
+            entry.target.classList.add('slide-up');
+        }
+    });
+}
+;
+const titleObserver = new IntersectionObserver(titleSlideIn);
+sectionTitles.forEach((section) => {
+    if (section) {
+        titleObserver.observe(section);
+    }
+});
 // widen separation bars
 function widenBar(entries) {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('widen');
+            entry.target.classList.add('final-width');
         }
     });
 }
@@ -174,24 +194,10 @@ function clear(entries) {
 const skillsObserver = new IntersectionObserver(clear);
 skillsObserver.observe(skillsIconsContainer);
 // navbar select
-function moveHighlight(target) {
-    // get position and size of clicked link
-    const rect = target.getBoundingClientRect();
-    const container = document.querySelector('.navbar-links');
-    // get position of navbar-links container
-    if (!container)
-        return;
-    const containerRect = container.getBoundingClientRect();
-    highlight.style.width = `${rect.width}px`;
-    highlight.style.height = `${rect.height}px`;
-    highlight.style.left = `${rect.left - containerRect.left}px`;
-    highlight.style.top = `${rect.top - containerRect.top}px`;
-}
 function navLinkClick(link) {
     var _a;
     (_a = document.querySelector('.nav-link.active')) === null || _a === void 0 ? void 0 : _a.classList.remove('active');
     link.classList.add('active');
-    moveHighlight(link);
 }
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -201,17 +207,16 @@ navLinks.forEach(link => {
 homeArrowIcon.addEventListener('click', () => {
     navLinkClick(homeNavLink);
 });
-window.addEventListener('DOMContentLoaded', () => {
-    const activeLink = document.querySelector('.nav-link.active');
-    if (activeLink)
-        moveHighlight(activeLink);
-});
 // about cards toggle
 aboutRadioButtons.forEach((button) => {
     button.addEventListener('click', () => {
         let selectedCard = null;
         if (radioButtons.experience.checked) {
             selectedCard = card.experience;
+            aboutInfo.forEach(info => {
+                var _a;
+                info.innerHTML === ((_a = interestsInfo.text) === null || _a === void 0 ? void 0 : _a.innerHTML);
+            });
         }
         else if (radioButtons.interests.checked) {
             selectedCard = card.interests;
@@ -255,7 +260,7 @@ function openOverlay(button) {
         musicOverlay.classList.toggle('show');
     }
     if (musicImage) {
-        musicImage === null || musicImage === void 0 ? void 0 : musicImage.classList.toggle('darken');
+        musicImage.classList.toggle('darken');
     }
 }
 ;

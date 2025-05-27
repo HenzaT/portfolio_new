@@ -26,15 +26,3 @@
   margin: 0px;
   transform: translateX(192px);
 }
-
-.banner-text-left.slide-right {
-  animation: slideRight 3s ease;
-}
-
-.banner-text-center.slide-up {
-  animation: slideUp 3s ease;
-}
-
-.banner-text-right.slide-left {
-  animation: slideLeft 3s ease;
-}

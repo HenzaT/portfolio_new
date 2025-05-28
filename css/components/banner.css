@@ -15,12 +15,34 @@
 
 .banner-text-section > * {margin: 0;}
 
-.banner-text-left {
-  margin: 0px;
-  transform: translateX(-207px);
+@media only screen and (max-width: 600px) {
+  .banner-text-section {
+    text-align: center;
+  }
+
+  .banner-text-left, .banner-text-right {
+    margin: 0px;
+  }
 }
 
-.banner-text-right {
-  margin: 0px;
-  transform: translateX(192px);
+@media only screen and (min-width: 600px) {
+  .banner-text-section {
+    text-align: center;
+  }
+
+  .banner-text-left, .banner-text-right {
+    margin: 0px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .banner-text-left {
+    margin: 0px;
+    transform: translateX(-207px);
+  }
+
+  .banner-text-right {
+    margin: 0px;
+    transform: translateX(192px);
+  }
 }

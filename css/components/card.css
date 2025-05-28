@@ -6,7 +6,6 @@
   background-color: var(--light);
   padding: 20px;
   border-radius: 20px;
-  /* width: 40vw; */
   box-shadow: var(--shadow);
   position: relative;
   cursor: pointer;
@@ -82,7 +81,6 @@
   background-color: var(--light);
   padding: 20px;
   border-radius: 20px;
-  width: 40vw;
   box-shadow: var(--shadow);
   margin: auto;
   margin-top: 50px;
@@ -108,9 +106,23 @@ iframe {
 .contact-card {
   border-radius: 20px;
   margin: auto;
-  width: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .music-card {width: 70vw;}
+  .contact-card {width: 70vw;}
+}
+
+@media only screen and (min-width: 600px) {
+  .music-card {width: 60vw;}
+  .contact-card {width: 50vw;}
+}
+
+@media only screen and (min-width: 768px) {
+  .music-card {width: 40vw;}
+  .contact-card {width: 30vw;}
 }

@@ -19,28 +19,26 @@
   .banner-text-section {
     text-align: center;
   }
-
   .banner-text-left, .banner-text-right {
     margin: 0px;
   }
+  .banner-text-right h1 span.highlight {font-size: 4.5rem;}
 }
 
 @media only screen and (min-width: 600px) {
   .banner-text-section {
     text-align: center;
   }
-
   .banner-text-left, .banner-text-right {
     margin: 0px;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1210px) {
   .banner-text-left {
     margin: 0px;
-    transform: translateX(-207px);
+    transform: translateX(-154px);
   }
-
   .banner-text-right {
     margin: 0px;
     transform: translateX(192px);

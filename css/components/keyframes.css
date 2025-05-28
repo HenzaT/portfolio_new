@@ -4,20 +4,15 @@
 }
 
 .brighten {animation: brighten 0.6s ease;}
-
 .hidden {opacity: 0;}
-
-.slide-right {animation: slideRight 3s ease;}
-
-.slide-up {animation: slideUp 3s ease;}
-
+.slide-up {animation: slideUp 1.2s ease;}
 .slide-up-dark {animation: slideUpDark 0.8s ease;}
-
-.slide-up-expand {animation: slideUpExpand 1.5s ease;}
-
-.slide-up-fade {animation: slideUpFade 1.5s ease;}
-
+.slide-up-expand {animation: slideUpExpand 1.2s ease;}
+.slide-up-fade {animation: slideUpFade 1.2s ease;}
+.slide-right {animation: slideRight 3s ease;}
 .slide-left {animation: slideLeft 3s ease;}
+.slide-right-center {animation: slideRightCenter 3s ease;}
+.slide-left-center {animation: slideLeftCenter 3s ease;}
 
 .fade {
   opacity: 0.2;
@@ -140,7 +135,18 @@
   }
   100% {
     opacity: 1;
-    transform: translateX(-207px);
+    transform: translateX(-154px);
+  }
+}
+/* slide element to right mobile */
+@keyframes slideRightCenter {
+  0% {
+    opacity: 0;
+    transform: translateX(-900px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -152,6 +158,17 @@
   }
   100% {
     opacity: 1;
-    transform: translateX(192px);
+    transform: translateX(192);
+  }
+}
+/* slide element to left mobile */
+@keyframes slideLeftCenter {
+  0% {
+    opacity: 0;
+    transform: translateX(900px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

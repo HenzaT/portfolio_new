@@ -28,7 +28,6 @@
 
 /* project icons */
 .project-links {
-  width: 10vw;
   margin: auto;
   display: flex;
   justify-content: space-evenly;
@@ -64,7 +63,6 @@
 /* music icons */
 .music-icons {
   margin: auto;
-  width: 10vw;
   font-size: 50px;
   display: flex;
   justify-content: space-evenly;
@@ -76,3 +74,16 @@
 .music-icons i {transition: transform 0.3s ease-in-out;}
 
 .music-icons i:hover {transform: scale(1.1);}
+
+@media only screen and (max-width: 600px) {
+  .project-links, .music-icons {width: 60vw;}
+  .icons-container i {font-size: 28px;}
+}
+
+@media only screen and (min-width: 600px) {
+  .project-links, .music-icons {width: 40vw;}
+}
+
+@media only screen and (min-width: 768px) {
+  .project-links, .music-icons {width: 20vw;}
+}

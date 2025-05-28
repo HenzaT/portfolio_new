@@ -21,7 +21,6 @@ const homeNavLink: HTMLElement | null = document.getElementById('home-link');
 
 // banner
 const bannerLeft: HTMLElement | null = document.querySelector('.banner-text-left');
-const bannerCenter: HTMLElement | null = document.querySelector('.banner-text-center');
 const bannerRight: HTMLElement | null = document.querySelector('.banner-text-right');
 
 // projects
@@ -110,10 +109,20 @@ const musicPlusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.mu
 
 
 // on page load
+function animationMediaQuery(media: MediaQueryList) {
+  if (media.matches) {
+    bannerLeft?.classList.add('slide-right');
+    bannerRight?.classList.add('slide-left');
+  } else {
+    bannerLeft?.classList.add('slide-right-center');
+    bannerRight?.classList.add('slide-left-center');
+  }
+};
+
+let desktopScreen = window.matchMedia("(min-width: 1210px)");
+
 window.addEventListener('DOMContentLoaded', () => {
-  bannerLeft?.classList.add('slide-right');
-  bannerRight?.classList.add('slide-left');
-  bannerCenter?.classList.add('slide-up');
+  animationMediaQuery(desktopScreen);
   chevron?.classList.add('slide-up-dark');
 });
 

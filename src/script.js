@@ -19,7 +19,6 @@ const navLinks = document.querySelectorAll('.nav-link');
 const homeNavLink = document.getElementById('home-link');
 // banner
 const bannerLeft = document.querySelector('.banner-text-left');
-const bannerCenter = document.querySelector('.banner-text-center');
 const bannerRight = document.querySelector('.banner-text-right');
 // projects
 const projectImages = document.querySelectorAll('.project-image');
@@ -84,10 +83,20 @@ const chevron = document.querySelector('.about-chevron');
 const plusButtons = document.querySelectorAll('.plus');
 const musicPlusButtons = document.querySelectorAll('.music-plus');
 // on page load
+function animationMediaQuery(media) {
+    if (media.matches) {
+        bannerLeft === null || bannerLeft === void 0 ? void 0 : bannerLeft.classList.add('slide-right');
+        bannerRight === null || bannerRight === void 0 ? void 0 : bannerRight.classList.add('slide-left');
+    }
+    else {
+        bannerLeft === null || bannerLeft === void 0 ? void 0 : bannerLeft.classList.add('slide-right-center');
+        bannerRight === null || bannerRight === void 0 ? void 0 : bannerRight.classList.add('slide-left-center');
+    }
+}
+;
+let desktopScreen = window.matchMedia("(min-width: 1210px)");
 window.addEventListener('DOMContentLoaded', () => {
-    bannerLeft === null || bannerLeft === void 0 ? void 0 : bannerLeft.classList.add('slide-right');
-    bannerRight === null || bannerRight === void 0 ? void 0 : bannerRight.classList.add('slide-left');
-    bannerCenter === null || bannerCenter === void 0 ? void 0 : bannerCenter.classList.add('slide-up');
+    animationMediaQuery(desktopScreen);
     chevron === null || chevron === void 0 ? void 0 : chevron.classList.add('slide-up-dark');
 });
 // intersection observer - element IN viewport

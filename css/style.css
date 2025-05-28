@@ -106,7 +106,13 @@ a {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 820px) {
+  .project-all, .music-all {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1210px) {
   .project-all, .music-all {
     width: 70%;
   }

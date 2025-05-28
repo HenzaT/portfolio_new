@@ -129,7 +129,7 @@ function sectionViewChangeNav(entries) {
 }
 ;
 const sectionObserver = new IntersectionObserver(sectionViewChangeNav, {
-    threshold: 0.1
+    threshold: 0.3
 });
 Object.entries(sections).forEach(([name, section]) => {
     if (section) {
@@ -150,7 +150,6 @@ function ElementSlideUp(entries) {
     });
 }
 ;
-// when each section is in view, do the function above
 const titleObserver = new IntersectionObserver(ElementSlideUp);
 const projectObserver = new IntersectionObserver(ElementSlideUp);
 const skillsButtonsObserver = new IntersectionObserver(ElementSlideUp);
@@ -230,6 +229,13 @@ if (homeArrowIcon) {
         navLinkClick(homeNavLink);
     });
 }
+homeNavLink === null || homeNavLink === void 0 ? void 0 : homeNavLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 // about cards toggle
 allCards.forEach((card) => {
     if (!card)

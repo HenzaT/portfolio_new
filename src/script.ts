@@ -155,7 +155,7 @@ function sectionViewChangeNav(entries: IntersectionObserverEntry[]) {
 };
 
 const sectionObserver = new IntersectionObserver(sectionViewChangeNav, {
-  threshold: 0.1
+  threshold: 0.3
 });
 
 Object.entries(sections).forEach(([name, section]) => {
@@ -176,8 +176,6 @@ function ElementSlideUp(entries: IntersectionObserverEntry[]): void {
     }
   });
 };
-
-// when each section is in view, do the function above
 
 const titleObserver = new IntersectionObserver(ElementSlideUp);
 const projectObserver = new IntersectionObserver(ElementSlideUp);
@@ -257,6 +255,13 @@ if (homeArrowIcon) {
     navLinkClick(homeNavLink);
   });
 }
+homeNavLink?.addEventListener('click', (event) => {
+  event.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
 
 // about cards toggle
 allCards.forEach((card) => {

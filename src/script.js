@@ -1,25 +1,20 @@
 "use strict";
 // section variables
-const homeSection = document.getElementById('home');
-const projectsSection = document.getElementById('projects');
-const skillsSection = document.getElementById('skills');
-const musicSection = document.getElementById('music');
-const aboutSection = document.getElementById('about');
-const contactSection = document.getElementById('contact');
-const allSections = [
-    homeSection,
-    projectsSection,
-    skillsSection,
-    musicSection,
-    aboutSection,
-    contactSection
-];
+const sections = {
+    home: document.getElementById('home'),
+    projects: document.getElementById('projects'),
+    skills: document.getElementById('skills'),
+    music: document.getElementById('music'),
+    about: document.getElementById('about'),
+    contact: document.getElementById('contact')
+};
 const sectionsNoHome = document.querySelector('.below-content');
 // section specific
 const skillsIconsContainer = document.querySelector('.skills-container');
 const sectionTitles = document.querySelectorAll('.section-title');
+const aboutContainer = document.querySelector('.about-container');
+const projectsContainer = document.querySelector('.projects-container');
 // nav
-const highlight = document.querySelector('.highlight');
 const navLinks = document.querySelectorAll('.nav-link');
 const homeNavLink = document.getElementById('home-link');
 // banner
@@ -29,43 +24,28 @@ const bannerRight = document.querySelector('.banner-text-right');
 // projects
 const projectImages = document.querySelectorAll('.project-image');
 const projectOverlays = document.querySelectorAll('.project-card-overlay');
+// skills
+const skillsCardButtons = document.getElementById('skills-card-button');
 // music
+const allAlbums = document.querySelector('.all-albums');
 const albumImages = document.querySelectorAll('.album-art');
 const albumOverlays = document.querySelectorAll('.album-card-overlay');
 // radio buttons
-const aboutRadioButtons = document.querySelectorAll('.radio');
 const skillsRadioButtons = document.querySelectorAll('.skills-radio');
 const radioButtons = {
-    experience: document.getElementById('experience'),
-    interests: document.getElementById('interests'),
-    education: document.getElementById('education'),
     languages: document.getElementById('languages'),
     frameworks: document.getElementById('frameworks'),
     tools: document.getElementById('tools'),
     databases: document.getElementById('databases')
 };
-// about cards
+// cards
 const card = {
-    experience: document.getElementById('experience-card'),
     interests: document.getElementById('interests-card'),
-    education: document.getElementById('education-card')
+    experience: document.getElementById('experience-card'),
+    education: document.getElementById('education-card'),
+    music: document.querySelector('.music-card')
 };
-const allCards = [card.experience, card.interests, card.education];
-const experienceInfo = {
-    title: document.getElementById('experience-title'),
-    text: document.getElementById('experience-text'),
-    icons: document.getElementById('experience-icons')
-};
-const interestsInfo = {
-    title: document.getElementById('interests-title'),
-    text: document.getElementById('interests-text'),
-    icons: document.getElementById('interests-icons')
-};
-const educationInfo = {
-    title: document.getElementById('experience-title'),
-    text: document.getElementById('experience-text'),
-    icons: document.getElementById('experience-icons')
-};
+const allCards = [card.interests, card.experience, card.education];
 const aboutInfo = document.querySelectorAll('.about-info');
 // icons
 const languageIcons = [
@@ -127,27 +107,42 @@ function homeArrowInView(entries) {
     });
 }
 const arrowObserver = new IntersectionObserver(homeArrowInView);
-if (sectionsNoHome) {
+if (sectionsNoHome)
     arrowObserver.observe(sectionsNoHome);
-}
 // highlight nav when each section is in viewport
 function sectionViewChangeNav(entries) {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+            const sectionId = entry.target.id;
+            navLinks.forEach((link) => {
+                var _a;
+                const linkTarget = (_a = link.getAttribute('href')) === null || _a === void 0 ? void 0 : _a.substring(1);
+                if (linkTarget === sectionId) {
+                    link.classList.add('active');
+                }
+                else {
+                    link.classList.remove('active');
+                }
+            });
         }
     });
 }
 ;
-const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
-allSections.forEach((section) => {
+const sectionObserver = new IntersectionObserver(sectionViewChangeNav, {
+    threshold: 0.1
+});
+Object.entries(sections).forEach(([name, section]) => {
     if (section) {
-        console.log(section);
+        sectionObserver.observe(section);
+    }
+    else {
+        console.warn(`Section "${name}" not found in the DOM.`);
     }
 });
-// title in view
-function titleSlideIn(entries) {
+// element in view slide up
+function ElementSlideUp(entries) {
     entries.forEach((entry) => {
+        // does to section title
         if (entry.isIntersecting) {
             entry.target.classList.remove('hide');
             entry.target.classList.add('slide-up');
@@ -155,44 +150,68 @@ function titleSlideIn(entries) {
     });
 }
 ;
-const titleObserver = new IntersectionObserver(titleSlideIn);
+// when each section is in view, do the function above
+const titleObserver = new IntersectionObserver(ElementSlideUp);
+const projectObserver = new IntersectionObserver(ElementSlideUp);
+const skillsButtonsObserver = new IntersectionObserver(ElementSlideUp);
+const allAlbumsObserver = new IntersectionObserver(ElementSlideUp);
+const musicCardObserver = new IntersectionObserver(ElementSlideUp);
 sectionTitles.forEach((section) => {
     if (section) {
         titleObserver.observe(section);
     }
 });
-// widen separation bars
-function widenBar(entries) {
+if (projectsContainer)
+    projectObserver.observe(projectsContainer);
+if (skillsCardButtons)
+    skillsButtonsObserver.observe(skillsCardButtons);
+if (allAlbums)
+    allAlbumsObserver.observe(allAlbums);
+if (card.music)
+    musicCardObserver.observe(card.music);
+// about card slide up if expanded
+function ElementSlideUpExpand(entries) {
     entries.forEach((entry) => {
+        // does to section title
         if (entry.isIntersecting) {
-            entry.target.classList.add('widen');
-            entry.target.classList.add('final-width');
+            entry.target.classList.remove('hide');
+            entry.target.classList.add('slide-up-expand');
         }
     });
 }
 ;
-const barObserver = new IntersectionObserver(widenBar);
-let dividingBars = document.querySelectorAll('.dividing-bar');
-dividingBars.forEach(bar => {
-    if (bar) {
-        barObserver.observe(bar);
-    }
-});
+const middleAboutCard = new IntersectionObserver(ElementSlideUpExpand);
+if (card.experience)
+    middleAboutCard.observe(card.experience);
+// about card slide up if faded
+function ElementSlideUpFade(entries) {
+    entries.forEach((entry) => {
+        // does to section title
+        if (entry.isIntersecting) {
+            entry.target.classList.remove('hide');
+            entry.target.classList.add('slide-up-fade');
+        }
+    });
+}
+;
+const leftAndRightAboutCard = new IntersectionObserver(ElementSlideUpFade);
+if (card.education && card.interests) {
+    leftAndRightAboutCard.observe(card.education);
+    leftAndRightAboutCard.observe(card.interests);
+}
 // intersection observer - element OUT of viewport
 // clear skills container
 function clear(entries) {
     entries.forEach((entry) => {
         if (!entry.isIntersecting) {
             clearFadeExpand();
-            skillsRadioButtons.forEach(button => {
-                button.removeAttribute('checked');
-            });
         }
     });
 }
 ;
 const skillsObserver = new IntersectionObserver(clear);
-skillsObserver.observe(skillsIconsContainer);
+if (skillsIconsContainer)
+    skillsObserver.observe(skillsIconsContainer);
 // navbar select
 function navLinkClick(link) {
     var _a;
@@ -204,66 +223,45 @@ navLinks.forEach(link => {
         navLinkClick(link);
     });
 });
-homeArrowIcon.addEventListener('click', () => {
-    navLinkClick(homeNavLink);
-});
+if (homeArrowIcon) {
+    homeArrowIcon.addEventListener('click', () => {
+        if (!homeNavLink)
+            return;
+        navLinkClick(homeNavLink);
+    });
+}
 // about cards toggle
-aboutRadioButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        let selectedCard = null;
-        if (radioButtons.experience.checked) {
-            selectedCard = card.experience;
-            aboutInfo.forEach(info => {
-                var _a;
-                info.innerHTML === ((_a = interestsInfo.text) === null || _a === void 0 ? void 0 : _a.innerHTML);
-            });
-        }
-        else if (radioButtons.interests.checked) {
-            selectedCard = card.interests;
-        }
-        else if (radioButtons.education.checked) {
-            selectedCard = card.education;
-        }
-        allCards.forEach((card) => {
-            if (!card) {
-                console.error(`there is no ${card}`);
-                return;
-            }
-            if (card === selectedCard) {
-                card.classList.remove('hidden');
-                card.classList.add('visible');
-            }
-            else {
-                card.classList.remove('visible');
-                card.classList.add('hidden');
-            }
+allCards.forEach((card) => {
+    if (!card)
+        return;
+    card.addEventListener('click', () => {
+        allCards.forEach((active) => {
+            active === null || active === void 0 ? void 0 : active.classList.remove('expand');
+            active === null || active === void 0 ? void 0 : active.classList.add('fade');
         });
+        card.classList.add('expand');
+        card.classList.remove('fade');
     });
 });
 // plus toggle to show more info
+function toggleClassBySelector(selector, className, id) {
+    const element = document.querySelector(`${selector}[data-id="${id}"]`);
+    if (!element)
+        return;
+    element.classList.toggle(className);
+}
 function openOverlay(button) {
     const id = button.dataset.id;
     if (!id)
         return;
     button.classList.toggle('rotate');
-    const projectOverlay = document.querySelector(`.project-card-overlay[data-id="${id}"]`);
-    const projectImage = document.querySelector(`.project-image[data-id="${id}"]`);
-    const musicOverlay = document.querySelector(`.album-card-overlay[data-id="${id}"]`);
-    const musicImage = document.querySelector(`.album-art[data-id="${id}"]`);
-    if (projectOverlay) {
-        projectOverlay.classList.toggle('show');
-    }
-    if (projectImage) {
-        projectImage.classList.toggle('darken');
-    }
-    if (musicOverlay) {
-        musicOverlay.classList.toggle('show');
-    }
-    if (musicImage) {
-        musicImage.classList.toggle('darken');
-    }
+    toggleClassBySelector('.project-card-overlay', 'show', id);
+    toggleClassBySelector('.project-image', 'darken', id);
+    toggleClassBySelector('.album-card-overlay', 'show', id);
+    toggleClassBySelector('.album-art', 'darken', id);
 }
 ;
+// projects plus toggle to show info
 plusButtons.forEach((button) => {
     button.addEventListener('click', () => {
         openOverlay(button);
@@ -279,6 +277,8 @@ musicPlusButtons.forEach((button) => {
 function clearFadeExpand() {
     Object.values(iconGroups).forEach(group => {
         group.forEach((icon) => {
+            if (!icon)
+                return;
             icon.classList.remove('fade');
             icon.classList.remove('expand');
         });
@@ -288,14 +288,24 @@ function clearFadeExpand() {
 skillsRadioButtons.forEach((button) => {
     button.addEventListener('click', () => {
         clearFadeExpand();
-        const selected = Object.keys(radioButtons).find(buttonName => radioButtons[buttonName].checked);
+        const selected = Object.keys(radioButtons)
+            .find(buttonName => { var _a; return (_a = radioButtons[buttonName]) === null || _a === void 0 ? void 0 : _a.checked; });
         Object.entries(iconGroups).forEach(([group, icons]) => {
             if (group !== selected) {
-                icons.forEach((icon) => icon.classList.add('fade'));
+                icons.forEach((icon) => {
+                    if (icon) {
+                        icon.classList.add('fade');
+                    }
+                });
             }
-            if (group === selected) {
-                icons.forEach((icon) => icon.classList.add('expand'));
+            else if (group === selected) {
+                icons.forEach((icon) => {
+                    if (icon) {
+                        icon.classList.add('expand');
+                    }
+                });
             }
+            ;
         });
     });
 });

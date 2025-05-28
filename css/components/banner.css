@@ -13,9 +13,7 @@
   justify-content: center;
 }
 
-.banner-text-section > * {
-  margin: 0;
-}
+.banner-text-section > * {margin: 0;}
 
 .banner-text-left {
   margin: 0px;

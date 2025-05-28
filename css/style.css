@@ -3,7 +3,6 @@
 @import url("components/button.css");
 @import url("components/card.css");
 @import url("components/container.css");
-@import url("components/dividing-bar.css");
 @import url("components/icon.css");
 @import url("components/iframe.css");
 @import url("components/keyframes.css");
@@ -18,7 +17,7 @@
   --grad-dark-blue: #2b366e;
   --grad-darker-blue: #1d1a7b;
   --grad-darkest-blue: #172783;
-  --selected: #d695bb;
+  --selected: #c172a0;
   --pink: #eebddc;
   --black: #1B1B1E;
   --light: rgb(232, 245, 248);
@@ -76,20 +75,16 @@ h3 {
   );
 }
 
-.section-title {
-  font-size: 3rem;
-}
+.section-title {font-size: 3rem;}
 
-.hide {
-  opacity: 0;
-}
+.hide {opacity: 0;}
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
-.highlighted-word {
+.highlight {
   color: var(--selected);
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
@@ -97,10 +92,6 @@ a {
   font-style: normal;
 }
 
-.project-all h1, .music-all h1 {
-  text-align: center;
-}
+.project-all h1, .music-all h1, .about-card h2, .album-card-overlay {text-align: center;}
 
-.project-all, .music-all {
-  width: 70%;
-}
+.project-all, .music-all {width: 70%;}

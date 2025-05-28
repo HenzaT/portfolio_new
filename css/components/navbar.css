@@ -36,13 +36,9 @@
   color: var(--pink);
 }
 
-.nav-link.active {
-  color: var(--selected);
-}
+.nav-link.active {color: var(--selected);}
 
-.nav-link.active h3 {
-  font-weight: 500;
-}
+.nav-link.active h3 {font-weight: 500;}
 
 /* .burger-menu {
   display: block;

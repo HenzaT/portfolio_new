@@ -1,7 +1,5 @@
 /* general icons */
-.icons-container i, .skills-container i {
-  font-size: 50px;
-}
+.icons-container i, .skills-container i {font-size: 50px;}
 
 /* general icons container */
 .icons-container {
@@ -24,15 +22,8 @@
   width: 50%;
   color: black;
   transition: opacity 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
-}
-
-.devicon.fade {
-  opacity: 0.2;
-}
-
-.devicon.expand {
-  transform: scale(1.1);
 }
 
 /* project icons */
@@ -49,9 +40,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.project-links i:hover {
-  transform: scale(1.1);
-}
+.project-links i:hover {transform: scale(1.1);}
 
 /* contact icons */
 .contact i {
@@ -84,10 +73,6 @@
   border: 3px solid var(--dark-blue);
 }
 
-.music-icons i {
-  transition: transform 0.3s ease-in-out;
-}
+.music-icons i {transition: transform 0.3s ease-in-out;}
 
-.music-icons i:hover {
-  transform: scale(1.1);
-}
+.music-icons i:hover {transform: scale(1.1);}

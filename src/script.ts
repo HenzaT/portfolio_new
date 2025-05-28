@@ -1,96 +1,69 @@
 // section variables
-const homeSection = document.getElementById('home');
-const projectsSection = document.getElementById('projects');
-const skillsSection = document.getElementById('skills');
-const musicSection = document.getElementById('music');
-const aboutSection = document.getElementById('about');
-const contactSection = document.getElementById('contact');
-
-const allSections = [
-  homeSection,
-  projectsSection,
-  skillsSection,
-  musicSection,
-  aboutSection,
-  contactSection
-];
-
+const sections = {
+  home: document.getElementById('home'),
+  projects: document.getElementById('projects'),
+  skills: document.getElementById('skills'),
+  music: document.getElementById('music'),
+  about: document.getElementById('about'),
+  contact: document.getElementById('contact')
+};
 const sectionsNoHome: HTMLElement | null = document.querySelector('.below-content');
 
 // section specific
-const skillsIconsContainer = document.querySelector('.skills-container');
+const skillsIconsContainer: HTMLElement | null = document.querySelector('.skills-container');
 const sectionTitles: NodeListOf<HTMLElement> = document.querySelectorAll('.section-title');
+const aboutContainer: HTMLElement | null = document.querySelector('.about-container');
+const projectsContainer: HTMLElement | null = document.querySelector('.projects-container');
 
 // nav
-const highlight = document.querySelector('.highlight');
 const navLinks: NodeListOf<HTMLElement> = document.querySelectorAll('.nav-link');
-const homeNavLink = document.getElementById('home-link');
+const homeNavLink: HTMLElement | null = document.getElementById('home-link');
 
 // banner
-const bannerLeft = document.querySelector('.banner-text-left');
-const bannerCenter = document.querySelector('.banner-text-center');
-const bannerRight = document.querySelector('.banner-text-right');
+const bannerLeft: HTMLElement | null = document.querySelector('.banner-text-left');
+const bannerCenter: HTMLElement | null = document.querySelector('.banner-text-center');
+const bannerRight: HTMLElement | null = document.querySelector('.banner-text-right');
 
 // projects
 const projectImages: NodeListOf<HTMLElement> = document.querySelectorAll('.project-image');
 const projectOverlays: NodeListOf<HTMLElement> = document.querySelectorAll('.project-card-overlay');
 
+// skills
+const skillsCardButtons: HTMLElement | null = document.getElementById('skills-card-button');
+
 // music
+const allAlbums: HTMLElement | null = document.querySelector('.all-albums');
 const albumImages: NodeListOf<HTMLElement> = document.querySelectorAll('.album-art');
 const albumOverlays: NodeListOf<HTMLElement> = document.querySelectorAll('.album-card-overlay');
 
 // radio buttons
-const aboutRadioButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.radio');
 const skillsRadioButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.skills-radio');
 
 interface RadioButtons {
-  experience: HTMLElement | null
-  interests: HTMLElement | null
-  education: HTMLElement | null
-  languages: HTMLElement | null
-  frameworks: HTMLElement | null
-  tools: HTMLElement | null
-  databases: HTMLElement | null
+  languages: HTMLInputElement
+  frameworks: HTMLInputElement
+  tools: HTMLInputElement
+  databases: HTMLInputElement
 }
 
 const radioButtons: RadioButtons = {
-  experience: document.getElementById('experience'),
-  interests: document.getElementById('interests'),
-  education: document.getElementById('education'),
-  languages: document.getElementById('languages'),
-  frameworks: document.getElementById('frameworks'),
-  tools: document.getElementById('tools'),
-  databases: document.getElementById('databases')
+  languages: document.getElementById('languages') as HTMLInputElement,
+  frameworks: document.getElementById('frameworks') as HTMLInputElement,
+  tools: document.getElementById('tools') as HTMLInputElement,
+  databases: document.getElementById('databases') as HTMLInputElement
 };
 
-// about cards
+// cards
 const card = {
-  experience: document.getElementById('experience-card'),
   interests: document.getElementById('interests-card'),
-  education: document.getElementById('education-card')
+  experience: document.getElementById('experience-card'),
+  education: document.getElementById('education-card'),
+  music: document.querySelector('.music-card')
 };
 
-const allCards = [card.experience, card.interests, card.education];
+const allCards = [card.interests, card.experience, card.education];
 
-const experienceInfo = {
-  title: document.getElementById('experience-title'),
-  text: document.getElementById('experience-text'),
-  icons: document.getElementById('experience-icons')
-}
-
-const interestsInfo = {
-  title: document.getElementById('interests-title'),
-  text: document.getElementById('interests-text'),
-  icons: document.getElementById('interests-icons')
-}
-
-const educationInfo = {
-  title: document.getElementById('experience-title'),
-  text: document.getElementById('experience-text'),
-  icons: document.getElementById('experience-icons')
-}
-
-const aboutInfo = document.querySelectorAll('.about-info');
+const aboutInfo: NodeListOf<HTMLElement> = document.querySelectorAll('.about-info');
 
 // icons
 const languageIcons = [
@@ -131,7 +104,6 @@ const homeArrow: HTMLElement | null = document.querySelector('.home-arrow');
 const homeArrowIcon: HTMLElement | null = document.getElementById('arrow-icon');
 // about chevron
 const chevron: HTMLElement | null = document.querySelector('.about-chevron');
-
 // plus button
 const plusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.plus');
 const musicPlusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.music-plus');
@@ -150,8 +122,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // show home arrow button when sections in view
 function homeArrowInView(entries: IntersectionObserverEntry[]): void {
   entries.forEach((entry) => {
-    if (!homeArrow) return
-
+    if (!homeArrow) return;
     if (entry.isIntersecting) {
       homeArrow.classList.remove('hidden');
       homeArrow.classList.add('slide-up-dark');
@@ -163,29 +134,42 @@ function homeArrowInView(entries: IntersectionObserverEntry[]): void {
 }
 
 const arrowObserver = new IntersectionObserver(homeArrowInView);
-if (sectionsNoHome) {
-  arrowObserver.observe(sectionsNoHome);
-}
+if (sectionsNoHome) arrowObserver.observe(sectionsNoHome);
 
 // highlight nav when each section is in viewport
 function sectionViewChangeNav(entries: IntersectionObserverEntry[]) {
   entries.forEach((entry: IntersectionObserverEntry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('active');
+      const sectionId = entry.target.id;
+
+      navLinks.forEach((link) => {
+        const linkTarget = link.getAttribute('href')?.substring(1);
+        if (linkTarget === sectionId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
     }
   });
 };
 
-const sectionObserver = new IntersectionObserver(sectionViewChangeNav);
-allSections.forEach((section) => {
-  if (section) {
-    console.log(section)
-  }
-})
+const sectionObserver = new IntersectionObserver(sectionViewChangeNav, {
+  threshold: 0.1
+});
 
-// title in view
-function titleSlideIn(entries: IntersectionObserverEntry[]): void {
+Object.entries(sections).forEach(([name, section]) => {
+  if (section) {
+    sectionObserver.observe(section);
+  } else {
+    console.warn(`Section "${name}" not found in the DOM.`);
+  }
+});
+
+// element in view slide up
+function ElementSlideUp(entries: IntersectionObserverEntry[]): void {
   entries.forEach((entry) => {
+    // does to section title
     if (entry.isIntersecting) {
       entry.target.classList.remove('hide');
       entry.target.classList.add('slide-up');
@@ -193,52 +177,70 @@ function titleSlideIn(entries: IntersectionObserverEntry[]): void {
   });
 };
 
-const titleObserver = new IntersectionObserver(titleSlideIn);
+// when each section is in view, do the function above
+
+const titleObserver = new IntersectionObserver(ElementSlideUp);
+const projectObserver = new IntersectionObserver(ElementSlideUp);
+const skillsButtonsObserver = new IntersectionObserver(ElementSlideUp);
+const allAlbumsObserver = new IntersectionObserver(ElementSlideUp);
+const musicCardObserver = new IntersectionObserver(ElementSlideUp);
+
 sectionTitles.forEach((section) => {
   if (section) {
     titleObserver.observe(section);
   }
 });
+if (projectsContainer) projectObserver.observe(projectsContainer);
+if (skillsCardButtons) skillsButtonsObserver.observe(skillsCardButtons);
+if (allAlbums) allAlbumsObserver.observe(allAlbums);
+if (card.music) musicCardObserver.observe(card.music);
 
-// widen separation bars
-function widenBar(entries: IntersectionObserverEntry[]): void {
+// about card slide up if expanded
+function ElementSlideUpExpand(entries: IntersectionObserverEntry[]): void {
   entries.forEach((entry) => {
+    // does to section title
     if (entry.isIntersecting) {
-      entry.target.classList.add('widen');
-      entry.target.classList.add('final-width');
+      entry.target.classList.remove('hide');
+      entry.target.classList.add('slide-up-expand');
     }
-  })
+  });
 };
 
-const barObserver = new IntersectionObserver(widenBar);
-let dividingBars = document.querySelectorAll('.dividing-bar');
-dividingBars.forEach(bar => {
-  if (bar) {
-    barObserver.observe(bar);
-  }
-});
+const middleAboutCard = new IntersectionObserver(ElementSlideUpExpand)
+if (card.experience) middleAboutCard.observe(card.experience);
 
+// about card slide up if faded
+function ElementSlideUpFade(entries: IntersectionObserverEntry[]): void {
+  entries.forEach((entry) => {
+    // does to section title
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('hide');
+      entry.target.classList.add('slide-up-fade');
+    }
+  });
+};
+
+const leftAndRightAboutCard = new IntersectionObserver(ElementSlideUpFade)
+if (card.education && card.interests) {
+  leftAndRightAboutCard.observe(card.education);
+  leftAndRightAboutCard.observe(card.interests);
+}
 
 // intersection observer - element OUT of viewport
-
 // clear skills container
 function clear(entries: IntersectionObserverEntry[]): void {
   entries.forEach((entry)=> {
     if (!entry.isIntersecting) {
       clearFadeExpand()
-      skillsRadioButtons.forEach(button => {
-        button.removeAttribute('checked');
-      });
     }
   })
 };
 
 const skillsObserver = new IntersectionObserver(clear);
-skillsObserver.observe(skillsIconsContainer);
-
+if (skillsIconsContainer) skillsObserver.observe(skillsIconsContainer);
 
 // navbar select
-function navLinkClick(link): void {
+function navLinkClick(link: HTMLElement): void {
   document.querySelector('.nav-link.active')?.classList.remove('active');
   link.classList.add('active');
 }
@@ -249,65 +251,45 @@ navLinks.forEach(link => {
   });
 });
 
-homeArrowIcon.addEventListener('click', () => {
-  navLinkClick(homeNavLink);
-});
+if (homeArrowIcon) {
+  homeArrowIcon.addEventListener('click', () => {
+    if (!homeNavLink) return;
+    navLinkClick(homeNavLink);
+  });
+}
 
 // about cards toggle
-aboutRadioButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    let selectedCard: HTMLElement | null = null;
-    if (radioButtons.experience.checked) {
-      selectedCard = card.experience;
-    } else if (radioButtons.interests.checked) {
-      selectedCard = card.interests;
-    } else if (radioButtons.education.checked) {
-      selectedCard = card.education;
-    }
-
-    allCards.forEach((card) => {
-      if (!card) {
-        console.error(`there is no ${card}`)
-        return
-      }
-      if (card === selectedCard) {
-        card.classList.remove('hidden');
-        card.classList.add('visible');
-      } else {
-        card.classList.remove('visible');
-        card.classList.add('hidden');
-      }
-    });
-  });
+allCards.forEach((card) => {
+  if (!card) return
+  card.addEventListener('click', () => {
+    allCards.forEach((active) => {
+      active?.classList.remove('expand');
+      active?.classList.add('fade');
+    })
+      card.classList.add('expand');
+      card.classList.remove('fade');
+  })
 });
 
+
 // plus toggle to show more info
+function toggleClassBySelector(selector: string, className: string, id: string): void {
+  const element = document.querySelector(`${selector}[data-id="${id}"]`);
+  if (!element) return;
+  element.classList.toggle(className);
+}
+
 function openOverlay(button: HTMLElement): void {
   const id = button.dataset.id;
-
   if (!id) return;
-
   button.classList.toggle('rotate');
-
-  const projectOverlay = document.querySelector(`.project-card-overlay[data-id="${id}"]`);
-  const projectImage = document.querySelector(`.project-image[data-id="${id}"]`);
-  const musicOverlay = document.querySelector(`.album-card-overlay[data-id="${id}"]`);
-  const musicImage = document.querySelector(`.album-art[data-id="${id}"]`);
-
-  if (projectOverlay) {
-    projectOverlay.classList.toggle('show');
-  }
-  if (projectImage) {
-    projectImage.classList.toggle('darken');
-  }
-  if (musicOverlay) {
-    musicOverlay.classList.toggle('show');
-  }
-  if (musicImage) {
-    musicImage.classList.toggle('darken');
-  }
+  toggleClassBySelector('.project-card-overlay', 'show', id);
+  toggleClassBySelector('.project-image', 'darken', id);
+  toggleClassBySelector('.album-card-overlay', 'show', id);
+  toggleClassBySelector('.album-art', 'darken', id);
 };
 
+// projects plus toggle to show info
 plusButtons.forEach((button) => {
   button.addEventListener('click', () => {
     openOverlay(button);
@@ -325,6 +307,7 @@ musicPlusButtons.forEach((button) => {
 function clearFadeExpand(): void {
   Object.values(iconGroups).forEach(group => {
     group.forEach((icon) => {
+      if (!icon) return;
       icon.classList.remove('fade');
       icon.classList.remove('expand');
     });
@@ -334,15 +317,22 @@ function clearFadeExpand(): void {
 skillsRadioButtons.forEach((button) => {
   button.addEventListener('click', () => {
     clearFadeExpand();
-
-    const selected = Object.keys(radioButtons).find(buttonName => radioButtons[buttonName].checked);
-
+    const selected = (Object.keys(radioButtons) as Array<keyof RadioButtons>)
+    .find(buttonName => radioButtons[buttonName]?.checked);
     Object.entries(iconGroups).forEach(([group, icons]) => {
       if (group !== selected) {
-        icons.forEach((icon) => icon.classList.add('fade'));
-      } if (group === selected) {
-        icons.forEach((icon) => icon.classList.add('expand'));
-      }
+        icons.forEach((icon) => {
+          if (icon) {
+            icon.classList.add('fade')
+          }
+        });
+      } else if (group === selected) {
+        icons.forEach((icon) => {
+          if (icon) {
+            icon.classList.add('expand')
+          }
+        });
+      };
     });
   });
 });

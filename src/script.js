@@ -1,5 +1,4 @@
 "use strict";
-var _a, _b, _c;
 // section variables
 const sections = {
     home: document.getElementById('home'),
@@ -22,14 +21,18 @@ const homeNavLink = document.getElementById('home-link');
 const bannerLeft = document.querySelector('.banner-text-left');
 const bannerRight = document.querySelector('.banner-text-right');
 // projects
+const projectCards = document.querySelectorAll('.project-card');
 const projectImages = document.querySelectorAll('.project-image');
 const projectOverlays = document.querySelectorAll('.project-card-overlay');
 // skills
 const skillsCardButtons = document.getElementById('skills-card-button');
 // music
 const allAlbums = document.querySelector('.all-albums');
+const albumCards = document.querySelectorAll('.album-card');
 const albumImages = document.querySelectorAll('.album-art');
 const albumOverlays = document.querySelectorAll('.album-card-overlay');
+const musicCard = document.querySelector('.music-card');
+const projectAlbumMusicSkillsCards = [...projectCards, ...albumCards, musicCard, skillsIconsContainer];
 // radio buttons
 const skillsRadioButtons = document.querySelectorAll('.skills-radio');
 const radioButtons = {
@@ -247,6 +250,23 @@ homeNavLink === null || homeNavLink === void 0 ? void 0 : homeNavLink.addEventLi
         behavior: 'smooth'
     });
 });
+// scroll into view
+function scrollToView(element) {
+    if (!element)
+        return;
+    element.scrollIntoView({
+        behavior: 'auto',
+        block: 'center',
+        inline: 'center'
+    });
+}
+projectAlbumMusicSkillsCards.forEach((card) => {
+    if (!card)
+        return;
+    card.addEventListener('click', () => {
+        scrollToView(card);
+    });
+});
 // about cards toggle
 allCards.forEach((card) => {
     if (!card)
@@ -256,32 +276,9 @@ allCards.forEach((card) => {
             active === null || active === void 0 ? void 0 : active.classList.remove('expand');
             active === null || active === void 0 ? void 0 : active.classList.add('fade');
         });
+        scrollToView(card);
         card.classList.add('expand');
         card.classList.remove('fade');
-    });
-});
-(_a = card.experience) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
-    var _a;
-    (_a = card.experience) === null || _a === void 0 ? void 0 : _a.scrollIntoView({
-        behavior: 'auto',
-        block: 'center',
-        inline: 'center'
-    });
-});
-(_b = card.interests) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => {
-    var _a;
-    (_a = card.interests) === null || _a === void 0 ? void 0 : _a.scrollIntoView({
-        behavior: 'auto',
-        block: 'center',
-        inline: 'center'
-    });
-});
-(_c = card.education) === null || _c === void 0 ? void 0 : _c.addEventListener('click', () => {
-    var _a;
-    (_a = card.education) === null || _a === void 0 ? void 0 : _a.scrollIntoView({
-        behavior: 'auto',
-        block: 'center',
-        inline: 'center'
     });
 });
 // plus toggle to show more info

@@ -24,6 +24,7 @@ const bannerLeft: HTMLElement | null = document.querySelector('.banner-text-left
 const bannerRight: HTMLElement | null = document.querySelector('.banner-text-right');
 
 // projects
+const projectCards: NodeListOf<HTMLElement> = document.querySelectorAll('.project-card');
 const projectImages: NodeListOf<HTMLElement> = document.querySelectorAll('.project-image');
 const projectOverlays: NodeListOf<HTMLElement> = document.querySelectorAll('.project-card-overlay');
 
@@ -32,8 +33,12 @@ const skillsCardButtons: HTMLElement | null = document.getElementById('skills-ca
 
 // music
 const allAlbums: HTMLElement | null = document.querySelector('.all-albums');
+const albumCards: NodeListOf<HTMLElement> = document.querySelectorAll('.album-card');
 const albumImages: NodeListOf<HTMLElement> = document.querySelectorAll('.album-art');
 const albumOverlays: NodeListOf<HTMLElement> = document.querySelectorAll('.album-card-overlay');
+const musicCard: HTMLElement | null = document.querySelector('.music-card');
+
+const projectAlbumMusicSkillsCards = [...projectCards, ...albumCards, musicCard, skillsIconsContainer]
 
 // radio buttons
 const skillsRadioButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.skills-radio');
@@ -272,6 +277,23 @@ homeNavLink?.addEventListener('click', (event) => {
   });
 });
 
+// scroll into view
+function scrollToView(element: HTMLElement) {
+  if (!element) return
+    element.scrollIntoView({
+      behavior: 'auto',
+      block: 'center',
+      inline: 'center'
+    });
+}
+
+projectAlbumMusicSkillsCards.forEach((card) => {
+  if (!card) return
+  card.addEventListener('click', () => {
+    scrollToView(card);
+  })
+})
+
 // about cards toggle
 allCards.forEach((card) => {
   if (!card) return
@@ -280,34 +302,11 @@ allCards.forEach((card) => {
       active?.classList.remove('expand');
       active?.classList.add('fade');
     })
-      card.classList.add('expand');
-      card.classList.remove('fade');
+    scrollToView(card);
+    card.classList.add('expand');
+    card.classList.remove('fade');
   })
 });
-
-card.experience?.addEventListener('click', () => {
-  card.experience?.scrollIntoView({
-            behavior: 'auto',
-            block: 'center',
-            inline: 'center'
-        });
-})
-
-card.interests?.addEventListener('click', () => {
-  card.interests?.scrollIntoView({
-            behavior: 'auto',
-            block: 'center',
-            inline: 'center'
-        });
-})
-
-card.education?.addEventListener('click', () => {
-  card.education?.scrollIntoView({
-            behavior: 'auto',
-            block: 'center',
-            inline: 'center'
-        });
-})
 
 // plus toggle to show more info
 function toggleClassBySelector(selector: string, className: string, id: string): void {

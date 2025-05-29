@@ -44,7 +44,7 @@ const card = {
     education: document.getElementById('education-card'),
     music: document.querySelector('.music-card')
 };
-const allCards = [card.interests, card.experience, card.education];
+let allCards = [card.interests, card.experience, card.education];
 const aboutInfo = document.querySelectorAll('.about-info');
 // icons
 const languageIcons = [
@@ -82,6 +82,8 @@ const chevron = document.querySelector('.about-chevron');
 // plus button
 const plusButtons = document.querySelectorAll('.plus');
 const musicPlusButtons = document.querySelectorAll('.music-plus');
+// Desktop screen size
+const desktopScreen = window.matchMedia("(min-width: 1210px)");
 // on page load
 function animationMediaQuery(media) {
     if (media.matches) {
@@ -94,7 +96,6 @@ function animationMediaQuery(media) {
     }
 }
 ;
-let desktopScreen = window.matchMedia("(min-width: 1210px)");
 window.addEventListener('DOMContentLoaded', () => {
     animationMediaQuery(desktopScreen);
     chevron === null || chevron === void 0 ? void 0 : chevron.classList.add('slide-up-dark');
@@ -246,17 +247,30 @@ homeNavLink === null || homeNavLink === void 0 ? void 0 : homeNavLink.addEventLi
     });
 });
 // about cards toggle
-allCards.forEach((card) => {
-    if (!card)
-        return;
-    card.addEventListener('click', () => {
-        allCards.forEach((active) => {
-            active === null || active === void 0 ? void 0 : active.classList.remove('expand');
-            active === null || active === void 0 ? void 0 : active.classList.add('fade');
-        });
-        card.classList.add('expand');
-        card.classList.remove('fade');
+function aboutCardMediaQuery(media) {
+    allCards.forEach((card) => {
+        if (!card)
+            return;
+        if (media.matches) {
+            card.classList.remove('expand', 'fade');
+            card.addEventListener('click', () => {
+                allCards.forEach((active) => {
+                    active === null || active === void 0 ? void 0 : active.classList.remove('expand');
+                    active === null || active === void 0 ? void 0 : active.classList.add('fade');
+                });
+                card.classList.add('expand');
+                card.classList.remove('fade');
+            });
+        }
+        else {
+            card.classList.remove('expand', 'fade');
+        }
     });
+}
+;
+aboutCardMediaQuery(desktopScreen);
+desktopScreen.addEventListener("change", () => {
+    aboutCardMediaQuery(desktopScreen);
 });
 // plus toggle to show more info
 function toggleClassBySelector(selector, className, id) {

@@ -60,7 +60,7 @@ const card = {
   music: document.querySelector('.music-card')
 };
 
-const allCards = [card.interests, card.experience, card.education];
+let allCards = [card.interests, card.experience, card.education];
 
 const aboutInfo: NodeListOf<HTMLElement> = document.querySelectorAll('.about-info');
 
@@ -107,6 +107,8 @@ const chevron: HTMLElement | null = document.querySelector('.about-chevron');
 const plusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.plus');
 const musicPlusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.music-plus');
 
+// Desktop screen size
+const desktopScreen = window.matchMedia("(min-width: 1210px)");
 
 // on page load
 function animationMediaQuery(media: MediaQueryList) {
@@ -118,8 +120,6 @@ function animationMediaQuery(media: MediaQueryList) {
     bannerRight?.classList.add('slide-left-center');
   }
 };
-
-let desktopScreen = window.matchMedia("(min-width: 1210px)");
 
 window.addEventListener('DOMContentLoaded', () => {
   animationMediaQuery(desktopScreen);
@@ -273,18 +273,28 @@ homeNavLink?.addEventListener('click', (event) => {
 });
 
 // about cards toggle
-allCards.forEach((card) => {
-  if (!card) return
-  card.addEventListener('click', () => {
-    allCards.forEach((active) => {
-      active?.classList.remove('expand');
-      active?.classList.add('fade');
-    })
-      card.classList.add('expand');
-      card.classList.remove('fade');
+function aboutCardMediaQuery(media: MediaQueryList) {
+  allCards.forEach((card) => {
+    if (!card) return
+      if (media.matches) {
+        card.classList.remove('expand', 'fade');
+        card.addEventListener('click', () => {
+          allCards.forEach((active) => {
+            active?.classList.remove('expand');
+            active?.classList.add('fade');
+          })
+            card.classList.add('expand');
+            card.classList.remove('fade');
+        })
+      } else {
+        card.classList.remove('expand', 'fade');
+      }
   })
+};
+aboutCardMediaQuery(desktopScreen);
+desktopScreen.addEventListener("change", () => {
+  aboutCardMediaQuery(desktopScreen);
 });
-
 
 // plus toggle to show more info
 function toggleClassBySelector(selector: string, className: string, id: string): void {

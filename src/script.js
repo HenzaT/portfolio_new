@@ -82,7 +82,8 @@ const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons]
 const homeArrow = document.querySelector('.home-arrow');
 const homeArrowIcon = document.getElementById('arrow-icon');
 // about chevron
-const chevron = document.querySelector('.about-chevron');
+const chevron = document.getElementById('top-chevron');
+const mobileChevrons = document.querySelectorAll('#mobile-chevron');
 // plus button
 const plusButtons = document.querySelectorAll('.plus');
 const musicPlusButtons = document.querySelectorAll('.music-plus');
@@ -100,9 +101,14 @@ function animationMediaQuery(media) {
     }
 }
 ;
+function addSlideUpDark(element) {
+    element.classList.add('slide-up-dark');
+}
 window.addEventListener('DOMContentLoaded', () => {
     animationMediaQuery(desktopScreen);
-    chevron === null || chevron === void 0 ? void 0 : chevron.classList.add('slide-up-dark');
+    if (!chevron)
+        return;
+    addSlideUpDark(chevron);
 });
 // intersection observer - element IN viewport
 // show home arrow button when sections in view
@@ -150,7 +156,7 @@ Object.entries(sections).forEach(([name, section]) => {
         sectionObserver.observe(section);
     }
     else {
-        console.warn(`Section "${name}" not found in the DOM.`);
+        console.error(`Section "${name}" not found in the DOM.`);
     }
 });
 // element in view slide up
@@ -212,6 +218,24 @@ if (card.education && card.interests) {
     leftAndRightAboutCard.observe(card.education);
     leftAndRightAboutCard.observe(card.interests);
 }
+;
+// mobile chevrons slide up when in viewport
+function ElementSlideUpDark(entries) {
+    entries.forEach((entry) => {
+        // does to section title
+        if (entry.isIntersecting) {
+            entry.target.classList.remove('hide');
+            entry.target.classList.add('slide-up-dark');
+        }
+    });
+}
+;
+const mobileChevronObserver = new IntersectionObserver(ElementSlideUpDark);
+mobileChevrons.forEach((chevron) => {
+    if (chevron) {
+        mobileChevronObserver.observe(chevron);
+    }
+});
 // intersection observer - element OUT of viewport
 // clear skills container
 function clear(entries) {
@@ -225,6 +249,23 @@ function clear(entries) {
 const skillsObserver = new IntersectionObserver(clear);
 if (skillsIconsContainer)
     skillsObserver.observe(skillsIconsContainer);
+// reset about cards
+function resetAbout(entries) {
+    entries.forEach((entry) => {
+        var _a, _b, _c, _d, _e, _f;
+        if (!entry.isIntersecting) {
+            (_a = card.experience) === null || _a === void 0 ? void 0 : _a.classList.remove('fade');
+            (_b = card.experience) === null || _b === void 0 ? void 0 : _b.classList.add('expand');
+            (_c = card.interests) === null || _c === void 0 ? void 0 : _c.classList.remove('expand');
+            (_d = card.interests) === null || _d === void 0 ? void 0 : _d.classList.add('fade');
+            (_e = card.education) === null || _e === void 0 ? void 0 : _e.classList.remove('expand');
+            (_f = card.education) === null || _f === void 0 ? void 0 : _f.classList.add('fade');
+        }
+    });
+}
+const aboutObserver = new IntersectionObserver(resetAbout);
+if (aboutContainer)
+    aboutObserver.observe(aboutContainer);
 // navbar select
 function navLinkClick(link) {
     var _a;

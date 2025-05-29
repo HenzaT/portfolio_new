@@ -107,7 +107,8 @@ const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons]
 const homeArrow: HTMLElement | null = document.querySelector('.home-arrow');
 const homeArrowIcon: HTMLElement | null = document.getElementById('arrow-icon');
 // about chevron
-const chevron: HTMLElement | null = document.querySelector('.about-chevron');
+const chevron: HTMLElement | null = document.getElementById('top-chevron');
+const mobileChevrons: NodeListOf<HTMLElement> = document.querySelectorAll('#mobile-chevron');
 // plus button
 const plusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.plus');
 const musicPlusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.music-plus');
@@ -126,9 +127,14 @@ function animationMediaQuery(media: MediaQueryList) {
   }
 };
 
+function addSlideUpDark(element: HTMLElement) {
+  element.classList.add('slide-up-dark');
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   animationMediaQuery(desktopScreen);
-  chevron?.classList.add('slide-up-dark');
+  if (!chevron) return
+  addSlideUpDark(chevron);
 });
 
 // intersection observer - element IN viewport
@@ -176,7 +182,7 @@ Object.entries(sections).forEach(([name, section]) => {
   if (section) {
     sectionObserver.observe(section);
   } else {
-    console.warn(`Section "${name}" not found in the DOM.`);
+    console.error(`Section "${name}" not found in the DOM.`);
   }
 });
 
@@ -236,7 +242,25 @@ const leftAndRightAboutCard = new IntersectionObserver(ElementSlideUpFade)
 if (card.education && card.interests) {
   leftAndRightAboutCard.observe(card.education);
   leftAndRightAboutCard.observe(card.interests);
-}
+};
+
+// mobile chevrons slide up when in viewport
+function ElementSlideUpDark(entries: IntersectionObserverEntry[]): void {
+  entries.forEach((entry) => {
+    // does to section title
+    if (entry.isIntersecting) {
+      entry.target.classList.remove('hide');
+      entry.target.classList.add('slide-up-dark');
+    }
+  });
+};
+
+const mobileChevronObserver = new IntersectionObserver(ElementSlideUpDark);
+mobileChevrons.forEach((chevron) => {
+  if (chevron) {
+    mobileChevronObserver.observe(chevron);
+  }
+});
 
 // intersection observer - element OUT of viewport
 // clear skills container
@@ -250,6 +274,23 @@ function clear(entries: IntersectionObserverEntry[]): void {
 
 const skillsObserver = new IntersectionObserver(clear);
 if (skillsIconsContainer) skillsObserver.observe(skillsIconsContainer);
+
+// reset about cards
+function resetAbout(entries: IntersectionObserverEntry[]): void {
+  entries.forEach((entry)=> {
+    if (!entry.isIntersecting) {
+      card.experience?.classList.remove('fade');
+      card.experience?.classList.add('expand');
+      card.interests?.classList.remove('expand');
+      card.interests?.classList.add('fade');
+      card.education?.classList.remove('expand');
+      card.education?.classList.add('fade');
+    }
+  })
+}
+
+const aboutObserver = new IntersectionObserver(resetAbout);
+if (aboutContainer) aboutObserver.observe(aboutContainer);
 
 // navbar select
 function navLinkClick(link: HTMLElement): void {

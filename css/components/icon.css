@@ -1,5 +1,5 @@
 /* general icons */
-.icons-container i, .skills-container i {font-size: 50px;}
+.skills-container i {font-size: 50px;}
 
 /* general icons container */
 .icons-container {
@@ -81,11 +81,21 @@
     font-size: 28px;
   }
 }
-
 @media only screen and (min-width: 600px) {
   .project-links, .music-icons {width: 40vw;}
 }
-
 @media only screen and (min-width: 768px) {
   .project-links, .music-icons {width: 20vw;}
+  .icons-container i {
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .icons-container i {font-size: 34px;}
+}
+@media only screen and (min-width: 1210px) {
+  .icons-container i {font-size: 43px;}
+}
+@media only screen and (min-width: 1380px) {
+  .icons-container i {font-size: 50px;}
 }

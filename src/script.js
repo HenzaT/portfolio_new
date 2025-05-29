@@ -1,4 +1,5 @@
 "use strict";
+var _a, _b, _c;
 // section variables
 const sections = {
     home: document.getElementById('home'),
@@ -257,6 +258,30 @@ allCards.forEach((card) => {
         });
         card.classList.add('expand');
         card.classList.remove('fade');
+    });
+});
+(_a = card.experience) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
+    var _a;
+    (_a = card.experience) === null || _a === void 0 ? void 0 : _a.scrollIntoView({
+        behavior: 'auto',
+        block: 'center',
+        inline: 'center'
+    });
+});
+(_b = card.interests) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => {
+    var _a;
+    (_a = card.interests) === null || _a === void 0 ? void 0 : _a.scrollIntoView({
+        behavior: 'auto',
+        block: 'center',
+        inline: 'center'
+    });
+});
+(_c = card.education) === null || _c === void 0 ? void 0 : _c.addEventListener('click', () => {
+    var _a;
+    (_a = card.education) === null || _a === void 0 ? void 0 : _a.scrollIntoView({
+        behavior: 'auto',
+        block: 'center',
+        inline: 'center'
     });
 });
 // plus toggle to show more info

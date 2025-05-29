@@ -285,6 +285,30 @@ allCards.forEach((card) => {
   })
 });
 
+card.experience?.addEventListener('click', () => {
+  card.experience?.scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center'
+        });
+})
+
+card.interests?.addEventListener('click', () => {
+  card.interests?.scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center'
+        });
+})
+
+card.education?.addEventListener('click', () => {
+  card.education?.scrollIntoView({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'center'
+        });
+})
+
 // plus toggle to show more info
 function toggleClassBySelector(selector: string, className: string, id: string): void {
   const element = document.querySelector(`${selector}[data-id="${id}"]`);

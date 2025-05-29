@@ -44,7 +44,7 @@ const card = {
     education: document.getElementById('education-card'),
     music: document.querySelector('.music-card')
 };
-let allCards = [card.interests, card.experience, card.education];
+const allCards = [card.interests, card.experience, card.education];
 const aboutInfo = document.querySelectorAll('.about-info');
 // icons
 const languageIcons = [
@@ -247,30 +247,17 @@ homeNavLink === null || homeNavLink === void 0 ? void 0 : homeNavLink.addEventLi
     });
 });
 // about cards toggle
-function aboutCardMediaQuery(media) {
-    allCards.forEach((card) => {
-        if (!card)
-            return;
-        if (media.matches) {
-            card.classList.remove('expand', 'fade');
-            card.addEventListener('click', () => {
-                allCards.forEach((active) => {
-                    active === null || active === void 0 ? void 0 : active.classList.remove('expand');
-                    active === null || active === void 0 ? void 0 : active.classList.add('fade');
-                });
-                card.classList.add('expand');
-                card.classList.remove('fade');
-            });
-        }
-        else {
-            card.classList.remove('expand', 'fade');
-        }
+allCards.forEach((card) => {
+    if (!card)
+        return;
+    card.addEventListener('click', () => {
+        allCards.forEach((active) => {
+            active === null || active === void 0 ? void 0 : active.classList.remove('expand');
+            active === null || active === void 0 ? void 0 : active.classList.add('fade');
+        });
+        card.classList.add('expand');
+        card.classList.remove('fade');
     });
-}
-;
-aboutCardMediaQuery(desktopScreen);
-desktopScreen.addEventListener("change", () => {
-    aboutCardMediaQuery(desktopScreen);
 });
 // plus toggle to show more info
 function toggleClassBySelector(selector, className, id) {

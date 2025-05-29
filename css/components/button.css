@@ -59,8 +59,6 @@
 
 .radio-label {
   padding: 8px 14px;
-  width: 5vw;
-  font-size: 14px;
   color: var(--light);
   background-color: var(--black);
   cursor: pointer;
@@ -85,10 +83,28 @@
 
 @media only screen and (min-width: 600px) {
   .home-arrow {display: none;}
+  .radio-label {
+    width: 12vw;
+    font-size: 14px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .project-all, .music-all {
     width: 70%;
+  }
+  .radio-label {
+    width: 8vw;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1210px) {
+  .project-all, .music-all {
+    width: 70%;
+  }
+  .radio-label {
+    width: 6vw;
+    font-size: 14px;
   }
 }

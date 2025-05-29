@@ -109,10 +109,14 @@
   .all-albums {
     grid-template-columns: repeat(3, 1fr);
   }
+  .about-container {
+    width: 50%;
+  }
 }
 
 @media only screen and (min-width: 1210px) {
   .about-container {
     grid-template-columns: repeat(3, 1fr);
+    width: 80%;
   }
 }

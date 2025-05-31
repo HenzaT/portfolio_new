@@ -16,8 +16,13 @@ const aboutContainer: HTMLElement | null = document.querySelector('.about-contai
 const projectsContainer: HTMLElement | null = document.querySelector('.projects-container');
 
 // nav
+const navBar: HTMLElement | null = document.querySelector('.navbar');
 const navLinks: NodeListOf<HTMLElement> = document.querySelectorAll('.nav-link');
 const homeNavLink: HTMLElement | null = document.getElementById('home-link');
+const burgerMenu: HTMLElement | null = document.querySelector('.burger-menu');
+const lineOne: HTMLElement | null = document.querySelector('.line1');
+const lineTwo: HTMLElement | null = document.querySelector('.line2');
+const lineThree: HTMLElement | null = document.querySelector('.line3');
 
 // banner
 const bannerLeft: HTMLElement | null = document.querySelector('.banner-text-left');
@@ -113,8 +118,9 @@ const mobileChevrons: NodeListOf<HTMLElement> = document.querySelectorAll('#mobi
 const plusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.plus');
 const musicPlusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.music-plus');
 
-// Desktop screen size
+// screen size
 const desktopScreen = window.matchMedia("(min-width: 1210px)");
+const mobileScreen = window.matchMedia("(max-width: 600px");
 
 // on page load
 function animationMediaQuery(media: MediaQueryList) {
@@ -317,6 +323,28 @@ homeNavLink?.addEventListener('click', (event) => {
     behavior: 'smooth'
   });
 });
+
+// mobile navbar overlay
+// burgerMenu?.addEventListener('click', () => {
+//   lineOne?.classList.toggle('clicked-down');
+//   lineTwo?.classList.toggle('hidden');
+//   lineThree?.classList.toggle('clicked-up');
+//   mobileNavMediaQuery(mobileScreen);
+// });
+
+// mobile navbar show and hide
+// function mobileNavMediaQuery(media: MediaQueryList) {
+//   if (media.matches) {
+//     if (!navBar) return
+//     if (navBar.style.display == 'none') {
+//       document.body.style.overflowY = 'hidden';
+//       navBar.style.display = 'block';
+//     } else {
+//       document.body.style.overflowY = 'visible';
+//       navBar.style.display = 'none';
+//     }
+//   };
+// };
 
 // scroll into view
 function scrollToView(element: HTMLElement) {

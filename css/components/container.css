@@ -47,6 +47,7 @@
 .projects-container {
   display: grid;
   gap: 40px;
+  margin-top: -25px;
 }
 
 /* skills container */
@@ -77,9 +78,14 @@
   gap: 15px;
 }
 
+#about-card-container {
+  margin-top: -25px;
+}
+
 .all-albums {
   display: grid;
   grid-gap: 40px;
+  margin-top: -25px;
 }
 
 /* contact container */
@@ -91,13 +97,20 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .projects-container {grid-template-columns: repeat(1, 1fr);}
+  .about-container{
+    margin-top: -4px;
+  }
+  .projects-container {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: -45px;
+  }
   .skills-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
   .all-albums {
     grid-template-columns: repeat(1, 1fr);
+    margin-top: -45px;
   }
 }
 

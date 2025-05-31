@@ -17,19 +17,31 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-links">
-      <a class="nav-link active" id="home-link" href="#home"><h3>Home</h3></a>
-      <a class="nav-link" href="#about"><h3>About</h3></a>
-      <a class="nav-link" href="#projects"><h3>Projects</h3></a>
-      <a class="nav-link" href="#skills"><h3>Skills</h3></a>
-      <a class="nav-link" href="#music"><h3>Music</h3></a>
-      <a class="nav-link" href="#contact"><h3>Contact</h3></a>
-      <!-- <div class="burger-menu">
-        <span class="line line1"></span>
-        <span class="line line2"></span>
-        <span class="line line3"></span>
+      <div class="top-nav">
+        <a class="nav-link active" id="home-link" href="#home"><h3>Home</h3></a>
+        <a class="nav-link" href="#about"><h3>About</h3></a>
+        <a class="nav-link" href="#projects"><h3>Projects</h3></a>
+        <a class="nav-link" href="#skills"><h3>Skills</h3></a>
+        <a class="nav-link" href="#music"><h3>Music</h3></a>
+        <a class="nav-link" href="#contact"><h3>Contact</h3></a>
+      </div>
+      <!-- <div class="nav-overlay">
+        <ul>
+          <li><a class="nav-link active" id="home-link" href="#home"><h3>Home</h3></a></li>
+          <li><a class="nav-link" href="#about"><h3>About</h3></a></li>
+          <li><a class="nav-link" href="#projects"><h3>Projects</h3></a></li>
+          <li><a class="nav-link" href="#skills"><h3>Skills</h3></a></li>
+          <li><a class="nav-link" href="#music"><h3>Music</h3></a></li>
+          <li><a class="nav-link" href="#contact"><h3>Contact</h3></a></li>
+        </ul>
       </div> -->
     </div>
   </nav>
+  <!-- <div class="burger-menu">
+    <span class="line line1"></span>
+    <span class="line line2"></span>
+    <span class="line line3"></span>
+  </div> -->
   <!-- Banner -->
   <section class="main">
     <section class="above-content">
@@ -56,7 +68,7 @@
         <div class="about-header">
           <h1 class="section-title small hide">About Me</h1>
         </div>
-        <div class="card-and-button-container">
+        <div class="card-and-button-container" id="about-card-container">
           <div class="about-container">
             <div class="about-card fade hide" id="interests-card">
               <h2 class="about-title" id="interests-title">Interests</h2>
@@ -112,12 +124,12 @@
                     <i>Diploma - Web Development</i>
                   </li>
                   <li>
-                    <span class="highlight">University of Bristol</span><br>
-                    <i>BA - Classical Studies</i>
-                  </li>
-                  <li>
                     <span class="highlight">The Institute of Education, UCL</span><br>
                     <i>PGCE - Primary Education</i>
+                  </li>
+                  <li>
+                    <span class="highlight">University of Bristol</span><br>
+                    <i>BA - Classical Studies</i>
                   </li>
                 </ul>
               </div>
@@ -126,10 +138,10 @@
                   <i class="fa-solid fa-computer" alt="computer icon"></i>
                 </div>
                 <div class="devicon">
-                  <i class="fa-solid fa-building-columns" alt="museum building icon"></i>
+                  <i class="fa-solid fa-person-chalkboard" alt="person at chalkboard icon"></i>
                 </div>
                 <div class="devicon">
-                  <i class="fa-solid fa-person-chalkboard" alt="person at chalkboard icon"></i>
+                  <i class="fa-solid fa-building-columns" alt="museum building icon"></i>
                 </div>
               </div>
             </div>
@@ -277,8 +289,8 @@
                 <div class="project-info">
                   <p>
                     My first <span class="highlight">team project</span> at Le Wagon.
-                    We were tasked with <span class="highlight">building an airbnb style website</span> and so
-                    naturally we settled on renting yachts. I focused mainly on the frontend,
+                    We were tasked with <span class="highlight">building an airbnb style website</span> for renting something,
+                    and so naturally we settled on renting yachts. I focused mainly on the frontend,
                     working with <span class="highlight">Bootstrap</span> and
                     <span class="highlight">JavaScript</span> to style multiple pages according to the lead designer's designs.
                     Using <span class="highlight">PostgreSQL</span>, I also built the backend of the dashboard page.
@@ -333,7 +345,7 @@
               <div class="project-card-overlay" data-id="4">
                 <div class="project-info">
                   <p>
-                    Although admittedly this is not a product, I used this portfolio as an
+                    Although this is not a product, I used this portfolio as an
                     opportunity to <span class="highlight">consolidate</span> my
                     <span class="highlight">HTML</span>, <span class="highlight">CSS</span> and
                     <span class="highlight">JavaScript</span> skills.

@@ -111,5 +111,7 @@
     width: 6vw;
     font-size: 14px;
   }
-  #mobile-chevron {display: none;}
+  #mobile-chevron {
+    margin-top: 0px;
+  }
 }

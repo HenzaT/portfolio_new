@@ -15,8 +15,13 @@ const sectionTitles = document.querySelectorAll('.section-title');
 const aboutContainer = document.querySelector('.about-container');
 const projectsContainer = document.querySelector('.projects-container');
 // nav
+const navBar = document.querySelector('.navbar');
 const navLinks = document.querySelectorAll('.nav-link');
 const homeNavLink = document.getElementById('home-link');
+const burgerMenu = document.querySelector('.burger-menu');
+const lineOne = document.querySelector('.line1');
+const lineTwo = document.querySelector('.line2');
+const lineThree = document.querySelector('.line3');
 // banner
 const bannerLeft = document.querySelector('.banner-text-left');
 const bannerRight = document.querySelector('.banner-text-right');
@@ -87,8 +92,9 @@ const mobileChevrons = document.querySelectorAll('#mobile-chevron');
 // plus button
 const plusButtons = document.querySelectorAll('.plus');
 const musicPlusButtons = document.querySelectorAll('.music-plus');
-// Desktop screen size
+// screen size
 const desktopScreen = window.matchMedia("(min-width: 1210px)");
+const mobileScreen = window.matchMedia("(max-width: 600px");
 // on page load
 function animationMediaQuery(media) {
     if (media.matches) {
@@ -291,6 +297,26 @@ homeNavLink === null || homeNavLink === void 0 ? void 0 : homeNavLink.addEventLi
         behavior: 'smooth'
     });
 });
+// mobile navbar overlay
+// burgerMenu?.addEventListener('click', () => {
+//   lineOne?.classList.toggle('clicked-down');
+//   lineTwo?.classList.toggle('hidden');
+//   lineThree?.classList.toggle('clicked-up');
+//   mobileNavMediaQuery(mobileScreen);
+// });
+// mobile navbar show and hide
+// function mobileNavMediaQuery(media: MediaQueryList) {
+//   if (media.matches) {
+//     if (!navBar) return
+//     if (navBar.style.display == 'none') {
+//       document.body.style.overflowY = 'hidden';
+//       navBar.style.display = 'block';
+//     } else {
+//       document.body.style.overflowY = 'visible';
+//       navBar.style.display = 'none';
+//     }
+//   };
+// };
 // scroll into view
 function scrollToView(element) {
     if (!element)

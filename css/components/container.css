@@ -100,7 +100,7 @@
   .about-container{
     margin-top: -4px;
   }
-  .projects-container {
+  .projects-container, .all-albums {
     grid-template-columns: repeat(1, 1fr);
     margin-top: -45px;
   }
@@ -108,20 +108,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-  .all-albums {
-    grid-template-columns: repeat(1, 1fr);
-    margin-top: -45px;
-  }
 }
 
 @media only screen and (min-width: 600px) {
-  .projects-container {grid-template-columns: repeat(1, 1fr);}
+  .projects-container, .all-albums {grid-template-columns: repeat(1, 1fr);}
   .skills-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-  }
-  .all-albums {
-    grid-template-columns: repeat(1, 1fr);
   }
 }
 

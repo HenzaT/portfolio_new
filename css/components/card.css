@@ -106,8 +106,7 @@ iframe {
 }
 
 @media only screen and (max-width: 600px) {
-  .music-card {width: 70vw;}
-  .contact-card {width: 70vw;}
+  .music-card, .contact-card {width: 70vw;}
   .project-info {height: 56%;}
   .project-title p, .album-title p {margin-top: -19px;}
   .project-card-overlay.show, .album-card-overlay.show {height: 81%;}
@@ -133,7 +132,6 @@ iframe {
   .contact-card {width: 30vw;}
   .small {line-height: 30%;}
   .project-title p, .album-title p {margin-top: 0px;}
-  .project-info {height: 50%;}
+  .project-info, .about-info {height: 50%;}
   .project-card-overlay.show, .album-card-overlay.show {height: 85%;}
-  .about-info {height: 50%;}
 }

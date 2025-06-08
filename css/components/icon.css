@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 20px 5px 20px;
   border-radius: 20px;
   border: 3px solid var(--dark-blue);
   background-color: var(--light);
@@ -77,18 +77,15 @@
 
 @media only screen and (max-width: 600px) {
   .project-links, .music-icons {width: 60vw;}
-  .icons-container i {
-    font-size: 28px;
-  }
+  .icons-container i {font-size: 28px;}
 }
 @media only screen and (min-width: 600px) {
   .project-links, .music-icons {width: 40vw;}
+  .icons-container i {font-size: 30px;}
 }
 @media only screen and (min-width: 768px) {
   .project-links, .music-icons {width: 20vw;}
-  .icons-container i {
-    font-size: 22px;
-  }
+  .icons-container i {font-size: 30px;}
 }
 @media only screen and (min-width: 1000px) {
   .icons-container i {font-size: 34px;}

@@ -27,7 +27,7 @@ I knew I wanted:
 - a contact section
 
 ## Reflections
-I really enjoyed making this portfolio, and there were many 'lightbulb' moments. One early idea that I wanted to implement was the toggling icon functionality in the skills section. 
+I really enjoyed making this portfolio, and there were many 'lightbulb' moments. One early idea that I wanted to implement was the toggling icon functionality in the skills section. I wanted to allow the user to bring certain skills into focus, whilst fading out the others. I also wanted the skills to reset when the user scrolled to a different part of the portfolio; I used the intersection observer API for this, and later used this same API for any scroll-based event. 
 
 https://github.com/user-attachments/assets/de68c5a0-a569-4ae3-82ca-fe4c124073d7
 

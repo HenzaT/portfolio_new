@@ -36,4 +36,6 @@ https://github.com/user-attachments/assets/de68c5a0-a569-4ae3-82ca-fe4c124073d7
 
 
 ## Future Additions
-I am currently working on building a burger menu for the navbar when viewing on mobile and smaller devices. I would also like to implement a music player widget, that appears when the user starts playing one of my songs in the 'music' section. This would allow the user to pause/play at any time, instead of needing to go back to the 'music' section. When the overlay comes over the cards, the underlying content is actually darkened (as if roller blinds are being closed). I found it hard to implement the reverse, ie as the overlay is closed the content is brightened, and so this is something I'd like to add too.
+- I am currently working on building a burger menu for the navbar when viewing on mobile and smaller devices.
+- I would also like to implement a music player widget, that appears when the user starts playing one of my songs in the 'music' section. This would allow the user to pause/play at any time, instead of needing to go back to the 'music' section.
+- When the overlay comes over the cards, the underlying content is actually darkened (as if roller blinds are being closed over it). I found it hard to implement the reverse, ie as the overlay is closed the content is brightened, and so this is something I'd like to add too.

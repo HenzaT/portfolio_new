@@ -85,7 +85,7 @@
 }
 @media only screen and (min-width: 768px) {
   .project-links, .music-icons {width: 20vw;}
-  .icons-container i {font-size: 30px;}
+  .icons-container i {font-size: 22px;}
 }
 @media only screen and (min-width: 1000px) {
   .icons-container i {font-size: 34px;}

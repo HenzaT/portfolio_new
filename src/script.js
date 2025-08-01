@@ -63,7 +63,8 @@ const languageIcons = [
 ];
 const frameworkIcons = [
     document.getElementById('rails'),
-    document.getElementById('bootstrap')
+    document.getElementById('bootstrap'),
+    document.getElementById('react')
 ];
 const toolIcons = [
     document.getElementById('git'),

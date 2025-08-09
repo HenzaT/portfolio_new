@@ -25,23 +25,25 @@
         <a class="nav-link" href="#music"><h3>Music</h3></a>
         <a class="nav-link" href="#contact"><h3>Contact</h3></a>
       </div>
-      <!-- <div class="nav-overlay">
-        <ul>
-          <li><a class="nav-link active" id="home-link" href="#home"><h3>Home</h3></a></li>
-          <li><a class="nav-link" href="#about"><h3>About</h3></a></li>
-          <li><a class="nav-link" href="#projects"><h3>Projects</h3></a></li>
-          <li><a class="nav-link" href="#skills"><h3>Skills</h3></a></li>
-          <li><a class="nav-link" href="#music"><h3>Music</h3></a></li>
-          <li><a class="nav-link" href="#contact"><h3>Contact</h3></a></li>
-        </ul>
-      </div> -->
     </div>
   </nav>
-  <!-- <div class="burger-menu">
-    <span class="line line1"></span>
-    <span class="line line2"></span>
-    <span class="line line3"></span>
-  </div> -->
+  <div class="mobile-navbar">
+    <div class="burger-menu">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </div>
+    <div class="nav-overlay hidden">
+      <ul>
+        <li><a class="nav-link active" id="home-link" href="#home"><h3>Home</h3></a></li>
+        <li><a class="nav-link" href="#projects"><h3>Projects</h3></a></li>
+        <li><a class="nav-link" href="#skills"><h3>Skills</h3></a></li>
+        <li><a class="nav-link" href="#about"><h3>About</h3></a></li>
+        <li><a class="nav-link" href="#music"><h3>Music</h3></a></li>
+        <li><a class="nav-link" href="#contact"><h3>Contact</h3></a></li>
+      </ul>
+    </div>
+  </div>
   <!-- Banner -->
   <section class="main">
     <section class="above-content">
@@ -359,11 +361,23 @@
             <div class="devicon" id="ruby">
               <i class="devicon-ruby-plain-wordmark" alt="ruby icon"></i>
             </div>
-            <div class="devicon" id="rails">
-              <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
+            <div class="devicon" id="ts">
+              <i class="devicon-typescript-plain" alt="typescript icon"></i>
             </div>
             <div class="devicon" id="js">
               <i class="devicon-javascript-plain" alt="javascript icon"></i>
+            </div>
+            <div class="devicon" id="python">
+              <i class="devicon-python-plain" alt="python icon"></i>
+            </div>
+            <div class="devicon" id="rails">
+              <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
+            </div>
+            <div class="devicon" id="bootstrap">
+              <i class="devicon-bootstrap-plain-wordmark" alt="bootstrap icon"></i>
+            </div>
+            <div class="devicon" id="react">
+              <i class="devicon-react-original" alt="react js icon"></i>
             </div>
             <div class="devicon" id="html">
               <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
@@ -385,15 +399,6 @@
             </div>
             <div class="devicon" id="postgres">
               <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
-            </div>
-            <div class="devicon" id="bootstrap">
-              <i class="devicon-bootstrap-plain-wordmark" alt="bootstrap icon"></i>
-            </div>
-            <div class="devicon" id="ts">
-              <i class="devicon-typescript-plain" alt="typescript icon"></i>
-            </div>
-            <div class="devicon" id="react">
-              <i class="devicon-react-original" alt="react js icon"></i>
             </div>
           </div>
           <div class="skills-radio">
@@ -419,15 +424,16 @@
         <div class="card-and-button-container" id="about-card-container">
           <div class="about-container">
             <div class="about-card fade hide" id="interests-card">
-              <h2 class="about-title" id="interests-title">Interests</h2>
+              <h2 class="about-title" id="interests-title">Background</h2>
               <div class="about-info" id="interests-text-box">
                 <p id="interests-text">
-                  Outside of coding and tech, I write and produce my own <a class="highlight" href="#music">music</a> as well as play bass guitar in a band.
-                  I also love to climb and travel - I'm half Japanese,
-                  so I'm lucky enough to go to Japan at least once a year to visit family (and stock up on tea!)
+                My passion for tech started when I began writing and recording my own music.
+                I was fascinated by how the DAW (digital audio workstation) worked and I loved
+                the creative designs of the sound plugins. Wanting to learn more about how they were built, I enrolled
+                in a web development course and have been building and learning ever since.
                 </p>
               </div>
-              <div class="icons-container" id="interests-icons">
+              <!-- <div class="icons-container" id="interests-icons">
                 <div class="devicon">
                   <i class="fa-solid fa-guitar" alt="guitar icon"></i>
                 </div>
@@ -437,7 +443,7 @@
                 <div class="devicon">
                   <i class="fa-solid fa-plane" alt="plane icon"></i>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="about-card expand hide" id="experience-card">
               <h2 class="about-title" id="experience-title">About</h2>
@@ -450,7 +456,7 @@
                   <span class="highlight">collaboration</span> skills to every team.
                 </p>
               </div>
-              <div class="icons-container" id="experience-icons">
+              <!-- <div class="icons-container" id="experience-icons">
                 <div class="devicon">
                   <i class="fa-solid fa-person-chalkboard" alt="person at chalkboard icon"></i>
                 </div>
@@ -460,15 +466,16 @@
                 <div class="devicon">
                   <i class="fa-solid fa-music" alt="music note icon"></i>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="about-card fade hide" id="education-card">
-              <h2 class="about-title" id="education-title">Background</h2>
+              <h2 class="about-title" id="education-title">Interests</h2>
               <div class="about-info" id="education-text-box">
-                My passion for tech started when I began writing and recording my own music.
-                I was fascinated by how the DAW (digital audio workstation) worked and I loved
-                the creative designs of the sound plugins. Wanting to learn more about how they were built, I enrolled
-                in a web development course and have been building and learning ever since.
+                Outside of coding and tech, I write and produce my own <a href="#music"><span class="highlight">music</span></a>
+                as well as play bass guitar in a band.
+                I also love to climb and travel - I'm half Japanese, so I'm lucky enough to go to Japan
+                at least once a year to visit family (and stock up on tea!)
+
                 <!-- <ul id="education-text">
                   <li>
                     <span class="highlight">Le Wagon</span><br>
@@ -484,7 +491,7 @@
                   </li>
                 </ul> -->
               </div>
-              <div class="icons-container" id="education-icons">
+              <!-- <div class="icons-container" id="education-icons">
                 <div class="devicon">
                   <i class="fa-solid fa-computer" alt="computer icon"></i>
                 </div>
@@ -494,7 +501,7 @@
                 <div class="devicon">
                   <i class="fa-solid fa-person-chalkboard" alt="person at chalkboard icon"></i>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

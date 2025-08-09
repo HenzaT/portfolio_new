@@ -16,9 +16,11 @@ const aboutContainer = document.querySelector('.about-container');
 const projectsContainer = document.querySelector('.projects-container');
 // nav
 const navBar = document.querySelector('.navbar');
+const mobileNav = document.querySelector('.mobile-navbar');
 const navLinks = document.querySelectorAll('.nav-link');
 const homeNavLink = document.getElementById('home-link');
 const burgerMenu = document.querySelector('.burger-menu');
+const navOverlay = document.querySelector('.nav-overlay');
 const lineOne = document.querySelector('.line1');
 const lineTwo = document.querySelector('.line2');
 const lineThree = document.querySelector('.line3');
@@ -59,7 +61,8 @@ const aboutInfo = document.querySelectorAll('.about-info');
 const languageIcons = [
     document.getElementById('ruby'),
     document.getElementById('js'),
-    document.getElementById('ts')
+    document.getElementById('ts'),
+    document.getElementById('python')
 ];
 const frameworkIcons = [
     document.getElementById('rails'),
@@ -299,25 +302,28 @@ homeNavLink === null || homeNavLink === void 0 ? void 0 : homeNavLink.addEventLi
     });
 });
 // mobile navbar overlay
-// burgerMenu?.addEventListener('click', () => {
-//   lineOne?.classList.toggle('clicked-down');
-//   lineTwo?.classList.toggle('hidden');
-//   lineThree?.classList.toggle('clicked-up');
-//   mobileNavMediaQuery(mobileScreen);
-// });
+burgerMenu === null || burgerMenu === void 0 ? void 0 : burgerMenu.addEventListener('click', () => {
+    lineOne === null || lineOne === void 0 ? void 0 : lineOne.classList.toggle('clicked-down');
+    lineTwo === null || lineTwo === void 0 ? void 0 : lineTwo.classList.toggle('hidden');
+    lineThree === null || lineThree === void 0 ? void 0 : lineThree.classList.toggle('clicked-up');
+    toggleNavOverlay();
+});
 // mobile navbar show and hide
-// function mobileNavMediaQuery(media: MediaQueryList) {
-//   if (media.matches) {
-//     if (!navBar) return
-//     if (navBar.style.display == 'none') {
-//       document.body.style.overflowY = 'hidden';
-//       navBar.style.display = 'block';
-//     } else {
-//       document.body.style.overflowY = 'visible';
-//       navBar.style.display = 'none';
-//     }
-//   };
-// };
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (!navOverlay)
+            return;
+        navOverlay.classList.add('hidden');
+        navOverlay.classList.remove('fade-into');
+    });
+});
+function toggleNavOverlay() {
+    if (!navOverlay)
+        return;
+    const isHidden = navOverlay.classList.contains('hidden');
+    navOverlay.classList.toggle('hidden');
+    navOverlay.classList.toggle('fade-into', isHidden);
+}
 // scroll into view
 function scrollToView(element) {
     if (!element)

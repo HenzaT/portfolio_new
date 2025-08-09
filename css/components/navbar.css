@@ -47,9 +47,9 @@
   position: fixed;
   height: 35x;
   width: 50px;
-  top: 50px;
-  right: 25px;
-  z-index: 200;
+  top: 20px;
+  right: 20px;
+  z-index: 4000;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +60,7 @@
   display: block;
   height: 3px;
   width: 100%;
-  z-index: 200;
+  z-index: 4000;
   border-radius: 10px;
   background: white;
 }
@@ -77,32 +77,57 @@
   transition: 0.3s ease;
 }
 
-.clicked-down { transform: rotate(45deg) translateY(18px);}
-.clicked-up { transform: rotate(-45deg) translateY(-18px);}
+.clicked-down {
+  -webkit-transform: rotate(45deg) translate(10px, 10px);
+  transform: rotate(45deg) translate(10px, 10px);
+}
+.clicked-up {
+  -webkit-transform: rotate(-45deg) translate(10px, -10px);
+  transform: rotate(-45deg) translate(6px, -10px);
+}
+
+.mobile-navbar {
+  background-color: black;
+}
 
 .nav-overlay {
   text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  visibility: hidden;
+  z-index: 3999;
+  opacity: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.nav-overlay.show {display: block}
+.nav-overlay.fade-into {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .nav-overlay ul{
   margin-top: 90px;
+  padding: 0;
   margin-left: 0px;
 }
 .nav-overlay li {list-style-type: none;}
 .nav-overlay h3 {font-size: 2rem;}
 
-/* @media only screen and (max-width: 600px) {
-  .nav-overlay {
+@media only screen and (max-width: 600px) {
+  .mobile-navbar {
     display: block;
   }
-  .top-nav {display: none;}
-  .navbar {
-    justify-content: flex-start;
+  .top-nav {
+    display: none;
   }
-} */
+}
 
-/* @media only screen and (min-width: 601px) {
-  .nav-overlay, .burger-menu {display: none;}
-} */
+@media only screen and (min-width: 601px) {
+  .mobile-navbar {display: none;}
+}

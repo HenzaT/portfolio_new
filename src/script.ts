@@ -17,9 +17,11 @@ const projectsContainer: HTMLElement | null = document.querySelector('.projects-
 
 // nav
 const navBar: HTMLElement | null = document.querySelector('.navbar');
+const mobileNav: HTMLElement | null = document.querySelector('.mobile-navbar');
 const navLinks: NodeListOf<HTMLElement> = document.querySelectorAll('.nav-link');
 const homeNavLink: HTMLElement | null = document.getElementById('home-link');
 const burgerMenu: HTMLElement | null = document.querySelector('.burger-menu');
+const navOverlay: HTMLElement | null = document.querySelector('.nav-overlay');
 const lineOne: HTMLElement | null = document.querySelector('.line1');
 const lineTwo: HTMLElement | null = document.querySelector('.line2');
 const lineThree: HTMLElement | null = document.querySelector('.line3');
@@ -78,7 +80,8 @@ const aboutInfo: NodeListOf<HTMLElement> = document.querySelectorAll('.about-inf
 const languageIcons = [
   document.getElementById('ruby'),
   document.getElementById('js'),
-  document.getElementById('ts')
+  document.getElementById('ts'),
+  document.getElementById('python')
 ];
 
 const frameworkIcons = [
@@ -326,26 +329,29 @@ homeNavLink?.addEventListener('click', (event) => {
 });
 
 // mobile navbar overlay
-// burgerMenu?.addEventListener('click', () => {
-//   lineOne?.classList.toggle('clicked-down');
-//   lineTwo?.classList.toggle('hidden');
-//   lineThree?.classList.toggle('clicked-up');
-//   mobileNavMediaQuery(mobileScreen);
-// });
+burgerMenu?.addEventListener('click', () => {
+  lineOne?.classList.toggle('clicked-down');
+  lineTwo?.classList.toggle('hidden');
+  lineThree?.classList.toggle('clicked-up');
+  toggleNavOverlay()
+});
 
 // mobile navbar show and hide
-// function mobileNavMediaQuery(media: MediaQueryList) {
-//   if (media.matches) {
-//     if (!navBar) return
-//     if (navBar.style.display == 'none') {
-//       document.body.style.overflowY = 'hidden';
-//       navBar.style.display = 'block';
-//     } else {
-//       document.body.style.overflowY = 'visible';
-//       navBar.style.display = 'none';
-//     }
-//   };
-// };
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (!navOverlay) return
+    navOverlay.classList.add('hidden');
+    navOverlay.classList.remove('fade-into');
+  });
+});
+
+function toggleNavOverlay(): void {
+  if (!navOverlay) return;
+  const isHidden = navOverlay.classList.contains('hidden');
+  navOverlay.classList.toggle('hidden');
+  navOverlay.classList.toggle('fade-into', isHidden);
+}
+
 
 // scroll into view
 function scrollToView(element: HTMLElement) {

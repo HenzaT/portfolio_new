@@ -93,6 +93,7 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .home-arrow {display: block;}
   .project-all, .music-all {
     width: 70%;
   }

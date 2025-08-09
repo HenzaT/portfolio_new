@@ -4,6 +4,7 @@
 .about-card {
   background-color: var(--light);
   padding: 20px;
+  height: 90%;
   border-radius: 20px;
   box-shadow: var(--shadow);
   position: relative;
@@ -111,24 +112,6 @@ iframe {
   .project-info {height: 59%;}
   .project-title p, .album-title p {margin-top: -19px;}
   .project-card-overlay.show, .album-card-overlay.show {height: 81%;}
-  #experience-text-box {height: 51%;}
-  #interests-text-box {height: 43%;}
-  #education-text-box {height: 54%;}
-}
-@media only screen and (max-width: 589px) {#experience-text-box {height: 54%;}}
-@media only screen and (max-width: 546px) {#experience-text-box {height: 57%;}}
-@media only screen and (max-width: 521px) {#interests-text-box {height: 48%;}}
-@media only screen and (max-width: 474px) {#experience-text-box {height: 61%;}}
-
-@media only screen and (max-width: 435px) {
-  #experience-text-box {height: 61%;}
-  #interests-text-box {height: 51%;}
-  #education-text-box {height: 54%;}
-}
-@media only screen and (max-width: 375px) {
-  #experience-text-box {height: 65%;}
-  #interests-text-box {height: 51%;}
-  #education-text-box {height: 57%;}
 }
 
 @media only screen and (min-width: 601px) {
@@ -137,28 +120,13 @@ iframe {
   .project-info {height: 59%;}
   .project-title p, .album-title p {margin-top: -19px;}
   .project-card-overlay.show, .album-card-overlay.show {height: 81%;}
-  #experience-text-box {height: 51%;}
-  #interests-text-box {height: 43%;}
-  #education-text-box {height: 54%;}
 }
-@media only screen and (min-width: 621px) {#interests-text-box {height: 39%;}}
-@media only screen and (min-width: 682px) {#experience-text-box {height: 48%;}}
+
 @media only screen and (min-width: 768px) {
   .music-card {width: 60vw;}
   .contact-card {width: 50vw;}
-  #experience-text-box {height: 56%;}
-  #interests-text-box {height: 47%;}
-  #education-text-box {height: 54%;}
 }
-@media only screen and (min-width: 834px) {#interests-text-box {height: 43%;}}
-@media only screen and (min-width: 876px) {#experience-text-box {height: 53%;}}
-@media only screen and (min-width: 943px) {#experience-text-box {height: 50%;}}
-@media only screen and (min-width: 993px) {#interests-text-box {height: 38%;}}
-@media only screen and (min-width: 1090px) {
-  #experience-text-box {height: 47%;}
-  #interests-text-box {height: 38%;}
-  #education-text-box {height: 54%;}
-}
+
 @media only screen and (min-width: 1210px) {
   .music-card {width: 40vw;}
   .contact-card {width: 30vw;}
@@ -166,7 +134,6 @@ iframe {
   .project-title p, .album-title p {margin-top: 0px;}
   .project-info {height: 55%;}
   .project-card-overlay.show, .album-card-overlay.show {height: 85%;}
-  #experience-text-box, #education-text-box, #interests-text-box {height: 62%;}
 }
 @media only screen and (min-width: 1255px) {
   #experience-text-box, #education-text-box, #interests-text-box {height: 60%;}

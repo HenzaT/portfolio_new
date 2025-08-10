@@ -340,6 +340,9 @@ burgerMenu?.addEventListener('click', () => {
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
     if (!navOverlay) return
+    lineOne?.classList.remove('clicked-down');
+    lineTwo?.classList.remove('hidden');
+    lineThree?.classList.remove('clicked-up');
     navOverlay.classList.add('hidden');
     navOverlay.classList.remove('fade-into');
   });

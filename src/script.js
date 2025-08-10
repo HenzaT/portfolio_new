@@ -313,6 +313,9 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         if (!navOverlay)
             return;
+        lineOne === null || lineOne === void 0 ? void 0 : lineOne.classList.remove('clicked-down');
+        lineTwo === null || lineTwo === void 0 ? void 0 : lineTwo.classList.remove('hidden');
+        lineThree === null || lineThree === void 0 ? void 0 : lineThree.classList.remove('clicked-up');
         navOverlay.classList.add('hidden');
         navOverlay.classList.remove('fade-into');
     });

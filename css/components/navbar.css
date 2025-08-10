@@ -79,11 +79,11 @@
 
 .clicked-down {
   -webkit-transform: rotate(45deg) translate(10px, 10px);
-  transform: rotate(45deg) translate(10px, 10px);
+  transform: rotate(45deg) translate(11px, 8px);
 }
 .clicked-up {
   -webkit-transform: rotate(-45deg) translate(10px, -10px);
-  transform: rotate(-45deg) translate(6px, -10px);
+  transform: rotate(-45deg) translate(10px, -8px);
 }
 
 .mobile-navbar {

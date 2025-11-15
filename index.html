@@ -18,29 +18,29 @@
   <nav class="navbar">
     <div class="navbar-links">
       <div class="top-nav">
-        <a class="nav-link active" id="home-link" href="#home"><h3>Home</h3></a>
-        <a class="nav-link" href="#projects"><h3>Projects</h3></a>
-        <a class="nav-link" href="#skills"><h3>Skills</h3></a>
-        <a class="nav-link" href="#about"><h3>About</h3></a>
-        <a class="nav-link" href="#music"><h3>Music</h3></a>
-        <a class="nav-link" href="#contact"><h3>Contact</h3></a>
+        <a href="#home" class="nav-link active" id="home-link" aria-label="internal link to top and home section"><h3>Home</h3></a>
+        <a href="#projects" class="nav-link" aria-label="internal link to projects section"><h3>Projects</h3></a>
+        <a href="#skills" class="nav-link" aria-label="internal link to skills section"><h3>Skills</h3></a>
+        <a href="#about" class="nav-link" aria-label="internal link to about section"><h3>About</h3></a>
+        <a href="#music" class="nav-link" aria-label="internal link to music section"><h3>Music</h3></a>
+        <a href="#contact" class="nav-link" aria-label="internal link to contact section"><h3>Contact</h3></a>
       </div>
     </div>
   </nav>
   <div class="mobile-navbar">
-    <div class="burger-menu">
+    <div class="burger-menu" aria-label="clickable burger menu">
       <span class="line line1"></span>
       <span class="line line2"></span>
       <span class="line line3"></span>
     </div>
     <div class="nav-overlay hidden">
       <ul>
-        <li><a class="nav-link active" id="home-link" href="#home"><h3>Home</h3></a></li>
-        <li><a class="nav-link" href="#projects"><h3>Projects</h3></a></li>
-        <li><a class="nav-link" href="#skills"><h3>Skills</h3></a></li>
-        <li><a class="nav-link" href="#about"><h3>About</h3></a></li>
-        <li><a class="nav-link" href="#music"><h3>Music</h3></a></li>
-        <li><a class="nav-link" href="#contact"><h3>Contact</h3></a></li>
+        <li><a href="#home" class="nav-link active" id="home-link" aria-label="internal link to top and home section"><h3>Home</h3></a></li>
+        <li><a href="#projects" class="nav-link" aria-label="internal link to projects section"><h3>Projects</h3></a></li>
+        <li><a href="#skills" class="nav-link" aria-label="internal link to skills section"><h3>Skills</h3></a></li>
+        <li><a href="#about" class="nav-link" aria-label="internal link to about section"><h3>About</h3></a></li>
+        <li><a href="#music" class="nav-link" aria-label="internal link to music section"><h3>Music</h3></a></li>
+        <li><a href="#contact" class="nav-link" aria-label="internal link to contact section"><h3>Contact</h3></a></li>
       </ul>
     </div>
   </div>
@@ -53,7 +53,7 @@
             <h1><span class="highlight">Henry </span>Thomas</h1>
           </div>
           <div class="banner-text-right">
-            <h1>Software <span class="highlight">Developer</span></h1>
+            <h1>Software <span class="highlight">Engineer</span></h1>
           </div>
         </div>
         <div class="about-chevron" id="top-chevron">
@@ -68,14 +68,14 @@
       <!-- Projects -->
       <section class="projects" id="projects">
         <div class="project-all">
-          <h1 class="section-title small hide">Projects</h1>
+          <h2 class="section-title small hide">Projects</h2>
           <div class="projects-container hide">
             <!-- Gimme a Song -->
             <div class="project-card">
               <div class="project-card-under">
                 <div class="project-card-header">
                   <div class="project-title">
-                    <h2 class="small">Gimme a Song</h2>
+                    <h3 class="small">Gimme a Song</h3>
                     <p class="small">song idea app for musicians</p>
                   </div>
                   <div class="plus" data-id="1">
@@ -132,7 +132,7 @@
               <div class="project-card-under">
                 <div class="project-card-header">
                   <div class="project-title">
-                    <h2 class="small">React Weather App</h2>
+                    <h3 class="small">React Weather App</h3>
                     <p class="small">Flask & React Weather app</p>
                   </div>
                   <div class="plus" data-id="2">
@@ -181,11 +181,11 @@
               </div>
             </div>
             <!-- Morning Burrito -->
-            <div class="project-card">
+            <!-- <div class="project-card">
               <div class="project-card-under">
                 <div class="project-card-header">
                   <div class="project-title">
-                    <h2 class="small">Morning Burrito</h2>
+                    <h3 class="small">Morning Burrito</h3>
                     <p class="small">mobile app for creative activities</p>
                   </div>
                   <div class="plus" data-id="3">
@@ -235,13 +235,13 @@
                   </a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Blue Horizon -->
-            <div class="project-card">
+            <!-- <div class="project-card">
               <div class="project-card-under">
                 <div class="project-card-header">
                   <div class="project-title">
-                    <h2 class="small">Blue Horizon</h2>
+                    <h3 class="small">Blue Horizon</h3>
                     <p class="small">rental market space for yachts</p>
                   </div>
                   <div class="plus" data-id="4">
@@ -292,13 +292,62 @@
                   </a>
                 </div>
               </div>
+            </div> -->
+
+          <!-- Music page -->
+            <div class="project-card">
+              <div class="project-card-under">
+                <div class="project-card-header">
+                  <div class="project-title">
+                    <h3 class="small">aptist music page</h3>
+                    <p class="small">Music Portfolio Site</p>
+                  </div>
+                  <div class="plus" data-id="7">
+                    <i class="fa-solid fa-plus" alt="plus icon"></i>
+                  </div>
+                </div>
+                <div class="project-image" data-id="7">
+                  <img src="css/assets/aptist-website.jpeg" alt="aptist website picture">
+                </div>
+              </div>
+              <div class="project-card-overlay" data-id="7">
+                <div class="project-info">
+                  <p>
+                    This is a site to showcase my music. I consolidated my knowledge of <span class="highlight">React</span>,
+                    <span class="highlight">TypeScript</span> and data handling through props.
+                    I knew I wanted to have multiple pages, so I used react router and react spring to animate between pages.
+                    I also incorporated emailjs and recaptcha for simple contact functionality.
+                    After running the website through an accessibility checker, I implemented changes to make my website
+                    more accessible.
+                  </p>
+                </div>
+                <div class="icons-container">
+                  <div class="devicon">
+                    <i class="devicon-react-original" alt="react js icon"></i>
+                  </div>
+                  <div class="devicon">
+                    <i class="devicon-typescript-plain" alt="typescript icon"></i>
+                  </div>
+                  <div class="devicon">
+                    <i class="devicon-vitejs-plain" alt="vite js icon"></i>
+                  </div>
+                </div>
+                <div class="project-links">
+                  <a href="https://react-weather-claude-app-af1fc23c96a1.herokuapp.com/" target="_blank">
+                    <i class="fa-solid fa-link" alt="url link icon"></i>
+                  </a>
+                  <a href="https://github.com/HenzaT/music-page-copy" target="_blank">
+                    <i class="fa-brands fa-github" alt="github icon"></i>
+                  </a>
+                </div>
+              </div>
             </div>
             <!-- Portfolio -->
             <div class="project-card">
               <div class="project-card-under">
                 <div class="project-card-header">
                   <div class="project-title">
-                    <h2 class="small">Portfolio</h2>
+                    <h3 class="small">Portfolio</h3>
                     <p class="small">personal portfolio for projects</p>
                   </div>
                   <div class="plus" data-id="5">
@@ -350,7 +399,7 @@
               <div class="project-card-under">
                 <div class="project-card-header">
                   <div class="project-title">
-                    <h2 class="small">The Country Club.</h2>
+                    <h3 class="small">The Country Club.</h3>
                     <p class="small">countries app (in progress)</p>
                   </div>
                   <div class="plus" data-id="6">
@@ -412,7 +461,7 @@
         <!-- Skills -->
       <section class="skills" id="skills">
         <div class="skills-header">
-          <h1 class="section-title small hide">Skills</h1>
+          <h2 class="section-title small hide">Skills</h2>
         </div>
         <div class="card-and-button-container hide" id="skills-card-button">
           <div class="skills-container">
@@ -427,6 +476,9 @@
             </div>
             <div class="devicon" id="python">
               <i class="devicon-python-plain" alt="python icon"></i>
+            </div>
+            <div class="devicon" id="perl">
+              <i class="devicon-perl-plain" alt="perl icon"></i>
             </div>
             <div class="devicon" id="rails">
               <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
@@ -458,6 +510,9 @@
             <div class="devicon" id="postgres">
               <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
             </div>
+            <div class="devicon" id="mysql">
+              <i class="devicon-mysql-original" alt="mysql icon"></i>
+            </div>
           </div>
           <div class="skills-radio">
             <input class="radio-input" type="radio" id="languages" name="about" value="languages">
@@ -477,12 +532,12 @@
       <!-- About -->
       <section class="about" id="about">
         <div class="about-header">
-          <h1 class="section-title small hide">About Me</h1>
+          <h2 class="section-title small hide">About Me</h2>
         </div>
         <div class="card-and-button-container" id="about-card-container">
           <div class="about-container">
             <div class="about-card fade hide" id="interests-card">
-              <h2 class="about-title" id="interests-title">Background</h2>
+              <h3 class="about-title" id="interests-title">Background</h3>
               <div class="about-info" id="interests-text-box">
                 <p id="interests-text">
                 My passion for tech started when I began writing and recording my own music.
@@ -504,14 +559,13 @@
               </div> -->
             </div>
             <div class="about-card expand hide" id="experience-card">
-              <h2 class="about-title" id="experience-title">About</h2>
+              <h3 class="about-title" id="experience-title">About</h3>
               <div class="about-info" id="experience-text-box">
                 <p id="experience-text">
-                  I'm a software developer with a background in education, passionate about building intuitive,
+                  I'm a software engineer with a background in education, passionate about building intuitive,
                   user-focused products. I love bringing ideas to life: whether it's a website, a lesson, or a song.
-                  I'm especially drawn to smooth UX and the back-end systems that support seamless interactivity.
-                  With 5+ years of teaching experience, I bring strong <span class="highlight">communication</span> and
-                  <span class="highlight">collaboration</span> skills to every team.
+                  I have experience building responsive websites, building servers, and b2b IT support.
+                  I'm currently consolidating my knowledge of Perl, Linux and scripting languages.
                 </p>
               </div>
               <!-- <div class="icons-container" id="experience-icons">
@@ -527,7 +581,7 @@
               </div> -->
             </div>
             <div class="about-card fade hide" id="education-card">
-              <h2 class="about-title" id="education-title">Interests</h2>
+              <h3 class="about-title" id="education-title">Interests</h3>
               <div class="about-info" id="education-text-box">
                 Outside of coding and tech, I write and produce my own <a href="#music"><span class="highlight">music</span></a>
                 as well as play bass guitar in a band.
@@ -570,150 +624,8 @@
       <!-- Music -->
       <section class="music" id="music">
         <div class="music-all">
-          <h1 class="section-title small hide">My Music</h1>
+          <h2 class="section-title small hide">My Music</h2>
           <div class="music-container">
-            <div class="all-albums hide">
-              <!-- Later Single -->
-              <div class="album-card">
-                <div class="album-card-under">
-                  <div class="album-card-header">
-                    <div class="album-title">
-                      <h2 class="small">Later</h2>
-                      <p class="small">2025</p>
-                    </div>
-                    <div class="music-plus" data-id="6">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="album-art" data-id="6">
-                    <img src="./css/assets/later.jpeg" alt="album cover for Later" loading="lazy">
-                  </div>
-                </div>
-                <div class="album-card-overlay" data-id="6">
-                  <div class="iframe-box">
-                    <iframe
-                      src="https://open.spotify.com/embed/album/3ZtJJdL1J1frqflqiJXUeS?utm_source=generator"
-                      loading="lazy"
-                      frameBorder="0"
-                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                      allowfullscreen=""
-                      loading="lazy">
-                    </iframe>
-                  </div>
-                <div class="album-info">
-                  <ol>
-                    <li>Later</li>
-                    <li>Close Your Eyes</li>
-                  </ol>
-                </div>
-                </div>
-              </div>
-              <!-- April Tea Single -->
-              <div class="album-card">
-                <div class="album-card-under">
-                  <div class="album-card-header">
-                    <div class="album-title">
-                      <h2 class="small">April Tea</h2>
-                      <p class="small">2025</p>
-                    </div>
-                    <div class="music-plus" data-id="7">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="album-art" data-id="7">
-                    <img src="./css/assets/april-tea.jpg" alt="album cover for April Tea" loading="lazy">
-                  </div>
-                </div>
-                <div class="album-card-overlay" data-id="7">
-                  <div class="iframe-box">
-                    <iframe
-                      src="https://open.spotify.com/embed/album/7GryBSuk2PyH2CummeI0bP?utm_source=generator&theme=0"
-                      loading="lazy"
-                      frameBorder="0"
-                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                      allowfullscreen=""
-                      loading="lazy">
-                    </iframe>
-                  </div>
-                <div class="album-info">
-                  <ol>
-                    <li>April Tea</li>
-                  </ol>
-                </div>
-                </div>
-              </div>
-              <!-- Sundown EP -->
-              <div class="album-card">
-                <div class="album-card-under">
-                  <div class="album-card-header">
-                    <div class="album-title">
-                      <h2 class="small">Sundown</h2>
-                      <p class="small">2024</p>
-                    </div>
-                    <div class="music-plus" data-id="8">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="album-art" data-id="8">
-                    <img src="./css/assets/sundown.png" alt="album cover for Sundown" loading="lazy">
-                  </div>
-                </div>
-                <div class="album-card-overlay" data-id="8">
-                  <div class="iframe-box">
-                    <iframe
-                      src="https://open.spotify.com/embed/album/3vtjwdLmkB4sKiPppbguXC?utm_source=generator&theme=0"
-                      loading="lazy"
-                      frameBorder="0"
-                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                      allowfullscreen=""
-                      loading="lazy">
-                    </iframe>
-                  </div>
-                  <div class="album-info">
-                    <ol>
-                      <li>Sundown</li>
-                      <li>Balance</li>
-                      <li>Think of June</li>
-                      <li>Gatehouse</li>
-                    </ol>
-                  </div>
-                </div>
-              </div>
-              <!-- Reflections Single -->
-              <div class="album-card">
-                <div class="album-card-under">
-                  <div class="album-card-header">
-                    <div class="album-title">
-                      <h2 class="small">Reflections</h2>
-                      <p class="small">2021</p>
-                    </div>
-                    <div class="music-plus" data-id="9">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="album-art" data-id="9">
-                    <img src="./css/assets/reflections.jpeg" alt="album cover for Reflections" loading="lazy">
-                  </div>
-                </div>
-                <div class="album-card-overlay" data-id="9">
-                  <div class="iframe-box">
-                    <iframe
-                      src="https://open.spotify.com/embed/album/3Rw7vetIADv1dPBpwoUHpB?utm_source=generator&theme=0"
-                      loading="lazy"
-                      frameBorder="0"
-                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                      allowfullscreen=""
-                      loading="lazy">
-                    </iframe>
-                  </div>
-                  <div class="album-info">
-                    <ol>
-                      <li>Reflections</li>
-                    </ol>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="music-card">
               <p>
                 As this is a creative portfolio, I wanted to also show my other creative output, music.

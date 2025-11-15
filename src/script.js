@@ -62,7 +62,8 @@ const languageIcons = [
     document.getElementById('ruby'),
     document.getElementById('js'),
     document.getElementById('ts'),
-    document.getElementById('python')
+    document.getElementById('python'),
+    document.getElementById('perl')
 ];
 const frameworkIcons = [
     document.getElementById('rails'),
@@ -78,7 +79,8 @@ const toolIcons = [
     document.getElementById('sass')
 ];
 const dbIcons = [
-    document.getElementById('postgres')
+    document.getElementById('postgres'),
+    document.getElementById('mysql')
 ];
 const iconGroups = {
     languages: languageIcons,

@@ -25,7 +25,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.project-card:hover, .album-card:hover {transform: scale(1.03);}
+.project-card:hover, .album-card:hover {transform: scale(1.02);}
 
 .project-card-header, .album-card-header {
   /* text-align: center; */

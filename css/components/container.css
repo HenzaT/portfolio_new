@@ -2,7 +2,7 @@
 .banner {
   position: relative;
   width: 100%;
-  min-height: 80vh;
+  min-height: 80dvh;
   padding: 0px 0px 55px 0px;
 }
 
@@ -47,7 +47,6 @@
 .projects-container {
   display: grid;
   gap: 40px;
-  margin-top: -25px;
 }
 
 /* skills container */
@@ -57,14 +56,14 @@
   text-align: center;
 }
 
-.skills-header h1 {
+/* .skills-header h2 {
   margin-bottom: 20px;
-}
+} */
 
 .skills-container {
   background-color: var(--light);
   padding: 20px;
-  margin: 20px;
+  margin-bottom: 20px;
   border-radius: 20px;
   display: inline-grid;
   box-shadow: var(--shadow);
@@ -78,9 +77,9 @@
   gap: 15px;
 }
 
-#about-card-container {
+/* #about-card-container {
   margin-top: -25px;
-}
+} */
 
 .all-albums {
   display: grid;
@@ -102,7 +101,6 @@
   }
   .projects-container, .all-albums {
     grid-template-columns: repeat(1, 1fr);
-    margin-top: -45px;
   }
   .skills-container {
     grid-template-columns: repeat(3, 1fr);

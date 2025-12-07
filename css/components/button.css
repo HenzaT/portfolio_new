@@ -73,6 +73,25 @@
   color: black;
 }
 
+/* button to music portfolio */
+.music-site-link {
+  text-align: center;
+  margin: auto;
+  margin: 20px 0 10px 0;
+}
+
+.music-site-link > a {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 30px;
+  background: var(--pink);
+  transition: all 0.2s ease-in-out;
+}
+
+.music-site-link > a:hover {
+  background: var(--selected);
+}
+
 @media only screen and (max-width: 600px) {
   .home-arrow {display: none;}
   .radio-label {

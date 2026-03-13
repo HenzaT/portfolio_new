@@ -1,0 +1,79 @@
+// abstracts
+@use 'abstracts/mixins';
+@use 'abstracts/variables';
+
+// base
+@use 'base/_base';
+
+// components
+@use 'components/banner';
+@use 'components/button';
+@use 'components/card';
+@use 'components/container';
+@use 'components/icon';
+@use 'components/keyframes';
+
+// layout
+@use 'layout/navbar';
+@use 'layout/header';
+@use 'layout/projects';
+
+// themes
+
+h1, .contact h3 {
+  color: var(--light);
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+h2 {
+  color: var(--light);
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+h3 {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.main {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+  background-image: linear-gradient(
+    -45deg,
+    var(--grad-blue),
+    var(--grad-darker-blue),
+    rgba(104, 84, 20, 0.429),
+    var(--grad-dark-blue),
+    rgba(113, 14, 93, 0.35),
+    var(--grad-darkest-blue)
+  );
+}
+
+.section-title {font-size: 3rem;}
+
+.hide {opacity: 0;}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.highlight {
+  color: var(--selected);
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.project-all h2, .music-all h2, .about-card h3, .album-card-overlay {text-align: center;}

@@ -1,0 +1,140 @@
+/* back to home arrow */
+.home-arrow {
+  padding: 10px;
+  margin: 30px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--black);
+  display: inline-block;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 100;
+  transition: opacity 0.3s, visibility 0.3s ease;
+}
+
+.home-arrow i {
+  font-size: 20px;
+  color: var(--light);
+}
+
+/* to about section arrow */
+.about-chevron {
+  font-size: 3rem;
+  color: var(--light);
+  opacity: 0.5;
+  text-align: center;
+  margin-top: 170px;
+}
+
+.about-chevron.slide-up-dark {
+  animation-delay: 5s;
+  animation: slideUpDark 3s ease;
+}
+
+/* plus button project */
+.plus, .music-plus {
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--black);
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+}
+
+.rotate {transform: rotate(45deg);}
+
+/* radio buttons */
+.radio, .skills-radio {
+  display: inline-flex;
+  overflow: hidden;
+  margin: 0px 0px 20px 0px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px var(--dark-grey);
+  text-align: center;
+  height: 100%;
+}
+
+.radio-input {display: none;}
+
+.radio-label {
+  padding: 8px 14px;
+  color: var(--light);
+  background-color: var(--black);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.radio-label:not(:last-of-type) {border-right: 1px solid var(--grey);}
+
+.radio-input:checked + .radio-label {
+  background-color: var(--selected);
+  color: black;
+}
+
+/* button to music portfolio */
+.music-site-link {
+  text-align: center;
+  margin: auto;
+  margin: 20px 0 10px 0;
+}
+
+.music-site-link > a {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 30px;
+  background: var(--pink);
+  transition: all 0.2s ease-in-out;
+}
+
+.music-site-link > a:hover {
+  background: var(--selected);
+}
+
+@media only screen and (max-width: 600px) {
+  .home-arrow {display: none;}
+  .radio-label {
+    width: 16vw;
+    font-size: 12px;
+  }
+  .about-chevron {
+    margin-top: 18px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .home-arrow {display: none;}
+  .radio-label {
+    width: 12vw;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .home-arrow {display: block;}
+  .project-all, .music-all {
+    width: 70%;
+  }
+  .radio-label {
+    width: 8vw;
+    font-size: 14px;
+  }
+  #mobile-chevron {
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (min-width: 1210px) {
+  .home-arrow {display: block;}
+  .project-all, .music-all {
+    width: 70%;
+  }
+  .radio-label {
+    width: 6vw;
+    font-size: 14px;
+  }
+  #mobile-chevron {
+    margin-top: 0px;
+  }
+}

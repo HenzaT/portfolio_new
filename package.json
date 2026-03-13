@@ -1,0 +1,27 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This is a portfolio website to showcase my projects, skills and interests.",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --watch styles/style.scss styles/style.css",
+    "ts:watch": "tsc --watch",
+    "dev": "npm run sass:watch & npm run ts:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenzaT/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/HenzaT/portfolio/issues"
+  },
+  "homepage": "https://github.com/HenzaT/portfolio#readme",
+  "devDependencies": {
+    "sass": "^1.98.0",
+    "typescript": "^5.9.3"
+  }
+}

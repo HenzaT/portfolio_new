@@ -1,0 +1,15 @@
+@use '../abstracts/mixins' as mixin;
+@use '../abstracts/variables' as vars;
+
+nav {
+  @include mixin.flex-row;
+  justify-content: space-between;
+  height: 10dvh;
+  background: vars.$dark-blue;
+  color: vars.$light-text;
+  padding: vars.$page-padding;
+
+  p {
+    font-size: 1.5rem;
+  }
+}

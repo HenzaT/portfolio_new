@@ -1,0 +1,152 @@
+/* general card styling */
+
+/* about card */
+.about-card {
+  background-color: var(--light);
+  padding: 20px;
+  height: 90%;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+}
+
+.about-info li {margin-bottom: 20px;}
+
+/* project card and music album card */
+.project-card, .album-card {
+  position: relative;
+  border-radius: 20px;
+  background-color: var(--light);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover, .album-card:hover {transform: scale(1.02);}
+
+.project-card-header, .album-card-header {
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.project-title, .album-title {width: 70%;}
+
+.project-info {
+  width: 90%;
+  margin: auto;
+}
+
+.project-image, .album-art {overflow: hidden;}
+
+.project-image img, .album-art img {
+  border-radius: 0px 0px 20px 20px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  background-size: cover;
+}
+
+.project-image img {height: 350px;}
+
+.album-art img {height: auto}
+
+.project-card-overlay, .album-card-overlay {
+  position: absolute;
+  bottom: 85%;
+  left: 0;
+  right: 0;
+  background-color: var(--light);
+  border-radius: 0px 0px 20px 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.project-card-overlay.show, .album-card-overlay.show {bottom: 0;}
+
+/* music card */
+.music-card {
+  background-color: var(--light);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  margin: auto;
+  margin-top: 50px;
+}
+
+.iframe-box {
+  margin-top: 10px;
+  height: 60%;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+}
+
+.album-info {
+  display: inline-block;
+  text-align: left;
+}
+
+/* contact card */
+.contact-card {
+  border-radius: 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .music-card, .contact-card {width: 70vw;}
+  .project-info {height: 59%;}
+  .project-title p, .album-title p {margin-top: -19px;}
+  .project-card-overlay.show, .album-card-overlay.show {height: 81%;}
+}
+
+@media only screen and (min-width: 601px) {
+  .music-card {width: 60vw;}
+  .contact-card {width: 50vw;}
+  .project-info {height: 59%;}
+  .project-title p, .album-title p {margin-top: -19px;}
+  .project-card-overlay.show, .album-card-overlay.show {height: 81%;}
+}
+
+@media only screen and (min-width: 768px) {
+  .music-card {width: 60vw;}
+  .contact-card {width: 50vw;}
+}
+
+@media only screen and (min-width: 1210px) {
+  .music-card {width: 40vw;}
+  .contact-card {width: 30vw;}
+  .small {line-height: 30%;}
+  .project-title p, .album-title p {margin-top: 0px;}
+  .project-info {height: 55%;}
+  .project-card-overlay.show, .album-card-overlay.show {height: 85%;}
+}
+@media only screen and (min-width: 1255px) {
+  #experience-text-box, #education-text-box, #interests-text-box {height: 60%;}
+}
+@media only screen and (min-width: 1280px) {
+  #experience-text-box, #education-text-box, #interests-text-box {height: 58%;}
+}
+@media only screen and (min-width: 1434px) {
+  #experience-text-box, #education-text-box, #interests-text-box {height: 56%;}
+}
+@media only screen and (min-width: 1524px) {
+  #experience-text-box, #education-text-box, #interests-text-box {height: 54%;}
+}
+@media only screen and (min-width: 1741px) {
+  #experience-text-box, #education-text-box, #interests-text-box {height: 52%;}
+}

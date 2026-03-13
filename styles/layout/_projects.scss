@@ -1,0 +1,10 @@
+@use '../abstracts/mixins' as mixin;
+@use '../abstracts/variables' as vars;
+
+section#projects {
+  .section-info {
+    @include mixin.flex-col;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+}

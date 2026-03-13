@@ -1,0 +1,47 @@
+.banner h1 {
+  font-size: 5rem;
+  color: white;
+  margin: 60px 0px 0px 0px;
+}
+
+.banner-text-section {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text-section > * {margin: 0;}
+
+@media only screen and (max-width: 600px) {
+  .banner-text-section {
+    text-align: center;
+    margin-top: 0px;
+  }
+  .banner-text-left, .banner-text-right {
+    margin: 0px;
+  }
+  .banner-text-right h1 span.highlight {font-size: 4.5rem;}
+}
+
+@media only screen and (min-width: 600px) {
+  .banner-text-section {
+    text-align: center;
+  }
+  .banner-text-left, .banner-text-right {
+    margin: 0px;
+  }
+}
+
+@media only screen and (min-width: 1210px) {
+  .banner-text-left {
+    margin: 0px;
+    transform: translateX(-154px);
+  }
+  .banner-text-right {
+    margin: 0px;
+    transform: translateX(192px);
+  }
+}

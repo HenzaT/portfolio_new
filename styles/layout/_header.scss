@@ -1,0 +1,9 @@
+@use '../abstracts/mixins' as mixin;
+@use '../abstracts/variables' as vars;
+
+header {
+  @include mixin.flex-col;
+  gap: 1rem;
+  margin: 7rem 0 2rem 0;
+  padding: vars.$page-padding;
+}

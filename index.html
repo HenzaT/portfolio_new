@@ -35,53 +35,273 @@
     <!-- main content -->
     <main>
       <section id="projects">
-        <div class="section-info">
-          <h2>Projects</h2>
-          <p>
-            These are my self-directed projects. As I learn new skills and practise old ones,
-            I often return to past projects to improve or even redesign them.
-          </p>
+        <h2>Projects</h2>
+        <div class="grid">
+          <!-- Therapy Website -->
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="/assets/aptist-website.jpeg" alt="therapy website picture" width="100" height="100">
+            </div>
+            <h3 class="project-card__title">Therapy Website</h3>
+            <h4 class="project-card__tagline">professional website for therapist client</h4>
+            <div class="project-card__tech-icons-container">
+              <i class="devicon-react-original" alt="react js icon"></i>
+              <i class="devicon-typescript-plain" alt="typescript icon"></i>
+              <i class="devicon-sass-original" alt="sass icon"></i>
+              <i class="devicon-vitejs-plain" alt="vite js icon"></i>
+              <i class="devicon-netlify-plain" alt="netlify icon"></i>
+            </div>
+            <div class="project-card__links">
+              <a href="https://aptistmusic.com/">
+                <i class="fa-solid fa-link" alt="url link icon"></i>
+              </a>
+              <a href="https://github.com/HenzaT/music-page-copy">
+                <i class="fa-brands fa-github" alt="github icon"></i>
+              </a>
+            </div>
+            <p class="project-card__description">
+              I worked collaboratively with a client to build this professional website.
+              It is fully responsive, with different components rendered depending on screen size.
+              Integrated Netlify forms for form-handling, and Decap CMS to allow
+              the client to edit content easily. (This is a private repo).
+            </p>
+          </article>
+          <!-- Gimme a Song -->
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="/assets/gimme-a-song-1.jpeg" alt="gimme a song website picture" width="100" height="100">
+            </div>
+            <h3 class="project-card__title">Gimme a Song</h3>
+            <h4 class="project-card__tagline">song idea app for musicians</h4>
+            <div class="project-card__tech-icons-container">
+              <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
+              <i class="devicon-javascript-plain" alt="javascript icon"></i>
+              <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
+              <i class="devicon-sass-original" alt="sass icon"></i>
+              <i class="devicon-bootstrap-plain-wordmark" alt="bootstrap icon"></i>
+              <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
+            </div>
+            <div class="project-card__links">
+              <a href="https://gimme-a-song-75fdbe92334c.herokuapp.com/">
+                <i class="fa-solid fa-link" alt="url link icon"></i>
+              </a>
+              <a href="https://github.com/HenzaT/gimme-a-song">
+                <i class="fa-brands fa-github" alt="github icon"></i>
+              </a>
+            </div>
+            <p class="project-card__description">
+              A self-directed project built to help musicians overcome writer's block by generating random song elements.
+              Built using <span class="highlight">Ruby on Rails</span>,
+              <span class="highlight">PostgreSQL</span>, and <span class="highlight">JavaScript</span>.
+              The front end communicates with the back end via the <span class="highlight">Fetch API</span>
+              for dynamic data handling. I also integrated Devise for user authentication and implemented
+              CSRF protection to ensure secure user interactions.
+            </p>
+          </article>
+          <!-- Flask / React Weather App -->
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="/assets/weather-app.jpeg" alt="react weather website picture" width="100" height="100">
+            </div>
+            <h3 class="project-card__title">React Weather</h3>
+            <h4 class="project-card__tagline">flask & react weather app</h4>
+            <div class="project-card__tech-icons-container">
+              <i class="devicon-react-original" alt="react js icon"></i>
+              <i class="devicon-flask-original" alt="flask icon"></i>
+              <i class="devicon-python-plain" alt="python icon"></i>
+              <i class="devicon-typescript-plain" alt="typescript icon"></i>
+            </div>
+            <div class="project-card__links">
+              <a href="https://react-weather-claude-app-af1fc23c96a1.herokuapp.com/">
+                <i class="fa-solid fa-link" alt="url link icon"></i>
+              </a>
+              <a href="https://github.com/HenzaT/react-weather-app">
+                <i class="fa-brands fa-github" alt="github icon"></i>
+              </a>
+            </div>
+            <p class="project-card__description">
+              I built this full-stack application to solidify my understanding of <span class="highlight">React</span>
+              and <span class="highlight">TypeScript</span>.
+              The app integrates a <span class="highlight">Flask</span> backend and
+              consumes <span class="highlight">external APIs</span>:
+              <span class="highlight">OpenWeather</span> for real-time weather data and the
+              <span class="highlight">Claude AI</span> API from Anthropic for activity suggestions.
+              My focus was on creating smooth UX,
+              while deepening my knowledge of asynchronous data handling and API integration.
+            </p>
+          </article>
+          <!-- Music Portfolio Website -->
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="/assets/aptist-website.jpeg" alt="aptist website picture" width="100" height="100">
+            </div>
+            <h3 class="project-card__title">aptist music</h3>
+            <h4 class="project-card__tagline">music portfolio website</h4>
+            <div class="project-card__tech-icons-container">
+              <i class="devicon-react-original" alt="react js icon"></i>
+              <i class="devicon-typescript-plain" alt="typescript icon"></i>
+              <i class="devicon-css3-plain-wordmark" alt="css3 icon"></i>
+              <i class="devicon-vitejs-plain" alt="vite js icon"></i>
+            </div>
+            <div class="project-card__links">
+              <a href="https://aptistmusic.com/" target="_blank">
+                <i class="fa-solid fa-link" alt="url link icon"></i>
+              </a>
+              <a href="https://github.com/HenzaT/music-page-copy" target="_blank">
+                <i class="fa-brands fa-github" alt="github icon"></i>
+              </a>
+            </div>
+            <p class="project-card__description">
+              This is a site to showcase my music. I consolidated my knowledge of <span class="highlight">React</span>,
+              <span class="highlight">TypeScript</span> and data handling through props.
+              I knew I wanted to have multiple pages, so I used react router and react spring.
+              I also incorporated emailjs and recaptcha for simple contact functionality and implemented changes to make my website
+              more accessible.
+            </p>
+          </article>
+          <!-- Coding Portfolio Website -->
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="/assets/portfolio.jpeg" alt="portfolio website picture" width="100" height="100">
+            </div>
+            <h3 class="project-card__title">Portfolio</h3>
+            <h4 class="project-card__tagline">personal portfolio for projects</h4>
+            <div class="project-card__tech-icons-container">
+              <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
+              <i class="devicon-sass-original" alt="sass icon"></i>
+              <i class="devicon-typescript-plain" alt="typescript icon"></i>
+            </div>
+            <div class="project-card__links">
+              <a href="#projects">
+                <i class="fa-solid fa-link" alt="url link icon"></i>
+              </a>
+              <a href="https://github.com/HenzaT/portfolio">
+                <i class="fa-brands fa-github" alt="github icon"></i>
+              </a>
+            </div>
+            <p class="project-card__description">
+              This portfolio served as an opportunity to consolidate my
+              <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, and
+              <span class="highlight">JavaScript</span> skills.
+              I focused on design, animation, and JavaScript DOM manipulation,
+              while also applying newly learned <span class="highlight">TypeScript</span> concepts.
+              This project reflects my growing front-end capabilities and informs improvements
+              across both past and future projects.
+            </p>
+          </article>
+          <!-- The Country Club -->
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="/assets/country-club.jpeg" alt="country club website picture" width="100" height="100">
+            </div>
+            <h3 class="project-card__title">The Country Club</h3>
+            <h4 class="project-card__tagline">web application for exploring countries (in progress)</h4>
+            <div class="project-card__tech-icons-container">
+              <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
+              <i class="devicon-typescript-plain" alt="typescript icon"></i>
+              <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
+              <i class="devicon-sass-original" alt="sass icon"></i>
+              <i class="devicon-vitejs-plain" alt="vite js icon"></i>
+              <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
+            </div>
+            <div class="project-card__links">
+              <a href="https://the-country-club-e3d07af9dd9d.herokuapp.com/">
+                <i class="fa-solid fa-link" alt="url link icon"></i>
+              </a>
+              <a href="https://github.com/HenzaT/the_country_club">
+                <i class="fa-brands fa-github" alt="github icon"></i>
+              </a>
+            </div>
+            <p class="project-card__description">
+              Built using <span class="highlight">Rails</span>,
+              I wanted to practise using <span class="highlight">TypeScript</span>, as well as use
+              multiple <span class="highlight">third-party APIs</span>.
+              Some of the APIs I integrated are the Unsplash and Claude API.
+              After receiving user feedback, I am currently in the middle of an aesthetic
+              redesign, which has helped me to better understand modern design trends.
+              With the frontend in mind, I switched to using <span class="highlight">Vite</span> for optimised performance.
+            </p>
+          </article>
         </div>
-        <!-- Therapy Website -->
-        <article class="project-card">
-          <div class="project-card__image">
-            <img src="css/assets/aptist-website.jpeg" alt="therapy website picture">
-          </div>
-          <h3 class="project-card__title">Therapy Website</h3>
-          <h4 class="project-card__description">Professional website for therapist</h4>
-          <div class="project-card__tech-icons-container">
-            <i class="devicon-react-original" alt="react js icon"></i>
-            <i class="devicon-typescript-plain" alt="typescript icon"></i>
-            <i class="devicon-sass-original" alt="sass icon"></i>
-            <i class="devicon-vitejs-plain" alt="vite js icon"></i>
-            <i class="devicon-netlify-plain" alt="netlify icon"></i>
-          </div>
-          <div class="project-card__links">
-            <a href="https://aptistmusic.com/" target="_blank">
-              <i class="fa-solid fa-link" alt="url link icon"></i>
-            </a>
-            <a href="https://github.com/HenzaT/music-page-copy" target="_blank">
-              <i class="fa-brands fa-github" alt="github icon"></i>
-            </a>
-          </div>
-          <p>
-            I worked collaboratively with a client to build this professional website.
-            It is fully responsive, with different components rendered depending on screen size.
-            Integrated Netlify forms for form-handling, and Decap CMS to allow
-            the client to edit content easily. (This is a private repo).
-          </p>
-        </article>
       </section>
       <section id="skills">
-
-      </section>
-      <section id="music">
-
+        <h2>Skills</h2>
+        <div class="card-and-button-container hide" id="skills-card-button">
+          <div class="skills-container">
+            <div class="devicon" id="ruby">
+              <i class="devicon-ruby-plain-wordmark" alt="ruby icon"></i>
+            </div>
+            <div class="devicon" id="ts">
+              <i class="devicon-typescript-plain" alt="typescript icon"></i>
+            </div>
+            <div class="devicon" id="js">
+              <i class="devicon-javascript-plain" alt="javascript icon"></i>
+            </div>
+            <div class="devicon" id="python">
+              <i class="devicon-python-plain" alt="python icon"></i>
+            </div>
+            <div class="devicon" id="perl">
+              <i class="devicon-perl-plain" alt="perl icon"></i>
+            </div>
+            <div class="devicon" id="rails">
+              <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
+            </div>
+            <div class="devicon" id="bootstrap">
+              <i class="devicon-bootstrap-plain-wordmark" alt="bootstrap icon"></i>
+            </div>
+            <div class="devicon" id="react">
+              <i class="devicon-react-original" alt="react js icon"></i>
+            </div>
+            <div class="devicon" id="html">
+              <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
+            </div>
+            <div class="devicon" id="css">
+              <i class="devicon-css3-plain-wordmark" alt="css3 icon"></i>
+            </div>
+            <div class="devicon" id="sass">
+              <i class="devicon-sass-original" alt="sass icon"></i>
+            </div>
+            <div class="devicon" id="git">
+              <i class="devicon-git-plain-wordmark" alt="git icon"></i>
+            </div>
+            <div class="devicon" id="github">
+              <i class="devicon-github-original-wordmark" alt="github icon"></i>
+            </div>
+            <div class="devicon" id="heroku">
+              <i class="devicon-heroku-original-wordmark" alt="heroku icon"></i>
+            </div>
+            <div class="devicon" id="postgres">
+              <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
+            </div>
+            <div class="devicon" id="mysql">
+              <i class="devicon-mysql-original" alt="mysql icon"></i>
+            </div>
+          </div>
+          <div class="skills-radio">
+            <input class="radio-input" type="radio" id="languages" name="about" value="languages">
+            <label class="radio-label" for="languages">Languages</label>
+            <input class="radio-input" type="radio" id="frameworks" name="about" value="frameworks">
+            <label class="radio-label" for="frameworks">Frameworks</label>
+            <input class="radio-input" type="radio" id="tools" name="about" value="tools">
+            <label class="radio-label" for="tools">Tools</label>
+            <input class="radio-input" type="radio" id="databases" name="about" value="databases">
+            <label class="radio-label" for="databases">Databases</label>
+          </div>
+        </div>
       </section>
       <footer>
-
+        <div class="footer-left">
+          <a href="https://www.linkedin.com/in/henryththomas/">
+            <i class="fa-brands fa-linkedin" alt="linkedin icon"></i>
+          </a>
+          <a href="https://github.com/HenzaT">
+            <i class="fa-brands fa-github" alt="github icon"></i>
+          </a>
+        </div>
+        <a href="mailto:henrykun95@gmail.com">
+          <i class="fa-solid fa-square-envelope" alt="email icon"></i>
+        </a>
       </footer>
-
       <!-- <section class="above-content">
         <section class="banner" id="home">
           <div class="banner-text-section">
@@ -100,602 +320,16 @@
       <!-- <div class="home-arrow hidden">
         <a id="arrow-icon" href="#"><i class="fa-solid fa-arrow-up" alt="arrow up icon"></i></a>
       </div> -->
-      <section class="below-content">
-        <!-- Projects -->
+<!--
         <section class="projects" id="projects">
-          <div class="project-all">
-            <h2 class="section-title small hide">Projects</h2>
-            <div class="projects-container hide">
-              <!-- Gimme a Song -->
-              <div class="project-card">
-                <div class="project-card-under">
-                  <div class="project-card-header">
-                    <div class="project-title">
-                      <h3 class="small">Gimme a Song</h3>
-                      <p class="small">song idea app for musicians</p>
-                    </div>
-                    <div class="plus" data-id="1">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-image bright" data-id="1">
-                    <img src="css/assets/gimme-a-song-1.jpeg" alt="gimme a song website picture">
-                  </div>
-                </div>
-                <div class="project-card-overlay" data-id="1">
-                  <div class="project-info">
-                    <p id="song-project-p">
-                      A self-directed project built to help musicians overcome writer's block by generating random song elements.
-                      Built using <span class="highlight">Ruby on Rails</span>,
-                      <span class="highlight">PostgreSQL</span>, and <span class="highlight">JavaScript</span>.
-                      The front end communicates with the back end via the <span class="highlight">Fetch API</span>
-                      for dynamic data handling. I also integrated Devise for user authentication and implemented
-                      CSRF protection to ensure secure user interactions.
-                    </p>
-                  </div>
-                  <div class="icons-container">
-                    <div class="devicon">
-                      <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-javascript-plain" alt="javascript icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-sass-original" alt="sass icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-bootstrap-plain-wordmark" alt="bootstrap icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-links">
-                    <a href="https://gimme-a-song-75fdbe92334c.herokuapp.com/" target="_blank">
-                      <i class="fa-solid fa-link" alt="url link icon"></i>
-                    </a>
-                    <a href="https://github.com/HenzaT/gimme-a-song" target="_blank">
-                      <i class="fa-brands fa-github" alt="github icon"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Flask React Weather App -->
-              <div class="project-card">
-                <div class="project-card-under">
-                  <div class="project-card-header">
-                    <div class="project-title">
-                      <h3 class="small">React Weather App</h3>
-                      <p class="small">Flask & React Weather app</p>
-                    </div>
-                    <div class="plus" data-id="2">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-image" data-id="2">
-                    <img src="css/assets/weather-app.jpeg" alt="react weather website picture">
-                  </div>
-                </div>
-                <div class="project-card-overlay" data-id="2">
-                  <div class="project-info">
-                    <p>
-                      I built this full-stack application to solidify my understanding of <span class="highlight">React</span>
-                      and <span class="highlight">TypeScript</span>.
-                      The app integrates a <span class="highlight">Flask</span> backend and
-                      consumes <span class="highlight">external APIs</span>:
-                      <span class="highlight">OpenWeather</span> for real-time weather data and the
-                      <span class="highlight">Claude AI</span> API from Anthropic for activity suggestions.
-                      My focus was on creating smooth UX,
-                      while deepening my knowledge of asynchronous data handling and API integration.
-                    </p>
-                  </div>
-                  <div class="icons-container">
-                    <div class="devicon">
-                      <i class="devicon-react-original" alt="react js icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-flask-original" alt="flask icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-python-plain" alt="python icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-typescript-plain" alt="typescript icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-links">
-                    <a href="https://react-weather-claude-app-af1fc23c96a1.herokuapp.com/" target="_blank">
-                      <i class="fa-solid fa-link" alt="url link icon"></i>
-                    </a>
-                    <a href="https://github.com/HenzaT/react-weather-app" target="_blank">
-                      <i class="fa-brands fa-github" alt="github icon"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Morning Burrito -->
-              <!-- <div class="project-card">
-                <div class="project-card-under">
-                  <div class="project-card-header">
-                    <div class="project-title">
-                      <h3 class="small">Morning Burrito</h3>
-                      <p class="small">mobile app for creative activities</p>
-                    </div>
-                    <div class="plus" data-id="3">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-image" data-id="3">
-                    <img src="css/assets/morning-burrito-3.jpeg" alt="morning burrito app picture">
-                  </div>
-                </div>
-                <div class="project-card-overlay" data-id="3">
-                  <div class="project-info">
-                    <p>
-                      Collaborative group project designed to encourage daily creativity through activities like
-                      writing Haikus or drawing from sound prompts.
-                      I utilised <span class="highlight">JavaScript</span> (via Rails' Stimulus framework) to enhance
-                      interactivity on user preferences and dashboard pages.
-                      Continuously deployed with <span class="highlight">Git</span> and debugged features to improve user flow.
-                    </p>
-                  </div>
-                  <div class="icons-container">
-                    <div class="devicon">
-                      <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-javascript-plain" alt="javascript icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-sass-original" alt="sass icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-bootstrap-plain-wordmark" alt="bootstrap icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-links">
-                    <a href="https://www.morning-burrito.me/" target="_blank">
-                      <i class="fa-solid fa-link" alt="url link icon"></i>
-                    </a>
-                    <a href="https://github.com/HenzaT/morning_burrito" target="_blank">
-                      <i class="fa-brands fa-github" alt="github icon"></i>
-                    </a>
-                  </div>
-                </div>
-              </div> -->
-              <!-- Blue Horizon -->
-              <!-- <div class="project-card">
-                <div class="project-card-under">
-                  <div class="project-card-header">
-                    <div class="project-title">
-                      <h3 class="small">Blue Horizon</h3>
-                      <p class="small">rental market space for yachts</p>
-                    </div>
-                    <div class="plus" data-id="4">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-image" data-id="4">
-                    <img src="css/assets/blue-horizon.jpg" alt="blue horizon website picture">
-                  </div>
-                </div>
-                <div class="project-card-overlay" data-id="4">
-                  <div class="project-info">
-                    <p id="blue-horizon-p">
-                      Collaborative team project to build an Airbnb-style yacht rental platform.
-                      I focused on front-end development using <span class="highlight">Bootstrap </span>
-                      and <span class="highlight">JavaScript</span>.
-                      I also built the back-end of the user dashboard using <span class="highlight">PostgreSQL</span>.
-                      Contributed to pair programming and regular code reviews, facilitating effective debugging and
-                      refactoring for improved performance.
-                    </p>
-                  </div>
-                  <div class="icons-container">
-                    <div class="devicon">
-                      <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-javascript-plain" alt="javascript icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-sass-original" alt="sass icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-bootstrap-plain-wordmark" alt="bootstrap icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-links">
-                    <a href="https://blue-horizon-andrejo42-2c99cbea77a6.herokuapp.com/" target="_blank">
-                      <i class="fa-solid fa-link" alt="url link icon"></i>
-                    </a>
-                    <a href="https://github.com/HenzaT/blue-horizon" target="_blank">
-                      <i class="fa-brands fa-github" alt="github icon"></i>
-                    </a>
-                  </div>
-                </div>
-              </div> -->
-              <!-- Music page -->
-              <div class="project-card">
-                <div class="project-card-under">
-                  <div class="project-card-header">
-                    <div class="project-title">
-                      <h3 class="small">aptist music page</h3>
-                      <p class="small">Music Portfolio Site</p>
-                    </div>
-                    <div class="plus" data-id="7">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-image" data-id="7">
-                    <img src="css/assets/aptist-website.jpeg" alt="aptist website picture">
-                  </div>
-                </div>
-                <div class="project-card-overlay" data-id="7">
-                  <div class="project-info">
-                    <p>
-                      This is a site to showcase my music. I consolidated my knowledge of <span class="highlight">React</span>,
-                      <span class="highlight">TypeScript</span> and data handling through props.
-                      I knew I wanted to have multiple pages, so I used react router and react spring.
-                      I also incorporated emailjs and recaptcha for simple contact functionality and implemented changes to make my website
-                      more accessible.
-                    </p>
-                  </div>
-                  <div class="icons-container">
-                    <div class="devicon">
-                      <i class="devicon-react-original" alt="react js icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-typescript-plain" alt="typescript icon"></i>
-                    </div>
-                    <div class="devicon" id="css">
-                      <i class="devicon-css3-plain-wordmark" alt="css3 icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-vitejs-plain" alt="vite js icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-links">
-                    <a href="https://aptistmusic.com/" target="_blank">
-                      <i class="fa-solid fa-link" alt="url link icon"></i>
-                    </a>
-                    <a href="https://github.com/HenzaT/music-page-copy" target="_blank">
-                      <i class="fa-brands fa-github" alt="github icon"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- Portfolio -->
-              <div class="project-card">
-                <div class="project-card-under">
-                  <div class="project-card-header">
-                    <div class="project-title">
-                      <h3 class="small">Portfolio</h3>
-                      <p class="small">personal portfolio for projects</p>
-                    </div>
-                    <div class="plus" data-id="5">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-image" data-id="5">
-                    <img src="css/assets/portfolio.jpeg" alt="portfolio website picture">
-                  </div>
-                </div>
-                <div class="project-card-overlay" data-id="5">
-                  <div class="project-info">
-                    <p>
-                      This portfolio served as an opportunity to consolidate my
-                      <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, and
-                      <span class="highlight">JavaScript</span> skills.
-                      I focused on design, animation, and JavaScript DOM manipulation,
-                      while also applying newly learned <span class="highlight">TypeScript</span> concepts.
-                      This project reflects my growing front-end capabilities and informs improvements
-                      across both past and future projects.
-                    </p>
-                  </div>
-                  <div class="icons-container">
-                    <div class="devicon">
-                      <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-css3-plain-wordmark" alt="css3 icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-typescript-plain" alt="typescript icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-javascript-plain" alt="javascript icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-links">
-                    <a href="#projects">
-                      <i class="fa-solid fa-link" alt="url link icon"></i>
-                    </a>
-                    <a href="https://github.com/HenzaT/portfolio" target="_blank">
-                      <i class="fa-brands fa-github" alt="github icon"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <!-- The Country Club -->
-              <div class="project-card">
-                <div class="project-card-under">
-                  <div class="project-card-header">
-                    <div class="project-title">
-                      <h3 class="small">The Country Club.</h3>
-                      <p class="small">countries app (in progress)</p>
-                    </div>
-                    <div class="plus" data-id="6">
-                      <i class="fa-solid fa-plus" alt="plus icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-image" data-id="6">
-                    <img src="css/assets/country-club.jpeg" alt="portfolio website picture">
-                  </div>
-                </div>
-                <div class="project-card-overlay" data-id="6">
-                  <div class="project-info">
-                    <p>
-                      Built using <span class="highlight">Rails</span>,
-                      I wanted to practise using <span class="highlight">TypeScript</span>, as well as use
-                      multiple <span class="highlight">third-party APIs</span>.
-                      Some of the APIs I integrated are the Unsplash and Claude API.
-                      After receiving user feedback, I am currently in the middle of an aesthetic
-                      redesign, which has helped me to better understand modern design trends.
-                      With the frontend in mind, I switched to using <span class="highlight">Vite</span> for optimised performance.
-                    </p>
-                  </div>
-                  <div class="icons-container">
-                    <div class="devicon">
-                      <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-typescript-plain" alt="typescript icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-sass-original" alt="sass icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-vitejs-plain" alt="vite js icon"></i>
-                    </div>
-                    <div class="devicon">
-                      <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
-                    </div>
-                  </div>
-                  <div class="project-links">
-                    <a href="https://the-country-club-e3d07af9dd9d.herokuapp.com/" target="_blank">
-                      <i class="fa-solid fa-link" alt="url link icon"></i>
-                    </a>
-                    <a href="https://github.com/HenzaT/the_country_club" target="_blank">
-                      <i class="fa-brands fa-github" alt="github icon"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="about-chevron" id="mobile-chevron">
             <a href="#skills"><i class="fa-solid fa-chevron-down fa-bounce" style="--fa-bounce-height: 5px;--fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;" alt="down chevron icon"></i></a>
           </div>
         </section>
-          <!-- Skills -->
-        <section class="skills" id="skills">
-          <div class="skills-header">
-            <h2 class="section-title small hide">Skills</h2>
-          </div>
-          <div class="card-and-button-container hide" id="skills-card-button">
-            <div class="skills-container">
-              <div class="devicon" id="ruby">
-                <i class="devicon-ruby-plain-wordmark" alt="ruby icon"></i>
-              </div>
-              <div class="devicon" id="ts">
-                <i class="devicon-typescript-plain" alt="typescript icon"></i>
-              </div>
-              <div class="devicon" id="js">
-                <i class="devicon-javascript-plain" alt="javascript icon"></i>
-              </div>
-              <div class="devicon" id="python">
-                <i class="devicon-python-plain" alt="python icon"></i>
-              </div>
-              <div class="devicon" id="perl">
-                <i class="devicon-perl-plain" alt="perl icon"></i>
-              </div>
-              <div class="devicon" id="rails">
-                <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
-              </div>
-              <div class="devicon" id="bootstrap">
-                <i class="devicon-bootstrap-plain-wordmark" alt="bootstrap icon"></i>
-              </div>
-              <div class="devicon" id="react">
-                <i class="devicon-react-original" alt="react js icon"></i>
-              </div>
-              <div class="devicon" id="html">
-                <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
-              </div>
-              <div class="devicon" id="css">
-                <i class="devicon-css3-plain-wordmark" alt="css3 icon"></i>
-              </div>
-              <div class="devicon" id="sass">
-                <i class="devicon-sass-original" alt="sass icon"></i>
-              </div>
-              <div class="devicon" id="git">
-                <i class="devicon-git-plain-wordmark" alt="git icon"></i>
-              </div>
-              <div class="devicon" id="github">
-                <i class="devicon-github-original-wordmark" alt="github icon"></i>
-              </div>
-              <div class="devicon" id="heroku">
-                <i class="devicon-heroku-original-wordmark" alt="heroku icon"></i>
-              </div>
-              <div class="devicon" id="postgres">
-                <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
-              </div>
-              <div class="devicon" id="mysql">
-                <i class="devicon-mysql-original" alt="mysql icon"></i>
-              </div>
-            </div>
-            <div class="skills-radio">
-              <input class="radio-input" type="radio" id="languages" name="about" value="languages">
-              <label class="radio-label" for="languages">Languages</label>
-              <input class="radio-input" type="radio" id="frameworks" name="about" value="frameworks">
-              <label class="radio-label" for="frameworks">Frameworks</label>
-              <input class="radio-input" type="radio" id="tools" name="about" value="tools">
-              <label class="radio-label" for="tools">Tools</label>
-              <input class="radio-input" type="radio" id="databases" name="about" value="databases">
-              <label class="radio-label" for="databases">Databases</label>
-            </div>
-          </div>
           <div class="about-chevron" id="mobile-chevron">
             <a href="#about"><i class="fa-solid fa-chevron-down fa-bounce" style="--fa-bounce-height: 5px;--fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;" alt="down chevron icon"></i></a>
-          </div>
-        </section>
-        <!-- About -->
-        <section class="about" id="about">
-          <div class="about-header">
-            <h2 class="section-title small hide">About Me</h2>
-          </div>
-          <div class="card-and-button-container" id="about-card-container">
-            <div class="about-container">
-              <div class="about-card fade hide" id="interests-card">
-                <h3 class="about-title" id="interests-title">Background</h3>
-                <div class="about-info" id="interests-text-box">
-                  <p id="interests-text">
-                  My passion for tech started when I began writing and recording my own music.
-                  I was fascinated by how the DAW (digital audio workstation) worked and I loved
-                  the creative designs of the sound plugins. Wanting to learn more about how they were built, I enrolled
-                  in a web development course and have been building and learning ever since.
-                  </p>
-                </div>
-                <!-- <div class="icons-container" id="interests-icons">
-                  <div class="devicon">
-                    <i class="fa-solid fa-guitar" alt="guitar icon"></i>
-                  </div>
-                  <div class="devicon">
-                    <i class="fa-solid fa-hill-rockslide" alt="rock climbing icon"></i>
-                  </div>
-                  <div class="devicon">
-                    <i class="fa-solid fa-plane" alt="plane icon"></i>
-                  </div>
-                </div> -->
-              </div>
-              <div class="about-card expand hide" id="experience-card">
-                <h3 class="about-title" id="experience-title">About</h3>
-                <div class="about-info" id="experience-text-box">
-                  <p id="experience-text">
-
-                  </p>
-                </div>
-                <!-- <div class="icons-container" id="experience-icons">
-                  <div class="devicon">
-                    <i class="fa-solid fa-person-chalkboard" alt="person at chalkboard icon"></i>
-                  </div>
-                  <div class="devicon">
-                    <i class="fa-solid fa-computer" alt="computer icon"></i>
-                  </div>
-                  <div class="devicon">
-                    <i class="fa-solid fa-music" alt="music note icon"></i>
-                  </div>
-                </div> -->
-              </div>
-              <div class="about-card fade hide" id="education-card">
-                <h3 class="about-title" id="education-title">Interests</h3>
-                <div class="about-info" id="education-text-box">
-                  Outside of coding and tech, I write and produce my own <a href="#music"><span class="highlight">music</span></a>
-                  as well as play bass guitar in a band.
-                  I also love to climb and travel - I'm half Japanese, so I'm lucky enough to go to Japan
-                  at least once a year to visit family (and stock up on tea!)
-
-                  <!-- <ul id="education-text">
-                    <li>
-                      <span class="highlight">Le Wagon</span><br>
-                      <i>Diploma - Web Development</i>
-                    </li>
-                    <li>
-                      <span class="highlight">The Institute of Education, UCL</span><br>
-                      <i>PGCE - Primary Education</i>
-                    </li>
-                    <li>
-                      <span class="highlight">University of Bristol</span><br>
-                      <i>BA - Classical Studies</i>
-                    </li>
-                  </ul> -->
-                </div>
-                <!-- <div class="icons-container" id="education-icons">
-                  <div class="devicon">
-                    <i class="fa-solid fa-computer" alt="computer icon"></i>
-                  </div>
-                  <div class="devicon">
-                    <i class="fa-solid fa-music" alt="music note icon"></i>
-                  </div>
-                  <div class="devicon">
-                    <i class="fa-solid fa-person-chalkboard" alt="person at chalkboard icon"></i>
-                  </div>
-                </div> -->
-              </div>
-            </div>
-          </div>
-          <div class="about-chevron" id="mobile-chevron">
-            <a href="#music"><i class="fa-solid fa-chevron-down fa-bounce" style="--fa-bounce-height: 5px;--fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;" alt="down chevron icon"></i></a>
-          </div>
-        </section>
+          </div> -->
         <!-- Music -->
-        <section class="music" id="music">
-          <div class="music-all">
-            <h2 class="section-title small hide">My Music</h2>
-            <div class="music-container">
-              <div class="music-card">
-                <p>
-                  As this is a creative portfolio, I wanted to also show my other creative output, music.
-                  I write and produce electronic music under the name <span class="highlight">aptist</span>.
-                </p>
-                <div class="music-site-link">
-                  <a href="https://aptistmusic.com/" target="_blank">Music Portfolio</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Contact -->
-        <footer class="contact" id="contact">
-          <h3 class="small">Contact Me</h3>
-          <div class="contact-card">
-            <div class="contact-icons-all">
-              <div class="contact-icon">
-                <a href="https://www.linkedin.com/in/henryththomas/" target="_blank">
-                  <i class="fa-brands fa-linkedin" alt="linkedin icon"></i>
-                </a>
-              </div>
-              <div class="contact-icon">
-                <a href="https://github.com/HenzaT" target="_blank">
-                  <i class="fa-brands fa-github" alt="github icon"></i>
-                </a>
-              </div>
-              <div class="contact-icon">
-                <a href="mailto:henrykun95@gmail.com" target="_blank">
-                  <i class="fa-solid fa-square-envelope" alt="email icon"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </section>
     </main>
   </body>
 </html>

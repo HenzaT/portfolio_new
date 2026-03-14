@@ -3,7 +3,11 @@
 
 .project-card {
   @include mixin.flex-col;
-  border: 1px solid black;
+  align-items: flex-start;
+  gap: 0.5rem;
+  // border: 0.5px solid vars.$dark-blue;
+  box-shadow: vars.$shadow;
+  border-radius: 10px;
   padding: 1rem;
 
   &__image {
@@ -11,11 +15,23 @@
   }
 
   &__title {
-    align-self: flex-start;
+    // align-self: flex-start;
   }
 
   &__tech-icons-container {
     @include mixin.flex-row;
     gap: 0.5rem;
+  }
+
+  &__links {
+    @include mixin.flex-row;
+    gap: 1rem;
+    justify-self: flex-end;
+  }
+
+  &__link {
+    border: 0.5px solid vars.$dark-blue;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
   }
 }

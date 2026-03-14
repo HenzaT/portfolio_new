@@ -16,6 +16,22 @@ body {
   overscroll-behavior-y: none;
 }
 
-main {
-  padding: vars.$page-padding;
+header, main, footer {
+  padding: vars.$page-padding-xs;
+}
+
+p {
+  line-height: 150%;
+}
+
+@media (min-width: 768px) {
+  header, main, footer {
+    padding: vars.$page-padding-md;
+  }
+}
+
+@media (min-width: 1024px) {
+  header, main, footer {
+    padding: vars.$page-padding-lg;
+  }
 }

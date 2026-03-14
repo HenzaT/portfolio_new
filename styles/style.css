@@ -13,10 +13,24 @@ body {
   overscroll-behavior-y: none;
 }
 
-main {
+header, main, footer {
   padding: 0 1rem;
 }
 
+p {
+  line-height: 150%;
+}
+
+@media (min-width: 768px) {
+  header, main, footer {
+    padding: 0 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  header, main, footer {
+    padding: 0 6rem;
+  }
+}
 .banner h1 {
   font-size: 5rem;
   color: white;
@@ -221,20 +235,32 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
+  align-items: flex-start;
+  gap: 0.5rem;
+  box-shadow: 0 0px 6px rgba(0, 2, 33, 0.6);
+  border-radius: 10px;
   padding: 1rem;
 }
 .project-card__image {
   width: 100%;
-}
-.project-card__title {
-  align-self: flex-start;
 }
 .project-card__tech-icons-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
+}
+.project-card__links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  justify-self: flex-end;
+}
+.project-card__link {
+  border: 0.5px solid #030e2a;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
 }
 
 /* banner container */
@@ -397,8 +423,16 @@ main {
     grid-row: 3;
   }
 }
-.project-card__tech-icons-container i {
+.project-card__tech-icons-container i, footer i {
   font-size: 2rem;
+}
+
+.project-card__links i {
+  font-size: 1.5rem;
+}
+
+.fa-copy {
+  font-size: 1.5rem;
 }
 
 /* general icons container */
@@ -619,6 +653,22 @@ main {
     transform: translateX(0);
   }
 }
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 7rem 0 2rem 0;
+}
+
 nav {
   display: flex;
   flex-direction: row;
@@ -633,21 +683,17 @@ nav p {
   font-size: 1.5rem;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin: 7rem 0 2rem 0;
-  padding: 0 1rem;
-}
-
 section#projects .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
 }
 
+@media (min-width: 768px) {
+  section#projects .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 h1, .contact h3 {
   color: var(--light);
   font-family: "Raleway", sans-serif;

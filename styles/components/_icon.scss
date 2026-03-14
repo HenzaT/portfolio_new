@@ -1,10 +1,20 @@
 @use '../abstracts/mixins' as mixin;
 @use '../abstracts/variables' as vars;
 
-.project-card__tech-icons-container {
+.project-card__tech-icons-container, footer {
   i {
     font-size: 2rem;
   }
+}
+
+.project-card__links {
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+.fa-copy {
+  font-size: 1.5rem;
 }
 
 

@@ -1,0 +1,8 @@
+@use '../abstracts/mixins' as mixin;
+@use '../abstracts/variables' as vars;
+
+footer {
+  @include mixin.flex-row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}

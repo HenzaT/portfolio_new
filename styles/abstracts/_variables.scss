@@ -11,6 +11,9 @@ $selected: #c172a0;
 $pink: #eebddc;
 $black: #1B1B1E;
 $light: rgb(232, 245, 248);
-$shadow: 0 0px 15px rgba(0, 0, 0, 0.6);
+$shadow: 0 0px 6px rgba(0, 2, 33, 0.6);
 
-$page-padding: 0 1rem;
+// padding / margin
+$page-padding-xs: 0 1rem;
+$page-padding-md: 0 2rem;
+$page-padding-lg: 0 6rem;

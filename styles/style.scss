@@ -9,7 +9,6 @@
 @use 'components/banner';
 @use 'components/button';
 @use 'components/card';
-@use 'components/container';
 @use 'components/icon';
 @use 'components/keyframes';
 
@@ -18,32 +17,9 @@
 @use 'layout/header';
 @use 'layout/navbar';
 @use 'layout/projects';
+@use 'layout/skills';
 
 // themes
-
-h1, .contact h3 {
-  color: var(--light);
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
-h2 {
-  color: var(--light);
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
-h3 {
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
 .main {
   overflow: auto;
   scroll-snap-type: y mandatory;

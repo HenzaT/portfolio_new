@@ -14,16 +14,6 @@ const skillsIconsContainer = document.querySelector('.skills-container');
 const sectionTitles = document.querySelectorAll('.section-title');
 const aboutContainer = document.querySelector('.about-container');
 const projectsContainer = document.querySelector('.projects-container');
-// nav
-const navBar = document.querySelector('.navbar');
-const mobileNav = document.querySelector('.mobile-navbar');
-const navLinks = document.querySelectorAll('.nav-link');
-const homeNavLink = document.getElementById('home-link');
-const burgerMenu = document.querySelector('.burger-menu');
-const navOverlay = document.querySelector('.nav-overlay');
-const lineOne = document.querySelector('.line1');
-const lineTwo = document.querySelector('.line2');
-const lineThree = document.querySelector('.line3');
 // banner
 const bannerLeft = document.querySelector('.banner-text-left');
 const bannerRight = document.querySelector('.banner-text-right');
@@ -60,27 +50,32 @@ const aboutInfo = document.querySelectorAll('.about-info');
 // icons
 const languageIcons = [
     document.getElementById('ruby'),
-    document.getElementById('js'),
     document.getElementById('ts'),
+    document.getElementById('js'),
     document.getElementById('python'),
-    document.getElementById('perl')
+    document.getElementById('perl'),
 ];
 const frameworkIcons = [
     document.getElementById('rails'),
     document.getElementById('bootstrap'),
-    document.getElementById('react')
+    document.getElementById('react'),
 ];
 const toolIcons = [
+    document.getElementById('html'),
+    document.getElementById('css'),
+    document.getElementById('sass'),
     document.getElementById('git'),
     document.getElementById('github'),
     document.getElementById('heroku'),
-    document.getElementById('html'),
-    document.getElementById('css'),
-    document.getElementById('sass')
+    document.getElementById('netlify'),
+    document.getElementById('linux'),
+    document.getElementById('proxmox'),
+    document.getElementById('vim'),
 ];
 const dbIcons = [
     document.getElementById('postgres'),
-    document.getElementById('mysql')
+    document.getElementById('mysql'),
+    document.getElementById('mariadb'),
 ];
 const iconGroups = {
     languages: languageIcons,
@@ -95,9 +90,6 @@ const homeArrowIcon = document.getElementById('arrow-icon');
 // about chevron
 const chevron = document.getElementById('top-chevron');
 const mobileChevrons = document.querySelectorAll('#mobile-chevron');
-// plus button
-const plusButtons = document.querySelectorAll('.plus');
-const musicPlusButtons = document.querySelectorAll('.music-plus');
 // screen size
 const desktopScreen = window.matchMedia("(min-width: 1210px)");
 const mobileScreen = window.matchMedia("(max-width: 600px");
@@ -141,36 +133,6 @@ function homeArrowInView(entries) {
 const arrowObserver = new IntersectionObserver(homeArrowInView);
 if (sectionsNoHome)
     arrowObserver.observe(sectionsNoHome);
-// highlight nav when each section is in viewport
-function sectionViewChangeNav(entries) {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            const sectionId = entry.target.id;
-            navLinks.forEach((link) => {
-                var _a;
-                const linkTarget = (_a = link.getAttribute('href')) === null || _a === void 0 ? void 0 : _a.substring(1);
-                if (linkTarget === sectionId) {
-                    link.classList.add('active');
-                }
-                else {
-                    link.classList.remove('active');
-                }
-            });
-        }
-    });
-}
-;
-const sectionObserver = new IntersectionObserver(sectionViewChangeNav, {
-    threshold: 0.3
-});
-Object.entries(sections).forEach(([name, section]) => {
-    if (section) {
-        sectionObserver.observe(section);
-    }
-    else {
-        console.error(`Section "${name}" not found in the DOM.`);
-    }
-});
 // element in view slide up
 function ElementSlideUp(entries) {
     entries.forEach((entry) => {
@@ -278,57 +240,19 @@ function resetAbout(entries) {
 const aboutObserver = new IntersectionObserver(resetAbout);
 if (aboutContainer)
     aboutObserver.observe(aboutContainer);
-// navbar select
-function navLinkClick(link) {
-    var _a;
-    (_a = document.querySelector('.nav-link.active')) === null || _a === void 0 ? void 0 : _a.classList.remove('active');
-    link.classList.add('active');
-}
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navLinkClick(link);
-    });
-});
-if (homeArrowIcon) {
-    homeArrowIcon.addEventListener('click', () => {
-        if (!homeNavLink)
-            return;
-        navLinkClick(homeNavLink);
-    });
-}
-homeNavLink === null || homeNavLink === void 0 ? void 0 : homeNavLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-// mobile navbar overlay
-burgerMenu === null || burgerMenu === void 0 ? void 0 : burgerMenu.addEventListener('click', () => {
-    lineOne === null || lineOne === void 0 ? void 0 : lineOne.classList.toggle('clicked-down');
-    lineTwo === null || lineTwo === void 0 ? void 0 : lineTwo.classList.toggle('hidden');
-    lineThree === null || lineThree === void 0 ? void 0 : lineThree.classList.toggle('clicked-up');
-    toggleNavOverlay();
-});
-// mobile navbar show and hide
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (!navOverlay)
-            return;
-        lineOne === null || lineOne === void 0 ? void 0 : lineOne.classList.remove('clicked-down');
-        lineTwo === null || lineTwo === void 0 ? void 0 : lineTwo.classList.remove('hidden');
-        lineThree === null || lineThree === void 0 ? void 0 : lineThree.classList.remove('clicked-up');
-        navOverlay.classList.add('hidden');
-        navOverlay.classList.remove('fade-into');
-    });
-});
-function toggleNavOverlay() {
-    if (!navOverlay)
-        return;
-    const isHidden = navOverlay.classList.contains('hidden');
-    navOverlay.classList.toggle('hidden');
-    navOverlay.classList.toggle('fade-into', isHidden);
-}
+// if (homeArrowIcon) {
+//   homeArrowIcon.addEventListener('click', () => {
+//     if (!homeNavLink) return;
+//     navLinkClick(homeNavLink);
+//   });
+// }
+// homeNavLink?.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   window.scrollTo({
+//     top: 0,
+//     behavior: 'smooth'
+//   });
+// });
 // scroll into view
 function scrollToView(element) {
     if (!element)
@@ -378,18 +302,6 @@ function openOverlay(button) {
     toggleClassBySelector('.album-art', 'darken', id);
 }
 ;
-// projects plus toggle to show info
-plusButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        openOverlay(button);
-    });
-});
-// music plus toggle to show iFrame
-musicPlusButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        openOverlay(button);
-    });
-});
 // skills icons toggle
 function clearFadeExpand() {
     Object.values(iconGroups).forEach(group => {

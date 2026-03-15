@@ -13,32 +13,16 @@
   }
 }
 
+section#skills {
+  .skills-icons {
+    font-size: 2.5rem;
+    color: vars.$dark-blue;
+    transition: opacity 0.5s ease-in-out;
+    transition: filter 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+  }
+}
+
 .fa-copy {
   font-size: 1.5rem;
-}
-
-
-/* general icons container */
-.icons-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 20px 5px 20px;
-  border-radius: 20px;
-  border: 3px solid var(--dark-blue);
-  background-color: var(--light);
-}
-
-/* devicons */
-.devicon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  height: 50%;
-  width: 50%;
-  color: black;
-  transition: opacity 0.5s ease-in-out;
-  transition: filter 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out;
 }

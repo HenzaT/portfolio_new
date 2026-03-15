@@ -15,17 +15,6 @@ const sectionTitles: NodeListOf<HTMLElement> = document.querySelectorAll('.secti
 const aboutContainer: HTMLElement | null = document.querySelector('.about-container');
 const projectsContainer: HTMLElement | null = document.querySelector('.projects-container');
 
-// nav
-const navBar: HTMLElement | null = document.querySelector('.navbar');
-const mobileNav: HTMLElement | null = document.querySelector('.mobile-navbar');
-const navLinks: NodeListOf<HTMLElement> = document.querySelectorAll('.nav-link');
-const homeNavLink: HTMLElement | null = document.getElementById('home-link');
-const burgerMenu: HTMLElement | null = document.querySelector('.burger-menu');
-const navOverlay: HTMLElement | null = document.querySelector('.nav-overlay');
-const lineOne: HTMLElement | null = document.querySelector('.line1');
-const lineTwo: HTMLElement | null = document.querySelector('.line2');
-const lineThree: HTMLElement | null = document.querySelector('.line3');
-
 // banner
 const bannerLeft: HTMLElement | null = document.querySelector('.banner-text-left');
 const bannerRight: HTMLElement | null = document.querySelector('.banner-text-right');
@@ -79,30 +68,35 @@ const aboutInfo: NodeListOf<HTMLElement> = document.querySelectorAll('.about-inf
 // icons
 const languageIcons = [
   document.getElementById('ruby'),
-  document.getElementById('js'),
   document.getElementById('ts'),
+  document.getElementById('js'),
   document.getElementById('python'),
-  document.getElementById('perl')
+  document.getElementById('perl'),
 ];
 
 const frameworkIcons = [
   document.getElementById('rails'),
   document.getElementById('bootstrap'),
-  document.getElementById('react')
+  document.getElementById('react'),
 ];
 
 const toolIcons = [
+  document.getElementById('html'),
+  document.getElementById('css'),
+  document.getElementById('sass'),
   document.getElementById('git'),
   document.getElementById('github'),
   document.getElementById('heroku'),
-  document.getElementById('html'),
-  document.getElementById('css'),
-  document.getElementById('sass')
+  document.getElementById('netlify'),
+  document.getElementById('linux'),
+  document.getElementById('proxmox'),
+  document.getElementById('vim'),
 ];
 
 const dbIcons = [
   document.getElementById('postgres'),
-  document.getElementById('mysql')
+  document.getElementById('mysql'),
+  document.getElementById('mariadb'),
 ];
 
 const iconGroups = {
@@ -120,9 +114,6 @@ const homeArrowIcon: HTMLElement | null = document.getElementById('arrow-icon');
 // about chevron
 const chevron: HTMLElement | null = document.getElementById('top-chevron');
 const mobileChevrons: NodeListOf<HTMLElement> = document.querySelectorAll('#mobile-chevron');
-// plus button
-const plusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.plus');
-const musicPlusButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.music-plus');
 
 // screen size
 const desktopScreen = window.matchMedia("(min-width: 1210px)");
@@ -167,36 +158,6 @@ function homeArrowInView(entries: IntersectionObserverEntry[]): void {
 
 const arrowObserver = new IntersectionObserver(homeArrowInView);
 if (sectionsNoHome) arrowObserver.observe(sectionsNoHome);
-
-// highlight nav when each section is in viewport
-function sectionViewChangeNav(entries: IntersectionObserverEntry[]) {
-  entries.forEach((entry: IntersectionObserverEntry) => {
-    if (entry.isIntersecting) {
-      const sectionId = entry.target.id;
-
-      navLinks.forEach((link) => {
-        const linkTarget = link.getAttribute('href')?.substring(1);
-        if (linkTarget === sectionId) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }
-  });
-};
-
-const sectionObserver = new IntersectionObserver(sectionViewChangeNav, {
-  threshold: 0.3
-});
-
-Object.entries(sections).forEach(([name, section]) => {
-  if (section) {
-    sectionObserver.observe(section);
-  } else {
-    console.error(`Section "${name}" not found in the DOM.`);
-  }
-});
 
 // element in view slide up
 function ElementSlideUp(entries: IntersectionObserverEntry[]): void {
@@ -304,59 +265,19 @@ function resetAbout(entries: IntersectionObserverEntry[]): void {
 const aboutObserver = new IntersectionObserver(resetAbout);
 if (aboutContainer) aboutObserver.observe(aboutContainer);
 
-// navbar select
-function navLinkClick(link: HTMLElement): void {
-  document.querySelector('.nav-link.active')?.classList.remove('active');
-  link.classList.add('active');
-}
-
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navLinkClick(link);
-  });
-});
-
-if (homeArrowIcon) {
-  homeArrowIcon.addEventListener('click', () => {
-    if (!homeNavLink) return;
-    navLinkClick(homeNavLink);
-  });
-}
-homeNavLink?.addEventListener('click', (event) => {
-  event.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-
-// mobile navbar overlay
-burgerMenu?.addEventListener('click', () => {
-  lineOne?.classList.toggle('clicked-down');
-  lineTwo?.classList.toggle('hidden');
-  lineThree?.classList.toggle('clicked-up');
-  toggleNavOverlay()
-});
-
-// mobile navbar show and hide
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (!navOverlay) return
-    lineOne?.classList.remove('clicked-down');
-    lineTwo?.classList.remove('hidden');
-    lineThree?.classList.remove('clicked-up');
-    navOverlay.classList.add('hidden');
-    navOverlay.classList.remove('fade-into');
-  });
-});
-
-function toggleNavOverlay(): void {
-  if (!navOverlay) return;
-  const isHidden = navOverlay.classList.contains('hidden');
-  navOverlay.classList.toggle('hidden');
-  navOverlay.classList.toggle('fade-into', isHidden);
-}
-
+// if (homeArrowIcon) {
+//   homeArrowIcon.addEventListener('click', () => {
+//     if (!homeNavLink) return;
+//     navLinkClick(homeNavLink);
+//   });
+// }
+// homeNavLink?.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   window.scrollTo({
+//     top: 0,
+//     behavior: 'smooth'
+//   });
+// });
 
 // scroll into view
 function scrollToView(element: HTMLElement) {
@@ -405,20 +326,6 @@ function openOverlay(button: HTMLElement): void {
   toggleClassBySelector('.album-card-overlay', 'show', id);
   toggleClassBySelector('.album-art', 'darken', id);
 };
-
-// projects plus toggle to show info
-plusButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    openOverlay(button);
-  });
-});
-
-// music plus toggle to show iFrame
-musicPlusButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    openOverlay(button);
-  });
-});
 
 // skills icons toggle
 function clearFadeExpand(): void {

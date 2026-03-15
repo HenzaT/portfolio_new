@@ -1,0 +1,19 @@
+@use '../abstracts/mixins' as mixin;
+@use '../abstracts/variables' as vars;
+
+section#skills {
+  .card-and-button-container {
+    @include mixin.flex-col;
+    gap: 1rem;
+  }
+
+  .skills-icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    width: 88%;
+    padding: 1rem;
+    box-shadow: vars.$shadow;
+    border-radius: 10px;
+  }
+}

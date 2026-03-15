@@ -6,9 +6,9 @@
   align-items: flex-start;
   gap: 0.5rem;
   // border: 0.5px solid vars.$dark-blue;
-  box-shadow: vars.$shadow;
+  // box-shadow: vars.$shadow;
   border-radius: 10px;
-  padding: 1rem;
+  // padding: 1rem;
 
   &__image {
     width: 100%;
@@ -30,7 +30,7 @@
   }
 
   &__link {
-    border: 0.5px solid vars.$dark-blue;
+    border: 1px solid vars.$dark-blue;
     border-radius: 10px;
     padding: 0.5rem 1rem;
   }

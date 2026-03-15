@@ -3,6 +3,8 @@
   padding: 0;
   scroll-behavior: smooth;
   font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 body {
@@ -17,8 +19,17 @@ header, main, footer {
   padding: 0 1rem;
 }
 
+h1 {
+  font-weight: 600;
+  line-height: 140%;
+}
+
+h2 {
+  font-weight: 600;
+}
+
 p {
-  line-height: 150%;
+  line-height: 170%;
 }
 
 @media (min-width: 768px) {
@@ -115,131 +126,59 @@ p {
   animation: slideUpDark 3s ease;
 }
 
-/* plus button project */
-.plus, .music-plus {
-  font-size: 30px;
-  cursor: pointer;
-  color: var(--black);
-  transition: transform 0.3s ease-in-out;
-  transform: rotate(0deg);
+/* skills radio buttons */
+section#skills .skills-radio {
+  border: 1px solid #030e2a;
+  border-radius: 20px;
+  width: 80%;
 }
-
-.rotate {
-  transform: rotate(45deg);
+section#skills .top, section#skills .bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-
-/* radio buttons */
-.radio, .skills-radio {
-  display: inline-flex;
-  overflow: hidden;
-  margin: 0px 0px 20px 0px;
-  border-radius: 15px;
-  box-shadow: 0 0 5px var(--dark-grey);
-  text-align: center;
-  height: 100%;
+section#skills .top {
+  border-bottom: 1px solid #030e2a;
 }
-
-.radio-input {
+section#skills .radio-input {
   display: none;
 }
-
-.radio-label {
-  padding: 8px 14px;
-  color: var(--light);
-  background-color: var(--black);
+section#skills .radio-label {
   cursor: pointer;
+  padding: 8px 14px;
+  width: 50%;
+  font-size: 0.8rem;
+  text-align: center;
   transition: background-color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
-
-.radio-label:not(:last-of-type) {
-  border-right: 1px solid var(--grey);
+section#skills .radio-label.lang {
+  border-radius: 18px 0 0 0;
+}
+section#skills .radio-label.fworks {
+  border-radius: 0 18px 0 0;
+}
+section#skills .radio-label.tools {
+  border-radius: 0 0 0 18px;
+}
+section#skills .radio-label.db {
+  border-radius: 0 0 18px 0;
+}
+section#skills .radio-label:not(:last-of-type) {
+  border-right: 1px solid #030e2a;
+}
+section#skills .radio-input:checked + .radio-label {
+  background-color: #030e2a;
+  color: #e6f2ff;
 }
 
-.radio-input:checked + .radio-label {
-  background-color: var(--selected);
-  color: black;
-}
-
-/* button to music portfolio */
-.music-site-link {
-  text-align: center;
-  margin: auto;
-  margin: 20px 0 10px 0;
-}
-
-.music-site-link > a {
-  border: 1px solid black;
-  padding: 10px;
-  border-radius: 30px;
-  background: var(--pink);
-  transition: all 0.2s ease-in-out;
-}
-
-.music-site-link > a:hover {
-  background: var(--selected);
-}
-
-@media only screen and (max-width: 600px) {
-  .home-arrow {
-    display: none;
-  }
-  .radio-label {
-    width: 16vw;
-    font-size: 12px;
-  }
-  .about-chevron {
-    margin-top: 18px;
-  }
-}
-@media only screen and (min-width: 600px) {
-  .home-arrow {
-    display: none;
-  }
-  .radio-label {
-    width: 12vw;
-    font-size: 14px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .home-arrow {
-    display: block;
-  }
-  .project-all, .music-all {
-    width: 70%;
-  }
-  .radio-label {
-    width: 8vw;
-    font-size: 14px;
-  }
-  #mobile-chevron {
-    margin-top: 0px;
-  }
-}
-@media only screen and (min-width: 1210px) {
-  .home-arrow {
-    display: block;
-  }
-  .project-all, .music-all {
-    width: 70%;
-  }
-  .radio-label {
-    width: 6vw;
-    font-size: 14px;
-  }
-  #mobile-chevron {
-    margin-top: 0px;
-  }
-}
 .project-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-items: flex-start;
   gap: 0.5rem;
-  box-shadow: 0 0px 6px rgba(0, 2, 33, 0.6);
   border-radius: 10px;
-  padding: 1rem;
 }
 .project-card__image {
   width: 100%;
@@ -258,171 +197,11 @@ p {
   justify-self: flex-end;
 }
 .project-card__link {
-  border: 0.5px solid #030e2a;
+  border: 1px solid #030e2a;
   border-radius: 10px;
   padding: 0.5rem 1rem;
 }
 
-/* banner container */
-.banner {
-  position: relative;
-  width: 100%;
-  min-height: 80dvh;
-  padding: 0px 0px 55px 0px;
-}
-
-/* about container */
-.about {
-  width: 100%;
-  /* height: 60vh; */
-  padding: 55px 0px 55px 0px;
-}
-
-.about-header {
-  text-align: center;
-}
-
-.about-container {
-  display: grid;
-  gap: 40px;
-  width: 80%;
-  margin: 20px;
-}
-
-#experience-card {
-  grid-column: 2;
-}
-
-#interests-card {
-  grid-column: 1;
-}
-
-#education-card {
-  grid-column: 3;
-}
-
-/* projects container */
-.projects, .music {
-  width: 100%;
-  padding: 55px 0px 55px 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  scroll-snap-align: start;
-}
-
-.projects-container {
-  display: grid;
-  gap: 40px;
-}
-
-/* skills container */
-.skills {
-  width: 100%;
-  padding: 55px 0px 45px 0px;
-  text-align: center;
-}
-
-/* .skills-header h2 {
-  margin-bottom: 20px;
-} */
-.skills-container {
-  background-color: var(--light);
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  display: inline-grid;
-  box-shadow: var(--shadow);
-}
-
-.card-and-button-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-/* #about-card-container {
-  margin-top: -25px;
-} */
-.all-albums {
-  display: grid;
-  grid-gap: 40px;
-  margin-top: -25px;
-}
-
-/* contact container */
-.contact {
-  width: 100%;
-  padding: 10px 0px 55px 0px;
-  background-color: var(--black);
-  text-align: center;
-}
-
-@media only screen and (max-width: 600px) {
-  .about-container {
-    margin-top: -4px;
-  }
-  .projects-container, .all-albums {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .skills-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-}
-@media only screen and (min-width: 600px) {
-  .projects-container, .all-albums {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .skills-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .projects-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .skills-container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-  }
-  .all-albums {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .about-container {
-    width: 50%;
-  }
-}
-@media only screen and (min-width: 1210px) {
-  .projects-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .about-container {
-    grid-template-columns: repeat(3, 1fr);
-    width: 80%;
-  }
-}
-@media only screen and (max-width: 1210px) {
-  .about-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
-  #experience-card {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  #interests-card {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  #education-card {
-    grid-column: 1;
-    grid-row: 3;
-  }
-}
 .project-card__tech-icons-container i, footer i {
   font-size: 2rem;
 }
@@ -431,33 +210,16 @@ p {
   font-size: 1.5rem;
 }
 
-.fa-copy {
-  font-size: 1.5rem;
-}
-
-/* general icons container */
-.icons-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 20px 5px 20px;
-  border-radius: 20px;
-  border: 3px solid var(--dark-blue);
-  background-color: var(--light);
-}
-
-/* devicons */
-.devicon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  height: 50%;
-  width: 50%;
-  color: black;
+section#skills .skills-icons {
+  font-size: 2.5rem;
+  color: #030e2a;
   transition: opacity 0.5s ease-in-out;
   transition: filter 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;
+}
+
+.fa-copy {
+  font-size: 1.5rem;
 }
 
 .darken {
@@ -694,27 +456,20 @@ section#projects .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-h1, .contact h3 {
-  color: var(--light);
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
+section#skills .card-and-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
-
-h2 {
-  color: var(--light);
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
-h3 {
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
+section#skills .skills-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  width: 88%;
+  padding: 1rem;
+  box-shadow: 0 0px 6px rgba(0, 2, 33, 0.6);
+  border-radius: 10px;
 }
 
 .main {

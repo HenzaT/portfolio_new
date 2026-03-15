@@ -5,4 +5,9 @@ footer {
   @include mixin.flex-row;
   justify-content: space-between;
   margin-bottom: 2rem;
+
+  .footer-left {
+    @include mixin.flex-row;
+    gap: 1rem;
+  }
 }

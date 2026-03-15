@@ -9,7 +9,7 @@
 
 body {
   background-color: whitesmoke;
-  color: black;
+  color: #030e2a;
   width: 100%;
   position: relative;
   overscroll-behavior-y: none;
@@ -26,10 +26,21 @@ h1 {
 
 h2 {
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 p {
   line-height: 170%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.highlight {
+  color: #004f9e;
+  font-weight: 600;
 }
 
 @media (min-width: 768px) {
@@ -422,6 +433,12 @@ footer {
   justify-content: space-between;
   margin-bottom: 2rem;
 }
+footer .footer-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
 
 header {
   display: flex;
@@ -456,6 +473,9 @@ section#projects .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+section#skills {
+  margin: 2rem 0;
+}
 section#skills .card-and-button-container {
   display: flex;
   flex-direction: column;
@@ -486,23 +506,6 @@ section#skills .skills-icons {
 
 .hide {
   opacity: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.highlight {
-  color: var(--selected);
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.project-all h2, .music-all h2, .about-card h3, .album-card-overlay {
-  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

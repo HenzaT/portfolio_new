@@ -12,10 +12,35 @@ section#skills {
   .skills-icons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
     gap: 1.5rem;
     width: 88%;
     padding: 1rem;
     box-shadow: vars.$shadow;
     border-radius: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  section#skills {
+    .card-and-button-container {
+      .skills-icons {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  section#skills {
+    padding: 0 2rem;
+    .card-and-button-container {
+      flex-direction: row-reverse;
+
+      .skills-icons {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
   }
 }

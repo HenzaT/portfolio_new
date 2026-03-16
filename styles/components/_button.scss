@@ -41,7 +41,7 @@ section#skills {
   .skills-radio {
     border: 1px solid vars.$dark-blue;
     border-radius: 20px;
-    width: 80%;
+    width: 90%;
   }
 
   .top, .bottom {
@@ -54,23 +54,66 @@ section#skills {
 
   .radio-label {
     cursor: pointer;
-    padding: 8px 14px;
+    padding: 10px 14px;
     width: 50%;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-align: center;
     transition: background-color 0.3s ease-in-out;
     transition: color 0.3s ease-in-out;
   }
 
-  .radio-label.lang { border-radius: 18px 0 0 0 }
+  .radio-label.lang   { border-radius: 18px 0 0 0 }
   .radio-label.fworks { border-radius: 0 18px 0 0 }
-  .radio-label.tools { border-radius: 0 0 0 18px }
-  .radio-label.db { border-radius: 0 0 18px 0 }
+  .radio-label.tools  { border-radius: 0 0 0 18px }
+  .radio-label.db     { border-radius: 0 0 18px 0 }
 
   .radio-label:not(:last-of-type) {border-right: 1px solid vars.$dark-blue;}
 
   .radio-input:checked + .radio-label {
     background-color: vars.$dark-blue;
     color: vars.$light-text;
+  }
+}
+
+@media (min-width: 768px) {
+  section#skills {
+    .skills-radio {
+      @include mixin.flex-row;
+    }
+
+    .top {
+      border-bottom: none;
+      border-right: 1px solid vars.$dark-blue;
+    }
+
+    .radio-label.lang   { border-radius: 18px 0 0 18px; }
+    .radio-label.fworks,
+    .radio-label.tools  { border-radius: 0px; }
+    .radio-label.db     { border-radius: 0 18px 18px 0; }
+  }
+}
+
+@media (min-width: 1024px) {
+  section#skills {
+    .skills-radio, .top, .bottom {
+      flex-direction: column;
+    }
+
+    .top {
+      border: none;
+      align-items: center;
+    }
+
+    .radio-label, .radio-label:not(:last-of-type) {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid vars.$dark-blue;
+      border-radius: 0px;
+    }
+
+    .radio-label.db {
+      border: none;
+      border-radius: 0px;
+    }
   }
 }

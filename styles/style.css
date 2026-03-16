@@ -50,10 +50,10 @@ a {
 }
 @media (min-width: 1024px) {
   main {
-    padding: 0 20rem;
+    padding: 0 18rem;
   }
   header, footer {
-    padding: 0 22rem;
+    padding: 0 20rem;
   }
 }
 .banner h1 {
@@ -515,7 +515,7 @@ header {
   align-items: center;
   align-items: normal;
   gap: 1rem;
-  margin: 7rem 0 2rem 0;
+  margin: 8rem 0 5rem 0;
 }
 
 nav {
@@ -577,7 +577,7 @@ section#skills .skills-icons {
     flex-direction: row-reverse;
   }
   section#skills .card-and-button-container .skills-icons {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .main {

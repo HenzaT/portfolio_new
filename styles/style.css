@@ -1,3 +1,4 @@
+@import "../node_modules/@splidejs/splide/dist/css/splide.min.css";
 * {
   margin: 0;
   padding: 0;
@@ -30,7 +31,7 @@ h2 {
 }
 
 p {
-  line-height: 170%;
+  line-height: 2;
 }
 
 a {
@@ -54,55 +55,6 @@ a {
   }
   header, footer {
     padding: 0 20rem;
-  }
-}
-.banner h1 {
-  font-size: 5rem;
-  color: white;
-  margin: 60px 0px 0px 0px;
-}
-
-.banner-text-section {
-  margin-top: 44px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  align-items: center;
-  justify-content: center;
-}
-
-.banner-text-section > * {
-  margin: 0;
-}
-
-@media only screen and (max-width: 600px) {
-  .banner-text-section {
-    text-align: center;
-    margin-top: 0px;
-  }
-  .banner-text-left, .banner-text-right {
-    margin: 0px;
-  }
-  .banner-text-right h1 span.highlight {
-    font-size: 4.5rem;
-  }
-}
-@media only screen and (min-width: 600px) {
-  .banner-text-section {
-    text-align: center;
-  }
-  .banner-text-left, .banner-text-right {
-    margin: 0px;
-  }
-}
-@media only screen and (min-width: 1210px) {
-  .banner-text-left {
-    margin: 0px;
-    transform: translateX(-154px);
-  }
-  .banner-text-right {
-    margin: 0px;
-    transform: translateX(192px);
   }
 }
 /* back to home arrow */
@@ -208,6 +160,12 @@ section#skills .radio-input:checked + .radio-label {
   }
 }
 @media (min-width: 1024px) {
+  section#skills .skills-radio {
+    width: 50%;
+  }
+  section#skills .top, section#skills .bottom {
+    width: 100%;
+  }
   section#skills .skills-radio, section#skills .top, section#skills .bottom {
     flex-direction: column;
   }
@@ -216,7 +174,7 @@ section#skills .radio-input:checked + .radio-label {
     align-items: center;
   }
   section#skills .radio-label, section#skills .radio-label:not(:last-of-type) {
-    width: 100%;
+    width: 90%;
     border-right: none;
     border-bottom: 1px solid #030e2a;
     border-radius: 0px;
@@ -225,15 +183,39 @@ section#skills .radio-input:checked + .radio-label {
     border: none;
     border-radius: 0px;
   }
+  section#skills .radio-label.lang {
+    border-radius: 18px 18px 0 0;
+  }
+  section#skills .radio-label.fworks,
+  section#skills .radio-label.tools {
+    border-radius: 0px;
+  }
+  section#skills .radio-label.db {
+    border-radius: 0 0 18px 18px;
+  }
 }
 .project-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-items: flex-start;
   gap: 0.5rem;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
+}
+.project-card__top-and-image {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.project-card__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 .project-card__text {
   display: flex;
@@ -241,15 +223,6 @@ section#skills .radio-input:checked + .radio-label {
   align-items: center;
   align-items: flex-start;
   gap: 0.5rem;
-}
-.project-card__image {
-  margin: auto;
-  box-shadow: 0 0px 6px rgba(0, 2, 33, 0.179);
-  border-radius: 10px;
-}
-.project-card__image img {
-  border-radius: 10px;
-  object-fit: cover;
 }
 .project-card__tech-icons-container {
   display: flex;
@@ -270,11 +243,21 @@ section#skills .radio-input:checked + .radio-label {
   border: 1px solid #030e2a;
   border-radius: 10px;
   padding: 0.5rem 1rem;
+  transition: all 0.1s ease-in-out;
+}
+.project-card__link:hover {
+  background-color: #030e2a;
+  color: rgb(232, 245, 248);
+}
+.project-card .splide__track, .project-card .splide__slide img {
+  border-radius: 10px;
 }
 
 @media (min-width: 1024px) {
   .project-card {
+    display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 2rem;
     padding: 2rem;
   }
@@ -550,7 +533,7 @@ section#skills .card-and-button-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 section#skills .skills-icons {
   display: grid;
@@ -580,6 +563,12 @@ section#skills .skills-icons {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.splide__slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .main {
   overflow: auto;
   scroll-snap-type: y mandatory;

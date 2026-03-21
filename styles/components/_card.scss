@@ -3,26 +3,27 @@
 
 .project-card {
   @include mixin.flex-col;
-  align-items: flex-start;
   gap: 0.5rem;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 
-  &__text {
+  &__top-and-image {
+    height: 100%;
+    @include mixin.flex-col;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__top {
     @include mixin.flex-col;
     align-items: flex-start;
     gap: 0.5rem;
   }
 
-  &__image {
-    margin: auto;
-    box-shadow: vars.$light-shadow;
-    border-radius: 10px;
-
-    img {
-      border-radius: 10px;
-      object-fit: cover;
-    }
+  &__text {
+    @include mixin.flex-col;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 
   &__title {
@@ -46,14 +47,26 @@
     border: 1px solid vars.$dark-blue;
     border-radius: 10px;
     padding: 0.5rem 1rem;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background-color: vars.$dark-blue;
+      color: vars.$light;
+    }
+  }
+
+  .splide__track, .splide__slide img {
+    border-radius: 10px;
   }
 }
 
 @media (min-width: 1024px) {
   .project-card {
-    flex-direction: row;
+    @include mixin.flex-row;
     gap: 2rem;
     padding: 2rem;
+
+
 
     &:hover {
       box-shadow: vars.$shadow;

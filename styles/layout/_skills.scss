@@ -6,7 +6,7 @@ section#skills {
 
   .card-and-button-container {
     @include mixin.flex-col;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .skills-icons {

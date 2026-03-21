@@ -6,7 +6,6 @@
 @use 'base/_base';
 
 // components
-@use 'components/banner';
 @use 'components/button';
 @use 'components/card';
 @use 'components/icon';
@@ -18,7 +17,13 @@
 @use 'layout/navbar';
 @use 'layout/projects';
 @use 'layout/skills';
+@import "../node_modules/@splidejs/splide/dist/css/splide.min.css";
 
+.splide__slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 // themes
 .main {
   overflow: auto;

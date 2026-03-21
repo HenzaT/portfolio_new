@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap" rel="stylesheet">
-    <script src="src/script.js" defer></script>
+    <script type="module" src="src/script.js"></script>
   </head>
   <body>
     <!-- nav -->
@@ -26,10 +26,12 @@
     <header>
       <h1>Full-Stack Software Engineer</h1>
       <p>
-        I'm a software engineer with a background in education, passionate about building intuitive,
-        user-focused products. I'm currently working as a software engineer at a listserv company,
-        consolidating my knowledge of Perl, Linux, building servers, responsive frontend design and
-        b2b technical IT support.
+        I'm a software engineer with a background in education, currently working as a software engineer
+        at an electronic mailing list company. During my time working here, I've been consolidating
+        my knowledge of Perl, Linux, building servers, responsive front-end design and technical IT support.
+        <br>
+        <br>
+        In my personal projects, I like to build with a variety of tech ranging from Ruby to React.
       </p>
     </header>
     <!-- main content -->
@@ -72,12 +74,23 @@
           </article>
           <!-- Gimme a Song -->
           <article class="project-card">
-            <div class="project-card__image">
-              <img src="/assets/gimme-a-song-1.jpeg" alt="gimme a song website picture" width="200" height="200">
+            <div class="project-card__top-and-image">
+              <div class="project-card__top">
+                <h3 class="project-card__title">Gimme a Song</h3>
+                <h4 class="project-card__tagline">song idea app for musicians</h4>
+              </div>
+              <section id="song-slider" class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide"><img src="/assets/gimme-a-song-1.png" alt="gimme a song home page"></li>
+                    <li class="splide__slide"><img src="/assets/gimme-a-song-2.png" alt="gimme a song idea page"></li>
+                    <li class="splide__slide"><img src="/assets/gimme-a-song-3.png" alt="gimme a song save page"></li>
+                    <li class="splide__slide"><img src="/assets/gimme-a-song-4.png" alt="gimme a song dashboard"></li>
+                  </ul>
+                </div>
+              </section>
             </div>
             <div class="project-card__text">
-              <h3 class="project-card__title">Gimme a Song</h3>
-              <h4 class="project-card__tagline">song idea app for musicians</h4>
               <div class="project-card__tech-icons-container">
                 <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
                 <i class="devicon-javascript-plain" alt="javascript icon"></i>
@@ -139,12 +152,23 @@
           </article>
           <!-- Music Portfolio Website -->
           <article class="project-card">
-            <div class="project-card__image">
-              <img src="/assets/aptist-website.jpeg" alt="aptist website picture" width="200" height="200">
+            <div class="project-card__top-and-image">
+              <div class="project-card__top">
+                <h3 class="project-card__title">aptist music</h3>
+                <h4 class="project-card__tagline">music portfolio website</h4>
+              </div>
+              <section id="aptist-slider" class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide"><img src="/assets/aptistmusic.com_1.png" alt="aptist home"></li>
+                    <li class="splide__slide"><img src="/assets/aptistmusic.com_2.png" alt="aptist info"></li>
+                    <li class="splide__slide"><img src="/assets/aptistmusic.com_3.png" alt="aptist discs"></li>
+                    <li class="splide__slide"><img src="/assets/aptistmusic.com_4.png" alt="aptist discs reveal"></li>
+                  </ul>
+                </div>
+              </section>
             </div>
             <div class="project-card__text">
-              <h3 class="project-card__title">aptist music</h3>
-              <h4 class="project-card__tagline">music portfolio website</h4>
               <div class="project-card__tech-icons-container">
                 <i class="devicon-react-original" alt="react js icon"></i>
                 <i class="devicon-typescript-plain" alt="typescript icon"></i>
@@ -154,10 +178,8 @@
               <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
               <p class="project-card__description">
                 This is a site to showcase my music. I consolidated my knowledge of <span class="highlight">React</span>,
-                <span class="highlight">TypeScript</span> and data handling through props.
-                I used react router for multiple pages and react spring to explore transitions.
-                I also incorporated emailjs and recaptcha for simple contact functionality and
-                implemented changes to make my website more accessible.
+                and data handling through props. I used react router for multiple pages and react spring to explore transitions.
+                Wanting a simple contact form, I incorporated emailjs and recaptcha.
               </p>
               <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
               <div class="project-card__links">
@@ -202,12 +224,25 @@
           </article>
           <!-- The Country Club -->
           <article class="project-card">
-            <div class="project-card__image">
-              <img src="/assets/country-club.jpeg" alt="country club website picture" width="200" height="200">
+            <div class="project-card__top-and-image">
+              <div class="project-card__top">
+                <h3 class="project-card__title">The Country Club</h3>
+                <h4 class="project-card__tagline">app for exploring countries (in progress)</h4>
+              </div>
+              <section id="country-slider" class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide"><img src="/assets/the-country-club-1.png" alt="country club home page"></li>
+                    <li class="splide__slide"><img src="/assets/the-country-club-2.png" alt="country club country page"></li>
+                    <li class="splide__slide"><img src="/assets/the-country-club-3.png" alt="country club country info"></li>
+                    <li class="splide__slide"><img src="/assets/the-country-club-4.png" alt="country club region page"></li>
+                  </ul>
+                </div>
+              </section>
             </div>
             <div class="project-card__text">
-              <h3 class="project-card__title">The Country Club</h3>
-              <h4 class="project-card__tagline">app for exploring countries (in progress)</h4>
+              <!-- <h3 class="project-card__title">The Country Club</h3>
+              <h4 class="project-card__tagline">app for exploring countries (in progress)</h4> -->
               <div class="project-card__tech-icons-container">
                 <i class="devicon-rails-plain-wordmark" alt="ruby on rails icon"></i>
                 <i class="devicon-typescript-plain" alt="typescript icon"></i>
@@ -218,10 +253,8 @@
               </div>
               <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
               <p class="project-card__description">
-                Built using <span class="highlight">Rails</span>,
-                I wanted to practise using <span class="highlight">TypeScript</span>, as well as use
-                multiple <span class="highlight">third-party APIs</span>.
-                Some of the APIs I integrated are the Unsplash and Claude API.
+                I wanted to integrate multiple <span class="highlight">third-party APIs</span>:
+                some of the APIs I used were the Unsplash and Claude API.
                 After receiving user feedback, I am currently in the middle of an aesthetic
                 redesign, which has helped me to better understand modern design trends.
                 With the frontend in mind, I switched to using <span class="highlight">Vite</span> for optimised performance.
@@ -281,26 +314,10 @@
           </div>
         </div>
       </section>
-      <!-- <section class="above-content">
-        <section class="banner" id="home">
-          <div class="banner-text-section">
-            <div class="banner-text-left">
-              <h1><span class="highlight">Henry </span>Thomas</h1>
-            </div>
-            <div class="banner-text-right">
-              <h1>Software <span class="highlight">Engineer</span></h1>
-            </div>
-          </div>
-          <div class="about-chevron" id="top-chevron">
-            <a href="#projects"><i class="fa-solid fa-chevron-down fa-bounce" style="--fa-bounce-height: 5px;--fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;" alt="down chevron icon"></i></a>
-          </div>
-        </section>
-      </section> -->
-      <!-- <div class="home-arrow hidden">
+      <div class="home-arrow hidden">
         <a id="arrow-icon" href="#"><i class="fa-solid fa-arrow-up" alt="arrow up icon"></i></a>
-      </div> -->
-<!--
-        <section class="projects" id="projects">
+      </div>
+        <!-- <section class="projects" id="projects">
           <div class="about-chevron" id="mobile-chevron">
             <a href="#skills"><i class="fa-solid fa-chevron-down fa-bounce" style="--fa-bounce-height: 5px;--fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;" alt="down chevron icon"></i></a>
           </div>
@@ -308,7 +325,6 @@
           <div class="about-chevron" id="mobile-chevron">
             <a href="#about"><i class="fa-solid fa-chevron-down fa-bounce" style="--fa-bounce-height: 5px;--fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;" alt="down chevron icon"></i></a>
           </div> -->
-        <!-- Music -->
     </main>
     <footer>
       <div class="footer-left">

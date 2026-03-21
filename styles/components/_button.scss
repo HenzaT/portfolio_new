@@ -95,6 +95,14 @@ section#skills {
 
 @media (min-width: 1024px) {
   section#skills {
+    .skills-radio {
+      width: 50%;
+    }
+
+    .top, .bottom {
+      width: 100%;
+    }
+
     .skills-radio, .top, .bottom {
       flex-direction: column;
     }
@@ -105,7 +113,7 @@ section#skills {
     }
 
     .radio-label, .radio-label:not(:last-of-type) {
-      width: 100%;
+      width: 90%;
       border-right: none;
       border-bottom: 1px solid vars.$dark-blue;
       border-radius: 0px;
@@ -115,5 +123,10 @@ section#skills {
       border: none;
       border-radius: 0px;
     }
+
+    .radio-label.lang   { border-radius: 18px 18px 0 0; }
+    .radio-label.fworks,
+    .radio-label.tools  { border-radius: 0px; }
+    .radio-label.db     { border-radius: 0 0 18px 18px; }
   }
 }

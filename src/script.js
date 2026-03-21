@@ -1,4 +1,17 @@
-"use strict";
+// @ts-ignore
+import Splide from "../node_modules/@splidejs/splide/dist/js/splide.esm.js";
+new Splide('#song-slider').mount();
+new Splide('#aptist-slider').mount();
+new Splide('#country-slider').mount();
+// const init = () => {
+//   const el = document.querySelector('#song-slider');
+//   if (el) {
+//     const splide = new Splide(el as HTMLElement);
+//     splide.mount();
+//     console.log("Splide is alive!");
+//   }
+// };
+// document.addEventListener('DOMContentLoaded');
 // section variables
 const sections = {
     home: document.getElementById('home'),
@@ -11,12 +24,9 @@ const sections = {
 const sectionsNoHome = document.querySelector('.below-content');
 // section specific
 const skillsIconsContainer = document.querySelector('.skills-container');
-const sectionTitles = document.querySelectorAll('.section-title');
 const aboutContainer = document.querySelector('.about-container');
 const projectsContainer = document.querySelector('.projects-container');
-// banner
-const bannerLeft = document.querySelector('.banner-text-left');
-const bannerRight = document.querySelector('.banner-text-right');
+const sectionTitles = document.querySelectorAll('.section-title');
 // projects
 const projectCards = document.querySelectorAll('.project-card');
 const projectImages = document.querySelectorAll('.project-image');
@@ -29,7 +39,7 @@ const albumCards = document.querySelectorAll('.album-card');
 const albumImages = document.querySelectorAll('.album-art');
 const albumOverlays = document.querySelectorAll('.album-card-overlay');
 const musicCard = document.querySelector('.music-card');
-const projectAlbumMusicSkillsCards = [...projectCards, ...albumCards, musicCard, skillsIconsContainer];
+const projectAlbumMusicSkillsCards = [musicCard, skillsIconsContainer];
 // radio buttons
 const skillsRadioButtons = document.querySelectorAll('.skills-radio');
 const radioButtons = {
@@ -96,12 +106,12 @@ const mobileScreen = window.matchMedia("(max-width: 600px");
 // on page load
 function animationMediaQuery(media) {
     if (media.matches) {
-        bannerLeft === null || bannerLeft === void 0 ? void 0 : bannerLeft.classList.add('slide-right');
-        bannerRight === null || bannerRight === void 0 ? void 0 : bannerRight.classList.add('slide-left');
+        // bannerLeft?.classList.add('slide-right');
+        // bannerRight?.classList.add('slide-left');
     }
     else {
-        bannerLeft === null || bannerLeft === void 0 ? void 0 : bannerLeft.classList.add('slide-right-center');
-        bannerRight === null || bannerRight === void 0 ? void 0 : bannerRight.classList.add('slide-left-center');
+        // bannerLeft?.classList.add('slide-right-center');
+        // bannerRight?.classList.add('slide-left-center');
     }
 }
 ;
@@ -226,14 +236,13 @@ if (skillsIconsContainer)
 // reset about cards
 function resetAbout(entries) {
     entries.forEach((entry) => {
-        var _a, _b, _c, _d, _e, _f;
         if (!entry.isIntersecting) {
-            (_a = card.experience) === null || _a === void 0 ? void 0 : _a.classList.remove('fade');
-            (_b = card.experience) === null || _b === void 0 ? void 0 : _b.classList.add('expand');
-            (_c = card.interests) === null || _c === void 0 ? void 0 : _c.classList.remove('expand');
-            (_d = card.interests) === null || _d === void 0 ? void 0 : _d.classList.add('fade');
-            (_e = card.education) === null || _e === void 0 ? void 0 : _e.classList.remove('expand');
-            (_f = card.education) === null || _f === void 0 ? void 0 : _f.classList.add('fade');
+            card.experience?.classList.remove('fade');
+            card.experience?.classList.add('expand');
+            card.interests?.classList.remove('expand');
+            card.interests?.classList.add('fade');
+            card.education?.classList.remove('expand');
+            card.education?.classList.add('fade');
         }
     });
 }
@@ -276,8 +285,8 @@ allCards.forEach((card) => {
         return;
     card.addEventListener('click', () => {
         allCards.forEach((active) => {
-            active === null || active === void 0 ? void 0 : active.classList.remove('expand');
-            active === null || active === void 0 ? void 0 : active.classList.add('fade');
+            active?.classList.remove('expand');
+            active?.classList.add('fade');
         });
         scrollToView(card);
         card.classList.add('expand');
@@ -291,17 +300,6 @@ function toggleClassBySelector(selector, className, id) {
         return;
     element.classList.toggle(className);
 }
-function openOverlay(button) {
-    const id = button.dataset.id;
-    if (!id)
-        return;
-    button.classList.toggle('rotate');
-    toggleClassBySelector('.project-card-overlay', 'show', id);
-    toggleClassBySelector('.project-image', 'darken', id);
-    toggleClassBySelector('.album-card-overlay', 'show', id);
-    toggleClassBySelector('.album-art', 'darken', id);
-}
-;
 // skills icons toggle
 function clearFadeExpand() {
     Object.values(iconGroups).forEach(group => {
@@ -318,7 +316,7 @@ skillsRadioButtons.forEach((button) => {
     button.addEventListener('click', () => {
         clearFadeExpand();
         const selected = Object.keys(radioButtons)
-            .find(buttonName => { var _a; return (_a = radioButtons[buttonName]) === null || _a === void 0 ? void 0 : _a.checked; });
+            .find(buttonName => radioButtons[buttonName]?.checked);
         Object.entries(iconGroups).forEach(([group, icons]) => {
             if (group !== selected) {
                 icons.forEach((icon) => {

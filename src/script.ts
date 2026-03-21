@@ -1,3 +1,20 @@
+// @ts-ignore
+import Splide from "../node_modules/@splidejs/splide/dist/js/splide.esm.js";
+
+new Splide('#song-slider').mount();
+new Splide('#aptist-slider').mount();
+new Splide('#country-slider').mount();
+
+// const init = () => {
+//   const el = document.querySelector('#song-slider');
+//   if (el) {
+//     const splide = new Splide(el as HTMLElement);
+//     splide.mount();
+//     console.log("Splide is alive!");
+//   }
+// };
+
+// document.addEventListener('DOMContentLoaded');
 // section variables
 const sections = {
   home: document.getElementById('home'),
@@ -11,13 +28,9 @@ const sectionsNoHome: HTMLElement | null = document.querySelector('.below-conten
 
 // section specific
 const skillsIconsContainer: HTMLElement | null = document.querySelector('.skills-container');
-const sectionTitles: NodeListOf<HTMLElement> = document.querySelectorAll('.section-title');
 const aboutContainer: HTMLElement | null = document.querySelector('.about-container');
 const projectsContainer: HTMLElement | null = document.querySelector('.projects-container');
-
-// banner
-const bannerLeft: HTMLElement | null = document.querySelector('.banner-text-left');
-const bannerRight: HTMLElement | null = document.querySelector('.banner-text-right');
+const sectionTitles: NodeListOf<HTMLElement> = document.querySelectorAll('.section-title');
 
 // projects
 const projectCards: NodeListOf<HTMLElement> = document.querySelectorAll('.project-card');
@@ -34,16 +47,16 @@ const albumImages: NodeListOf<HTMLElement> = document.querySelectorAll('.album-a
 const albumOverlays: NodeListOf<HTMLElement> = document.querySelectorAll('.album-card-overlay');
 const musicCard: HTMLElement | null = document.querySelector('.music-card');
 
-const projectAlbumMusicSkillsCards = [...projectCards, ...albumCards, musicCard, skillsIconsContainer]
+const projectAlbumMusicSkillsCards = [musicCard, skillsIconsContainer]
 
 // radio buttons
 const skillsRadioButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.skills-radio');
 
 interface RadioButtons {
-  languages: HTMLInputElement
+  languages:  HTMLInputElement
   frameworks: HTMLInputElement
-  tools: HTMLInputElement
-  databases: HTMLInputElement
+  tools:      HTMLInputElement
+  databases:  HTMLInputElement
 }
 
 const radioButtons: RadioButtons = {
@@ -122,11 +135,11 @@ const mobileScreen = window.matchMedia("(max-width: 600px");
 // on page load
 function animationMediaQuery(media: MediaQueryList) {
   if (media.matches) {
-    bannerLeft?.classList.add('slide-right');
-    bannerRight?.classList.add('slide-left');
+    // bannerLeft?.classList.add('slide-right');
+    // bannerRight?.classList.add('slide-left');
   } else {
-    bannerLeft?.classList.add('slide-right-center');
-    bannerRight?.classList.add('slide-left-center');
+    // bannerLeft?.classList.add('slide-right-center');
+    // bannerRight?.classList.add('slide-left-center');
   }
 };
 
@@ -316,16 +329,6 @@ function toggleClassBySelector(selector: string, className: string, id: string):
   if (!element) return;
   element.classList.toggle(className);
 }
-
-function openOverlay(button: HTMLElement): void {
-  const id = button.dataset.id;
-  if (!id) return;
-  button.classList.toggle('rotate');
-  toggleClassBySelector('.project-card-overlay', 'show', id);
-  toggleClassBySelector('.project-image', 'darken', id);
-  toggleClassBySelector('.album-card-overlay', 'show', id);
-  toggleClassBySelector('.album-art', 'darken', id);
-};
 
 // skills icons toggle
 function clearFadeExpand(): void {

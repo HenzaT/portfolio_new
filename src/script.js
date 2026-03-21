@@ -3,15 +3,8 @@ import Splide from "../node_modules/@splidejs/splide/dist/js/splide.esm.js";
 new Splide('#song-slider').mount();
 new Splide('#aptist-slider').mount();
 new Splide('#country-slider').mount();
-// const init = () => {
-//   const el = document.querySelector('#song-slider');
-//   if (el) {
-//     const splide = new Splide(el as HTMLElement);
-//     splide.mount();
-//     console.log("Splide is alive!");
-//   }
-// };
-// document.addEventListener('DOMContentLoaded');
+new Splide('#weather-slider').mount();
+// new Splide('#country-slider').mount();
 // section variables
 const sections = {
     home: document.getElementById('home'),
@@ -95,7 +88,6 @@ const iconGroups = {
 };
 const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons];
 // home arrow to top
-const homeArrow = document.querySelector('.home-arrow');
 const homeArrowIcon = document.getElementById('arrow-icon');
 // about chevron
 const chevron = document.getElementById('top-chevron');
@@ -128,15 +120,15 @@ window.addEventListener('DOMContentLoaded', () => {
 // show home arrow button when sections in view
 function homeArrowInView(entries) {
     entries.forEach((entry) => {
-        if (!homeArrow)
+        if (!homeArrowIcon)
             return;
         if (entry.isIntersecting) {
-            homeArrow.classList.remove('hidden');
-            homeArrow.classList.add('slide-up-dark');
+            homeArrowIcon.classList.remove('hidden');
+            homeArrowIcon.classList.add('slide-up-dark');
         }
         else if (!entry.isIntersecting) {
-            homeArrow.classList.add('hidden');
-            homeArrow.classList.remove('slide-up-dark');
+            homeArrowIcon.classList.add('hidden');
+            homeArrowIcon.classList.remove('slide-up-dark');
         }
     });
 }

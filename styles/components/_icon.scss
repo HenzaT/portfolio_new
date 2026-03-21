@@ -13,6 +13,29 @@
   }
 }
 
+/* back to home arrow */
+a#arrow-icon{
+  margin: 1rem;
+  border: 1px solid vars.$dark-blue;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-radius: 50%;
+  }
+
+  i {
+    font-size: 1.5rem;
+    color: vars.$dark-blue;
+  }
+}
+
 section#skills {
   .skills-icons {
     font-size: 2.5rem;
@@ -25,4 +48,16 @@ section#skills {
 
 .fa-copy {
   font-size: 1.5rem;
+}
+
+@media (min-width: 1200px) {
+  section#skills {
+    .skills-icons {
+      font-size: 3rem;
+      color: vars.$dark-blue;
+      transition: opacity 0.5s ease-in-out;
+      transition: filter 0.5s ease-in-out;
+      transition: transform 0.5s ease-in-out;
+    }
+  }
 }

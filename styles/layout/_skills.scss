@@ -2,7 +2,7 @@
 @use '../abstracts/variables' as vars;
 
 section#skills {
-  margin: 2rem 0;
+  margin: 5rem 0 2rem 0;
 
   .card-and-button-container {
     @include mixin.flex-col;
@@ -32,11 +32,11 @@ section#skills {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   section#skills {
     padding: 0 2rem;
+
     .card-and-button-container {
-      flex-direction: row-reverse;
 
       .skills-icons {
         grid-template-columns: repeat(4, 1fr);

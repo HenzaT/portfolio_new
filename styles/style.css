@@ -49,7 +49,7 @@ a {
     padding: 0 10rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   main {
     padding: 0 18rem;
   }
@@ -57,27 +57,6 @@ a {
     padding: 0 20rem;
   }
 }
-/* back to home arrow */
-.home-arrow {
-  padding: 10px;
-  margin: 30px;
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--black);
-  display: inline-block;
-  position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  z-index: 100;
-  transition: opacity 0.3s, visibility 0.3s ease;
-}
-
-.home-arrow i {
-  font-size: 20px;
-  color: var(--light);
-}
-
 /* to about section arrow */
 .about-chevron {
   font-size: 3rem;
@@ -90,6 +69,11 @@ a {
 .about-chevron.slide-up-dark {
   animation-delay: 5s;
   animation: slideUpDark 3s ease;
+}
+
+#btn-disabled {
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 /* skills radio buttons */
@@ -143,6 +127,7 @@ section#skills .radio-input:checked + .radio-label {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: auto;
   }
   section#skills .top {
     border-bottom: none;
@@ -159,39 +144,16 @@ section#skills .radio-input:checked + .radio-label {
     border-radius: 0 18px 18px 0;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   section#skills .skills-radio {
     width: 50%;
   }
   section#skills .top, section#skills .bottom {
     width: 100%;
   }
-  section#skills .skills-radio, section#skills .top, section#skills .bottom {
-    flex-direction: column;
-  }
   section#skills .top {
     border: none;
     align-items: center;
-  }
-  section#skills .radio-label, section#skills .radio-label:not(:last-of-type) {
-    width: 90%;
-    border-right: none;
-    border-bottom: 1px solid #030e2a;
-    border-radius: 0px;
-  }
-  section#skills .radio-label.db {
-    border: none;
-    border-radius: 0px;
-  }
-  section#skills .radio-label.lang {
-    border-radius: 18px 18px 0 0;
-  }
-  section#skills .radio-label.fworks,
-  section#skills .radio-label.tools {
-    border-radius: 0px;
-  }
-  section#skills .radio-label.db {
-    border-radius: 0 0 18px 18px;
   }
 }
 .project-card {
@@ -249,11 +211,16 @@ section#skills .radio-input:checked + .radio-label {
   background-color: #030e2a;
   color: rgb(232, 245, 248);
 }
+.project-card .splide__slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .project-card .splide__track, .project-card .splide__slide img {
   border-radius: 10px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .project-card {
     display: flex;
     flex-direction: row;
@@ -273,6 +240,27 @@ section#skills .radio-input:checked + .radio-label {
   font-size: 1.5rem;
 }
 
+/* back to home arrow */
+a#arrow-icon {
+  margin: 1rem;
+  border: 1px solid #030e2a;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+a#arrow-icon:hover {
+  border-radius: 50%;
+}
+a#arrow-icon i {
+  font-size: 1.5rem;
+  color: #030e2a;
+}
+
 section#skills .skills-icons {
   font-size: 2.5rem;
   color: #030e2a;
@@ -285,11 +273,15 @@ section#skills .skills-icons {
   font-size: 1.5rem;
 }
 
-.darken {
-  animation: darken 0.5s ease;
-  filter: brightness(0);
+@media (min-width: 1200px) {
+  section#skills .skills-icons {
+    font-size: 3rem;
+    color: #030e2a;
+    transition: opacity 0.5s ease-in-out;
+    transition: filter 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+  }
 }
-
 .brighten {
   animation: brighten 0.6s ease;
 }
@@ -521,13 +513,13 @@ section#projects .grid {
   gap: 5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   section#projects h2 {
     padding-left: 2rem;
   }
 }
 section#skills {
-  margin: 2rem 0;
+  margin: 5rem 0 2rem 0;
 }
 section#skills .card-and-button-container {
   display: flex;
@@ -552,23 +544,14 @@ section#skills .skills-icons {
     grid-template-columns: repeat(5, 1fr);
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   section#skills {
     padding: 0 2rem;
-  }
-  section#skills .card-and-button-container {
-    flex-direction: row-reverse;
   }
   section#skills .card-and-button-container .skills-icons {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.splide__slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .main {
   overflow: auto;
   scroll-snap-type: y mandatory;

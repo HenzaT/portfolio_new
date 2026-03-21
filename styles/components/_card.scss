@@ -55,18 +55,22 @@
     }
   }
 
+  .splide__slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
   .splide__track, .splide__slide img {
     border-radius: 10px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .project-card {
     @include mixin.flex-row;
     gap: 2rem;
     padding: 2rem;
-
-
 
     &:hover {
       box-shadow: vars.$shadow;

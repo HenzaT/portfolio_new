@@ -1,27 +1,5 @@
 @use '../abstracts/mixins' as mixin;
 @use '../abstracts/variables' as vars;
-
-/* back to home arrow */
-.home-arrow {
-  padding: 10px;
-  margin: 30px;
-  border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--black);
-  display: inline-block;
-  position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  z-index: 100;
-  transition: opacity 0.3s, visibility 0.3s ease;
-}
-
-.home-arrow i {
-  font-size: 20px;
-  color: var(--light);
-}
-
 /* to about section arrow */
 .about-chevron {
   font-size: 3rem;
@@ -34,6 +12,11 @@
 .about-chevron.slide-up-dark {
   animation-delay: 5s;
   animation: slideUpDark 3s ease;
+}
+
+#btn-disabled {
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
 /* skills radio buttons */
@@ -79,6 +62,7 @@ section#skills {
   section#skills {
     .skills-radio {
       @include mixin.flex-row;
+      width: auto;
     }
 
     .top {
@@ -93,7 +77,7 @@ section#skills {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   section#skills {
     .skills-radio {
       width: 50%;
@@ -103,30 +87,15 @@ section#skills {
       width: 100%;
     }
 
-    .skills-radio, .top, .bottom {
-      flex-direction: column;
-    }
 
     .top {
       border: none;
       align-items: center;
     }
 
-    .radio-label, .radio-label:not(:last-of-type) {
-      width: 90%;
-      border-right: none;
-      border-bottom: 1px solid vars.$dark-blue;
-      border-radius: 0px;
-    }
-
-    .radio-label.db {
-      border: none;
-      border-radius: 0px;
-    }
-
-    .radio-label.lang   { border-radius: 18px 18px 0 0; }
-    .radio-label.fworks,
-    .radio-label.tools  { border-radius: 0px; }
-    .radio-label.db     { border-radius: 0 0 18px 18px; }
+    // .radio-label.lang   { border-radius: 18px 18px 0 0; }
+    // .radio-label.fworks,
+    // .radio-label.tools  { border-radius: 0px; }
+    // .radio-label.db     { border-radius: 0 0 18px 18px; }
   }
 }

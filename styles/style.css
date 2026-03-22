@@ -28,7 +28,12 @@ h1 {
 
 h2 {
   font-weight: 600;
+  font-size: 3rem;
   margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 2rem;
 }
 
 p {
@@ -71,6 +76,46 @@ a {
 .about-chevron.slide-up-dark {
   animation-delay: 5s;
   animation: slideUpDark 3s ease;
+}
+
+nav button {
+  cursor: pointer;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #030e2a;
+  border-radius: 10px;
+}
+nav button:hover {
+  background-color: #030e2a;
+  color: rgb(232, 245, 248);
+}
+
+/* back to home arrow */
+a#arrow-icon {
+  cursor: pointer;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #030e2a;
+  border-radius: 10px;
+}
+a#arrow-icon:hover {
+  background-color: #030e2a;
+  color: rgb(232, 245, 248);
+}
+a#arrow-icon {
+  display: inline-block;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+a#arrow-icon:hover {
+  border-radius: 50%;
+}
+a#arrow-icon i {
+  font-size: 1.5rem;
+  color: #030e2a;
 }
 
 #btn-disabled {
@@ -207,10 +252,11 @@ section#skills .radio-input:checked + .radio-label {
   padding-top: 0.5rem;
 }
 .project-card__link {
+  cursor: pointer;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid #030e2a;
   border-radius: 10px;
-  padding: 0.5rem 1rem;
-  transition: all 0.1s ease-in-out;
 }
 .project-card__link:hover {
   background-color: #030e2a;
@@ -247,29 +293,8 @@ section#skills .radio-input:checked + .radio-label {
   font-size: 2rem;
 }
 
-.project-card__links i {
+.project-card__links i, nav button i {
   font-size: 1.5rem;
-}
-
-/* back to home arrow */
-a#arrow-icon {
-  margin: 1rem;
-  border: 1px solid #030e2a;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
-a#arrow-icon:hover {
-  border-radius: 50%;
-}
-a#arrow-icon i {
-  font-size: 1.5rem;
-  color: #030e2a;
 }
 
 section#skills .skills-icons {
@@ -508,14 +533,12 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
+  justify-content: center;
   height: 10dvh;
-  background: #030e2a;
+  background: transparent;
   color: #e6f2ff;
   padding: 0 1rem;
-}
-nav p {
-  font-size: 1.5rem;
 }
 
 section#projects .grid {

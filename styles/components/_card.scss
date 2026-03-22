@@ -44,15 +44,7 @@
   }
 
   &__link {
-    border: 1px solid vars.$dark-blue;
-    border-radius: 10px;
-    padding: 0.5rem 1rem;
-    transition: all 0.1s ease-in-out;
-
-    &:hover {
-      background-color: vars.$dark-blue;
-      color: vars.$light;
-    }
+    @include mixin.btn-style;
   }
 
   .splide__slide img {

@@ -3,13 +3,10 @@
 
 nav {
   @include mixin.flex-row;
-  justify-content: space-between;
+  gap: 1rem;
+  justify-content: center;
   height: 10dvh;
-  background: vars.$dark-blue;
+  background: transparent;
   color: vars.$light-text;
   padding: vars.$page-padding-xs;
-
-  p {
-    font-size: 1.5rem;
-  }
 }

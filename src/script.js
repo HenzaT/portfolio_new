@@ -28,13 +28,28 @@ const projectOverlays = document.querySelectorAll('.project-card-overlay');
 const skillsCardButtons = document.getElementById('skills-card-button');
 // music
 const allAlbums = document.querySelector('.all-albums');
-const albumCards = document.querySelectorAll('.album-card');
-const albumImages = document.querySelectorAll('.album-art');
-const albumOverlays = document.querySelectorAll('.album-card-overlay');
 const musicCard = document.querySelector('.music-card');
 const projectAlbumMusicSkillsCards = [musicCard, skillsIconsContainer];
+const themeBtn = document.getElementById('theme-btn');
+const themeIcon = document.getElementById('theme-icon');
+const langBtn = document.getElementById('lang-btn');
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+        themeIcon.className === 'fa-solid fa-moon' ?
+            themeIcon.className = 'fa-solid fa-sun' :
+            themeIcon.className = 'fa-solid fa-moon';
+    });
+}
+if (langBtn) {
+    langBtn.addEventListener('click', () => {
+        langBtn.innerHTML === '日本語' ?
+            langBtn.innerHTML = 'Eng' :
+            langBtn.innerHTML = '日本語';
+    });
+}
 // radio buttons
 const skillsRadioButtons = document.querySelectorAll('.skills-radio');
+;
 const radioButtons = {
     languages: document.getElementById('languages'),
     frameworks: document.getElementById('frameworks'),

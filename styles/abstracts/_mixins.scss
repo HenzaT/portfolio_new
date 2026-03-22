@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as vars;
+
 @mixin flex-row {
   display: flex;
   flex-direction: row;
@@ -8,4 +10,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@mixin btn-style {
+  cursor: pointer;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid vars.$dark-blue;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: vars.$dark-blue;
+    color: vars.$light;
+  }
 }

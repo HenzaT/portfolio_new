@@ -7,32 +7,9 @@
   }
 }
 
-.project-card__links {
+.project-card__links, nav button {
   i {
     font-size: 1.5rem;
-  }
-}
-
-/* back to home arrow */
-a#arrow-icon{
-  margin: 1rem;
-  border: 1px solid vars.$dark-blue;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-  display: inline-block;
-  position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  z-index: 1000;
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-radius: 50%;
-  }
-
-  i {
-    font-size: 1.5rem;
-    color: vars.$dark-blue;
   }
 }
 

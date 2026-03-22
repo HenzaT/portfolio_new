@@ -75,5 +75,13 @@
     &:hover {
       box-shadow: vars.$shadow;
     }
+
+    &__top-and-image, &__text {
+      width: 65%;
+    }
+
+    &__text {
+      width: 35%;
+    }
   }
 }

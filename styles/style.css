@@ -22,7 +22,8 @@ header, main, footer {
 
 h1 {
   font-weight: 600;
-  line-height: 140%;
+  font-size: 4rem;
+  line-height: 120%;
 }
 
 h2 {
@@ -31,7 +32,8 @@ h2 {
 }
 
 p {
-  line-height: 2;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 a {
@@ -46,15 +48,15 @@ a {
 
 @media (min-width: 768px) {
   header, main, footer {
-    padding: 0 10rem;
+    padding: 0 18rem;
   }
 }
 @media (min-width: 1200px) {
   main {
-    padding: 0 18rem;
+    padding: 0 20rem;
   }
   header, footer {
-    padding: 0 20rem;
+    padding: 0 22rem;
   }
 }
 /* to about section arrow */
@@ -146,7 +148,7 @@ section#skills .radio-input:checked + .radio-label {
 }
 @media (min-width: 1200px) {
   section#skills .skills-radio {
-    width: 50%;
+    width: 90%;
   }
   section#skills .top, section#skills .bottom {
     width: 100%;
@@ -154,6 +156,9 @@ section#skills .radio-input:checked + .radio-label {
   section#skills .top {
     border: none;
     align-items: center;
+  }
+  section#skills .radio-label.fworks {
+    border-right: 1px solid #030e2a;
   }
 }
 .project-card {
@@ -230,6 +235,12 @@ section#skills .radio-input:checked + .radio-label {
   }
   .project-card:hover {
     box-shadow: 0 0px 6px rgba(0, 2, 33, 0.316);
+  }
+  .project-card__top-and-image, .project-card__text {
+    width: 65%;
+  }
+  .project-card__text {
+    width: 35%;
   }
 }
 .project-card__tech-icons-container i, footer i {

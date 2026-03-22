@@ -80,18 +80,19 @@ section#skills {
 @media (min-width: 1200px) {
   section#skills {
     .skills-radio {
-      width: 50%;
+      width: 90%;
     }
 
     .top, .bottom {
       width: 100%;
     }
 
-
     .top {
       border: none;
       align-items: center;
     }
+
+    .radio-label.fworks { border-right: 1px solid vars.$dark-blue; }
 
     // .radio-label.lang   { border-radius: 18px 18px 0 0; }
     // .radio-label.fworks,

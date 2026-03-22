@@ -24,7 +24,8 @@ header, main, footer {
 
 h1 {
   font-weight: 600;
-  line-height: 140%;
+  font-size: 4rem;
+  line-height: 120%;
 }
 
 h2 {
@@ -33,7 +34,8 @@ h2 {
 }
 
 p {
-  line-height: 2;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 a {
@@ -58,6 +60,6 @@ a {
   }
 
   header, footer {
-    padding: 0 20rem;
+    padding: 0 22rem;
   }
 }

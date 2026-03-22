@@ -10,12 +10,16 @@
   font-style: normal;
 }
 
-body {
-  background-color: whitesmoke;
-  color: vars.$dark-blue;
-  width: 100%;
-  position: relative;
-  overscroll-behavior-y: none;
+.lang-jp {
+  display: none;
+}
+
+body.jp-mode .lang-en {
+  display: none;
+}
+
+body.jp-mode .lang-jp {
+  display: inline;
 }
 
 header, main, footer {

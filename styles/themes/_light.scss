@@ -1,0 +1,7 @@
+@use '../abstracts/mixins' as mixin;
+@use '../abstracts/variables' as vars;
+
+body.light {
+  background-color: vars.$light;
+  color: vars.$dark-blue;
+}

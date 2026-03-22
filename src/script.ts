@@ -38,23 +38,53 @@ const musicCard: HTMLElement | null = document.querySelector('.music-card');
 
 const projectAlbumMusicSkillsCards = [musicCard, skillsIconsContainer]
 
-const themeBtn  = document.getElementById('theme-btn') as HTMLButtonElement;
-const themeIcon = document.getElementById('theme-icon') as HTMLButtonElement;
-const langBtn   = document.getElementById('lang-btn') as HTMLButtonElement;
+const themeBtn      = document.getElementById('theme-btn') as HTMLButtonElement;
+const themeIcon     = document.getElementById('theme-icon') as HTMLButtonElement;
+const langBtn       = document.getElementById('lang-btn') as HTMLButtonElement;
+const hrLine        = document.getElementsByTagName('hr');
+const projectLinks  = document.querySelectorAll('.project-card__link');
+const skillsCard    = document.querySelector('.skills-icons') as HTMLDivElement;
+const skillsRadio   = document.querySelector('.skills-radio') as HTMLDivElement;
+const highlighted   = document.querySelectorAll('.highlight');
 
+const elements = [ themeBtn, langBtn, skillsCard, skillsRadio ];
+
+// const manyElements = (elements: NodeListOf<Element>, el: Element ) => {
+//   elements.forEach(el => {
+//     el.classList.toggle('dark');
+//   })
+// };
+
+// light & dark mode toggle
 if (themeBtn) {
   themeBtn.addEventListener('click', () => {
-    themeIcon.className === 'fa-solid fa-moon' ?
-    themeIcon.className = 'fa-solid fa-sun' :
-    themeIcon.className = 'fa-solid fa-moon';
+    elements.forEach(el => {
+      el.classList.toggle('dark');
+    })
+    Array.from(hrLine).forEach(line => {
+      line.classList.toggle('dark');
+    })
+    projectLinks.forEach(link => {
+      link.classList.toggle('dark');
+    })
+    highlighted.forEach(word => {
+      word.classList.toggle('dark');
+    })
+    
+    if (themeIcon.className === 'fa-solid fa-moon') {
+      themeIcon.className = 'fa-solid fa-sun';
+      document.body.className = 'dark';
+    } else {
+      themeIcon.className = 'fa-solid fa-moon';
+      document.body.className = 'light';
+    }
   });
 }
 
+// language toggle
 if (langBtn) {
   langBtn.addEventListener('click', () => {
-    langBtn.innerHTML === '日本語' ?
-    langBtn.innerHTML = 'Eng' :
-    langBtn.innerHTML = '日本語';
+    document.body.classList.toggle('jp-mode');
   })
 }
 

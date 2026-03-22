@@ -45,6 +45,7 @@
 
   &__link {
     @include mixin.btn-style;
+    margin: 0;
   }
 
   .splide__slide img {

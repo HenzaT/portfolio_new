@@ -15,15 +15,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap" rel="stylesheet">
     <script type="module" src="src/script.js"></script>
   </head>
-  <body>
+  <body class="light">
     <!-- nav -->
     <nav>
       <button id="theme-btn" type="button"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
-      <button id="lang-btn" type="button">日本語</button>
+      <button id="lang-btn" type="button">JP</button>
     </nav>
     <!-- main header -->
     <header>
-      <h1>Henry Thomas <br>Software Engineer</h1>
+      <h1>
+        <span class="lang-en">Henry Thomas</span>
+        <span class="lang-jp">トーマス ヘンリー</span>
+      </h1>
+      <h1>
+        <span class="lang-en">Software Engineer</span>
+        <span class="lang-jp">エンジニア</span>
+      </h1>
       <p>
         I'm a software engineer with a background in education, currently working as a software engineer
         at an electronic mailing list company. During my time working here, I've been consolidating
@@ -31,6 +38,7 @@
         <br>
         <br>
         In my personal projects, I like to build with a variety of tech ranging from Ruby to React.
+        As I am half-Japanese, I added the option to view this page in Japanese.
       </p>
     </header>
     <!-- main content -->
@@ -54,14 +62,14 @@
                 <i class="devicon-vitejs-plain" alt="vite js icon"></i>
                 <i class="devicon-netlify-plain" alt="netlify icon"></i>
               </div>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <p class="project-card__description">
                 I worked collaboratively with a client to build this professional website.
                 It is fully responsive, with different components rendered depending on screen size.
                 Integrated <span class="highlight">Netlify Forms</span> for form-handling, and
                 <span class="highlight">Decap CMS</span> to allow the client to edit content easily. (This is a private repo).
               </p>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <div class="project-card__links">
                 <a href="https://therapyservice.org" class="project-card__link" title="Go to Therapy Website">
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -99,13 +107,13 @@
                 <i class="devicon-bootstrap-plain-wordmark" alt="bootstrap icon"></i>
                 <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
               </div>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <p class="project-card__description">
                 A self-directed project built to help musicians overcome writer's block by generating random song elements.
                 I focused on database design and relationships using <span class="highlight">PostgreSQL</span>
                 and learning to use <span class="highlight">Stimulus JS</span>.
               </p>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <div class="project-card__links">
                 <a href="https://gimme-a-song-75fdbe92334c.herokuapp.com/" class="project-card__link" title="Go to Gimme a Song Website">
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -139,14 +147,14 @@
                 <i class="devicon-python-plain" alt="python icon"></i>
                 <i class="devicon-typescript-plain" alt="typescript icon"></i>
               </div>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <p class="project-card__description">
                 This <span class="highlight">React</span> app integrates a <span class="highlight">Flask</span> backend
                 and consumes <span class="highlight">external APIs</span>:
                 <span class="highlight">OpenWeather</span> for real-time weather data and the
                 <span class="highlight">Claude AI</span> API from Anthropic for activity suggestions.
               </p>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <div class="project-card__links">
                 <a href="https://react-weather-claude-app-af1fc23c96a1.herokuapp.com/" class="project-card__link" title="Go to React Weather Website">
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -182,13 +190,13 @@
                 <i class="devicon-css3-plain-wordmark" alt="css3 icon"></i>
                 <i class="devicon-vitejs-plain" alt="vite js icon"></i>
               </div>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <p class="project-card__description">
                 This is a site to showcase my music. I used <span class="highlight">react router</span> for multiple pages,
                 <span class="highlight">react spring</span> to explore transitions and focused on data handling through props.
                 Wanting a simple contact form with no backend, I incorporated <span class="highlight">emailjs</span> and recaptcha.
               </p>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <div class="project-card__links">
                 <a href="https://aptistmusic.com/" class="project-card__link" title="Go to aptist website">
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -212,14 +220,14 @@
                 <i class="devicon-sass-original" alt="sass icon"></i>
                 <i class="devicon-typescript-plain" alt="typescript icon"></i>
               </div>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <p class="project-card__description">
                 I focused on design, animation, and JavaScript DOM manipulation,
                 while also applying newly learned <span class="highlight">TypeScript</span> concepts.
                 I returned to this portfolio after working on a number of other projects,
                 separating concerns better and replacing CSS with <span class="highlight">SCSS</span>.
               </p>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <div class="project-card__links">
                 <button id="btn-disabled" class="project-card__link" disabled>
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -257,7 +265,7 @@
                 <i class="devicon-vitejs-plain" alt="vite js icon"></i>
                 <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
               </div>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <p class="project-card__description">
                 I wanted to integrate multiple <span class="highlight">third-party APIs</span>:
                 some of the APIs I used were the Unsplash and Claude API.
@@ -265,7 +273,7 @@
                 redesign, which has helped me to better understand modern design trends.
                 With the frontend in mind, I switched to using <span class="highlight">Vite</span> for optimised performance.
               </p>
-              <hr style="height: 1px; width: 100%; margin: auto; background-color: #030e2a; border: none;" />
+              <hr />
               <div class="project-card__links">
                 <a href="https://the-country-club-e3d07af9dd9d.herokuapp.com/" class="project-card__link" title="Go to The Country Club website">
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -322,14 +330,6 @@
         </div>
       </section>
       <a id="arrow-icon" class="" href="#"><i class="fa-solid fa-arrow-up" alt="arrow up icon"></i></a>
-        <!-- <section class="projects" id="projects">
-          <div class="about-chevron" id="mobile-chevron">
-            <a href="#skills"><i class="fa-solid fa-chevron-down fa-bounce" style="--fa-bounce-height: 5px;--fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;" alt="down chevron icon"></i></a>
-          </div>
-        </section>
-          <div class="about-chevron" id="mobile-chevron">
-            <a href="#about"><i class="fa-solid fa-chevron-down fa-bounce" style="--fa-bounce-height: 5px;--fa-bounce-start-scale-x: 1;--fa-bounce-start-scale-y: 1;--fa-bounce-jump-scale-x: 1;--fa-bounce-jump-scale-y: 1;--fa-bounce-land-scale-x: 1;--fa-bounce-land-scale-y: 1;--fa-bounce-rebound: 0;" alt="down chevron icon"></i></a>
-          </div> -->
     </main>
     <footer>
       <div class="footer-left">

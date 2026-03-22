@@ -1,0 +1,10 @@
+@use '../abstracts/mixins' as mixin;
+@use '../abstracts/variables' as vars;
+
+hr {
+  height: 1px;
+  width: 100%;
+  margin: auto;
+  background-color: vars.$dark-blue;
+  border: none;
+}

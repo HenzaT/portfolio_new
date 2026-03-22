@@ -2,11 +2,11 @@
 @use '../abstracts/variables' as vars;
 
 nav {
+  // height: 20dvh;
   @include mixin.flex-row;
-  gap: 1rem;
   justify-content: center;
-  height: 10dvh;
+  gap: 1rem;
+  margin: 1rem 0;
   background: transparent;
-  color: vars.$light-text;
   padding: vars.$page-padding-xs;
 }

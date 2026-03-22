@@ -9,7 +9,7 @@ section#skills {
     gap: 2rem;
   }
 
-  .skills-icons {
+  div.skills-icons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;

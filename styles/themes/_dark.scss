@@ -1,0 +1,35 @@
+@use '../abstracts/mixins' as mixin;
+@use '../abstracts/variables' as vars;
+
+body.dark {
+  color: vars.$light;
+  background-color: vars.$dark-blue;
+}
+
+hr.dark {
+  background-color: vars.$light;
+}
+
+button.dark, .project-card__link.dark {
+  border: 1px solid vars.$light;
+
+  &:hover {
+    background-color: vars.$light;
+    color: vars.$dark-blue;
+  }
+}
+
+section#skills {
+  .skills-radio.dark {
+    border: 1px solid vars.$light;
+  }
+
+  .skills-icons.dark {
+    box-shadow: vars.$light-shadow;
+    color: vars.$light;
+  }
+}
+
+span.highlight.dark {
+  color: vars.$light-selected;
+}

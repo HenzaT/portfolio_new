@@ -70,7 +70,7 @@ if (themeBtn) {
     highlighted.forEach(word => {
       word.classList.toggle('dark');
     })
-    
+
     if (themeIcon.className === 'fa-solid fa-moon') {
       themeIcon.className = 'fa-solid fa-sun';
       document.body.className = 'dark';
@@ -85,6 +85,7 @@ if (themeBtn) {
 if (langBtn) {
   langBtn.addEventListener('click', () => {
     document.body.classList.toggle('jp-mode');
+    langBtn.textContent === 'JP' ? langBtn.textContent = 'EN' : langBtn.textContent = 'JP';
   })
 }
 

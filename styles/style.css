@@ -103,6 +103,10 @@ nav button:hover {
   background-color: #030e2a;
   color: rgb(247, 253, 255);
 }
+nav button {
+  height: 50px;
+  width: 70px;
+}
 nav #lang-btn {
   font-size: 1.5rem;
 }

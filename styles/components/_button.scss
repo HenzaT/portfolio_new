@@ -27,6 +27,8 @@ button {
 nav {
   button {
     @include mixin.btn-style;
+    height: 50px;
+    width: 70px;
   }
 
   #lang-btn {

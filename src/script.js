@@ -73,6 +73,7 @@ if (themeBtn) {
 if (langBtn) {
     langBtn.addEventListener('click', () => {
         document.body.classList.toggle('jp-mode');
+        langBtn.textContent === 'JP' ? langBtn.textContent = 'EN' : langBtn.textContent = 'JP';
     });
 }
 // radio buttons

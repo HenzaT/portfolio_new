@@ -84,8 +84,11 @@ if (themeBtn) {
 // language toggle
 if (langBtn) {
   langBtn.addEventListener('click', () => {
+    let htmlLang = document.documentElement;
+    htmlLang.getAttribute('lang') === 'jp' ? htmlLang.setAttribute('lang', 'en') : htmlLang.setAttribute('lang', 'jp');
     document.body.classList.toggle('jp-mode');
-    langBtn.textContent === 'JP' ? langBtn.textContent = 'EN' : langBtn.textContent = 'JP';
+    let btnText = langBtn.textContent;
+    btnText === 'JP' ? btnText = 'EN' : btnText = 'JP';
   })
 }
 

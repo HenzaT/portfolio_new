@@ -20,11 +20,6 @@
   color: inherit;
   border: 1px solid vars.$dark-blue;
   border-radius: 10px;
-
-  &:hover {
-    background-color: vars.$dark-blue;
-    color: vars.$light;
-  }
 }
 
 @mixin btn-style-dark {

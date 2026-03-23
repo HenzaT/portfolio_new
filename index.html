@@ -12,24 +12,24 @@
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Slabo+27px&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script type="module" src="src/script.js"></script>
   </head>
   <body class="light">
     <!-- nav -->
     <nav>
       <button id="theme-btn" type="button"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
-      <button id="lang-btn" type="button">JP</button>
+      <button id="lang-btn" type="button">日本語</button>
     </nav>
     <!-- main header -->
     <header>
       <h1>
         <span class="lang-en">Henry Thomas</span>
-        <span class="lang-jp">トーマス ヘンリー</span>
+        <span class="lang-ja">トーマス ヘンリー</span>
       </h1>
       <h1>
         <span class="lang-en">Software Engineer</span>
-        <span class="lang-jp">ソフトウェア・エンジニア</span>
+        <span class="lang-ja">ソフトウェア・エンジニア</span>
       </h1>
       <p>
         <span class="lang-en">
@@ -41,7 +41,7 @@
           In my personal projects, I like to build with a variety of tech ranging from Ruby to React.
           As I am half-Japanese, I added the option to view this page in Japanese.
         </span>
-        <span class="lang-jp">
+        <span class="lang-ja">
           教師の経歴を持つ、ロンドン出身のソフトウェア・エンジニアです。現在は電子メーリングリスト関連のソフトウェア企業で勤務しています。
           業務ではサーバの構築、Perl、JavaScript、Linuxなどのテクノロジーを使いながら働いてます。
           <br>
@@ -51,13 +51,14 @@
         </span>
       </p>
     </header>
+    <hr class="inbetween">
     <!-- main content -->
     <main>
       <!-- Project Section -->
       <section id="projects">
         <h2>
           <span class="lang-en">Projects</span>
-          <span class="lang-jp">プロジェクト一覧</span>
+          <span class="lang-ja">プロジェクト一覧</span>
         </h2>
         <div class="grid">
           <!-- Therapy Website -->
@@ -75,14 +76,14 @@
                 <i class="devicon-vitejs-plain" alt="vite js icon"></i>
                 <i class="devicon-netlify-plain" alt="netlify icon"></i>
               </div>
-              <hr />
+              <hr>
               <p class="project-card__description">
                 I worked collaboratively with a client to build this professional website.
                 It is fully responsive, with different components rendered depending on screen size.
                 Integrated <span class="highlight">Netlify Forms</span> for form-handling, and
                 <span class="highlight">Decap CMS</span> to allow the client to edit content easily. (This is a private repo).
               </p>
-              <hr />
+              <hr>
               <div class="project-card__links">
                 <a href="https://therapyservice.org" class="project-card__link" title="Go to Therapy Website">
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -93,6 +94,7 @@
               </div>
             </div>
           </article>
+          <hr class="inbetween">
           <!-- Gimme a Song -->
           <article class="project-card">
             <div class="project-card__top-and-image">
@@ -120,13 +122,13 @@
                 <i class="devicon-bootstrap-plain-wordmark" alt="bootstrap icon"></i>
                 <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
               </div>
-              <hr />
+              <hr>
               <p class="project-card__description">
                 A self-directed project built to help musicians overcome writer's block by generating random song elements.
                 I focused on database design and relationships using <span class="highlight">PostgreSQL</span>
                 and learning to use <span class="highlight">Stimulus JS</span>.
               </p>
-              <hr />
+              <hr>
               <div class="project-card__links">
                 <a href="https://gimme-a-song-75fdbe92334c.herokuapp.com/" class="project-card__link" title="Go to Gimme a Song Website">
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -137,6 +139,7 @@
               </div>
             </div>
           </article>
+          <hr class="inbetween">
           <!-- Flask / React Weather App -->
           <article class="project-card">
             <div class="project-card__top-and-image">
@@ -160,14 +163,14 @@
                 <i class="devicon-python-plain" alt="python icon"></i>
                 <i class="devicon-typescript-plain" alt="typescript icon"></i>
               </div>
-              <hr />
+              <hr>
               <p class="project-card__description">
                 This <span class="highlight">React</span> app integrates a <span class="highlight">Flask</span> backend
                 and consumes <span class="highlight">external APIs</span>:
                 <span class="highlight">OpenWeather</span> for real-time weather data and the
                 <span class="highlight">Claude AI</span> API from Anthropic for activity suggestions.
               </p>
-              <hr />
+              <hr>
               <div class="project-card__links">
                 <a href="https://react-weather-claude-app-af1fc23c96a1.herokuapp.com/" class="project-card__link" title="Go to React Weather Website">
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -178,6 +181,7 @@
               </div>
             </div>
           </article>
+          <hr class="inbetween">
           <!-- Music Portfolio Website -->
           <article class="project-card">
             <div class="project-card__top-and-image">
@@ -203,13 +207,13 @@
                 <i class="devicon-css3-plain-wordmark" alt="css3 icon"></i>
                 <i class="devicon-vitejs-plain" alt="vite js icon"></i>
               </div>
-              <hr />
+              <hr>
               <p class="project-card__description">
                 This is a site to showcase my music. I used <span class="highlight">react router</span> for multiple pages,
                 <span class="highlight">react spring</span> to explore transitions and focused on data handling through props.
                 Wanting a simple contact form with no backend, I incorporated <span class="highlight">emailjs</span> and recaptcha.
               </p>
-              <hr />
+              <hr>
               <div class="project-card__links">
                 <a href="https://aptistmusic.com/" class="project-card__link" title="Go to aptist website">
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -220,6 +224,7 @@
               </div>
             </div>
           </article>
+          <hr class="inbetween">
           <!-- Coding Portfolio Website -->
           <article class="project-card">
             <div class="project-card__image">
@@ -233,14 +238,14 @@
                 <i class="devicon-sass-original" alt="sass icon"></i>
                 <i class="devicon-typescript-plain" alt="typescript icon"></i>
               </div>
-              <hr />
+              <hr>
               <p class="project-card__description">
                 I focused on design, animation, and JavaScript DOM manipulation,
                 while also applying newly learned <span class="highlight">TypeScript</span> concepts.
                 I returned to this portfolio after working on a number of other projects,
                 separating concerns better and replacing CSS with <span class="highlight">SCSS</span>.
               </p>
-              <hr />
+              <hr>
               <div class="project-card__links">
                 <button id="btn-disabled" class="project-card__link" disabled>
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -251,6 +256,7 @@
               </div>
             </div>
           </article>
+          <hr class="inbetween">
           <!-- The Country Club -->
           <article class="project-card">
             <div class="project-card__top-and-image">
@@ -278,7 +284,7 @@
                 <i class="devicon-vitejs-plain" alt="vite js icon"></i>
                 <i class="devicon-postgresql-plain-wordmark" alt="postgresql icon"></i>
               </div>
-              <hr />
+              <hr>
               <p class="project-card__description">
                 I wanted to integrate multiple <span class="highlight">third-party APIs</span>:
                 some of the APIs I used were the Unsplash and Claude API.
@@ -286,7 +292,7 @@
                 redesign, which has helped me to better understand modern design trends.
                 With the frontend in mind, I switched to using <span class="highlight">Vite</span> for optimised performance.
               </p>
-              <hr />
+              <hr>
               <div class="project-card__links">
                 <a href="https://the-country-club-e3d07af9dd9d.herokuapp.com/" class="project-card__link" title="Go to The Country Club website">
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
@@ -299,6 +305,7 @@
           </article>
         </div>
       </section>
+      <hr class="inbetween">
       <!-- Skills section -->
       <section id="skills">
         <h2>Skills</h2>
@@ -344,6 +351,8 @@
       </section>
       <a id="arrow-icon" class="" href="#"><i class="fa-solid fa-arrow-up" alt="arrow up icon"></i></a>
     </main>
+    <hr class="inbetween">
+    <!-- footer -->
     <footer>
       <div class="footer-left">
         <a href="https://www.linkedin.com/in/henryththomas/" title="Go to my Linkedin profile">

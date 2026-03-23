@@ -5,20 +5,19 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-.lang-jp {
+.lang-ja {
   display: none;
 }
 
-body.jp-mode .lang-en {
+body.ja-mode .lang-en {
   display: none;
 }
 
-body.jp-mode .lang-jp {
+body.ja-mode .lang-ja {
   display: inline;
 }
 
@@ -27,27 +26,40 @@ header, main, footer {
 }
 
 h1 {
+  font-family: "Playfair Display", serif;
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 5rem;
   line-height: 120%;
 }
 
 h2 {
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 h3 {
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
 }
 
+h4 {
+  font-family: "Playfair Display", serif;
+}
+
 p {
+  font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
   line-height: 1.6;
 }
 
+button, .radio-label {
+  font-family: "Raleway", sans-serif;
+}
+
 a {
+  font-family: "Raleway", sans-serif;
   text-decoration: none;
   color: inherit;
 }

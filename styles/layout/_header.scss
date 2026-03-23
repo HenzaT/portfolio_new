@@ -4,6 +4,10 @@
 header {
   @include mixin.flex-col;
   align-items: normal;
-  gap: 2rem;
-  margin: 8rem 0 5rem 0;
+  gap: 1rem;
+  margin: 8rem 0 0 0;
+
+  p {
+    margin-top: 1rem;
+  }
 }

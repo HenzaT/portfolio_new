@@ -3,20 +3,19 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-.lang-jp {
+.lang-ja {
   display: none;
 }
 
-body.jp-mode .lang-en {
+body.ja-mode .lang-en {
   display: none;
 }
 
-body.jp-mode .lang-jp {
+body.ja-mode .lang-ja {
   display: inline;
 }
 
@@ -25,27 +24,40 @@ header, main, footer {
 }
 
 h1 {
+  font-family: "Playfair Display", serif;
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 5rem;
   line-height: 120%;
 }
 
 h2 {
+  font-family: "Playfair Display", serif;
   font-weight: 600;
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 h3 {
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
 }
 
+h4 {
+  font-family: "Playfair Display", serif;
+}
+
 p {
+  font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
   line-height: 1.6;
 }
 
+button, .radio-label {
+  font-family: "Raleway", sans-serif;
+}
+
 a {
+  font-family: "Raleway", sans-serif;
   text-decoration: none;
   color: inherit;
 }
@@ -68,28 +80,6 @@ a {
     padding: 0 22rem;
   }
 }
-/* to about section arrow */
-button {
-  transition: all 0.1s ease-in-out;
-}
-button:hover {
-  color: rgb(247, 253, 255);
-  background-color: #030e2a;
-}
-
-.about-chevron {
-  font-size: 3rem;
-  color: var(--light);
-  opacity: 0.5;
-  text-align: center;
-  margin-top: 170px;
-}
-
-.about-chevron.slide-up-dark {
-  animation-delay: 5s;
-  animation: slideUpDark 3s ease;
-}
-
 nav button {
   cursor: pointer;
   margin: 1rem;
@@ -98,17 +88,19 @@ nav button {
   color: inherit;
   border: 1px solid #030e2a;
   border-radius: 10px;
+  height: 50px;
+  transition: all 0.1s ease-in-out;
 }
 nav button:hover {
   background-color: #030e2a;
   color: rgb(247, 253, 255);
 }
-nav button {
-  height: 50px;
+nav #theme-btn {
   width: 70px;
 }
 nav #lang-btn {
   font-size: 1.5rem;
+  width: 120px;
 }
 
 /* back to home arrow */
@@ -120,12 +112,7 @@ a#arrow-icon {
   color: inherit;
   border: 1px solid #030e2a;
   border-radius: 10px;
-}
-a#arrow-icon:hover {
-  background-color: #030e2a;
-  color: rgb(247, 253, 255);
-}
-a#arrow-icon {
+  background: rgb(247, 253, 255);
   display: inline-block;
   position: fixed;
   bottom: 0.5rem;
@@ -282,12 +269,6 @@ section#skills .radio-input:checked + .radio-label {
   color: inherit;
   border: 1px solid #030e2a;
   border-radius: 10px;
-}
-.project-card__link:hover {
-  background-color: #030e2a;
-  color: rgb(247, 253, 255);
-}
-.project-card__link {
   margin: 0;
 }
 .project-card .splide__slide img {
@@ -306,9 +287,6 @@ section#skills .radio-input:checked + .radio-label {
     align-items: center;
     gap: 2rem;
     padding: 2rem;
-  }
-  .project-card:hover {
-    box-shadow: 0 0px 6px rgba(0, 2, 33, 0.316);
   }
   .project-card__top-and-image, .project-card__text {
     width: 65%;
@@ -561,8 +539,11 @@ header {
   flex-direction: column;
   align-items: center;
   align-items: normal;
-  gap: 2rem;
-  margin: 8rem 0 5rem 0;
+  gap: 1rem;
+  margin: 8rem 0 0 0;
+}
+header p {
+  margin-top: 1rem;
 }
 
 nav {
@@ -636,6 +617,11 @@ button.dark, .project-card__link.dark {
 button.dark:hover, .project-card__link.dark:hover {
   background-color: rgb(247, 253, 255);
   color: #030e2a;
+}
+
+a#arrow-icon.dark {
+  background: rgb(247, 253, 255);
+  border: 1px solid rgb(247, 253, 255);
 }
 
 section#skills .skills-radio.dark {

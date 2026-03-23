@@ -1,44 +1,33 @@
 @use '../abstracts/mixins' as mixin;
 @use '../abstracts/variables' as vars;
-/* to about section arrow */
-
-button {
-  transition: all 0.1s ease-in-out;
-
-  &:hover {
-    color: vars.$light;
-    background-color: vars.$dark-blue;
-  }
-}
-
-.about-chevron {
-  font-size: 3rem;
-  color: var(--light);
-  opacity: 0.5;
-  text-align: center;
-  margin-top: 170px;
-}
-
-.about-chevron.slide-up-dark {
-  animation-delay: 5s;
-  animation: slideUpDark 3s ease;
-}
 
 nav {
   button {
     @include mixin.btn-style;
     height: 50px;
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      background-color: vars.$dark-blue;
+      color: vars.$light;
+    }
+  }
+
+  #theme-btn {
     width: 70px;
   }
 
   #lang-btn {
     font-size: 1.5rem;
+    width: 120px;
   }
+
 }
 
 /* back to home arrow */
 a#arrow-icon {
   @include mixin.btn-style;
+  background: vars.$light;
   display: inline-block;
   position: fixed;
   bottom: 0.5rem;

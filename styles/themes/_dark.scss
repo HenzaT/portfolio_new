@@ -19,6 +19,12 @@ button.dark, .project-card__link.dark {
   }
 }
 
+a#arrow-icon.dark {
+  background: vars.$light;
+  border: 1px solid vars.$light;
+
+}
+
 section#skills {
   .skills-radio.dark {
     border: 1px solid vars.$light;

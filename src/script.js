@@ -33,12 +33,13 @@ const projectAlbumMusicSkillsCards = [musicCard, skillsIconsContainer];
 const themeBtn = document.getElementById('theme-btn');
 const themeIcon = document.getElementById('theme-icon');
 const langBtn = document.getElementById('lang-btn');
+const arrowBtn = document.getElementById('arrow-icon');
 const hrLine = document.getElementsByTagName('hr');
 const projectLinks = document.querySelectorAll('.project-card__link');
 const skillsCard = document.querySelector('.skills-icons');
 const skillsRadio = document.querySelector('.skills-radio');
 const highlighted = document.querySelectorAll('.highlight');
-const elements = [themeBtn, langBtn, skillsCard, skillsRadio];
+const elements = [themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio];
 // const manyElements = (elements: NodeListOf<Element>, el: Element ) => {
 //   elements.forEach(el => {
 //     el.classList.toggle('dark');
@@ -73,10 +74,9 @@ if (themeBtn) {
 if (langBtn) {
     langBtn.addEventListener('click', () => {
         let htmlLang = document.documentElement;
-        htmlLang.getAttribute('lang') === 'jp' ? htmlLang.setAttribute('lang', 'en') : htmlLang.setAttribute('lang', 'jp');
-        document.body.classList.toggle('jp-mode');
-        let btnText = langBtn.textContent;
-        btnText === 'JP' ? btnText = 'EN' : btnText = 'JP';
+        htmlLang.getAttribute('lang') === 'ja' ? htmlLang.setAttribute('lang', 'en') : htmlLang.setAttribute('lang', 'ja');
+        document.body.classList.toggle('ja-mode');
+        langBtn.textContent = langBtn.textContent === '日本語' ? 'English' : '日本語';
     });
 }
 // radio buttons

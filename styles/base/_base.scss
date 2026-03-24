@@ -11,6 +11,7 @@
 
 .lang-ja {
   display: none;
+  font-family: "Noto Serif JP", serif;
 }
 
 body.ja-mode .lang-en {
@@ -58,6 +59,10 @@ p {
 
 button, .radio-label {
   font-family: "Raleway", sans-serif;
+}
+
+button#lang-btn {
+  font-family: "Noto Serif JP", serif;
 }
 
 a {

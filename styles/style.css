@@ -9,6 +9,7 @@
 
 .lang-ja {
   display: none;
+  font-family: "Noto Serif JP", serif;
 }
 
 body.ja-mode .lang-en {
@@ -58,6 +59,10 @@ button, .radio-label {
   font-family: "Raleway", sans-serif;
 }
 
+button#lang-btn {
+  font-family: "Noto Serif JP", serif;
+}
+
 a {
   font-family: "Raleway", sans-serif;
   text-decoration: none;
@@ -65,7 +70,7 @@ a {
 }
 
 .highlight {
-  color: #004f9e;
+  color: #0470db;
   font-weight: 600;
 }
 
@@ -76,7 +81,7 @@ a {
 }
 @media (min-width: 1200px) {
   header, main, footer {
-    padding: 0 20rem;
+    padding: 0 22rem;
   }
 }
 nav button {
@@ -232,10 +237,7 @@ section#skills .radio-input:checked + .radio-label {
   height: 100%;
   gap: 1rem;
 }
-.project-card__text {
-  gap: 1rem;
-}
-.project-card__top {
+.project-card__top, .project-card__text {
   gap: 0.5rem;
 }
 .project-card__tech-icons-container {
@@ -244,6 +246,9 @@ section#skills .radio-input:checked + .radio-label {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0;
+}
+.project-card__description {
+  margin: 0.5rem 0;
 }
 .project-card__links {
   display: flex;
@@ -307,12 +312,16 @@ hr.inbetween-card {
   width: 100%;
 }
 
-.project-card__tech-icons-container i, footer i {
-  font-size: 2rem;
+.project-card__tech-icons-container i {
+  font-size: 3rem;
 }
 
 .project-card__links i, nav button i {
   font-size: 1.5rem;
+}
+
+footer i {
+  font-size: 2rem;
 }
 
 section#skills .skills-icons {
@@ -334,6 +343,9 @@ section#skills .skills-icons {
     transition: opacity 0.5s ease-in-out;
     transition: filter 0.5s ease-in-out;
     transition: transform 0.5s ease-in-out;
+  }
+  .project-card__tech-icons-container i {
+    font-size: 2rem;
   }
 }
 .brighten {
@@ -377,7 +389,7 @@ section#skills .skills-icons {
 }
 
 .fade {
-  opacity: 0.2;
+  opacity: 0.4;
   filter: blur(1px);
 }
 
@@ -548,6 +560,20 @@ header {
 }
 header p {
   margin: 1rem 0;
+  transition: all 0.3s ease-in-out;
+}
+header .highlight.heading {
+  cursor: default;
+  transition: all 0.3s ease-in-out;
+}
+header p:has(.highlight.heading:hover) {
+  color: rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+header p:has(.highlight.heading:hover) .highlight.heading:hover {
+  opacity: 1;
+  filter: none;
+  color: #0470db;
 }
 
 nav {

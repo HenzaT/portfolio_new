@@ -9,5 +9,22 @@ header {
 
   p {
     margin: 1rem 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .highlight.heading {
+    cursor: default;
+    transition: all 0.3s ease-in-out;
+  }
+
+  p:has(.highlight.heading:hover) {
+    color: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+
+    .highlight.heading:hover {
+      opacity: 1;
+      filter: none;
+      color: vars.$selected;
+    }
   }
 }

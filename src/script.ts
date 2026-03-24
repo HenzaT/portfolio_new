@@ -5,6 +5,7 @@ new Splide('#song-slider').mount();
 new Splide('#aptist-slider').mount();
 new Splide('#country-slider').mount();
 new Splide('#weather-slider').mount();
+new Splide('#portfolio-slider').mount();
 // new Splide('#country-slider').mount();
 
 // section variables
@@ -350,27 +351,6 @@ projectAlbumMusicSkillsCards.forEach((card) => {
     scrollToView(card);
   })
 })
-
-// about cards toggle
-allCards.forEach((card) => {
-  if (!card) return
-  card.addEventListener('click', () => {
-    allCards.forEach((active) => {
-      active?.classList.remove('expand');
-      active?.classList.add('fade');
-    })
-    scrollToView(card);
-    card.classList.add('expand');
-    card.classList.remove('fade');
-  })
-});
-
-// plus toggle to show more info
-function toggleClassBySelector(selector: string, className: string, id: string): void {
-  const element = document.querySelector(`${selector}[data-id="${id}"]`);
-  if (!element) return;
-  element.classList.toggle(className);
-}
 
 // skills icons toggle
 function clearFadeExpand(): void {

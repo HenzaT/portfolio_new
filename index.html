@@ -12,7 +12,7 @@
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script type="module" src="src/script.js"></script>
   </head>
   <body class="light">
@@ -24,7 +24,7 @@
     <!-- main header -->
     <header>
       <h1>
-        <span class="lang-en">Henry Thomas</span>
+        <span class="lang-en" id="fullname">Henry Thomas</span>
         <span class="lang-ja">トーマス ヘンリー</span>
       </h1>
       <h1>
@@ -33,21 +33,28 @@
       </h1>
       <p>
         <span class="lang-en">
-          I'm a software engineer with a background in education, currently working as a software engineer
-          at an electronic mailing list company. During my time working here, I've been consolidating
-          my knowledge of Perl, Linux, building servers, responsive front-end design and technical IT support.
+          With a background in <span class="highlight heading">education</span>, I'm currently working at an
+          electronic mailing list company. My daily work ranges from managing <span class="highlight heading">Perl</span> and
+          <span class="highlight heading">Linux</span> systems, to developing <span class="highlight heading">responsive</span> and
+          <span class="highlight heading">accessible frontend</span> design. Additionally, I deliver
+          <span class="highlight heading">technical B2B support</span> and help to
+          <span class="highlight heading">build servers</span>.
           <br>
           <br>
-          In my personal projects, I like to build with a variety of tech ranging from Ruby to React.
-          As I am half-Japanese, I added the option to view this page in Japanese.
+          In my personal projects, I like to build with a variety of tech ranging from
+          <span class="highlight heading">Ruby</span> to <span class="highlight heading">React</span>.
+          As I am <span class="highlight heading">half Japanese</span>, I added the option to view this page in Japanese.
         </span>
         <span class="lang-ja">
-          教師の経歴を持つ、ロンドン出身のソフトウェア・エンジニアです。現在は電子メーリングリスト関連のソフトウェア企業で勤務しています。
-          業務ではサーバの構築、Perl、JavaScript、Linuxなどのテクノロジーを使いながら働いてます。
+          <span class="highlight heading">教師の経歴</span>を持つ、イギリス出身のソフトウェア・エンジニアです。
+          現在は電子メーリングリスト関連のソフトウェア企業で勤務しています。業務では<span class="highlight heading">サーバの構築</span>、
+          <span class="highlight heading">Perl</span>、<span class="highlight heading">JavaScript</span>、
+          <span class="highlight heading">Linux</span>などのテクノロジーを使いながら働いてます。
           <br>
           <br>
-          個人プロジェクトではRubyやReactを使ってウェブサイトやアプリを開発しています。私は日本人とイギリス人のハーフなのでこのサイト
-          を日本語でもご覧いただけるようにしました。
+          個人プロジェクトでは<span class="highlight heading">Ruby</span>や<span class="highlight heading">React</span>を使って
+          ウェブサイトやアプリを開発しています。私は<span class="highlight heading">日本人とイギリス人のハーフ</span>なので
+          このサイトを日本語でもご覧いただけるようにしました。
         </span>
       </p>
     </header>
@@ -225,12 +232,23 @@
           <hr class="inbetween-card">
           <!-- Coding Portfolio Website -->
           <article class="project-card">
-            <div class="project-card__image">
-              <img src="assets/portfolio.jpeg" alt="portfolio website picture" width="200" height="200">
+            <div class="project-card__top-and-image">
+              <div class="project-card__top">
+                <h3 class="project-card__title">Portfolio</h3>
+                <h4 class="project-card__tagline">personal portfolio for projects</h4>
+              </div>
+              <section id="portfolio-slider" class="splide" aria-label="portfolio website image slides">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide"><img src="assets/portfolio-1.png" alt="portfolio header"></li>
+                    <li class="splide__slide"><img src="assets/portfolio-2.png" alt="portfolio projects"></li>
+                    <li class="splide__slide"><img src="assets/portfolio-3.png" alt="portfolio skills"></li>
+                    <li class="splide__slide"><img src="assets/portfolio-4.png" alt="portfolio japanese"></li>
+                  </ul>
+                </div>
+              </section>
             </div>
             <div class="project-card__text">
-              <h3 class="project-card__title">Portfolio</h3>
-              <h4 class="project-card__tagline">personal portfolio for projects</h4>
               <div class="project-card__tech-icons-container">
                 <i class="devicon-html5-plain-wordmark" alt="html5 icon"></i>
                 <i class="devicon-sass-original" alt="sass icon"></i>

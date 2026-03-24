@@ -1,15 +1,21 @@
 @use '../abstracts/mixins' as mixin;
 @use '../abstracts/variables' as vars;
 
-.project-card__tech-icons-container, footer {
+.project-card__tech-icons-container {
   i {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 
 .project-card__links, nav button {
   i {
     font-size: 1.5rem;
+  }
+}
+
+footer {
+  i {
+    font-size: 2rem;
   }
 }
 
@@ -35,6 +41,12 @@ section#skills {
       transition: opacity 0.5s ease-in-out;
       transition: filter 0.5s ease-in-out;
       transition: transform 0.5s ease-in-out;
+    }
+  }
+
+  .project-card__tech-icons-container {
+    i {
+      font-size: 2rem;
     }
   }
 }

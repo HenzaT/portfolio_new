@@ -10,6 +10,24 @@ hr.dark {
   background-color: vars.$light;
 }
 
+:is(#theme-btn, #lang-btn).dark {
+  color: vars.$light;
+}
+
+#theme-btn.dark {
+  &:hover {
+    color: vars.$dark-blue;
+    background: vars.$light;
+  }
+}
+
+#lang-btn.dark {
+  &:hover {
+    color: inherit;
+    background: inherit;
+  }
+}
+
 button.dark, .project-card__link.dark {
   border: 1px solid vars.$light;
 

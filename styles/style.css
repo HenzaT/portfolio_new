@@ -28,12 +28,13 @@ h1 {
   font-weight: 600;
   font-size: 5rem;
   line-height: 120%;
+  letter-spacing: 1px;
 }
 
 h2 {
   font-family: "Playfair Display", serif;
   font-weight: 600;
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
 }
 
@@ -44,6 +45,7 @@ h3 {
 
 h4 {
   font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
 }
 
 p {
@@ -73,11 +75,8 @@ a {
   }
 }
 @media (min-width: 1200px) {
-  main {
+  header, main, footer {
     padding: 0 20rem;
-  }
-  header, footer {
-    padding: 0 22rem;
   }
 }
 nav button {
@@ -85,22 +84,27 @@ nav button {
   margin: 1rem;
   padding: 0.5rem 1rem;
   background: transparent;
-  color: inherit;
   border: 1px solid #030e2a;
   border-radius: 10px;
   height: 50px;
-  transition: all 0.1s ease-in-out;
-}
-nav button:hover {
-  background-color: #030e2a;
-  color: rgb(247, 253, 255);
+  padding: 0;
+  transition: all 0.3s ease-in-out;
 }
 nav #theme-btn {
-  width: 70px;
+  width: 60px;
+}
+nav #theme-btn:hover {
+  border-radius: 50%;
+  color: rgb(247, 253, 255);
+  background-color: #030e2a;
 }
 nav #lang-btn {
   font-size: 1.5rem;
   width: 120px;
+}
+nav #lang-btn:hover {
+  border-radius: 30px;
+  font-weight: 800;
 }
 
 /* back to home arrow */
@@ -109,7 +113,6 @@ a#arrow-icon {
   margin: 1rem;
   padding: 0.5rem 1rem;
   background: transparent;
-  color: inherit;
   border: 1px solid #030e2a;
   border-radius: 10px;
   background: rgb(247, 253, 255);
@@ -126,11 +129,6 @@ a#arrow-icon:hover {
 a#arrow-icon i {
   font-size: 1.5rem;
   color: #030e2a;
-}
-
-#btn-disabled {
-  pointer-events: none;
-  cursor: not-allowed;
 }
 
 /* skills radio buttons */
@@ -224,26 +222,20 @@ section#skills .radio-input:checked + .radio-label {
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
-.project-card__top-and-image {
-  height: 100%;
+.project-card__top-and-image, .project-card__top, .project-card__text {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-items: flex-start;
+}
+.project-card__top-and-image {
+  height: 100%;
+  gap: 1rem;
+}
+.project-card__text {
   gap: 1rem;
 }
 .project-card__top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-.project-card__text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-items: flex-start;
   gap: 0.5rem;
 }
 .project-card__tech-icons-container {
@@ -266,10 +258,13 @@ section#skills .radio-input:checked + .radio-label {
   margin: 1rem;
   padding: 0.5rem 1rem;
   background: transparent;
-  color: inherit;
   border: 1px solid #030e2a;
   border-radius: 10px;
   margin: 0;
+  transition: all 0.3s ease-in-out;
+}
+.project-card__link:hover {
+  border-radius: 50%;
 }
 .project-card .splide__slide img {
   width: 100%;
@@ -286,7 +281,7 @@ section#skills .radio-input:checked + .radio-label {
     flex-direction: row;
     align-items: center;
     gap: 2rem;
-    padding: 2rem;
+    padding-bottom: 1rem;
   }
   .project-card__top-and-image, .project-card__text {
     width: 65%;
@@ -301,6 +296,15 @@ hr {
   margin: auto;
   background-color: #030e2a;
   border: none;
+}
+
+hr.inbetween {
+  margin: 2rem auto;
+  width: 20%;
+}
+
+hr.inbetween-card {
+  width: 100%;
 }
 
 .project-card__tech-icons-container i, footer i {
@@ -543,7 +547,7 @@ header {
   margin: 8rem 0 0 0;
 }
 header p {
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 nav {
@@ -554,20 +558,14 @@ nav {
   gap: 1rem;
   margin: 1rem 0;
   background: transparent;
-  padding: 0 1rem;
 }
 
 section#projects .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 5rem;
+  gap: 2rem;
 }
 
-@media (min-width: 1200px) {
-  section#projects h2 {
-    padding-left: 2rem;
-  }
-}
 section#skills {
   margin: 5rem 0 2rem 0;
 }
@@ -595,9 +593,6 @@ section#skills div.skills-icons {
   }
 }
 @media (min-width: 1200px) {
-  section#skills {
-    padding: 0 2rem;
-  }
   section#skills .card-and-button-container .skills-icons {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -609,6 +604,20 @@ body.dark {
 
 hr.dark {
   background-color: rgb(247, 253, 255);
+}
+
+:is(#theme-btn, #lang-btn).dark {
+  color: rgb(247, 253, 255);
+}
+
+#theme-btn.dark:hover {
+  color: #030e2a;
+  background: rgb(247, 253, 255);
+}
+
+#lang-btn.dark:hover {
+  color: inherit;
+  background: inherit;
 }
 
 button.dark, .project-card__link.dark {

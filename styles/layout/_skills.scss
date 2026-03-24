@@ -34,10 +34,7 @@ section#skills {
 
 @media (min-width: 1200px) {
   section#skills {
-    padding: 0 2rem;
-
     .card-and-button-container {
-
       .skills-icons {
         grid-template-columns: repeat(4, 1fr);
       }

@@ -7,27 +7,22 @@
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 
-  &__top-and-image {
-    height: 100%;
+  &__top-and-image, &__top, &__text {
     @include mixin.flex-col;
     align-items: flex-start;
+  }
+
+  &__top-and-image {
+    height: 100%;
+    gap: 1rem;
+  }
+
+  &__text {
     gap: 1rem;
   }
 
   &__top {
-    @include mixin.flex-col;
-    align-items: flex-start;
     gap: 0.5rem;
-  }
-
-  &__text {
-    @include mixin.flex-col;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  &__title {
-    // align-self: flex-start;
   }
 
   &__tech-icons-container {
@@ -46,6 +41,12 @@
   &__link {
     @include mixin.btn-style;
     margin: 0;
+    // height: 50px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      border-radius: 50%;
+    }
   }
 
   .splide__slide img {
@@ -63,7 +64,7 @@
   .project-card {
     @include mixin.flex-row;
     gap: 2rem;
-    padding: 2rem;
+    padding-bottom: 1rem;
 
     &__top-and-image, &__text {
       width: 65%;

@@ -8,3 +8,12 @@ hr {
   background-color: vars.$dark-blue;
   border: none;
 }
+
+hr.inbetween {
+  margin: 2rem auto;
+  width: 20%;
+}
+
+hr.inbetween-card {
+  width: 100%;
+}

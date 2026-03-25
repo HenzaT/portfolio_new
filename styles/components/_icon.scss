@@ -23,9 +23,7 @@ section#skills {
   .skills-icons {
     font-size: 2.5rem;
     color: vars.$dark-blue;
-    transition: opacity 0.5s ease-in-out;
-    transition: filter 0.5s ease-in-out;
-    transition: transform 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 }
 
@@ -37,10 +35,6 @@ section#skills {
   section#skills {
     .skills-icons {
       font-size: 3rem;
-      color: vars.$dark-blue;
-      transition: opacity 0.5s ease-in-out;
-      transition: filter 0.5s ease-in-out;
-      transition: transform 0.5s ease-in-out;
     }
   }
 

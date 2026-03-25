@@ -15,9 +15,9 @@ section#skills {
     justify-items: center;
     align-items: center;
     gap: 1.5rem;
-    width: 88%;
-    padding: 1rem;
-    box-shadow: vars.$shadow;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: vars.$light-shadow;
     border-radius: 10px;
   }
 }

@@ -33,14 +33,29 @@ const projectOverlays: NodeListOf<HTMLElement> = document.querySelectorAll('.pro
 // skills
 const skillsCardButtons: HTMLElement | null = document.getElementById('skills-card-button');
 
-// music
-const allAlbums: HTMLElement | null = document.querySelector('.all-albums');
-const musicCard: HTMLElement | null = document.querySelector('.music-card');
+const copyBtn = document.getElementById('copy-btn') as HTMLButtonElement;
+const copyIcon = document.getElementById('clipboard') as HTMLElement;
+const emailAddress = document.getElementById('email-address') as HTMLAnchorElement;
 
-const projectAlbumMusicSkillsCards = [musicCard, skillsIconsContainer]
+if (copyBtn) {
+  copyBtn.addEventListener('click', () => {
+    if (copyIcon.className === 'fa-regular fa-clipboard') {
+      copyIcon.className = 'fa-solid fa-check';
+    }
+    setTimeout(() => {
+      copyIcon.className = 'fa-regular fa-clipboard';
+    }, 4000);
+    const emailText = emailAddress.innerHTML;
+    navigator.clipboard.writeText(emailText);
+
+    alert('email copied');
+  })
+}
+
+const projectAlbumMusicSkillsCards = [skillsIconsContainer]
 
 const themeBtn      = document.getElementById('theme-btn') as HTMLButtonElement;
-const themeIcon     = document.getElementById('theme-icon') as HTMLButtonElement;
+const themeIcon     = document.getElementById('theme-icon') as HTMLElement;
 const langBtn       = document.getElementById('lang-btn') as HTMLButtonElement;
 const arrowBtn      = document.getElementById('arrow-icon') as HTMLAnchorElement;
 const hrLine        = document.getElementsByTagName('hr');
@@ -239,7 +254,6 @@ sectionTitles.forEach((section) => {
 });
 if (projectsContainer) projectObserver.observe(projectsContainer);
 if (skillsCardButtons) skillsButtonsObserver.observe(skillsCardButtons);
-if (allAlbums) allAlbumsObserver.observe(allAlbums);
 if (card.music) musicCardObserver.observe(card.music);
 
 // about card slide up if expanded

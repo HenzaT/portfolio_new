@@ -30,7 +30,6 @@ nav {
       font-weight: 800;
     }
   }
-
 }
 
 /* back to home arrow */
@@ -98,6 +97,13 @@ section#skills {
     color: vars.$light-text;
   }
 }
+
+#copy-btn {
+  cursor: copy;
+  background: transparent;
+  border: none;
+}
+
 
 @media (min-width: 768px) {
   section#skills {

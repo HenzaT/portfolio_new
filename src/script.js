@@ -27,10 +27,23 @@ const projectImages = document.querySelectorAll('.project-image');
 const projectOverlays = document.querySelectorAll('.project-card-overlay');
 // skills
 const skillsCardButtons = document.getElementById('skills-card-button');
-// music
-const allAlbums = document.querySelector('.all-albums');
-const musicCard = document.querySelector('.music-card');
-const projectAlbumMusicSkillsCards = [musicCard, skillsIconsContainer];
+const copyBtn = document.getElementById('copy-btn');
+const copyIcon = document.getElementById('clipboard');
+const emailAddress = document.getElementById('email-address');
+if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+        if (copyIcon.className === 'fa-regular fa-clipboard') {
+            copyIcon.className = 'fa-solid fa-check';
+        }
+        setTimeout(() => {
+            copyIcon.className = 'fa-regular fa-clipboard';
+        }, 4000);
+        const emailText = emailAddress.innerHTML;
+        navigator.clipboard.writeText(emailText);
+        alert('email copied');
+    });
+}
+const projectAlbumMusicSkillsCards = [skillsIconsContainer];
 const themeBtn = document.getElementById('theme-btn');
 const themeIcon = document.getElementById('theme-icon');
 const langBtn = document.getElementById('lang-btn');
@@ -208,8 +221,6 @@ if (projectsContainer)
     projectObserver.observe(projectsContainer);
 if (skillsCardButtons)
     skillsButtonsObserver.observe(skillsCardButtons);
-if (allAlbums)
-    allAlbumsObserver.observe(allAlbums);
 if (card.music)
     musicCardObserver.observe(card.music);
 // about card slide up if expanded

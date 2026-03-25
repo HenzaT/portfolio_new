@@ -2,15 +2,11 @@
 @use '../abstracts/variables' as vars;
 
 section#projects {
-  margin: 5rem 0 2rem 0;
-
-  h2 {
-    margin-bottom: 3rem;
-  }
+  margin: 5rem 0;
 
   .grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
+    gap: 10rem;
   }
 }

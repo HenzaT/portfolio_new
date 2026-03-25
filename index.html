@@ -58,9 +58,6 @@
         </span>
       </p>
     </header>
-    <div class="hr-div">
-      <hr class="inbetween">
-    </div>
     <!-- main content -->
     <main>
       <!-- Project Section -->
@@ -69,8 +66,8 @@
           <span class="lang-en">Projects</span>
           <span class="lang-ja">プロジェクト一覧</span>
         </h2>
+        <hr class="inbetween">
         <div class="grid">
-          <hr class="inbetween-card">
           <!-- Therapy Website -->
           <article class="project-card">
             <div class="project-card__image">
@@ -101,7 +98,6 @@
               </div>
             </div>
           </article>
-          <hr class="inbetween-card">
           <!-- Gimme a Song -->
           <article class="project-card">
             <div class="project-card__top-and-image">
@@ -149,7 +145,6 @@
               </div>
             </div>
           </article>
-          <hr class="inbetween-card">
           <!-- Flask / React Weather App -->
           <article class="project-card">
             <div class="project-card__top-and-image">
@@ -191,7 +186,6 @@
               </div>
             </div>
           </article>
-          <hr class="inbetween-card">
           <!-- Music Portfolio Website -->
           <article class="project-card">
             <div class="project-card__top-and-image">
@@ -237,7 +231,6 @@
               </div>
             </div>
           </article>
-          <hr class="inbetween-card">
           <!-- Coding Portfolio Website -->
           <article class="project-card">
             <div class="project-card__top-and-image">
@@ -280,7 +273,6 @@
               </div>
             </div>
           </article>
-          <hr class="inbetween-card">
           <!-- The Country Club -->
           <article class="project-card">
             <div class="project-card__top-and-image">
@@ -327,13 +319,13 @@
               </div>
             </div>
           </article>
-          <hr class="inbetween-card">
         </div>
       </section>
+      <hr class="inbetween">
       <!-- Skills section -->
       <section id="skills">
         <h2>Skills</h2>
-        <div class="card-and-button-container hide" id="skills-card-button">
+        <div class="card-and-button-container" id="skills-card-button">
           <div class="skills-icons">
             <i id="ruby" class="devicon-ruby-plain-wordmark" alt="ruby icon"></i>
             <i id="ts" class="devicon-typescript-plain" alt="typescript icon"></i>
@@ -388,9 +380,14 @@
           <i class="fa-brands fa-github" alt="github icon"></i>
         </a>
       </div>
-      <a href="mailto:henrykun95@gmail.com" title="Email">
-        <i class="fa-solid fa-copy" alt="copy icon"></i>
-      </a>
+      <div class="footer-right">
+        <button type="button" id="copy-btn" title="copy email">
+          <i id="clipboard" class="fa-regular fa-clipboard" alt="copy icon"></i>
+        </button>
+        <a href="mailto:henrykun95@gmail.com" title="Send me an email" id="email-address">
+          henrykun95@gmail.com
+        </a>
+      </div>
     </footer>
   </body>
 </html>

@@ -6,8 +6,12 @@ footer {
   justify-content: space-between;
   margin-bottom: 2rem;
 
-  .footer-left {
+  .footer-left, .footer-right {
     @include mixin.flex-row;
-    gap: 1rem;
+  }
+
+  .footer-left  { gap: 1rem; }
+  .footer-right {
+    gap: 0.5rem;
   }
 }

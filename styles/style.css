@@ -187,6 +187,12 @@ section#skills .radio-input:checked + .radio-label {
   color: #e6f2ff;
 }
 
+#copy-btn {
+  cursor: copy;
+  background: transparent;
+  border: none;
+}
+
 @media (min-width: 768px) {
   section#skills .skills-radio {
     display: flex;
@@ -277,7 +283,7 @@ section#skills .radio-input:checked + .radio-label {
   border-radius: 50%;
 }
 .project-card .splide {
-  box-shadow: 0 4px 10px rgba(0, 2, 33, 0.316);
+  box-shadow: 0 3px 12px rgba(0, 2, 33, 0.316);
   border-radius: 10px;
 }
 .project-card .splide__slide img {
@@ -313,7 +319,7 @@ hr {
 }
 
 hr.inbetween {
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 
 .project-card__tech-icons-container i {
@@ -542,11 +548,16 @@ footer {
   justify-content: space-between;
   margin-bottom: 2rem;
 }
-footer .footer-left {
+footer .footer-left, footer .footer-right {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+footer .footer-left {
   gap: 1rem;
+}
+footer .footer-right {
+  gap: 0.5rem;
 }
 
 header {
@@ -555,7 +566,7 @@ header {
   align-items: center;
   align-items: normal;
   gap: 1rem;
-  margin: 8rem 0 0 0;
+  margin: 10rem 0;
 }
 header p {
   margin: 1rem 0;
@@ -586,19 +597,16 @@ nav {
 }
 
 section#projects {
-  margin: 5rem 0 2rem 0;
-}
-section#projects h2 {
-  margin-bottom: 3rem;
+  margin: 5rem 0;
 }
 section#projects .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
+  gap: 10rem;
 }
 
 section#skills {
-  margin: 5rem 0 2rem 0;
+  margin: 5rem 0;
 }
 section#skills .card-and-button-container {
   display: flex;

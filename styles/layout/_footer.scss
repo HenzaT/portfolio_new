@@ -14,4 +14,13 @@ footer {
   .footer-right {
     gap: 0.5rem;
   }
+
+  .footer-right {
+    width: 210px;
+    justify-content: space-between;
+
+    button {
+      justify-self: start;
+    }
+  }
 }

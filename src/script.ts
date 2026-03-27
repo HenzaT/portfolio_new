@@ -34,21 +34,26 @@ const projectOverlays: NodeListOf<HTMLElement> = document.querySelectorAll('.pro
 const skillsCardButtons: HTMLElement | null = document.getElementById('skills-card-button');
 
 const copyBtn = document.getElementById('copy-btn') as HTMLButtonElement;
-const copyIcon = document.getElementById('clipboard') as HTMLElement;
+const copyIcon = document.getElementById('copy-icon') as HTMLElement;
 const emailAddress = document.getElementById('email-address') as HTMLAnchorElement;
 
 if (copyBtn) {
   copyBtn.addEventListener('click', () => {
-    if (copyIcon.className === 'fa-regular fa-clipboard') {
+    const emailText = emailAddress.textContent;
+    if (copyIcon.className === 'fa-regular fa-copy') {
       copyIcon.className = 'fa-solid fa-check';
+      emailAddress.textContent = 'email copied';
+      copyBtn.setAttribute('disabled', '');
+      emailAddress.style.pointerEvents = 'none';
     }
     setTimeout(() => {
-      copyIcon.className = 'fa-regular fa-clipboard';
-    }, 4000);
-    const emailText = emailAddress.innerHTML;
+      copyIcon.className = 'fa-regular fa-copy';
+      emailAddress.textContent = 'henrykun95@gmail.com'
+      copyBtn.removeAttribute('disabled');
+      emailAddress.style.pointerEvents = 'auto';
+    }, 2000);
+    console.log(emailText)
     navigator.clipboard.writeText(emailText);
-
-    alert('email copied');
   })
 }
 

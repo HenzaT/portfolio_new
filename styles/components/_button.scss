@@ -53,6 +53,18 @@ a#arrow-icon {
   }
 }
 
+.filter-btns {
+  @include mixin.flex-row;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  button {
+    @include mixin.btn-style;
+    margin: 0;
+    width: 20%;
+  }
+}
+
 /* skills radio buttons */
 section#skills {
   .skills-radio {
@@ -102,6 +114,10 @@ section#skills {
   cursor: copy;
   background: transparent;
   border: none;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 

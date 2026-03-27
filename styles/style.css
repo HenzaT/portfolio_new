@@ -141,6 +141,24 @@ a#arrow-icon i {
   color: #030e2a;
 }
 
+.filter-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.filter-btns button {
+  cursor: pointer;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #030e2a;
+  border-radius: 10px;
+  margin: 0;
+  width: 20%;
+}
+
 /* skills radio buttons */
 section#skills .skills-radio {
   border: 1px solid #030e2a;
@@ -191,6 +209,9 @@ section#skills .radio-input:checked + .radio-label {
   cursor: copy;
   background: transparent;
   border: none;
+}
+#copy-btn:disabled {
+  cursor: not-allowed;
 }
 
 @media (min-width: 768px) {
@@ -332,6 +353,7 @@ hr.inbetween {
 
 footer i {
   font-size: 2rem;
+  color: #030e2a;
 }
 
 section#skills .skills-icons {
@@ -559,6 +581,13 @@ footer .footer-left {
 footer .footer-right {
   gap: 0.5rem;
 }
+footer .footer-right {
+  width: 210px;
+  justify-content: space-between;
+}
+footer .footer-right button {
+  justify-self: start;
+}
 
 header {
   display: flex;
@@ -602,7 +631,7 @@ section#projects {
 section#projects .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 10rem;
+  gap: 15rem;
 }
 
 section#skills {

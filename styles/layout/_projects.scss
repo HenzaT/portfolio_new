@@ -4,6 +4,15 @@
 section#projects {
   margin: 5rem 0;
 
+  header.projects {
+    @include mixin.flex-col;
+    align-items: flex-start;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

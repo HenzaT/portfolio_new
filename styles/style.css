@@ -20,7 +20,7 @@ body.ja-mode .lang-ja {
   display: inline;
 }
 
-header, main, footer, .hr-div {
+header.main, main, footer, .hr-div {
   padding: 0 1rem;
 }
 
@@ -75,17 +75,17 @@ a {
 }
 
 @media (min-width: 768px) {
-  header, main, footer, .hr-div {
+  header.main, main, footer, .hr-div {
     padding: 0 10rem;
   }
 }
 @media (min-width: 1024px) {
-  header, main, footer, .hr-div {
+  header.main, main, footer, .hr-div {
     padding: 0 17rem;
   }
 }
 @media (min-width: 1200px) {
-  header, main, footer, .hr-div {
+  header.main, main, footer, .hr-div {
     padding: 0 22rem;
   }
 }
@@ -94,6 +94,7 @@ nav button {
   margin: 1rem;
   padding: 0.5rem 1rem;
   background: transparent;
+  color: #030e2a;
   border: 1px solid #030e2a;
   border-radius: 10px;
   height: 50px;
@@ -123,6 +124,7 @@ a#arrow-icon {
   margin: 1rem;
   padding: 0.5rem 1rem;
   background: transparent;
+  color: #030e2a;
   border: 1px solid #030e2a;
   border-radius: 10px;
   background: rgb(247, 253, 255);
@@ -145,20 +147,25 @@ a#arrow-icon i {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+  margin: 1.5rem 0;
 }
 .filter-btns button {
   cursor: pointer;
   margin: 1rem;
   padding: 0.5rem 1rem;
   background: transparent;
+  color: #030e2a;
   border: 1px solid #030e2a;
   border-radius: 10px;
+  width: 30%;
   margin: 0;
-  width: 20%;
+  padding: 0.6rem 0;
+  font-size: 0.8rem;
+  text-align: center;
 }
-
 /* skills radio buttons */
 section#skills .skills-radio {
   border: 1px solid #030e2a;
@@ -295,6 +302,7 @@ section#skills .radio-input:checked + .radio-label {
   margin: 1rem;
   padding: 0.5rem 1rem;
   background: transparent;
+  color: #030e2a;
   border: 1px solid #030e2a;
   border-radius: 10px;
   margin: 0;
@@ -589,7 +597,7 @@ footer .footer-right button {
   justify-self: start;
 }
 
-header {
+header.main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -597,19 +605,19 @@ header {
   gap: 1rem;
   margin: 10rem 0;
 }
-header p {
+header.main p {
   margin: 1rem 0;
   transition: all 0.3s ease-in-out;
 }
-header .highlight.heading {
+header.main .highlight.heading {
   cursor: default;
   transition: all 0.3s ease-in-out;
 }
-header p:has(.highlight.heading:hover) {
+header.main p:has(.highlight.heading:hover) {
   color: rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
 }
-header p:has(.highlight.heading:hover) .highlight.heading:hover {
+header.main p:has(.highlight.heading:hover) .highlight.heading:hover {
   opacity: 1;
   filter: none;
   color: #0470db;
@@ -627,6 +635,15 @@ nav {
 
 section#projects {
   margin: 5rem 0;
+}
+section#projects header.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+}
+section#projects header.projects h2 {
+  margin: 0;
 }
 section#projects .grid {
   display: grid;

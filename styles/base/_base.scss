@@ -22,7 +22,7 @@ body.ja-mode .lang-ja {
   display: inline;
 }
 
-header, main, footer, .hr-div {
+header.main, main, footer, .hr-div {
   padding: vars.$page-padding-xs;
 }
 
@@ -77,19 +77,19 @@ a {
 }
 
 @media (min-width: 768px) {
-  header, main, footer, .hr-div {
+  header.main, main, footer, .hr-div {
     padding: vars.$page-padding-md;
   }
 }
 
 @media (min-width: 1024px) {
-  header, main, footer, .hr-div {
+  header.main, main, footer, .hr-div {
     padding: vars.$page-padding-lg;
   }
 }
 
 @media (min-width: 1200px) {
-  header, main, footer, .hr-div {
+  header.main, main, footer, .hr-div {
     padding: vars.$page-padding-xl;
   }
 }

@@ -22,7 +22,7 @@
       <button id="lang-btn" type="button">日本語</button>
     </nav>
     <!-- main header -->
-    <header>
+    <header class="main">
       <h1>
         <span class="lang-en" id="fullname">Henry Thomas</span>
         <span class="lang-ja">トーマス ヘンリー</span>
@@ -62,26 +62,32 @@
     <main>
       <!-- Project Section -->
       <section id="projects">
-        <h2>
-          <span class="lang-en">Projects</span>
-          <span class="lang-ja">プロジェクト一覧</span>
-        </h2>
+        <header class="projects">
+          <h2>
+            <span class="lang-en">Projects</span>
+            <span class="lang-ja">プロジェクト一覧</span>
+          </h2>
+          <h3>
+            <span class="lang-en">6 projects</span>
+          </h3>
+        </header>
+        <hr class="inbetween">
         <div class="filter-btns">
-          <button>TypeScript</button>
-          <button>Ruby/Rails</button>
-          <button>JavaScript</button>
-          <button>SASS/SCSS</button>
-          <button>PostgreSQL</button>
-          <button>React</button>
-          <button>Python/Flask</button>
-          <button>CSS</button>
-          <button>Vite</button>
-          <button>Bootstrap</button>
+          <button id="ts-btn" class="filter">TypeScript</button>
+          <button id="js-btn" class="filter">JavaScript</button>
+          <button id="ruby-btn" class="filter">React</button>
+          <button id="react-btn" class="filter">Ruby</button>
+          <button id="python-btn" class="filter">Python</button>
+          <button id="postgres-btn" class="filter">PostgreSQL</button>
+          <button id="css-btn" class="filter">CSS</button>
+          <button id="scss-btn" class="filter">SASS/SCSS</button>
+          <button id="bootstrap-btn" class="filter">Bootstrap</button>
+          <!-- <button>Vite</button> -->
         </div>
         <hr class="inbetween">
         <div class="grid">
           <!-- Therapy Website -->
-          <article class="project-card">
+          <article id="therapy-site" class="project-card">
             <div class="project-card__image">
               <img src="assets/aptist-website.jpeg" alt="therapy website picture" width="200" height="200">
             </div>
@@ -111,7 +117,7 @@
             </div>
           </article>
           <!-- Gimme a Song -->
-          <article class="project-card">
+          <article id="song-site" class="project-card">
             <div class="project-card__top-and-image">
               <div class="project-card__top">
                 <h3 class="project-card__title">Gimme a Song</h3>
@@ -158,7 +164,7 @@
             </div>
           </article>
           <!-- Flask / React Weather App -->
-          <article class="project-card">
+          <article id="weather-site" class="project-card">
             <div class="project-card__top-and-image">
               <div class="project-card__top">
                 <h3 class="project-card__title">React Weather</h3>
@@ -199,7 +205,7 @@
             </div>
           </article>
           <!-- Music Portfolio Website -->
-          <article class="project-card">
+          <article id="aptist-site" class="project-card">
             <div class="project-card__top-and-image">
               <div class="project-card__top">
                 <h3 class="project-card__title">aptist music</h3>
@@ -244,7 +250,7 @@
             </div>
           </article>
           <!-- Coding Portfolio Website -->
-          <article class="project-card">
+          <article id="portfolio-site" class="project-card">
             <div class="project-card__top-and-image">
               <div class="project-card__top">
                 <h3 class="project-card__title">
@@ -286,7 +292,7 @@
             </div>
           </article>
           <!-- The Country Club -->
-          <article class="project-card">
+          <article id="countries-site" class="project-card">
             <div class="project-card__top-and-image">
               <div class="project-card__top">
                 <h3 class="project-card__title">The Country Club</h3>

@@ -45,10 +45,46 @@ if (copyBtn) {
             copyBtn.removeAttribute('disabled');
             emailAddress.style.pointerEvents = 'auto';
         }, 2000);
-        console.log(emailText);
         navigator.clipboard.writeText(emailText);
     });
 }
+const projects = {
+    therapy: document.getElementById('therapy-site'),
+    song: document.getElementById('song-site'),
+    weather: document.getElementById('weather-site'),
+    aptist: document.getElementById('aptist-site'),
+    portfolio: document.getElementById('portfolio-site'),
+    countries: document.getElementById('countries-site'),
+};
+const projectCategories = {
+    typescript: [projects.therapy, projects.weather, projects.aptist, projects.portfolio, projects.countries],
+    javascript: [projects.song],
+    react: [projects.therapy, projects.weather, projects.aptist],
+    ruby: [projects.song, projects.countries],
+    python: [projects.weather],
+    postgres: [projects.song, projects.countries],
+    css: [projects.weather, projects.aptist],
+    scss: [projects.therapy, projects.song, projects.portfolio, projects.countries],
+    bootstrap: [projects.song],
+};
+const buttonCategories = {
+    typescript: document.getElementById('ts-btn'),
+    javascript: document.getElementById('js-btn'),
+    react: document.getElementById('react-btn'),
+    ruby: document.getElementById('ruby-btn'),
+    python: document.getElementById('python-btn'),
+    postgres: document.getElementById('postgres-btn'),
+    css: document.getElementById('css-btn'),
+    scss: document.getElementById('scss-btn'),
+    bootstrap: document.getElementById('bootstrap-btn'),
+};
+const filterBtns = document.querySelectorAll('.filter');
+filterBtns.forEach(button => {
+    button.addEventListener('click', () => {
+        console.log(Object.keys(buttonCategories));
+        console.log(Object.entries(projectCategories));
+    });
+});
 const projectAlbumMusicSkillsCards = [skillsIconsContainer];
 const themeBtn = document.getElementById('theme-btn');
 const themeIcon = document.getElementById('theme-icon');

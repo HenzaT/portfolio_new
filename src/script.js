@@ -79,11 +79,56 @@ const buttonCategories = {
     bootstrap: document.getElementById('bootstrap-btn'),
 };
 const filterBtns = document.querySelectorAll('.filter');
-filterBtns.forEach(button => {
-    button.addEventListener('click', () => {
-        console.log(Object.keys(buttonCategories));
-        console.log(Object.entries(projectCategories));
+let projectCountEn = document.querySelector('.project-count.lang-en');
+const showCards = (techStack) => {
+    Object.values(projectCategories).forEach(projectArray => {
+        projectArray.forEach(project => {
+            if (project) {
+                if (projectCategories[techStack].length > 1) {
+                    projectCountEn.textContent = `${projectCategories[techStack].length} projects`;
+                }
+                else {
+                    projectCountEn.textContent = `${projectCategories[techStack].length} project`;
+                }
+                projectCategories[techStack].includes(project) ? project.style.display = 'flex' : project.style.display = 'none';
+            }
+        });
     });
+};
+Object.values(buttonCategories).forEach(button => {
+    if (button) {
+        button.addEventListener('click', () => {
+            switch (button) {
+                case buttonCategories.typescript:
+                    showCards('typescript');
+                    break;
+                case buttonCategories.javascript:
+                    showCards('javascript');
+                    break;
+                case buttonCategories.react:
+                    showCards('react');
+                    break;
+                case buttonCategories.ruby:
+                    showCards('ruby');
+                    break;
+                case buttonCategories.python:
+                    showCards('python');
+                    break;
+                case buttonCategories.postgres:
+                    showCards('postgres');
+                    break;
+                case buttonCategories.css:
+                    showCards('css');
+                    break;
+                case buttonCategories.scss:
+                    showCards('scss');
+                    break;
+                default:
+                    showCards('bootstrap');
+                    break;
+            }
+        });
+    }
 });
 const projectAlbumMusicSkillsCards = [skillsIconsContainer];
 const themeBtn = document.getElementById('theme-btn');

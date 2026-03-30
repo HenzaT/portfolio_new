@@ -165,7 +165,31 @@ a#arrow-icon i {
   padding: 0.6rem 0;
   font-size: 0.8rem;
   text-align: center;
+  transition: all 0.2s ease-in-out;
 }
+.filter-btns button button.selected {
+  background-color: #030e2a;
+  color: #e6f2ff;
+}
+.filter-btns button:hover {
+  background-color: rgba(4, 111, 219, 0.2156862745);
+}
+
+button#reset-filter {
+  cursor: pointer;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: #030e2a;
+  border: 1px solid #030e2a;
+  border-radius: 10px;
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+}
+button#reset-filter:hover {
+  background-color: rgba(4, 111, 219, 0.2156862745);
+}
+
 /* skills radio buttons */
 section#skills .skills-radio {
   border: 1px solid #030e2a;
@@ -189,8 +213,10 @@ section#skills .radio-label {
   width: 50%;
   font-size: 1rem;
   text-align: center;
-  transition: background-color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+section#skills .radio-label:hover {
+  background-color: rgba(4, 111, 219, 0.2156862745);
 }
 section#skills .radio-label.lang {
   border-radius: 18px 0 0 0;
@@ -208,7 +234,7 @@ section#skills .radio-label:not(:last-of-type) {
   border-right: 1px solid #030e2a;
 }
 section#skills .radio-input:checked + .radio-label {
-  background-color: #030e2a;
+  background-color: #0470db;
   color: #e6f2ff;
 }
 
@@ -644,6 +670,12 @@ section#projects header.projects {
 }
 section#projects header.projects h2 {
   margin: 0;
+}
+section#projects header.projects .subheader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 }
 section#projects .grid {
   display: grid;

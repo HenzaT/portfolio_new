@@ -11,6 +11,11 @@ section#projects {
     h2 {
       margin: 0;
     }
+
+    .subheader {
+      @include mixin.flex-row;
+      gap: 1rem;
+    }
   }
 
   .grid {

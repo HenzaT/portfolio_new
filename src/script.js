@@ -77,6 +77,7 @@ const buttonCategories = {
     css: document.getElementById('css-btn'),
     scss: document.getElementById('scss-btn'),
     bootstrap: document.getElementById('bootstrap-btn'),
+    reset: document.getElementById('reset-filter'),
 };
 const filterBtns = document.querySelectorAll('.filter');
 let projectCountEn = document.querySelector('.project-count.lang-en');
@@ -123,8 +124,16 @@ Object.values(buttonCategories).forEach(button => {
                 case buttonCategories.scss:
                     showCards('scss');
                     break;
-                default:
+                case buttonCategories.bootstrap:
                     showCards('bootstrap');
+                    break;
+                default:
+                    Object.values(projects).forEach(project => {
+                        if (project) {
+                            project.style.display = 'flex';
+                        }
+                        projectCountEn.textContent = `${Object.values(projects).length} projects`;
+                    });
                     break;
             }
         });

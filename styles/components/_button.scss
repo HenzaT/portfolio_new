@@ -67,10 +67,26 @@ a#arrow-icon {
     padding: 0.6rem 0;
     font-size: 0.8rem;
     text-align: center;
+    transition: all 0.2s ease-in-out;
+
+    button.selected {
+      background-color: vars.$dark-blue;
+      color: vars.$light-text;
+    }
 
     &:hover {
-      
+      background-color: vars.$hover-btn;
     }
+  }
+}
+
+button#reset-filter {
+  @include mixin.btn-style;
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: vars.$hover-btn;
   }
 }
 
@@ -96,14 +112,11 @@ section#skills {
     width: 50%;
     font-size: 1rem;
     text-align: center;
-    transition: background-color 0.3s ease-in-out;
-    transition: color 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
-
-    // &:hover {
-    //   color: vars.$light;
-    //   background-color: vars.$dark-blue;
-    // }
+    &:hover {
+      background-color: vars.$hover-btn;
+    }
   }
 
   .radio-label.lang   { border-radius: 18px 0 0 0 }
@@ -114,7 +127,7 @@ section#skills {
   .radio-label:not(:last-of-type) {border-right: 1px solid vars.$dark-blue;}
 
   .radio-input:checked + .radio-label {
-    background-color: vars.$dark-blue;
+    background-color: vars.$selected;
     color: vars.$light-text;
   }
 }

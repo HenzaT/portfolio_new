@@ -56,7 +56,7 @@ if (copyBtn) {
   })
 }
 
-
+// projects filtering
 const projects = {
   therapy:   document.getElementById('therapy-site'),
   song:      document.getElementById('song-site'),
@@ -88,7 +88,20 @@ const buttonCategories = {
   css:        document.getElementById('css-btn'),
   scss:       document.getElementById('scss-btn'),
   bootstrap:  document.getElementById('bootstrap-btn'),
+  reset:      document.getElementById('reset-filter'),
 };
+
+const projectIcons = {
+  typescript: document.querySelectorAll('.ts-icon'),
+  javascript: document.querySelectorAll('.js-icon'),
+  react:      document.querySelectorAll('.react-icon'),
+  ruby:       document.querySelectorAll('.ruby-icon'),
+  python:     document.querySelectorAll('.python-icon'),
+  postgres:   document.querySelectorAll('.postgres-icon'),
+  css:        document.querySelectorAll('.css-icon'),
+  scss:       document.querySelectorAll('.scss-icon'),
+  bootstrap:  document.querySelectorAll('.bootstrap-icon'),
+}
 
 const filterBtns = document.querySelectorAll('.filter');
 let projectCountEn = document.querySelector('.project-count.lang-en') as HTMLHeadingElement;
@@ -136,8 +149,16 @@ Object.values(buttonCategories).forEach(button => {
         case buttonCategories.scss:
           showCards('scss');
           break;
-        default:
+        case buttonCategories.bootstrap:
           showCards('bootstrap');
+          break;
+        default:
+          Object.values(projects).forEach(project => {
+            if (project) {
+              project.style.display = 'flex';
+            }
+            projectCountEn.textContent = `${Object.values(projects).length} projects`;
+          });
           break;
       }
     })

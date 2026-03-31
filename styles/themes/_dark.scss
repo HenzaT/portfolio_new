@@ -56,4 +56,8 @@ section#skills {
 
 span.highlight.dark {
   color: vars.$light-selected;
+
+  &:hover {
+    color: vars.$light-selected;
+  }
 }

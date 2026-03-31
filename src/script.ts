@@ -10,12 +10,11 @@ new Splide('#portfolio-slider').mount();
 
 // section variables
 const sections = {
-  home: document.getElementById('home'),
+  nav:      document.getElementById('nav'),
+  header:   document.getElementById('main-header'),
   projects: document.getElementById('projects'),
-  skills: document.getElementById('skills'),
-  music: document.getElementById('music'),
-  about: document.getElementById('about'),
-  contact: document.getElementById('contact')
+  skills:   document.getElementById('skills'),
+  footer:   document.getElementById('footer'),
 };
 const sectionsNoHome: HTMLElement | null = document.querySelector('.below-content');
 
@@ -24,11 +23,6 @@ const skillsIconsContainer: HTMLElement | null = document.querySelector('.skills
 const aboutContainer: HTMLElement | null = document.querySelector('.about-container');
 const projectsContainer: HTMLElement | null = document.querySelector('.projects-container');
 const sectionTitles: NodeListOf<HTMLElement> = document.querySelectorAll('.section-title');
-
-// projects
-const projectCards: NodeListOf<HTMLElement> = document.querySelectorAll('.project-card');
-const projectImages: NodeListOf<HTMLElement> = document.querySelectorAll('.project-image');
-const projectOverlays: NodeListOf<HTMLElement> = document.querySelectorAll('.project-card-overlay');
 
 // skills
 const skillsCardButtons: HTMLElement | null = document.getElementById('skills-card-button');
@@ -104,9 +98,12 @@ const projectIcons = {
 }
 
 const filterBtns = document.querySelectorAll('.filter');
+const resetFilterBtn = document.getElementById('reset-filter');
 let projectCountEn = document.querySelector('.project-count.lang-en') as HTMLHeadingElement;
 
 const showCards = (techStack: keyof typeof projectCategories) => {
+  if (resetFilterBtn) { resetFilterBtn.style.display = 'block'; }
+  buttonCategories[techStack]?.classList.add('selected');
   Object.values(projectCategories).forEach(projectArray => {
     projectArray.forEach(project => {
       if (project) {
@@ -175,9 +172,7 @@ Object.values(buttonCategories).forEach(button => {
           break;
         default:
           Object.values(projects).forEach(project => {
-            if (project) {
-              project.style.display = 'flex';
-            }
+            if (project) { project.style.display = 'flex'; }
             projectCountEn.textContent = `${Object.values(projects).length} projects`;
           });
           Object.values(projectIcons).forEach(icons => {
@@ -185,6 +180,7 @@ Object.values(buttonCategories).forEach(button => {
               icon.classList.remove('highlight');
             });
           });
+          if (resetFilterBtn) { resetFilterBtn.style.display = 'none'; }
           break;
       }
     })

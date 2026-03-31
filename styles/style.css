@@ -160,6 +160,7 @@ a#arrow-icon i {
   color: #030e2a;
   border: 1px solid #030e2a;
   border-radius: 10px;
+  background-color: rgb(247, 253, 255);
   width: 30%;
   margin: 0;
   padding: 0.6rem 0;
@@ -167,9 +168,10 @@ a#arrow-icon i {
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
-.filter-btns button button.selected {
-  background-color: #030e2a;
+.filter-btns button .selected {
+  background-color: #0470db;
   color: #e6f2ff;
+  font-weight: 600;
 }
 .filter-btns button:hover {
   background-color: rgba(4, 111, 219, 0.2156862745);
@@ -179,6 +181,7 @@ a#arrow-icon i {
 }
 
 button#reset-filter {
+  display: none;
   cursor: pointer;
   margin: 1rem;
   padding: 0.5rem 1rem;
@@ -773,6 +776,9 @@ section#skills .skills-icons.dark {
 }
 
 span.highlight.dark {
+  color: #80befd;
+}
+span.highlight.dark:hover {
   color: #80befd;
 }
 

@@ -30,3 +30,9 @@
   border: 1px solid vars.$light;
   border-radius: 10px;
 }
+
+@mixin btn-clicked {
+  background-color: vars.$selected;
+  color: vars.$light-text;
+  font-weight: 600;
+}

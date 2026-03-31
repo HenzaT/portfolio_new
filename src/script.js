@@ -8,12 +8,11 @@ new Splide('#portfolio-slider').mount();
 // new Splide('#country-slider').mount();
 // section variables
 const sections = {
-    home: document.getElementById('home'),
+    nav: document.getElementById('nav'),
+    header: document.getElementById('main-header'),
     projects: document.getElementById('projects'),
     skills: document.getElementById('skills'),
-    music: document.getElementById('music'),
-    about: document.getElementById('about'),
-    contact: document.getElementById('contact')
+    footer: document.getElementById('footer'),
 };
 const sectionsNoHome = document.querySelector('.below-content');
 // section specific
@@ -21,10 +20,6 @@ const skillsIconsContainer = document.querySelector('.skills-container');
 const aboutContainer = document.querySelector('.about-container');
 const projectsContainer = document.querySelector('.projects-container');
 const sectionTitles = document.querySelectorAll('.section-title');
-// projects
-const projectCards = document.querySelectorAll('.project-card');
-const projectImages = document.querySelectorAll('.project-image');
-const projectOverlays = document.querySelectorAll('.project-card-overlay');
 // skills
 const skillsCardButtons = document.getElementById('skills-card-button');
 const copyBtn = document.getElementById('copy-btn');
@@ -92,8 +87,13 @@ const projectIcons = {
     bootstrap: document.querySelectorAll('.bootstrap-icon'),
 };
 const filterBtns = document.querySelectorAll('.filter');
+const resetFilterBtn = document.getElementById('reset-filter');
 let projectCountEn = document.querySelector('.project-count.lang-en');
 const showCards = (techStack) => {
+    if (resetFilterBtn) {
+        resetFilterBtn.style.display = 'block';
+    }
+    buttonCategories[techStack]?.classList.add('selected');
     Object.values(projectCategories).forEach(projectArray => {
         projectArray.forEach(project => {
             if (project) {
@@ -172,6 +172,9 @@ Object.values(buttonCategories).forEach(button => {
                             icon.classList.remove('highlight');
                         });
                     });
+                    if (resetFilterBtn) {
+                        resetFilterBtn.style.display = 'none';
+                    }
                     break;
             }
         });

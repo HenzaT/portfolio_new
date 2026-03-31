@@ -174,6 +174,9 @@ a#arrow-icon i {
 .filter-btns button:hover {
   background-color: rgba(4, 111, 219, 0.2156862745);
 }
+.filter-btns button:active {
+  background-color: #0470db;
+}
 
 button#reset-filter {
   cursor: pointer;
@@ -188,6 +191,9 @@ button#reset-filter {
 }
 button#reset-filter:hover {
   background-color: rgba(4, 111, 219, 0.2156862745);
+}
+button#reset-filter:active {
+  background-color: #0470db;
 }
 
 /* skills radio buttons */
@@ -236,6 +242,7 @@ section#skills .radio-label:not(:last-of-type) {
 section#skills .radio-input:checked + .radio-label {
   background-color: #0470db;
   color: #e6f2ff;
+  font-weight: 600;
 }
 
 #copy-btn {
@@ -283,6 +290,9 @@ section#skills .radio-input:checked + .radio-label {
   section#skills .radio-label.fworks {
     border-right: 1px solid #030e2a;
   }
+  .filter-btns button {
+    width: 20%;
+  }
 }
 .project-card {
   display: flex;
@@ -310,7 +320,7 @@ section#skills .radio-input:checked + .radio-label {
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0;
+  padding: 1rem 0 0.5rem 0;
 }
 .project-card__description {
   margin: 0.5rem 0;
@@ -363,6 +373,9 @@ section#skills .radio-input:checked + .radio-label {
   }
   .project-card__text {
     width: 35%;
+  }
+  .project-card__tech-icons-container {
+    padding: 0.5rem 0;
   }
 }
 hr {
@@ -676,6 +689,7 @@ section#projects header.projects .subheader {
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  width: 100%;
 }
 section#projects .grid {
   display: grid;

@@ -77,6 +77,10 @@ a#arrow-icon {
     &:hover {
       background-color: vars.$hover-btn;
     }
+
+    &:active {
+      background-color: vars.$selected;
+    }
   }
 }
 
@@ -87,6 +91,10 @@ button#reset-filter {
 
   &:hover {
     background-color: vars.$hover-btn;
+  }
+
+  &:active {
+    background-color: vars.$selected;
   }
 }
 
@@ -129,6 +137,7 @@ section#skills {
   .radio-input:checked + .radio-label {
     background-color: vars.$selected;
     color: vars.$light-text;
+    font-weight: 600;
   }
 }
 
@@ -179,9 +188,16 @@ section#skills {
 
     .radio-label.fworks { border-right: 1px solid vars.$dark-blue; }
 
+
     // .radio-label.lang   { border-radius: 18px 18px 0 0; }
     // .radio-label.fworks,
     // .radio-label.tools  { border-radius: 0px; }
     // .radio-label.db     { border-radius: 0 0 18px 18px; }
+  }
+
+  .filter-btns {
+    button {
+      width: 20%;
+    }
   }
 }

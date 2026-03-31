@@ -99,7 +99,7 @@ const projectIcons = {
   python:     document.querySelectorAll('.python-icon'),
   postgres:   document.querySelectorAll('.postgres-icon'),
   css:        document.querySelectorAll('.css-icon'),
-  scss:       document.querySelectorAll('.scss-icon'),
+  scss:       document.querySelectorAll('.sass-icon'),
   bootstrap:  document.querySelectorAll('.bootstrap-icon'),
 }
 
@@ -119,7 +119,19 @@ const showCards = (techStack: keyof typeof projectCategories) => {
       }
     });
   })
-}
+};
+
+const highlightIcons = (projectIconArr: keyof typeof projectIcons) => {
+  Object.values(projectIcons).forEach(icons => {
+    icons.forEach(icon => {
+      if (Array.from(projectIcons[projectIconArr]).includes(icon)) {
+        icon.classList.add('highlight');
+      } else {
+        icon.classList.remove('highlight');
+      }
+    })
+  })
+};
 
 Object.values(buttonCategories).forEach(button => {
   if (button) {
@@ -127,30 +139,39 @@ Object.values(buttonCategories).forEach(button => {
       switch (button) {
         case buttonCategories.typescript:
           showCards('typescript');
+          highlightIcons('typescript');
           break;
         case buttonCategories.javascript:
           showCards('javascript');
+          highlightIcons('javascript');
           break;
         case buttonCategories.react:
           showCards('react')
+          highlightIcons('react');
           break;
         case buttonCategories.ruby:
           showCards('ruby');
+          highlightIcons('ruby');
           break;
         case buttonCategories.python:
           showCards('python');
+          highlightIcons('python');
           break;
         case buttonCategories.postgres:
           showCards('postgres');
+          highlightIcons('postgres');
           break;
         case buttonCategories.css:
           showCards('css');
+          highlightIcons('css');
           break;
         case buttonCategories.scss:
           showCards('scss');
+          highlightIcons('scss');
           break;
         case buttonCategories.bootstrap:
           showCards('bootstrap');
+          highlightIcons('bootstrap');
           break;
         default:
           Object.values(projects).forEach(project => {
@@ -158,6 +179,11 @@ Object.values(buttonCategories).forEach(button => {
               project.style.display = 'flex';
             }
             projectCountEn.textContent = `${Object.values(projects).length} projects`;
+          });
+          Object.values(projectIcons).forEach(icons => {
+            icons.forEach(icon => {
+              icon.classList.remove('highlight');
+            });
           });
           break;
       }

@@ -24,7 +24,7 @@
   &__tech-icons-container {
     @include mixin.flex-row;
     gap: 0.5rem;
-    padding: 0.5rem 0;
+    padding: 1rem 0 0.5rem 0;
   }
 
   &__description {
@@ -77,6 +77,10 @@
 
     &__text {
       width: 35%;
+    }
+
+    &__tech-icons-container {
+      padding: 0.5rem 0;
     }
   }
 }

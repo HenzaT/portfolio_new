@@ -15,6 +15,7 @@ section#projects {
     .subheader {
       @include mixin.flex-row;
       gap: 1rem;
+      width: 100%;
     }
   }
 

@@ -74,6 +74,12 @@ a {
   font-weight: 600;
 }
 
+.selected {
+  background: #0470db !important;
+  color: #e6f2ff !important;
+  font-weight: 600;
+}
+
 @media (min-width: 768px) {
   header.main, main, footer, .hr-div {
     padding: 0 10rem;
@@ -160,18 +166,13 @@ a#arrow-icon i {
   color: #030e2a;
   border: 1px solid #030e2a;
   border-radius: 10px;
-  background-color: rgb(247, 253, 255);
+  background: rgb(247, 253, 255);
   width: 30%;
   margin: 0;
   padding: 0.6rem 0;
   font-size: 0.8rem;
   text-align: center;
   transition: all 0.2s ease-in-out;
-}
-.filter-btns button .selected {
-  background-color: #0470db;
-  color: #e6f2ff;
-  font-weight: 600;
 }
 .filter-btns button:hover {
   background-color: rgba(4, 111, 219, 0.2156862745);
@@ -243,8 +244,8 @@ section#skills .radio-label:not(:last-of-type) {
   border-right: 1px solid #030e2a;
 }
 section#skills .radio-input:checked + .radio-label {
-  background-color: #0470db;
-  color: #e6f2ff;
+  background: #0470db !important;
+  color: #e6f2ff !important;
   font-weight: 600;
 }
 

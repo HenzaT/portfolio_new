@@ -32,7 +32,7 @@
 }
 
 @mixin btn-clicked {
-  background-color: vars.$selected;
-  color: vars.$light-text;
+  background: vars.$selected !important;
+  color: vars.$light-text !important;
   font-weight: 600;
 }

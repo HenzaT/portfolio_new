@@ -62,17 +62,13 @@ a#arrow-icon {
 
   button {
     @include mixin.btn-style;
-    background-color: vars.$light;
+    background: vars.$light;
     width: 30%;
     margin: 0;
     padding: 0.6rem 0;
     font-size: 0.8rem;
     text-align: center;
     transition: all 0.2s ease-in-out;
-
-    .selected {
-      @include mixin.btn-clicked;
-    }
 
     &:hover {
       background-color: vars.$hover-btn;

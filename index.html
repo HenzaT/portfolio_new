@@ -69,7 +69,7 @@
           </h2>
           <div class="subheader">
             <h3>
-              <span class="project-count lang-en"><span class="project-count">6</span> projects</span>
+              <span class="project-count lang-en"><span class="project-count">7</span> projects</span>
             </h3>
             <button id="reset-filter">reset</button>
           </div>
@@ -91,12 +91,21 @@
         <div class="grid">
           <!-- Therapy Website -->
           <article id="therapy-site" class="project-card">
-            <div class="project-card__image">
-              <img src="assets/aptist-website.jpeg" alt="therapy website picture" width="200" height="200">
+            <div class="project-card__top-and-image">
+              <div class="project-card__top">
+                <h3 class="project-card__title">Therapy Website</h3>
+                <h4 class="project-card__tagline">professional website for client</h4>
+              </div>
+              <!-- <section id="therapy-slider" class="splide" aria-label="Therapy website image slides">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide"><img src="assets/react-weather-claude-app-1.png" alt="weather app"></li>
+                    <li class="splide__slide"><img src="assets/react-weather-claude-app-2.png" alt="weather app city search"></li>
+                  </ul>
+                </div>
+              </section> -->
             </div>
             <div class="project-card__text">
-              <h3 class="project-card__title">Therapy Website</h3>
-              <h4 class="project-card__tagline">professional website for client</h4>
               <div class="project-card__tech-icons-container">
                 <i class="devicon-react-original react-icon" alt="react js icon"></i>
                 <i class="devicon-typescript-plain ts-icon" alt="typescript icon"></i>
@@ -107,7 +116,7 @@
               <hr>
               <p class="project-card__description">
                 I worked collaboratively with a client to build this professional website.
-                It is fully responsive, with different components rendered depending on screen size.
+                We worked on the design together, whilst I focused on space and layout.
                 Integrated <span class="highlight">Netlify Forms</span> for form-handling, and
                 <span class="highlight">Decap CMS</span> to allow the client to edit content easily. (This is a private repo).
               </p>
@@ -336,6 +345,47 @@
                   <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
                 </a>
                 <a href="https://github.com/HenzaT/the_country_club" class="project-card__link" title="Go to The Country Club Github repo">
+                  <i class="fa-brands fa-github" alt="github icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- Kanji API -->
+          <article id="kanji-site" class="project-card">
+            <div class="project-card__top-and-image">
+              <div class="project-card__top">
+                <h3 class="project-card__title">JLPTrainer API</h3>
+                <h4 class="project-card__tagline">kanji learning api (in progress)</h4>
+              </div>
+              <!-- <section id="kanji-slider" class="splide" aria-label="JLPTrainer API image slides">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide"><img src="assets/the-country-club-1.png" alt="country club home page"></li>
+                    <li class="splide__slide"><img src="assets/the-country-club-2.png" alt="country club country page"></li>
+                    <li class="splide__slide"><img src="assets/the-country-club-3.png" alt="country club country info"></li>
+                    <li class="splide__slide"><img src="assets/the-country-club-4.png" alt="country club region page"></li>
+                  </ul>
+                </div>
+              </section> -->
+            </div>
+            <div class="project-card__text">
+              <div class="project-card__tech-icons-container">
+                <i class="devicon-rails-plain-wordmark ruby-icon" alt="ruby on rails icon"></i>
+                <i class="devicon-postgresql-plain-wordmark postgres-icon" alt="postgresql icon"></i>
+              </div>
+              <hr>
+              <p class="project-card__description">
+                I used the kanjiapi.dev API to create the backend for an eventual full stack app that will help with
+                learning for the JLPT exam. I focused on creating a clean seed file and following RESTful principles.
+                One of the route controllers is mostly RESTful, with additional functionality through custom routes.
+                The frontend is in progress and built using React.
+              </p>
+              <hr>
+              <div class="project-card__links">
+                <!-- <a href="https://the-country-club-e3d07af9dd9d.herokuapp.com/" class="project-card__link" title="Go to The Country Club website">
+                  <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
+                </a> -->
+                <a href="https://github.com/HenzaT/JLPT-Backend" class="project-card__link" title="Go to JLPTrainer API Github repo">
                   <i class="fa-brands fa-github" alt="github icon"></i>
                 </a>
               </div>

@@ -51,14 +51,15 @@ const projects = {
     aptist: document.getElementById('aptist-site'),
     portfolio: document.getElementById('portfolio-site'),
     countries: document.getElementById('countries-site'),
+    jlptrainer: document.getElementById('kanji-site'),
 };
 const projectCategories = {
     typescript: [projects.therapy, projects.weather, projects.aptist, projects.portfolio, projects.countries],
     javascript: [projects.song],
     react: [projects.therapy, projects.weather, projects.aptist],
-    ruby: [projects.song, projects.countries],
+    ruby: [projects.song, projects.countries, projects.jlptrainer],
     python: [projects.weather],
-    postgres: [projects.song, projects.countries],
+    postgres: [projects.song, projects.countries, projects.jlptrainer],
     css: [projects.weather, projects.aptist],
     scss: [projects.therapy, projects.song, projects.portfolio, projects.countries],
     bootstrap: [projects.song],
@@ -89,11 +90,20 @@ const projectIcons = {
 const filterBtns = document.querySelectorAll('.filter');
 const resetFilterBtn = document.getElementById('reset-filter');
 let projectCountEn = document.querySelector('.project-count.lang-en');
+const highlightButton = (specificBtn) => {
+    Object.values(buttonCategories).forEach(button => {
+        if (button === buttonCategories[specificBtn]) {
+            buttonCategories[specificBtn]?.classList.add('selected');
+        }
+        else {
+            button?.classList.remove('selected');
+        }
+    });
+};
 const showCards = (techStack) => {
     if (resetFilterBtn) {
         resetFilterBtn.style.display = 'block';
     }
-    buttonCategories[techStack]?.classList.add('selected');
     Object.values(projectCategories).forEach(projectArray => {
         projectArray.forEach(project => {
             if (project) {
@@ -120,65 +130,62 @@ const highlightIcons = (projectIconArr) => {
         });
     });
 };
+const buttonActions = (tech) => {
+    highlightButton(tech);
+    showCards(tech);
+    highlightIcons(tech);
+};
 Object.values(buttonCategories).forEach(button => {
-    if (button) {
-        button.addEventListener('click', () => {
-            switch (button) {
-                case buttonCategories.typescript:
-                    showCards('typescript');
-                    highlightIcons('typescript');
-                    break;
-                case buttonCategories.javascript:
-                    showCards('javascript');
-                    highlightIcons('javascript');
-                    break;
-                case buttonCategories.react:
-                    showCards('react');
-                    highlightIcons('react');
-                    break;
-                case buttonCategories.ruby:
-                    showCards('ruby');
-                    highlightIcons('ruby');
-                    break;
-                case buttonCategories.python:
-                    showCards('python');
-                    highlightIcons('python');
-                    break;
-                case buttonCategories.postgres:
-                    showCards('postgres');
-                    highlightIcons('postgres');
-                    break;
-                case buttonCategories.css:
-                    showCards('css');
-                    highlightIcons('css');
-                    break;
-                case buttonCategories.scss:
-                    showCards('scss');
-                    highlightIcons('scss');
-                    break;
-                case buttonCategories.bootstrap:
-                    showCards('bootstrap');
-                    highlightIcons('bootstrap');
-                    break;
-                default:
-                    Object.values(projects).forEach(project => {
-                        if (project) {
-                            project.style.display = 'flex';
-                        }
-                        projectCountEn.textContent = `${Object.values(projects).length} projects`;
-                    });
-                    Object.values(projectIcons).forEach(icons => {
-                        icons.forEach(icon => {
-                            icon.classList.remove('highlight');
-                        });
-                    });
-                    if (resetFilterBtn) {
-                        resetFilterBtn.style.display = 'none';
+    button?.addEventListener('click', () => {
+        switch (button) {
+            case buttonCategories.typescript:
+                buttonActions('typescript');
+                break;
+            case buttonCategories.javascript:
+                buttonActions('javascript');
+                break;
+            case buttonCategories.react:
+                buttonActions('react');
+                break;
+            case buttonCategories.ruby:
+                buttonActions('ruby');
+                break;
+            case buttonCategories.python:
+                buttonActions('python');
+                break;
+            case buttonCategories.postgres:
+                buttonActions('postgres');
+                break;
+            case buttonCategories.css:
+                buttonActions('css');
+                break;
+            case buttonCategories.scss:
+                buttonActions('scss');
+                break;
+            case buttonCategories.bootstrap:
+                buttonActions('bootstrap');
+                break;
+            default:
+                Object.values(buttonCategories).forEach(button => {
+                    button?.classList.remove('selected');
+                });
+                Object.values(projects).forEach(project => {
+                    if (project) {
+                        project.style.display = 'flex';
                     }
-                    break;
-            }
-        });
-    }
+                    projectCountEn.textContent = `${Object.values(projects).length} projects`;
+                });
+                Object.values(projectIcons).forEach(icons => {
+                    icons.forEach(icon => {
+                        icon.classList.remove('highlight');
+                    });
+                });
+                if (resetFilterBtn) {
+                    resetFilterBtn.style.display = 'none';
+                }
+                break;
+        }
+    });
 });
 const projectAlbumMusicSkillsCards = [skillsIconsContainer];
 const themeBtn = document.getElementById('theme-btn');

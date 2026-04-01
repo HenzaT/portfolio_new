@@ -1,5 +1,7 @@
 // @ts-ignore
 import Splide from "../node_modules/@splidejs/splide/dist/js/splide.esm.js";
+import { projectCards } from "./projects.js";
+import { skills } from "./skills.js";
 
 new Splide('#song-slider').mount();
 new Splide('#aptist-slider').mount();
@@ -7,6 +9,11 @@ new Splide('#country-slider').mount();
 new Splide('#weather-slider').mount();
 new Splide('#portfolio-slider').mount();
 // new Splide('#country-slider').mount();
+
+document.addEventListener('DOMContentLoaded', () => {
+  projectCards();
+  skills();
+})
 
 // section variables
 const sections = {

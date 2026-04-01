@@ -258,22 +258,22 @@ if (langBtn) {
   })
 }
 
-// radio buttons
-const skillsRadioButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.skills-radio');
+// // radio buttons
+// const skillsRadioButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.skills-radio');
 
-interface RadioButtons {
-  languages:  HTMLInputElement
-  frameworks: HTMLInputElement
-  tools:      HTMLInputElement
-  databases:  HTMLInputElement
-};
+// interface RadioButtons {
+//   languages:  HTMLInputElement
+//   frameworks: HTMLInputElement
+//   tools:      HTMLInputElement
+//   databases:  HTMLInputElement
+// };
 
-const radioButtons: RadioButtons = {
-  languages: document.getElementById('languages') as HTMLInputElement,
-  frameworks: document.getElementById('frameworks') as HTMLInputElement,
-  tools: document.getElementById('tools') as HTMLInputElement,
-  databases: document.getElementById('databases') as HTMLInputElement
-};
+// const radioButtons: RadioButtons = {
+//   languages: document.getElementById('languages') as HTMLInputElement,
+//   frameworks: document.getElementById('frameworks') as HTMLInputElement,
+//   tools: document.getElementById('tools') as HTMLInputElement,
+//   databases: document.getElementById('databases') as HTMLInputElement
+// };
 
 // cards
 const card = {
@@ -287,48 +287,48 @@ const allCards = [card.interests, card.experience, card.education];
 
 const aboutInfo: NodeListOf<HTMLElement> = document.querySelectorAll('.about-info');
 
-// icons
-const languageIcons = [
-  document.getElementById('ruby'),
-  document.getElementById('ts'),
-  document.getElementById('js'),
-  document.getElementById('python'),
-  document.getElementById('perl'),
-];
+// // icons
+// const languageIcons = [
+//   document.getElementById('ruby'),
+//   document.getElementById('ts'),
+//   document.getElementById('js'),
+//   document.getElementById('python'),
+//   document.getElementById('perl'),
+// ];
 
-const frameworkIcons = [
-  document.getElementById('rails'),
-  document.getElementById('bootstrap'),
-  document.getElementById('react'),
-];
+// const frameworkIcons = [
+//   document.getElementById('rails'),
+//   document.getElementById('bootstrap'),
+//   document.getElementById('react'),
+// ];
 
-const toolIcons = [
-  document.getElementById('html'),
-  document.getElementById('css'),
-  document.getElementById('sass'),
-  document.getElementById('git'),
-  document.getElementById('github'),
-  document.getElementById('heroku'),
-  document.getElementById('netlify'),
-  document.getElementById('linux'),
-  document.getElementById('proxmox'),
-  document.getElementById('vim'),
-];
+// const toolIcons = [
+//   document.getElementById('html'),
+//   document.getElementById('css'),
+//   document.getElementById('sass'),
+//   document.getElementById('git'),
+//   document.getElementById('github'),
+//   document.getElementById('heroku'),
+//   document.getElementById('netlify'),
+//   document.getElementById('linux'),
+//   document.getElementById('proxmox'),
+//   document.getElementById('vim'),
+// ];
 
-const dbIcons = [
-  document.getElementById('postgres'),
-  document.getElementById('mysql'),
-  document.getElementById('mariadb'),
-];
+// const dbIcons = [
+//   document.getElementById('postgres'),
+//   document.getElementById('mysql'),
+//   document.getElementById('mariadb'),
+// ];
 
-const iconGroups = {
-  languages: languageIcons,
-  frameworks: frameworkIcons,
-  tools: toolIcons,
-  databases: dbIcons
-};
+// const iconGroups = {
+//   languages: languageIcons,
+//   frameworks: frameworkIcons,
+//   tools: toolIcons,
+//   databases: dbIcons
+// };
 
-const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons];
+// const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons];
 
 // home arrow to top
 const homeArrowIcon: HTMLElement | null = document.getElementById('arrow-icon');
@@ -460,7 +460,7 @@ mobileChevrons.forEach((chevron) => {
 function clear(entries: IntersectionObserverEntry[]): void {
   entries.forEach((entry)=> {
     if (!entry.isIntersecting) {
-      clearFadeExpand()
+      // clearFadeExpand()
     }
   })
 };
@@ -516,36 +516,36 @@ projectAlbumMusicSkillsCards.forEach((card) => {
   })
 })
 
-// skills icons toggle
-function clearFadeExpand(): void {
-  Object.values(iconGroups).forEach(group => {
-    group.forEach((icon) => {
-      if (!icon) return;
-      icon.classList.remove('fade');
-      icon.classList.remove('expand');
-    });
-  });
-};
+// // skills icons toggle
+// function clearFadeExpand(): void {
+//   Object.values(iconGroups).forEach(group => {
+//     group.forEach((icon) => {
+//       if (!icon) return;
+//       icon.classList.remove('fade');
+//       icon.classList.remove('expand');
+//     });
+//   });
+// };
 
-skillsRadioButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    clearFadeExpand();
-    const selected = (Object.keys(radioButtons) as Array<keyof RadioButtons>)
-    .find(buttonName => radioButtons[buttonName]?.checked);
-    Object.entries(iconGroups).forEach(([group, icons]) => {
-      if (group !== selected) {
-        icons.forEach((icon) => {
-          if (icon) {
-            icon.classList.add('fade')
-          }
-        });
-      } else if (group === selected) {
-        icons.forEach((icon) => {
-          if (icon) {
-            icon.classList.add('expand')
-          }
-        });
-      };
-    });
-  });
-});
+// skillsRadioButtons.forEach((button) => {
+//   button.addEventListener('click', () => {
+//     clearFadeExpand();
+//     const selected = (Object.keys(radioButtons) as Array<keyof RadioButtons>)
+//     .find(buttonName => radioButtons[buttonName]?.checked);
+//     Object.entries(iconGroups).forEach(([group, icons]) => {
+//       if (group !== selected) {
+//         icons.forEach((icon) => {
+//           if (icon) {
+//             icon.classList.add('fade')
+//           }
+//         });
+//       } else if (group === selected) {
+//         icons.forEach((icon) => {
+//           if (icon) {
+//             icon.classList.add('expand')
+//           }
+//         });
+//       };
+//     });
+//   });
+// });

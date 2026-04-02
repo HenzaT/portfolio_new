@@ -6,7 +6,7 @@ export function skills() {
         { 'id': 'python', 'class': 'devicon-python-plain', 'title': 'python icon' },
         { 'id': 'perl', 'class': 'devicon-perl-plain', 'title': 'perl icon' },
         { 'id': 'rails', 'class': 'devicon-rails-plain', 'title': 'ruby on rails icon' },
-        { 'id': 'bootstrap', 'class': 'devicon-bootstrap-plain', 'title': 'bootsrap icon' },
+        { 'id': 'bootstrap', 'class': 'devicon-bootstrap-plain', 'title': 'bootstrap icon' },
         { 'id': 'react', 'class': 'devicon-react-original', 'title': 'reactjs icon' },
         { 'id': 'html', 'class': 'devicon-html5-plain-wordmark', 'title': 'html5 icon' },
         { 'id': 'css', 'class': 'devicon-css3-plain-wordmark', 'title': 'css3 icon' },

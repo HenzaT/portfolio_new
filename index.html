@@ -129,23 +129,69 @@
             </div>
           </article>
           <!-- Gimme a Song -->
-          <!-- <template> -->
-            <article id="song-site" class="project-card">
+          <article id="song-site" class="project-card">
+            <div class="project-card__top-and-image">
+              <div class="project-card__top">
+                <h3 class="project-card__title">Gimme a Song</h3>
+                <h4 class="project-card__tagline">
+                  <span class="lang-en">song idea app for musicians</span>
+                  <span class="lang-ja">作曲の手伝いアプリ</span>
+                </h4>
+              </div>
+              <section id="song-slider" class="splide" aria-label="Gimme a Song website image slides">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide"><img src="assets/gimme-a-song-1.png" alt="gimme a song home page"></li>
+                    <li class="splide__slide"><img src="assets/gimme-a-song-2.png" alt="gimme a song idea page"></li>
+                    <li class="splide__slide"><img src="assets/gimme-a-song-3.png" alt="gimme a song save page"></li>
+                    <li class="splide__slide"><img src="assets/gimme-a-song-4.png" alt="gimme a song dashboard"></li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+            <div class="project-card__text">
+              <div class="project-card__tech-icons-container">
+                <i class="devicon-rails-plain ruby-icon" alt="ruby on rails icon"></i>
+                <i class="devicon-javascript-plain js-icon" alt="javascript icon"></i>
+                <i class="devicon-html5-plain-wordmark html-icon" alt="html5 icon"></i>
+                <i class="devicon-sass-original sass-icon" alt="sass icon"></i>
+                <i class="devicon-bootstrap-plain bootstrap-icon" alt="bootstrap icon"></i>
+                <i class="devicon-postgresql-plain postgres-icon" alt="postgresql icon"></i>
+              </div>
+              <hr>
+              <p class="project-card__description">
+                A self-directed project built to help musicians overcome writer's block by generating random song elements.
+                I focused on database design and relationships using <span class="highlight">PostgreSQL</span>
+                and using <span class="highlight">Stimulus JS</span> for interactivity and local storage.
+              </p>
+              <hr>
+              <div class="project-card__links">
+                <a href="https://gimme-a-song-75fdbe92334c.herokuapp.com/" class="project-card__link" title="Go to Gimme a Song Website">
+                  <i class="fa-solid fa-arrow-up-right-from-square" alt="url link icon"></i>
+                </a>
+                <a href="https://github.com/HenzaT/gimme-a-song" class="project-card__link" title="Go to Gimme a Song Github repo">
+                  <i class="fa-brands fa-github" alt="github icon"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+          <template id="projects-template">
+            <article class="project-card">
               <div class="project-card__top-and-image">
                 <div class="project-card__top">
-                  <h3 class="project-card__title">Gimme a Song</h3>
+                  <h3 class="project-card__title"></h3>
                   <h4 class="project-card__tagline">
-                    <span class="lang-en">song idea app for musicians</span>
-                    <span class="lang-ja">作曲の手伝いアプリ</span>
+                    <span class="lang-en"></span>
+                    <span class="lang-ja"></span>
                   </h4>
                 </div>
-                <section id="song-slider" class="splide" aria-label="Gimme a Song website image slides">
+                <section class="splide">
                   <div class="splide__track">
                     <ul class="splide__list">
-                      <li class="splide__slide"><img src="assets/gimme-a-song-1.png" alt="gimme a song home page"></li>
-                      <li class="splide__slide"><img src="assets/gimme-a-song-2.png" alt="gimme a song idea page"></li>
-                      <li class="splide__slide"><img src="assets/gimme-a-song-3.png" alt="gimme a song save page"></li>
-                      <li class="splide__slide"><img src="assets/gimme-a-song-4.png" alt="gimme a song dashboard"></li>
+                      <li class="splide__slide"><img src=""></li>
+                      <li class="splide__slide"><img src=""></li>
+                      <li class="splide__slide"><img src=""></li>
+                      <li class="splide__slide"><img src=""></li>
                     </ul>
                   </div>
                 </section>
@@ -160,11 +206,7 @@
                   <i class="devicon-postgresql-plain postgres-icon" alt="postgresql icon"></i>
                 </div>
                 <hr>
-                <p class="project-card__description">
-                  A self-directed project built to help musicians overcome writer's block by generating random song elements.
-                  I focused on database design and relationships using <span class="highlight">PostgreSQL</span>
-                  and using <span class="highlight">Stimulus JS</span> for interactivity and local storage.
-                </p>
+                <p class="project-card__description"></p>
                 <hr>
                 <div class="project-card__links">
                   <a href="https://gimme-a-song-75fdbe92334c.herokuapp.com/" class="project-card__link" title="Go to Gimme a Song Website">
@@ -176,7 +218,7 @@
                 </div>
               </div>
             </article>
-          <!-- </template> -->
+          </template>
           <!-- Flask / React Weather App -->
           <article id="weather-site" class="project-card">
             <div class="project-card__top-and-image">
@@ -401,7 +443,9 @@
         <h2>Skills</h2>
         <div class="card-and-button-container" id="skills-card-button">
           <div class="skills-icons"></div>
-          <template id="skills-template"><i class="template-icon-class"></i></template>
+          <template id="skills-template">
+            <i class="template-icon-class"></i>
+          </template>
           <div class="skills-radio">
             <div class="top">
               <input id="languages" class="radio-input" type="radio" name="about" value="languages">

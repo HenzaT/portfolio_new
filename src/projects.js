@@ -1,34 +1,63 @@
+import { projectsData } from "./projectsData.js";
 export function projectCards() {
-    const projects = [
-        {
-            'articleId': 'song-site',
-            'title': 'Gimme a Song',
-            'taglineEn': 'song idea app for musicians',
-            'taglineJa': '作曲の手伝いアプリ',
-            'spliderId': 'song-slider',
-            'aria-label': 'Gimme a Song website image slides',
-            'spliderLi': [
-                { 'img1': 'assets/gimme-a-song-1.png', 'alt1': 'gimme a song home page' },
-                { 'img2': 'assets/gimme-a-song-2.png', 'alt2': 'gimme a song idea page' },
-                { 'img3': 'assets/gimme-a-song-3.png', 'alt3': 'gimme a song save page' },
-                { 'img4': 'assets/gimme-a-song-4.png', 'alt4': 'gimme a song dashboard' },
-            ],
-            'icons': [
-                { 'class': 'devicon-rails-plain ruby-icon', 'title': 'ruby on rails icon' },
-                { 'class': 'devicon-javascript-plain js-icon', 'title': 'javascript icon' },
-                { 'class': 'devicon-html5-plain-wordmark html-icon', 'title': 'html5 icon' },
-                { 'class': 'devicon-sass-original sass-icon', 'title': 'sass icon' },
-                { 'class': 'devicon-bootstrap-plain bootstrap-icon', 'title': 'bootstrap icon' },
-                { 'class': 'devicon-postgresql-plain postgres-icon', 'title': 'postgresql icon' },
-            ],
-            'description': `A self-directed project built to help musicians overcome writer's block by generating random song elements.
-        I focused on database design and relationships using <span class="highlight">PostgreSQL</span>
-        and using <span class="highlight">Stimulus JS</span> for interactivity and local storage.`,
-            'links': [
-                { 'siteHref': 'https://gimme-a-song-75fdbe92334c.herokuapp.com/', 'siteTitle': 'Go to Gimme a Song Website' },
-                { 'githubHref': 'https://github.com/HenzaT/gimme-a-song', 'githubTitle': 'Go to Gimme a Song Github repo' },
-            ],
-        }
-    ];
+    const projectsTemplate = document.getElementById('projects-template');
+    const projectsGrid = document.querySelector('.grid');
+    projectsData.forEach(project => {
+        const clone = projectsTemplate.content.cloneNode(true);
+        const card = clone.querySelector('.project-card');
+        const title = clone.querySelector('.project-card__title');
+        const taglineEn = clone.querySelector('.project-card__tagline .lang-en');
+        const taglineJa = clone.querySelector('.project-card__tagline .lang-ja');
+        const splider = clone.querySelector('.splide');
+        const descriptionEn = clone.querySelector('.project-card__description');
+        const splideUl = clone.querySelector('.splide__list');
+        const iconContainer = clone.querySelector('.project-card__tech-icons-container');
+        const linksDiv = clone.querySelector('.project-card__links');
+        // top-level info
+        if (card)
+            card.id = project['articleId'];
+        if (title)
+            title.textContent = project['title'];
+        if (taglineEn)
+            taglineEn.textContent = project['taglineEn'];
+        if (taglineJa)
+            taglineJa.textContent = project['taglineJa'];
+        if (splider)
+            splider.id = project['spliderId'];
+        if (splider)
+            splider.setAttribute('aria-label', project['aria-label']);
+        if (descriptionEn)
+            descriptionEn.innerHTML = project['description'];
+        // splider
+        project['spliderLi'].forEach(imageObj => {
+            const li = document.createElement('li');
+            li.classList.add('splide__slide');
+            const img = document.createElement('img');
+            img.src = imageObj.url;
+            img.alt = imageObj.alt;
+            li?.appendChild(img);
+            splideUl?.appendChild(li);
+        });
+        // icons
+        project['icons'].forEach(iconObj => {
+            const iEl = document.createElement('i');
+            iEl.className = iconObj['class'];
+            iEl.setAttribute('title', iconObj['title']);
+            iconContainer?.appendChild(iEl);
+        });
+        // links
+        project['links'].forEach(linkObj => {
+            const aTag = document.createElement('a');
+            aTag.setAttribute('href', linkObj['url']);
+            aTag.classList.add('project-card__link');
+            aTag.setAttribute('title', linkObj['title']);
+            const linkIcon = document.createElement('i');
+            linkIcon.className = linkObj['class'];
+            linkIcon.setAttribute('title', linkObj['iTitle']);
+            aTag?.appendChild(linkIcon);
+            linksDiv?.appendChild(aTag);
+        });
+        projectsGrid?.appendChild(clone);
+    });
 }
 ;

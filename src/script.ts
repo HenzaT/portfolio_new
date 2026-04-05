@@ -3,17 +3,26 @@ import Splide from "../node_modules/@splidejs/splide/dist/js/splide.esm.js";
 import { projectCards } from "./projects.js";
 import { skills } from "./skills.js";
 
-new Splide('#song-slider').mount();
-new Splide('#aptist-slider').mount();
-new Splide('#country-slider').mount();
-new Splide('#weather-slider').mount();
-new Splide('#portfolio-slider').mount();
-// new Splide('#country-slider').mount();
-
 document.addEventListener('DOMContentLoaded', () => {
   projectCards();
   skills();
-})
+
+  const spliders: string[] = [
+    '#song-slider',
+    '#aptist-slider',
+    '#country-slider',
+    '#weather-slider',
+    '#portfolio-slider',
+  ];
+
+  spliders.forEach(splide => {
+    if (document.querySelector(splide)) {
+      new Splide(splide).mount();
+    } else {
+      console.warn(`Splider skipped: ${splide}`);
+    }
+  })
+});
 
 // section variables
 const sections = {
@@ -287,49 +296,6 @@ const allCards = [card.interests, card.experience, card.education];
 
 const aboutInfo: NodeListOf<HTMLElement> = document.querySelectorAll('.about-info');
 
-// // icons
-// const languageIcons = [
-//   document.getElementById('ruby'),
-//   document.getElementById('ts'),
-//   document.getElementById('js'),
-//   document.getElementById('python'),
-//   document.getElementById('perl'),
-// ];
-
-// const frameworkIcons = [
-//   document.getElementById('rails'),
-//   document.getElementById('bootstrap'),
-//   document.getElementById('react'),
-// ];
-
-// const toolIcons = [
-//   document.getElementById('html'),
-//   document.getElementById('css'),
-//   document.getElementById('sass'),
-//   document.getElementById('git'),
-//   document.getElementById('github'),
-//   document.getElementById('heroku'),
-//   document.getElementById('netlify'),
-//   document.getElementById('linux'),
-//   document.getElementById('proxmox'),
-//   document.getElementById('vim'),
-// ];
-
-// const dbIcons = [
-//   document.getElementById('postgres'),
-//   document.getElementById('mysql'),
-//   document.getElementById('mariadb'),
-// ];
-
-// const iconGroups = {
-//   languages: languageIcons,
-//   frameworks: frameworkIcons,
-//   tools: toolIcons,
-//   databases: dbIcons
-// };
-
-// const allIcons = [...languageIcons, ...frameworkIcons, ...toolIcons, ...dbIcons];
-
 // home arrow to top
 const homeArrowIcon: HTMLElement | null = document.getElementById('arrow-icon');
 // about chevron
@@ -515,37 +481,3 @@ projectAlbumMusicSkillsCards.forEach((card) => {
     scrollToView(card);
   })
 })
-
-// // skills icons toggle
-// function clearFadeExpand(): void {
-//   Object.values(iconGroups).forEach(group => {
-//     group.forEach((icon) => {
-//       if (!icon) return;
-//       icon.classList.remove('fade');
-//       icon.classList.remove('expand');
-//     });
-//   });
-// };
-
-// skillsRadioButtons.forEach((button) => {
-//   button.addEventListener('click', () => {
-//     clearFadeExpand();
-//     const selected = (Object.keys(radioButtons) as Array<keyof RadioButtons>)
-//     .find(buttonName => radioButtons[buttonName]?.checked);
-//     Object.entries(iconGroups).forEach(([group, icons]) => {
-//       if (group !== selected) {
-//         icons.forEach((icon) => {
-//           if (icon) {
-//             icon.classList.add('fade')
-//           }
-//         });
-//       } else if (group === selected) {
-//         icons.forEach((icon) => {
-//           if (icon) {
-//             icon.classList.add('expand')
-//           }
-//         });
-//       };
-//     });
-//   });
-// });

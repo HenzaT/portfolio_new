@@ -60,7 +60,7 @@ a#arrow-icon {
   gap: 1rem;
   margin: 1.5rem 0;
 
-  button {
+  button.filter {
     @include mixin.btn-style;
     background: vars.$light;
     width: 30%;
@@ -71,7 +71,7 @@ a#arrow-icon {
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      background-color: vars.$hover-btn;
+      @include mixin.btn-hover;
     }
 
     &:active {
@@ -88,7 +88,7 @@ button#reset-filter {
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: vars.$hover-btn;
+    @include mixin.btn-hover;
   }
 
   &:active {
@@ -121,7 +121,7 @@ section#skills {
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      background-color: vars.$hover-btn;
+      @include mixin.btn-hover;
     }
   }
 

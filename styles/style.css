@@ -158,7 +158,7 @@ a#arrow-icon i {
   gap: 1rem;
   margin: 1.5rem 0;
 }
-.filter-btns button {
+.filter-btns button.filter {
   cursor: pointer;
   margin: 1rem;
   padding: 0.5rem 1rem;
@@ -174,10 +174,11 @@ a#arrow-icon i {
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
-.filter-btns button:hover {
-  background-color: rgba(4, 111, 219, 0.2156862745);
+.filter-btns button.filter:hover {
+  background: rgba(4, 111, 219, 0.2156862745);
+  font-weight: 600;
 }
-.filter-btns button:active {
+.filter-btns button.filter:active {
   background-color: #0470db;
 }
 
@@ -195,7 +196,8 @@ button#reset-filter {
   transition: all 0.2s ease-in-out;
 }
 button#reset-filter:hover {
-  background-color: rgba(4, 111, 219, 0.2156862745);
+  background: rgba(4, 111, 219, 0.2156862745);
+  font-weight: 600;
 }
 button#reset-filter:active {
   background-color: #0470db;
@@ -227,7 +229,8 @@ section#skills .radio-label {
   transition: all 0.2s ease-in-out;
 }
 section#skills .radio-label:hover {
-  background-color: rgba(4, 111, 219, 0.2156862745);
+  background: rgba(4, 111, 219, 0.2156862745);
+  font-weight: 600;
 }
 section#skills .radio-label.lang {
   border-radius: 18px 0 0 0;
@@ -700,6 +703,7 @@ section#projects .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 15rem;
+  margin-top: 5rem;
 }
 
 section#skills {
@@ -762,6 +766,10 @@ button.dark, .project-card__link.dark {
 button.dark:hover, .project-card__link.dark:hover {
   background-color: rgb(247, 253, 255);
   color: #030e2a;
+}
+
+.splide.dark {
+  box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
 }
 
 a#arrow-icon.dark {

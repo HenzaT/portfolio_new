@@ -31,6 +31,11 @@
   border-radius: 10px;
 }
 
+@mixin btn-hover {
+  background: vars.$hover-btn;
+  font-weight: 600;
+}
+
 @mixin btn-clicked {
   background: vars.$selected !important;
   color: vars.$light-text !important;

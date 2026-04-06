@@ -37,6 +37,10 @@ button.dark, .project-card__link.dark {
   }
 }
 
+.splide.dark {
+  box-shadow: vars.$dark-shadow;
+}
+
 a#arrow-icon.dark {
   background: vars.$light;
   border: 1px solid vars.$light;

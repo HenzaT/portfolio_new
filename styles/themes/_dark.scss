@@ -1,67 +1,93 @@
 @use '../abstracts/mixins' as mixin;
 @use '../abstracts/variables' as vars;
 
-body.dark {
-  color: vars.$light;
-  background-color: vars.$dark-blue;
-}
-
-hr.dark {
-  background-color: vars.$light;
-}
-
-:is(#theme-btn, #lang-btn).dark {
-  color: vars.$light;
-}
-
-#theme-btn.dark {
-  &:hover {
-    color: vars.$dark-blue;
-    background: vars.$light;
+@media (prefers-color-scheme: dark) {
+  body.dark {
+    color: vars.$light;
+    background-color: vars.$dark-blue;
   }
-}
 
-#lang-btn.dark {
-  &:hover {
-    color: inherit;
-    background: inherit;
-  }
-}
-
-button.dark, .project-card__link.dark {
-  border: 1px solid vars.$light;
-
-  &:hover {
+  hr.dark {
     background-color: vars.$light;
-    color: vars.$dark-blue;
-  }
-}
-
-.splide.dark {
-  box-shadow: vars.$dark-shadow;
-}
-
-a#arrow-icon.dark {
-  background: vars.$light;
-  border: 1px solid vars.$light;
-
-}
-
-section#skills {
-  .skills-radio.dark {
-    border: 1px solid vars.$light;
   }
 
-  .skills-icons.dark {
-    box-shadow: vars.$dark-shadow;
+  :is(#theme-btn, #lang-btn).dark {
     color: vars.$light;
   }
-}
 
-span.highlight.dark {
-  color: vars.$light-selected;
+  #theme-btn.dark {
+    &:hover {
+      color: vars.$dark-blue;
+      background: vars.$light;
+    }
+  }
 
-  &:hover {
+  #lang-btn.dark {
+    &:hover {
+      color: inherit;
+      background: inherit;
+    }
+  }
+
+  button.dark, .project-card__link.dark {
+    border: 1px solid vars.$light;
+
+    &:hover {
+      background-color: vars.$light;
+      color: vars.$dark-blue;
+    }
+  }
+
+  header.main p:has(.highlight.heading:hover) {
+    .highlight.heading.dark:hover {
+      color: vars.$light-selected;
+    }
+  }
+
+
+  :is(button.filter, button#reset-filter).dark {
+    &:hover {
+      background-color: vars.$hover-blue;
+    }
+
+    &:active {
+      background-color: vars.$light-selected;
+    }
+  }
+
+  .splide.dark {
+    box-shadow: vars.$dark-shadow;
+  }
+
+  a#arrow-icon.dark {
+    background: vars.$light;
+    border: 1px solid vars.$light;
+
+  }
+
+  section#skills {
+    .skills-radio.dark {
+      border: 1px solid vars.$light;
+    }
+
+    .skills-icons.dark {
+      box-shadow: vars.$dark-shadow;
+      color: vars.$light;
+    }
+
+    .radio-label.dark {
+      &:hover {
+        background-color: vars.$hover-blue;
+        color: vars.$dark-blue;
+      }
+    }
+  }
+
+  span.highlight.dark {
     color: vars.$light-selected;
+
+    &:hover {
+      color: vars.$light-selected;
+    }
   }
 }

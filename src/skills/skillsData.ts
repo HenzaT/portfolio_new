@@ -84,11 +84,6 @@ export const skillsData = [
     'title': 'proxmox icon',
   },
   {
-    'id': 'vim',
-    'class': 'devicon-vim-plain',
-    'title': 'vim icon',
-  },
-  {
     'id': 'postgres',
     'class': 'devicon-postgresql-plain',
     'title': 'postgres icon',

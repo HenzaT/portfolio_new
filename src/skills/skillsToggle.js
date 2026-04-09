@@ -21,7 +21,6 @@ export function skillsToggle() {
         document.getElementById('netlify'),
         document.getElementById('linux'),
         document.getElementById('proxmox'),
-        document.getElementById('vim'),
     ];
     const dbIcons = [
         document.getElementById('postgres'),

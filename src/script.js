@@ -64,23 +64,25 @@ if (copyBtn) {
         navigator.clipboard.writeText(emailText);
     });
 }
-const projectAlbumMusicSkillsCards = [skillsIconsContainer];
+const hrLine = document.getElementsByTagName('hr');
+const filterBtns = document.querySelectorAll('.filter');
+const projectLinks = document.querySelectorAll('.project-card__link');
+const projectImgs = document.querySelectorAll('.splide');
+const highlighted = document.querySelectorAll('.highlight');
+const radioLabels = document.querySelectorAll('.radio-label');
 const themeBtn = document.getElementById('theme-btn');
 const themeIcon = document.getElementById('theme-icon');
 const langBtn = document.getElementById('lang-btn');
 const arrowBtn = document.getElementById('arrow-icon');
-const hrLine = document.getElementsByTagName('hr');
-const projectLinks = document.querySelectorAll('.project-card__link');
-const projectImgs = document.querySelectorAll('.splide');
 const skillsCard = document.querySelector('.skills-icons');
 const skillsRadio = document.querySelector('.skills-radio');
-const highlighted = document.querySelectorAll('.highlight');
-const elements = [themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio];
-// const manyElements = (elements: NodeListOf<Element>, el: Element ) => {
-//   elements.forEach(el => {
-//     el.classList.toggle('dark');
-//   })
-// };
+const resetFilter = document.getElementById('reset-filter');
+const elements = [themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio, resetFilter];
+const elementsList = (elements) => {
+    elements.forEach(el => {
+        el.classList.toggle('dark');
+    });
+};
 // light & dark mode toggle
 if (themeBtn) {
     themeBtn.addEventListener('click', () => {
@@ -90,15 +92,11 @@ if (themeBtn) {
         Array.from(hrLine).forEach(line => {
             line.classList.toggle('dark');
         });
-        highlighted.forEach(word => {
-            word.classList.toggle('dark');
-        });
-        projectLinks.forEach(link => {
-            link.classList.toggle('dark');
-        });
-        projectImgs.forEach(img => {
-            img.classList.toggle('dark');
-        });
+        elementsList(highlighted);
+        elementsList(filterBtns);
+        elementsList(projectLinks);
+        elementsList(projectImgs);
+        elementsList(radioLabels);
         if (themeIcon.className === 'fa-solid fa-moon') {
             themeIcon.className = 'fa-solid fa-sun';
             document.body.className = 'dark';
@@ -267,10 +265,3 @@ function scrollToView(element) {
         inline: 'center'
     });
 }
-projectAlbumMusicSkillsCards.forEach((card) => {
-    if (!card)
-        return;
-    card.addEventListener('click', () => {
-        scrollToView(card);
-    });
-});

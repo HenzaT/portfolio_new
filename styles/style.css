@@ -737,61 +737,66 @@ section#skills div.skills-icons {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-body.dark {
-  color: rgb(247, 253, 255);
-  background-color: #030e2a;
+@media (prefers-color-scheme: dark) {
+  body.dark {
+    color: rgb(247, 253, 255);
+    background-color: #030e2a;
+  }
+  hr.dark {
+    background-color: rgb(247, 253, 255);
+  }
+  :is(#theme-btn, #lang-btn).dark {
+    color: rgb(247, 253, 255);
+  }
+  #theme-btn.dark:hover {
+    color: #030e2a;
+    background: rgb(247, 253, 255);
+  }
+  #lang-btn.dark:hover {
+    color: inherit;
+    background: inherit;
+  }
+  button.dark, .project-card__link.dark {
+    border: 1px solid rgb(247, 253, 255);
+  }
+  button.dark:hover, .project-card__link.dark:hover {
+    background-color: rgb(247, 253, 255);
+    color: #030e2a;
+  }
+  header.main p:has(.highlight.heading:hover) .highlight.heading.dark:hover {
+    color: #80befd;
+  }
+  :is(button.filter, button#reset-filter).dark:hover {
+    background-color: #abd5ff;
+  }
+  :is(button.filter, button#reset-filter).dark:active {
+    background-color: #80befd;
+  }
+  .splide.dark {
+    box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
+  }
+  a#arrow-icon.dark {
+    background: rgb(247, 253, 255);
+    border: 1px solid rgb(247, 253, 255);
+  }
+  section#skills .skills-radio.dark {
+    border: 1px solid rgb(247, 253, 255);
+  }
+  section#skills .skills-icons.dark {
+    box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
+    color: rgb(247, 253, 255);
+  }
+  section#skills .radio-label.dark:hover {
+    background-color: #abd5ff;
+    color: #030e2a;
+  }
+  span.highlight.dark {
+    color: #80befd;
+  }
+  span.highlight.dark:hover {
+    color: #80befd;
+  }
 }
-
-hr.dark {
-  background-color: rgb(247, 253, 255);
-}
-
-:is(#theme-btn, #lang-btn).dark {
-  color: rgb(247, 253, 255);
-}
-
-#theme-btn.dark:hover {
-  color: #030e2a;
-  background: rgb(247, 253, 255);
-}
-
-#lang-btn.dark:hover {
-  color: inherit;
-  background: inherit;
-}
-
-button.dark, .project-card__link.dark {
-  border: 1px solid rgb(247, 253, 255);
-}
-button.dark:hover, .project-card__link.dark:hover {
-  background-color: rgb(247, 253, 255);
-  color: #030e2a;
-}
-
-.splide.dark {
-  box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
-}
-
-a#arrow-icon.dark {
-  background: rgb(247, 253, 255);
-  border: 1px solid rgb(247, 253, 255);
-}
-
-section#skills .skills-radio.dark {
-  border: 1px solid rgb(247, 253, 255);
-}
-section#skills .skills-icons.dark {
-  box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
-  color: rgb(247, 253, 255);
-}
-
-span.highlight.dark {
-  color: #80befd;
-}
-span.highlight.dark:hover {
-  color: #80befd;
-}
-
 body.light {
   background-color: rgb(247, 253, 255);
   color: #030e2a;

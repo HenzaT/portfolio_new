@@ -407,7 +407,7 @@ hr.inbetween {
   font-size: 1.5rem;
 }
 
-footer i {
+footer .footer-icon {
   font-size: 2rem;
   color: #030e2a;
 }
@@ -738,89 +738,85 @@ section#skills div.skills-icons {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-body.dark {
-  color: rgb(247, 253, 255);
-  background-color: #030e2a;
+@media (prefers-color-scheme: dark) {
+  body.dark {
+    color: rgb(247, 253, 255);
+    background-color: #030e2a;
+  }
+  hr.dark {
+    background-color: rgb(247, 253, 255);
+  }
+  span.highlight.dark {
+    color: #80befd;
+  }
+  span.highlight.dark:hover {
+    color: #80befd;
+  }
+  :is(#theme-btn, #lang-btn).dark {
+    color: rgb(247, 253, 255);
+  }
+  #theme-btn.dark {
+    border: 1px solid rgb(247, 253, 255);
+  }
+  #theme-btn.dark:hover {
+    color: #030e2a;
+    background: rgb(247, 253, 255);
+  }
+  #lang-btn.dark {
+    border: 1px solid rgb(247, 253, 255);
+  }
+  #lang-btn.dark:hover {
+    color: inherit;
+    background: inherit;
+  }
+  .project-card__link.dark {
+    border: 1px solid rgb(247, 253, 255);
+  }
+  .project-card__link.dark:hover {
+    background-color: rgb(247, 253, 255);
+    color: #030e2a;
+  }
+  header.main p:has(.highlight.heading:hover) .highlight.heading.dark:hover {
+    color: #80befd;
+  }
+  .filter-btns.dark {
+    border-top: 1px solid rgb(247, 253, 255);
+    border-bottom: 1px solid rgb(247, 253, 255);
+  }
+  :is(button.filter, button#reset-filter).dark {
+    background: rgb(247, 253, 255);
+  }
+  :is(button.filter, button#reset-filter).dark:hover {
+    background-color: #abd5ff;
+  }
+  :is(button.filter, button#reset-filter).dark:active {
+    background-color: #80befd;
+  }
+  .splide.dark {
+    box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
+  }
+  a#arrow-icon.dark {
+    background: rgb(247, 253, 255);
+    border: 1px solid rgb(247, 253, 255);
+  }
+  section#skills .skills-radio.dark {
+    border: 1px solid rgb(247, 253, 255);
+  }
+  section#skills .skills-icons.dark {
+    box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
+    color: rgb(247, 253, 255);
+  }
+  section#skills .radio-label.dark:hover {
+    background-color: #abd5ff;
+    color: #030e2a;
+  }
+  section#skills .radio-label.dark:not(:last-of-type) {
+    border-right: 1px solid rgb(247, 253, 255);
+  }
+  footer .footer-icon.dark {
+    color: rgb(247, 253, 255);
+  }
 }
-
-hr.dark {
-  background-color: rgb(247, 253, 255);
-}
-
-:is(#theme-btn, #lang-btn).dark {
-  color: rgb(247, 253, 255);
-}
-
-#theme-btn.dark {
-  border: 1px solid rgb(247, 253, 255);
-}
-#theme-btn.dark:hover {
-  color: #030e2a;
-  background: rgb(247, 253, 255);
-}
-
-#lang-btn.dark {
-  border: 1px solid rgb(247, 253, 255);
-}
-#lang-btn.dark:hover {
-  color: inherit;
-  background: inherit;
-}
-
-.project-card__link.dark {
-  border: 1px solid rgb(247, 253, 255);
-}
-.project-card__link.dark:hover {
-  background-color: rgb(247, 253, 255);
-  color: #030e2a;
-}
-
-header.main p:has(.highlight.heading:hover) .highlight.heading.dark:hover {
-  color: #80befd;
-}
-
-.filter-btns.dark {
-  border-top: 1px solid rgb(247, 253, 255);
-  border-bottom: 1px solid rgb(247, 253, 255);
-}
-.filter-btns.dark :is(button.filter, button#reset-filter).dark {
-  background: rgb(247, 253, 255);
-}
-.filter-btns.dark :is(button.filter, button#reset-filter).dark:hover {
-  background-color: #abd5ff;
-}
-.filter-btns.dark :is(button.filter, button#reset-filter).dark:active {
-  background-color: #80befd;
-}
-
-.splide.dark {
-  box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
-}
-
-a#arrow-icon.dark {
-  background: rgb(247, 253, 255);
-  border: 1px solid rgb(247, 253, 255);
-}
-
-section#skills .skills-radio.dark {
-  border: 1px solid rgb(247, 253, 255);
-}
-section#skills .skills-icons.dark {
-  box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
-  color: rgb(247, 253, 255);
-}
-section#skills .radio-label.dark:hover {
-  background-color: #abd5ff;
-  color: #030e2a;
-}
-
-span.highlight.dark {
-  color: #80befd;
-}
-span.highlight.dark:hover {
-  color: #80befd;
-}
-
 body.light {
   background-color: rgb(247, 253, 255);
   color: #030e2a;

@@ -1,7 +1,7 @@
 @use '../abstracts/mixins' as mixin;
 @use '../abstracts/variables' as vars;
 
-// @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   body.dark {
     color: vars.$light;
     background-color: vars.$dark-blue;
@@ -11,13 +11,21 @@
     background-color: vars.$light;
   }
 
+  span.highlight.dark {
+    color: vars.$light-selected;
+
+    &:hover {
+      color: vars.$light-selected;
+    }
+  }
+
   :is(#theme-btn, #lang-btn).dark {
     color: vars.$light;
   }
 
   #theme-btn.dark {
     border: 1px solid vars.$light;
-    
+
     &:hover {
       color: vars.$dark-blue;
       background: vars.$light;
@@ -51,17 +59,17 @@
   .filter-btns.dark {
     border-top: 1px solid vars.$light;
     border-bottom: 1px solid vars.$light;
+  }
 
-    :is(button.filter, button#reset-filter).dark {
-      background: vars.$light;
+  :is(button.filter, button#reset-filter).dark {
+    background: vars.$light;
 
-      &:hover {
-        background-color: vars.$hover-blue;
-      }
+    &:hover {
+      background-color: vars.$hover-blue;
+    }
 
-      &:active {
-        background-color: vars.$light-selected;
-      }
+    &:active {
+      background-color: vars.$light-selected;
     }
   }
 
@@ -91,12 +99,13 @@
         color: vars.$dark-blue;
       }
     }
+
+    .radio-label.dark:not(:last-of-type) { border-right: 1px solid vars.$light; }
   }
 
-  span.highlight.dark {
-    color: vars.$light-selected;
-
-    &:hover {
-      color: vars.$light-selected;
+  footer {
+    .footer-icon.dark {
+      color: vars.$light; 
     }
   }
+}

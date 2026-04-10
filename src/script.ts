@@ -40,6 +40,7 @@ const projectLinks  = document.querySelectorAll('.project-card__link');
 const projectImgs   = document.querySelectorAll('.splide');
 const highlighted   = document.querySelectorAll('.highlight');
 const radioLabels   = document.querySelectorAll('.radio-label');
+const footerIcons   = document.querySelectorAll('.footer-icon');
 
 const themeBtn      = document.getElementById('theme-btn') as HTMLButtonElement;
 const themeIcon     = document.getElementById('theme-icon') as HTMLElement;
@@ -72,6 +73,7 @@ if (themeBtn) {
     elementsList(projectLinks);
     elementsList(projectImgs);
     elementsList(radioLabels);
+    elementsList(footerIcons);
 
     if (themeIcon.className === 'fa-solid fa-moon') {
       themeIcon.className = 'fa-solid fa-sun';

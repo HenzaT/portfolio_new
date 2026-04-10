@@ -1,33 +1,18 @@
 // @ts-ignore
-import Splide from "../node_modules/@splidejs/splide/dist/js/splide.esm.js";
+import { imgSliderSplide } from "./imgSliderSplide.js";
 import { projectCards } from "./projects/projects.js";
 import { projectsFilter } from "./projects/projectsFilter.js";
 import { skills } from "./skills/skills.js";
 import { skillsToggle } from "./skills/skillsToggle.js";
+import { footer } from "./footer.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   projectCards();
   projectsFilter();
+  imgSliderSplide();
   skills();
   skillsToggle();
-
-  const spliders: string[] = [
-    '#therapy-slider',
-    '#song-slider',
-    '#weather-slider',
-    '#portfolio-slider',
-    '#aptist-slider',
-    '#country-slider',
-    '#kanji-slider',
-  ];
-
-  spliders.forEach(splide => {
-    if (document.querySelector(splide)) {
-      new Splide(splide).mount();
-    } else {
-      console.warn(`Splider skipped: ${splide}`);
-    }
-  })
+  footer()
 });
 
 // section variables
@@ -49,29 +34,6 @@ const sectionTitles: NodeListOf<HTMLElement> = document.querySelectorAll('.secti
 // skills
 const skillsCardButtons: HTMLElement | null = document.getElementById('skills-card-button');
 
-const copyBtn = document.getElementById('copy-btn') as HTMLButtonElement;
-const copyIcon = document.getElementById('copy-icon') as HTMLElement;
-const emailAddress = document.getElementById('email-address') as HTMLAnchorElement;
-
-if (copyBtn) {
-  copyBtn.addEventListener('click', () => {
-    const emailText = emailAddress.textContent;
-    if (copyIcon.className === 'fa-regular fa-copy') {
-      copyIcon.className = 'fa-solid fa-check';
-      emailAddress.textContent = 'email copied';
-      copyBtn.setAttribute('disabled', '');
-      emailAddress.style.pointerEvents = 'none';
-    }
-    setTimeout(() => {
-      copyIcon.className = 'fa-regular fa-copy';
-      emailAddress.textContent = 'henrykun95@gmail.com'
-      copyBtn.removeAttribute('disabled');
-      emailAddress.style.pointerEvents = 'auto';
-    }, 2000);
-    navigator.clipboard.writeText(emailText);
-  })
-}
-
 const hrLine        = document.getElementsByTagName('hr');
 const filterBtns    = document.querySelectorAll('.filter');
 const projectLinks  = document.querySelectorAll('.project-card__link');
@@ -85,8 +47,9 @@ const langBtn       = document.getElementById('lang-btn') as HTMLButtonElement;
 const arrowBtn      = document.getElementById('arrow-icon') as HTMLAnchorElement;
 const skillsCard    = document.querySelector('.skills-icons') as HTMLDivElement;
 const skillsRadio   = document.querySelector('.skills-radio') as HTMLDivElement;
+const filterBtnDiv  = document.querySelector('.filter-btns') as HTMLDivElement;
 const resetFilter   = document.getElementById('reset-filter') as HTMLButtonElement;
-const elements = [ themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio, resetFilter ];
+const elements = [ themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio, filterBtnDiv, resetFilter ];
 
 
 const elementsList = (elements: NodeListOf<Element>) => {

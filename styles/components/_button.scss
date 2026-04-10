@@ -59,10 +59,12 @@ a#arrow-icon {
   flex-wrap: wrap;
   gap: 1rem;
   margin: 1.5rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid vars.$dark-blue;
+  border-bottom: 1px solid vars.$dark-blue;
 
   button.filter {
     @include mixin.btn-style;
-    background: vars.$light;
     width: 30%;
     margin: 0;
     padding: 0.6rem 0;
@@ -83,7 +85,6 @@ a#arrow-icon {
 button#reset-filter {
   display: none;
   @include mixin.btn-style;
-  background: vars.$light;
   margin: 0;
   transition: all 0.2s ease-in-out;
 

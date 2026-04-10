@@ -157,6 +157,9 @@ a#arrow-icon i {
   flex-wrap: wrap;
   gap: 1rem;
   margin: 1.5rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid #030e2a;
+  border-bottom: 1px solid #030e2a;
 }
 .filter-btns button.filter {
   cursor: pointer;
@@ -166,7 +169,6 @@ a#arrow-icon i {
   color: #030e2a;
   border: 1px solid #030e2a;
   border-radius: 10px;
-  background: rgb(247, 253, 255);
   width: 30%;
   margin: 0;
   padding: 0.6rem 0;
@@ -191,7 +193,6 @@ button#reset-filter {
   color: #030e2a;
   border: 1px solid #030e2a;
   border-radius: 10px;
-  background: rgb(247, 253, 255);
   margin: 0;
   transition: all 0.2s ease-in-out;
 }
@@ -737,66 +738,89 @@ section#skills div.skills-icons {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-@media (prefers-color-scheme: dark) {
-  body.dark {
-    color: rgb(247, 253, 255);
-    background-color: #030e2a;
-  }
-  hr.dark {
-    background-color: rgb(247, 253, 255);
-  }
-  :is(#theme-btn, #lang-btn).dark {
-    color: rgb(247, 253, 255);
-  }
-  #theme-btn.dark:hover {
-    color: #030e2a;
-    background: rgb(247, 253, 255);
-  }
-  #lang-btn.dark:hover {
-    color: inherit;
-    background: inherit;
-  }
-  button.dark, .project-card__link.dark {
-    border: 1px solid rgb(247, 253, 255);
-  }
-  button.dark:hover, .project-card__link.dark:hover {
-    background-color: rgb(247, 253, 255);
-    color: #030e2a;
-  }
-  header.main p:has(.highlight.heading:hover) .highlight.heading.dark:hover {
-    color: #80befd;
-  }
-  :is(button.filter, button#reset-filter).dark:hover {
-    background-color: #abd5ff;
-  }
-  :is(button.filter, button#reset-filter).dark:active {
-    background-color: #80befd;
-  }
-  .splide.dark {
-    box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
-  }
-  a#arrow-icon.dark {
-    background: rgb(247, 253, 255);
-    border: 1px solid rgb(247, 253, 255);
-  }
-  section#skills .skills-radio.dark {
-    border: 1px solid rgb(247, 253, 255);
-  }
-  section#skills .skills-icons.dark {
-    box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
-    color: rgb(247, 253, 255);
-  }
-  section#skills .radio-label.dark:hover {
-    background-color: #abd5ff;
-    color: #030e2a;
-  }
-  span.highlight.dark {
-    color: #80befd;
-  }
-  span.highlight.dark:hover {
-    color: #80befd;
-  }
+body.dark {
+  color: rgb(247, 253, 255);
+  background-color: #030e2a;
 }
+
+hr.dark {
+  background-color: rgb(247, 253, 255);
+}
+
+:is(#theme-btn, #lang-btn).dark {
+  color: rgb(247, 253, 255);
+}
+
+#theme-btn.dark {
+  border: 1px solid rgb(247, 253, 255);
+}
+#theme-btn.dark:hover {
+  color: #030e2a;
+  background: rgb(247, 253, 255);
+}
+
+#lang-btn.dark {
+  border: 1px solid rgb(247, 253, 255);
+}
+#lang-btn.dark:hover {
+  color: inherit;
+  background: inherit;
+}
+
+.project-card__link.dark {
+  border: 1px solid rgb(247, 253, 255);
+}
+.project-card__link.dark:hover {
+  background-color: rgb(247, 253, 255);
+  color: #030e2a;
+}
+
+header.main p:has(.highlight.heading:hover) .highlight.heading.dark:hover {
+  color: #80befd;
+}
+
+.filter-btns.dark {
+  border-top: 1px solid rgb(247, 253, 255);
+  border-bottom: 1px solid rgb(247, 253, 255);
+}
+.filter-btns.dark :is(button.filter, button#reset-filter).dark {
+  background: rgb(247, 253, 255);
+}
+.filter-btns.dark :is(button.filter, button#reset-filter).dark:hover {
+  background-color: #abd5ff;
+}
+.filter-btns.dark :is(button.filter, button#reset-filter).dark:active {
+  background-color: #80befd;
+}
+
+.splide.dark {
+  box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
+}
+
+a#arrow-icon.dark {
+  background: rgb(247, 253, 255);
+  border: 1px solid rgb(247, 253, 255);
+}
+
+section#skills .skills-radio.dark {
+  border: 1px solid rgb(247, 253, 255);
+}
+section#skills .skills-icons.dark {
+  box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
+  color: rgb(247, 253, 255);
+}
+section#skills .radio-label.dark:hover {
+  background-color: #abd5ff;
+  color: #030e2a;
+}
+
+span.highlight.dark {
+  color: #80befd;
+}
+span.highlight.dark:hover {
+  color: #80befd;
+}
+
 body.light {
   background-color: rgb(247, 253, 255);
   color: #030e2a;

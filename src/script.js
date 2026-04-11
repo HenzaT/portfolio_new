@@ -1,17 +1,19 @@
 // @ts-ignore
 import { imgSliderSplide } from "./imgSliderSplide.js";
+import { darkMode } from "./darkMode.js";
 import { projectCards } from "./projects/projects.js";
 import { projectsFilter } from "./projects/projectsFilter.js";
 import { skills } from "./skills/skills.js";
 import { skillsToggle } from "./skills/skillsToggle.js";
 import { footer } from "./footer.js";
 document.addEventListener('DOMContentLoaded', () => {
+    darkMode();
     projectCards();
     projectsFilter();
-    imgSliderSplide();
     skills();
     skillsToggle();
     footer();
+    imgSliderSplide();
 });
 // section variables
 const sections = {
@@ -29,52 +31,7 @@ const projectsContainer = document.querySelector('.projects-container');
 const sectionTitles = document.querySelectorAll('.section-title');
 // skills
 const skillsCardButtons = document.getElementById('skills-card-button');
-const hrLine = document.getElementsByTagName('hr');
-const filterBtns = document.querySelectorAll('.filter');
-const projectLinks = document.querySelectorAll('.project-card__link');
-const projectImgs = document.querySelectorAll('.splide');
-const highlighted = document.querySelectorAll('.highlight');
-const radioLabels = document.querySelectorAll('.radio-label');
-const footerIcons = document.querySelectorAll('.footer-icon');
-const themeBtn = document.getElementById('theme-btn');
-const themeIcon = document.getElementById('theme-icon');
 const langBtn = document.getElementById('lang-btn');
-const arrowBtn = document.getElementById('arrow-icon');
-const skillsCard = document.querySelector('.skills-icons');
-const skillsRadio = document.querySelector('.skills-radio');
-const filterBtnDiv = document.querySelector('.filter-btns');
-const resetFilter = document.getElementById('reset-filter');
-const elements = [themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio, filterBtnDiv, resetFilter];
-const elementsList = (elements) => {
-    elements.forEach(el => {
-        el.classList.toggle('dark');
-    });
-};
-// light & dark mode toggle
-if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-        elements.forEach(el => {
-            el.classList.toggle('dark');
-        });
-        Array.from(hrLine).forEach(line => {
-            line.classList.toggle('dark');
-        });
-        elementsList(highlighted);
-        elementsList(filterBtns);
-        elementsList(projectLinks);
-        elementsList(projectImgs);
-        elementsList(radioLabels);
-        elementsList(footerIcons);
-        if (themeIcon.className === 'fa-solid fa-moon') {
-            themeIcon.className = 'fa-solid fa-sun';
-            document.body.className = 'dark';
-        }
-        else {
-            themeIcon.className = 'fa-solid fa-moon';
-            document.body.className = 'light';
-        }
-    });
-}
 // language toggle
 if (langBtn) {
     langBtn.addEventListener('click', () => {

@@ -793,7 +793,7 @@ section#skills div.skills-icons {
   header.main p:has(.highlight.heading:hover) .highlight.heading.dark:hover {
     color: #80befd;
   }
-  .filter-btns.dark {
+  .box.dark {
     border-top: 1px solid rgb(247, 253, 255);
     border-bottom: 1px solid rgb(247, 253, 255);
   }
@@ -807,7 +807,7 @@ section#skills div.skills-icons {
     background-color: #80befd;
   }
   .splide.dark {
-    box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
+    box-shadow: 0 0px 40px rgba(247, 253, 255, 0.179);
   }
   a#arrow-icon.dark {
     background: rgb(247, 253, 255);
@@ -817,7 +817,7 @@ section#skills div.skills-icons {
     border: 1px solid rgb(247, 253, 255);
   }
   section#skills .skills-icons.dark {
-    box-shadow: 0 0px 6px rgba(247, 253, 255, 0.179);
+    box-shadow: 0 0px 40px rgba(247, 253, 255, 0.179);
     color: rgb(247, 253, 255);
   }
   section#skills .radio-label.dark:hover {

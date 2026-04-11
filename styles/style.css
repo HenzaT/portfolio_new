@@ -80,6 +80,12 @@ a {
   font-weight: 600;
 }
 
+.box {
+  padding: 1.5rem 0;
+  border-top: 1px solid #030e2a;
+  border-bottom: 1px solid #030e2a;
+}
+
 @media (min-width: 768px) {
   header.main, main, footer, .hr-div {
     padding: 0 10rem;
@@ -124,8 +130,7 @@ nav #lang-btn:hover {
   font-weight: 800;
 }
 
-/* back to home arrow */
-a#arrow-icon {
+.link-btn {
   cursor: pointer;
   margin: 1rem;
   padding: 0.5rem 1rem;
@@ -134,19 +139,28 @@ a#arrow-icon {
   border: 1px solid #030e2a;
   border-radius: 10px;
   background: rgb(247, 253, 255);
+  transition: all 0.3s ease;
+}
+.link-btn:hover {
+  border-radius: 50%;
+}
+.link-btn i {
+  font-size: 1.5rem;
+  color: #030e2a;
+}
+
+#back-to-projects .link-btn:hover {
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+/* back to home arrow */
+a#arrow-icon {
   display: inline-block;
   position: fixed;
   bottom: 0.5rem;
   right: 0.5rem;
   z-index: 1000;
-  transition: all 0.3s ease;
-}
-a#arrow-icon:hover {
-  border-radius: 50%;
-}
-a#arrow-icon i {
-  font-size: 1.5rem;
-  color: #030e2a;
 }
 
 .filter-btns {
@@ -157,9 +171,6 @@ a#arrow-icon i {
   flex-wrap: wrap;
   gap: 1rem;
   margin: 1.5rem 0;
-  padding: 1.5rem 0;
-  border-top: 1px solid #030e2a;
-  border-bottom: 1px solid #030e2a;
 }
 .filter-btns button.filter {
   cursor: pointer;
@@ -706,6 +717,14 @@ section#projects .grid {
   gap: 15rem;
   margin-top: 5rem;
 }
+section#projects #back-to-projects {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-top: 5rem;
+}
 
 section#skills {
   margin: 5rem 0;
@@ -729,11 +748,6 @@ section#skills div.skills-icons {
 }
 
 @media (min-width: 768px) {
-  section#skills .card-and-button-container .skills-icons {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-@media (min-width: 1200px) {
   section#skills .card-and-button-container .skills-icons {
     grid-template-columns: repeat(4, 1fr);
   }

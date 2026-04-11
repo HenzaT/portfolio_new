@@ -32,15 +32,9 @@ nav {
   }
 }
 
-/* back to home arrow */
-a#arrow-icon {
+.link-btn {
   @include mixin.btn-style;
   background: vars.$light;
-  display: inline-block;
-  position: fixed;
-  bottom: 0.5rem;
-  right: 0.5rem;
-  z-index: 1000;
   transition: all 0.3s ease;
 
   &:hover {
@@ -53,15 +47,31 @@ a#arrow-icon {
   }
 }
 
+#back-to-projects {
+  .link-btn {
+    &:hover {
+      border-radius: 30px;
+      font-weight: 600;
+    }
+  }
+}
+
+/* back to home arrow */
+a#arrow-icon {
+  display: inline-block;
+  position: fixed;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  z-index: 1000;
+
+}
+
 .filter-btns {
   @include mixin.flex-row;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   margin: 1.5rem 0;
-  padding: 1.5rem 0;
-  border-top: 1px solid vars.$dark-blue;
-  border-bottom: 1px solid vars.$dark-blue;
 
   button.filter {
     @include mixin.btn-style;

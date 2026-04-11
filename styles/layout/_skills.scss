@@ -26,16 +26,6 @@ section#skills {
   section#skills {
     .card-and-button-container {
       .skills-icons {
-        grid-template-columns: repeat(5, 1fr);
-      }
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  section#skills {
-    .card-and-button-container {
-      .skills-icons {
         grid-template-columns: repeat(4, 1fr);
       }
     }

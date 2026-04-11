@@ -25,4 +25,11 @@ section#projects {
     gap: 15rem;
     margin-top: 5rem;
   }
+
+  #back-to-projects {
+    @include mixin.flex-row;
+    justify-content: center;
+    padding: 0;
+    margin-top: 5rem;
+  }
 }

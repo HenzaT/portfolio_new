@@ -1,10 +1,10 @@
 import { skillsData } from "./skillsData.js";
+export const skillTemplate = document.getElementById('skills-template');
+export const skillsDiv = document.querySelector('.skills-icons');
+export const clone = skillTemplate.content.cloneNode(true);
+export const iconEl = clone.querySelector('.template-icon-class');
 export function skills() {
-    const skillTemplate = document.getElementById('skills-template');
-    const skillsDiv = document.querySelector('.skills-icons');
     skillsData.forEach(icon => {
-        const clone = skillTemplate.content.cloneNode(true);
-        const iconEl = clone.querySelector('.template-icon-class');
         if (iconEl) {
             iconEl.id = icon['id'];
             iconEl?.classList.add(icon['class']);

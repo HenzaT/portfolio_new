@@ -806,8 +806,12 @@ section#skills div.skills-icons {
   :is(button.filter, button#reset-filter).dark:active {
     background-color: #80befd;
   }
+  .selected.dark {
+    background-color: #80befd !important;
+    color: #030e2a !important;
+  }
   .splide.dark {
-    box-shadow: 0 0px 40px rgba(247, 253, 255, 0.179);
+    box-shadow: 0 0px 30px rgba(247, 253, 255, 0.179);
   }
   a#arrow-icon.dark {
     background: rgb(247, 253, 255);
@@ -817,7 +821,7 @@ section#skills div.skills-icons {
     border: 1px solid rgb(247, 253, 255);
   }
   section#skills .skills-icons.dark {
-    box-shadow: 0 0px 40px rgba(247, 253, 255, 0.179);
+    box-shadow: 0 0px 30px rgba(247, 253, 255, 0.179);
     color: rgb(247, 253, 255);
   }
   section#skills .radio-label.dark:hover {

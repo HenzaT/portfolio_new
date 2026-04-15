@@ -1,5 +1,3 @@
-import { skillTemplate, skillsDiv, clone, iconEl } from "./skills/skills";
-
 export function darkMode() {
   const hrLine        = document.getElementsByTagName('hr');
   const boxDiv        = document.querySelectorAll('.box');
@@ -41,7 +39,6 @@ export function darkMode() {
       elementsList(projectImgs);
       elementsList(radioLabels);
       elementsList(footerIcons);
-      iconEl
 
       if (themeIcon.className === 'fa-solid fa-moon') {
         themeIcon.className = 'fa-solid fa-sun';

@@ -1,4 +1,4 @@
-import { iconEl } from "./skills/skills";
+import { iconEl } from "./skills/skills.js";
 export function darkMode() {
     const hrLine = document.getElementsByTagName('hr');
     const boxDiv = document.querySelectorAll('.box');

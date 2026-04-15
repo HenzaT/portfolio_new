@@ -73,6 +73,11 @@
     }
   }
 
+  .selected.dark {
+    background-color: vars.$light-selected !important;
+    color: vars.$dark-blue !important;
+  }
+
   .splide.dark {
     box-shadow: vars.$dark-shadow;
   }

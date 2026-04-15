@@ -1,6 +1,5 @@
 // @ts-ignore
-// import Splide from "@splidejs/splide/dist/js/splide.esm.js";
-import Splide from "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.esm.js";
+import Splide from "@splidejs/splide/dist/js/splide.esm.js";
 export function imgSliderSplide() {
     const spliders = [
         '#therapy-slider',

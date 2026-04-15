@@ -7,13 +7,13 @@ import { skills } from "./skills/skills.js";
 import { skillsToggle } from "./skills/skillsToggle.js";
 import { footer } from "./footer.js";
 document.addEventListener('DOMContentLoaded', () => {
-    darkMode();
     projectCards();
     projectsFilter();
     skills();
     skillsToggle();
     footer();
     imgSliderSplide();
+    darkMode();
 });
 // section variables
 const sections = {

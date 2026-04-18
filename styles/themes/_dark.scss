@@ -41,6 +41,14 @@
     }
   }
 
+  .project-card__tech-icons-container {
+    :is(.ts-icon, .js-icon, .react-icon,
+      .ruby-icon, .python-icon, .postgres-icon,
+      .css-icon, .sass-icon, .bootstrap-icon).highlight.dark {
+      color: vars.$light-selected;
+    }
+  }
+
   .project-card__link.dark {
     border: 1px solid vars.$light;
 

@@ -1,6 +1,8 @@
 // @ts-ignore
 import { imgSliderSplide } from "./imgSliderSplide.js";
 import { darkMode } from "./darkMode.js";
+import { toggleLang } from "./toggleLang.js";
+import { scrollToView } from "./scrollTo.js";
 import { projectCards } from "./projects/projects.js";
 import { projectsFilter } from "./projects/projectsFilter.js";
 import { skills } from "./skills/skills.js";
@@ -12,9 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
   projectsFilter();
   skills();
   skillsToggle();
-  footer()
+  scrollToView();
+  footer();
   imgSliderSplide();
-  darkMode()
+  darkMode();
+  toggleLang();
 });
 
 // section variables
@@ -35,18 +39,6 @@ const sectionTitles: NodeListOf<HTMLElement> = document.querySelectorAll('.secti
 
 // skills
 const skillsCardButtons: HTMLElement | null = document.getElementById('skills-card-button');
-
-const langBtn       = document.getElementById('lang-btn') as HTMLButtonElement;
-
-// language toggle
-if (langBtn) {
-  langBtn.addEventListener('click', () => {
-    let htmlLang = document.documentElement;
-    htmlLang.getAttribute('lang') === 'ja' ? htmlLang.setAttribute('lang', 'en') : htmlLang.setAttribute('lang', 'ja');
-    document.body.classList.toggle('ja-mode');
-    langBtn.textContent = langBtn.textContent === '日本語' ? 'English' : '日本語';
-  })
-}
 
 const aboutInfo: NodeListOf<HTMLElement> = document.querySelectorAll('.about-info');
 
@@ -114,8 +106,6 @@ function ElementSlideUp(entries: IntersectionObserverEntry[]): void {
 const titleObserver = new IntersectionObserver(ElementSlideUp);
 const projectObserver = new IntersectionObserver(ElementSlideUp);
 const skillsButtonsObserver = new IntersectionObserver(ElementSlideUp);
-const allAlbumsObserver = new IntersectionObserver(ElementSlideUp);
-const musicCardObserver = new IntersectionObserver(ElementSlideUp);
 
 sectionTitles.forEach((section) => {
   if (section) {
@@ -191,13 +181,3 @@ if (skillsIconsContainer) skillsObserver.observe(skillsIconsContainer);
 //     behavior: 'smooth'
 //   });
 // });
-
-// scroll into view
-function scrollToView(element: HTMLElement) {
-  if (!element) return
-    element.scrollIntoView({
-      behavior: 'auto',
-      block: 'center',
-      inline: 'center'
-    });
-}

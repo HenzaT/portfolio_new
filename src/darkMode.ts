@@ -1,4 +1,7 @@
+import { getProjectIcons } from "./projects/getProjectIcons.js";
+
 export function darkMode() {
+  const projectIcons  = getProjectIcons();
   const hrLine        = document.getElementsByTagName('hr');
   const boxDiv        = document.querySelectorAll('.box');
   const filterBtns    = document.querySelectorAll('.filter');
@@ -31,6 +34,11 @@ export function darkMode() {
       })
       Array.from(hrLine).forEach(line => {
         line.classList.toggle('dark');
+      })
+      Object.values(projectIcons).forEach(icons => {
+        icons.forEach(icon => {
+          icon?.classList.toggle('dark');
+        })
       })
       elementsList(highlighted);
       elementsList(filterBtns);

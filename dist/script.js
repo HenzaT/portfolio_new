@@ -1,6 +1,8 @@
 // @ts-ignore
 import { imgSliderSplide } from "./imgSliderSplide.js";
 import { darkMode } from "./darkMode.js";
+import { toggleLang } from "./toggleLang.js";
+import { scrollToView } from "./scrollTo.js";
 import { projectCards } from "./projects/projects.js";
 import { projectsFilter } from "./projects/projectsFilter.js";
 import { skills } from "./skills/skills.js";
@@ -11,9 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
     projectsFilter();
     skills();
     skillsToggle();
+    scrollToView();
     footer();
     imgSliderSplide();
     darkMode();
+    toggleLang();
 });
 // section variables
 const sections = {
@@ -31,16 +35,6 @@ const projectsContainer = document.querySelector('.projects-container');
 const sectionTitles = document.querySelectorAll('.section-title');
 // skills
 const skillsCardButtons = document.getElementById('skills-card-button');
-const langBtn = document.getElementById('lang-btn');
-// language toggle
-if (langBtn) {
-    langBtn.addEventListener('click', () => {
-        let htmlLang = document.documentElement;
-        htmlLang.getAttribute('lang') === 'ja' ? htmlLang.setAttribute('lang', 'en') : htmlLang.setAttribute('lang', 'ja');
-        document.body.classList.toggle('ja-mode');
-        langBtn.textContent = langBtn.textContent === '日本語' ? 'English' : '日本語';
-    });
-}
 const aboutInfo = document.querySelectorAll('.about-info');
 // home arrow to top
 const homeArrowIcon = document.getElementById('arrow-icon');
@@ -104,8 +98,6 @@ function ElementSlideUp(entries) {
 const titleObserver = new IntersectionObserver(ElementSlideUp);
 const projectObserver = new IntersectionObserver(ElementSlideUp);
 const skillsButtonsObserver = new IntersectionObserver(ElementSlideUp);
-const allAlbumsObserver = new IntersectionObserver(ElementSlideUp);
-const musicCardObserver = new IntersectionObserver(ElementSlideUp);
 sectionTitles.forEach((section) => {
     if (section) {
         titleObserver.observe(section);
@@ -180,13 +172,3 @@ if (skillsIconsContainer)
 //     behavior: 'smooth'
 //   });
 // });
-// scroll into view
-function scrollToView(element) {
-    if (!element)
-        return;
-    element.scrollIntoView({
-        behavior: 'auto',
-        block: 'center',
-        inline: 'center'
-    });
-}

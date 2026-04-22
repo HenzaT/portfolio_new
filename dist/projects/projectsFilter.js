@@ -33,16 +33,13 @@ export function projectsFilter() {
         bootstrap: document.getElementById('bootstrap-btn'),
         reset: document.getElementById('reset-filter'),
     };
-    const resetFilterBtn = document.getElementById('reset-filter');
-    let projectCountEn = document.querySelector('.project-count.lang-en');
-    const highlightButton = (specificBtn) => {
+    const resetFilterBtn = buttonCategories.reset;
+    let projectCount = document.querySelectorAll('.project-count');
+    let projectSubHeaderEn = document.querySelector('.lang-en.project-subheader-en');
+    let projectSubHeaderJa = document.querySelector('.lang-ja.project-subheader-ja');
+    const highlightButton = (btn) => {
         Object.values(buttonCategories).forEach(button => {
-            if (button === buttonCategories[specificBtn]) {
-                buttonCategories[specificBtn]?.classList.add('selected');
-            }
-            else {
-                button?.classList.remove('selected');
-            }
+            button === buttonCategories[btn] ? buttonCategories[btn]?.classList.add('selected') : button?.classList.remove('selected');
         });
     };
     const showCards = (techStack) => {
@@ -52,26 +49,19 @@ export function projectsFilter() {
         Object.values(projectCategories).forEach(projectArray => {
             projectArray.forEach(project => {
                 if (project) {
-                    if (projectCategories[techStack].length > 1) {
-                        projectCountEn.textContent = `${projectCategories[techStack].length} projects`;
-                    }
-                    else {
-                        projectCountEn.textContent = `${projectCategories[techStack].length} project`;
-                    }
+                    projectCount.forEach(count => {
+                        count.textContent = `${projectCategories[techStack].length}`;
+                    });
+                    projectCategories[techStack].length > 1 ? projectSubHeaderEn.textContent = 'projects' : 'project';
                     projectCategories[techStack].includes(project) ? project.style.display = 'flex' : project.style.display = 'none';
                 }
             });
         });
     };
-    const highlightIcons = (projectIconArr) => {
+    const highlightIcons = (iconArr) => {
         Object.values(projectIcons).forEach(icons => {
             icons.forEach(icon => {
-                if (Array.from(projectIcons[projectIconArr]).includes(icon)) {
-                    icon.classList.add('highlight');
-                }
-                else {
-                    icon.classList.remove('highlight');
-                }
+                Array.from(projectIcons[iconArr]).includes(icon) ? icon.classList.add('highlight') : icon.classList.remove('highlight');
             });
         });
     };
@@ -118,7 +108,8 @@ export function projectsFilter() {
                         if (project) {
                             project.style.display = 'flex';
                         }
-                        projectCountEn.textContent = `${Object.values(projects).length} projects`;
+                        projectSubHeaderEn.textContent = `${Object.values(projects).length} projects`;
+                        projectSubHeaderJa.textContent = `プロジェクト数：${Object.values(projects).length}`;
                     });
                     Object.values(projectIcons).forEach(icons => {
                         icons.forEach(icon => {

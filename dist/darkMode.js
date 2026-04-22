@@ -12,11 +12,12 @@ export function darkMode() {
     const themeBtn = document.getElementById('theme-btn');
     const themeIcon = document.getElementById('theme-icon');
     const langBtn = document.getElementById('lang-btn');
+    const linkBtn = document.querySelector('.link-btn');
     const arrowBtn = document.getElementById('arrow-icon');
     const skillsCard = document.querySelector('.skills-icons');
     const skillsRadio = document.querySelector('.skills-radio');
     const resetFilter = document.getElementById('reset-filter');
-    const elements = [themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio, resetFilter];
+    const elements = [themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio, resetFilter, linkBtn];
     const elementsList = (elements) => {
         elements.forEach(el => {
             el.classList.toggle('dark');

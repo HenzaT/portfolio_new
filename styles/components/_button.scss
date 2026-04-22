@@ -34,7 +34,7 @@ nav {
 
 .link-btn {
   @include mixin.btn-style;
-  background: vars.$light;
+  // background: vars.$light;
   transition: all 0.3s ease;
 
   &:hover {
@@ -50,7 +50,7 @@ nav {
 #back-to-projects {
   .link-btn {
     &:hover {
-      border-radius: 30px;
+      border-radius: 10px;
       font-weight: 600;
     }
   }
@@ -95,6 +95,7 @@ a#arrow-icon {
 button#reset-filter {
   display: none;
   @include mixin.btn-style;
+  align-self: flex-end;
   margin: 0;
   transition: all 0.2s ease-in-out;
 

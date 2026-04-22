@@ -47,8 +47,7 @@ export const projectsData = [
                 'title': 'netlify icon',
             },
         ],
-        'description': `I worked collaboratively with a client to build this professional website.
-      We worked on the design together, whilst I focused on space and layout.
+        'description': `I worked collaboratively with a client, working on the design together and focusing on space and layout.
       Integrated <span class="highlight">Netlify Forms</span> for form-handling, and
       <span class="highlight">Decap CMS</span> to allow the client to edit content easily. (This is a private repo).`,
         'links': [
@@ -112,9 +111,9 @@ export const projectsData = [
                 'title': 'postgresql icon',
             },
         ],
-        'description': `A self-directed project built to help musicians overcome writer's block by generating random song elements.
-      I focused on database design and relationships using <span class="highlight">PostgreSQL</span>
-      and using <span class="highlight">Stimulus JS</span> for interactivity and local storage.`,
+        'description': `Built to help musicians overcome writer's block by generating random song elements.
+      I focused on database schema design and relationships using <span class="highlight">PostgreSQL</span>
+      and extensive use of <span class="highlight">Stimulus JS</span> for local memory storage.`,
         'links': [
             {
                 'url': 'https://gimme-a-song-75fdbe92334c.herokuapp.com/',
@@ -367,8 +366,7 @@ export const projectsData = [
         'description': `I wanted to integrate multiple <span class="highlight">third-party APIs</span>:
       some of the APIs I used were the Unsplash and Claude API.
       After receiving user feedback, I am currently in the middle of an aesthetic
-      redesign, which has helped me to better understand modern design trends.
-      With the frontend in mind, I switched to using <span class="highlight">Vite</span> for optimised performance.`,
+      redesign, which has helped me to better understand modern design trends.`,
         'links': [
             {
                 'url': 'https://the-country-club-e3d07af9dd9d.herokuapp.com/',
@@ -421,9 +419,8 @@ export const projectsData = [
             },
         ],
         'description': `I used the kanjiapi.dev API to create this backend-only <span class="highlight">Rails</span> project.
-      I focused on creating a clean seed file and following <span class="highlight">RESTful</span> principles.
-      One of the route controllers is mostly RESTful, with additional functionality through custom routes.
-      The frontend is in progress and built using React.`,
+      I focused on meaningful routes and following <span class="highlight">RESTful</span> principles.
+      One of the route controllers is mostly RESTful, with additional functionality through custom routes.`,
         'links': [
             // {
             //   'url': 'https://the-country-club-e3d07af9dd9d.herokuapp.com/',

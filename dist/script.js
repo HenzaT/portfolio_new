@@ -2,13 +2,17 @@
 import { imgSliderSplide } from "./imgSliderSplide.js";
 import { darkMode } from "./darkMode.js";
 import { toggleLang } from "./toggleLang.js";
-import { scrollToView } from "./scrollTo.js";
+import { animations } from "./interactivity/animations.js";
+import { scrollToView } from "./interactivity/scrollTo.js";
+import { intersectionObserver } from "./interactivity/intersectionObserver.js";
 import { projectCards } from "./projects/projects.js";
 import { projectsFilter } from "./projects/projectsFilter.js";
 import { skills } from "./skills/skills.js";
 import { skillsToggle } from "./skills/skillsToggle.js";
 import { footer } from "./footer.js";
 document.addEventListener('DOMContentLoaded', () => {
+    animations();
+    intersectionObserver();
     projectCards();
     projectsFilter();
     skills();
@@ -19,28 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     darkMode();
     toggleLang();
 });
-// section variables
-const sections = {
-    nav: document.getElementById('nav'),
-    header: document.getElementById('main-header'),
-    projects: document.getElementById('projects'),
-    skills: document.getElementById('skills'),
-    footer: document.getElementById('footer'),
-};
-const sectionsNoHome = document.querySelector('.below-content');
 // section specific
 const skillsIconsContainer = document.querySelector('.skills-container');
-const aboutContainer = document.querySelector('.about-container');
 const projectsContainer = document.querySelector('.projects-container');
 const sectionTitles = document.querySelectorAll('.section-title');
 // skills
 const skillsCardButtons = document.getElementById('skills-card-button');
-const aboutInfo = document.querySelectorAll('.about-info');
-// home arrow to top
-const homeArrowIcon = document.getElementById('arrow-icon');
-// about chevron
-const chevron = document.getElementById('top-chevron');
-const mobileChevrons = document.querySelectorAll('#mobile-chevron');
 // screen size
 const desktopScreen = window.matchMedia("(min-width: 1210px)");
 const mobileScreen = window.matchMedia("(max-width: 600px");
@@ -56,34 +44,6 @@ function animationMediaQuery(media) {
     }
 }
 ;
-function addSlideUpDark(element) {
-    element.classList.add('slide-up-dark');
-}
-window.addEventListener('DOMContentLoaded', () => {
-    animationMediaQuery(desktopScreen);
-    if (!chevron)
-        return;
-    addSlideUpDark(chevron);
-});
-// intersection observer - element IN viewport
-// show home arrow button when sections in view
-function homeArrowInView(entries) {
-    entries.forEach((entry) => {
-        if (!homeArrowIcon)
-            return;
-        if (entry.isIntersecting) {
-            homeArrowIcon.classList.remove('hidden');
-            homeArrowIcon.classList.add('slide-up-dark');
-        }
-        else if (!entry.isIntersecting) {
-            homeArrowIcon.classList.add('hidden');
-            homeArrowIcon.classList.remove('slide-up-dark');
-        }
-    });
-}
-const arrowObserver = new IntersectionObserver(homeArrowInView);
-if (sectionsNoHome)
-    arrowObserver.observe(sectionsNoHome);
 // element in view slide up
 function ElementSlideUp(entries) {
     entries.forEach((entry) => {
@@ -140,12 +100,12 @@ function ElementSlideUpDark(entries) {
     });
 }
 ;
-const mobileChevronObserver = new IntersectionObserver(ElementSlideUpDark);
-mobileChevrons.forEach((chevron) => {
-    if (chevron) {
-        mobileChevronObserver.observe(chevron);
-    }
-});
+// const mobileChevronObserver = new IntersectionObserver(ElementSlideUpDark);
+// mobileChevrons.forEach((chevron) => {
+//   if (chevron) {
+//     mobileChevronObserver.observe(chevron);
+//   }
+// });
 // intersection observer - element OUT of viewport
 // clear skills container
 function clear(entries) {
@@ -159,16 +119,3 @@ function clear(entries) {
 const skillsObserver = new IntersectionObserver(clear);
 if (skillsIconsContainer)
     skillsObserver.observe(skillsIconsContainer);
-// if (homeArrowIcon) {
-//   homeArrowIcon.addEventListener('click', () => {
-//     if (!homeNavLink) return;
-//     navLinkClick(homeNavLink);
-//   });
-// }
-// homeNavLink?.addEventListener('click', (event) => {
-//   event.preventDefault();
-//   window.scrollTo({
-//     top: 0,
-//     behavior: 'smooth'
-//   });
-// });

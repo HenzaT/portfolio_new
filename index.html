@@ -13,6 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <script type="module" src="dist/script.js"></script>
   </head>
   <body>
@@ -23,15 +27,15 @@
     </nav>
     <!-- main header -->
     <header class="main" id="main-header">
-      <h1>
+      <h1 id="name hidden">
         <span class="lang-en" id="fullname">Henry Thomas</span>
         <span class="lang-ja">トーマス ヘンリー</span>
       </h1>
-      <h1>
+      <h1 id="job-title hidden">
         <span class="lang-en">Software Engineer</span>
         <span class="lang-ja">ソフトウェア・エンジニア</span>
       </h1>
-      <p>
+      <p id="about-me hidden">
         <span class="lang-en">
           With a background in <span class="highlight heading">education</span>, I'm currently working at an
           electronic mailing list company. My daily work ranges from managing <span class="highlight heading">Perl</span> and
@@ -69,9 +73,13 @@
           </h2>
           <div class="subheader">
             <h3>
-              <span class="project-count lang-en"><span class="project-count">7</span> projects</span>
+              <span class="lang-en project-subheader-en"><span class="project-count">7</span> projects</span>
+              <span class="lang-ja project-subheader-ja">プロジェクト数：<span class="project-count">7</span></span>
             </h3>
-            <button id="reset-filter">reset</button>
+            <button id="reset-filter">
+              <span class="lang-en">reset</span>
+              <span class="lang-ja">リセット</span>
+            </button>
           </div>
         </header>
         <div class="filter-btns box">

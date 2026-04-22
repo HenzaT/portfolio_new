@@ -38,16 +38,14 @@ export function projectsFilter() {
     reset:      document.getElementById('reset-filter'),
   };
 
-  const resetFilterBtn = document.getElementById('reset-filter');
-  let projectCountEn = document.querySelector('.project-count.lang-en') as HTMLHeadingElement;
+  const resetFilterBtn = buttonCategories.reset;
+  let projectCount = document.querySelectorAll('.project-count');
+  let projectSubHeaderEn = document.querySelector('.lang-en.project-subheader-en') as HTMLHeadingElement;
+  let projectSubHeaderJa = document.querySelector('.lang-ja.project-subheader-ja') as HTMLHeadingElement;
 
-  const highlightButton = (specificBtn: keyof typeof buttonCategories) => {
+  const highlightButton = (btn: keyof typeof buttonCategories) => {
     Object.values(buttonCategories).forEach(button => {
-      if (button === buttonCategories[specificBtn]) {
-        buttonCategories[specificBtn]?.classList.add('selected');
-      } else {
-        button?.classList.remove('selected');
-      }
+      button === buttonCategories[btn] ? buttonCategories[btn]?.classList.add('selected') : button?.classList.remove('selected');
     })
   }
 
@@ -56,25 +54,20 @@ export function projectsFilter() {
     Object.values(projectCategories).forEach(projectArray => {
       projectArray.forEach(project => {
         if (project) {
-          if (projectCategories[techStack].length > 1) {
-            projectCountEn.textContent = `${projectCategories[techStack].length} projects`;
-          } else {
-            projectCountEn.textContent = `${projectCategories[techStack].length} project`;
-          }
+          projectCount.forEach(count => {
+            count.textContent = `${projectCategories[techStack].length}`;
+          })
+          projectCategories[techStack].length > 1 ? projectSubHeaderEn.textContent = 'projects' : 'project';
           projectCategories[techStack].includes(project) ? project.style.display = 'flex' : project.style.display = 'none';
         }
       });
     })
   };
 
-  const highlightIcons = (projectIconArr: keyof typeof projectIcons) => {
+  const highlightIcons = (iconArr: keyof typeof projectIcons) => {
     Object.values(projectIcons).forEach(icons => {
       icons.forEach(icon => {
-        if (Array.from(projectIcons[projectIconArr]).includes(icon)) {
-          icon.classList.add('highlight');
-        } else {
-          icon.classList.remove('highlight');
-        }
+        Array.from(projectIcons[iconArr]).includes(icon) ? icon.classList.add('highlight') : icon.classList.remove('highlight');
       })
     })
   };
@@ -121,7 +114,8 @@ export function projectsFilter() {
           })
           Object.values(projects).forEach(project => {
             if (project) { project.style.display = 'flex'; }
-            projectCountEn.textContent = `${Object.values(projects).length} projects`;
+            projectSubHeaderEn.textContent = `${Object.values(projects).length} projects`;
+            projectSubHeaderJa.textContent = `プロジェクト数：${Object.values(projects).length}`;
           });
           Object.values(projectIcons).forEach(icons => {
             icons.forEach(icon => {

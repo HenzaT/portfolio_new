@@ -14,11 +14,12 @@ export function darkMode() {
   const themeBtn      = document.getElementById('theme-btn') as HTMLButtonElement;
   const themeIcon     = document.getElementById('theme-icon') as HTMLElement;
   const langBtn       = document.getElementById('lang-btn') as HTMLButtonElement;
+  const linkBtn       = document.querySelector('.link-btn') as HTMLButtonElement;
   const arrowBtn      = document.getElementById('arrow-icon') as HTMLAnchorElement;
   const skillsCard    = document.querySelector('.skills-icons') as HTMLDivElement;
   const skillsRadio   = document.querySelector('.skills-radio') as HTMLDivElement;
   const resetFilter   = document.getElementById('reset-filter') as HTMLButtonElement;
-  const elements      = [ themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio, resetFilter ];
+  const elements      = [ themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio, resetFilter, linkBtn ];
 
   const elementsList = (elements: NodeListOf<Element>) => {
     elements.forEach(el => {

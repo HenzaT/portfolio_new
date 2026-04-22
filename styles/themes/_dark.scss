@@ -7,25 +7,21 @@
     background-color: vars.$dark-blue;
   }
 
-  hr.dark {
+  :is(hr, .link-btn).dark {
     background-color: vars.$light;
   }
 
   span.highlight.dark {
     color: vars.$light-selected;
-
-    &:hover {
-      color: vars.$light-selected;
-    }
+    &:hover { color: vars.$light-selected; }
   }
 
-  :is(#theme-btn, #lang-btn).dark {
+  :is(#theme-btn, #lang-btn, footer.footer-icon).dark {
     color: vars.$light;
   }
 
   #theme-btn.dark {
     border: 1px solid vars.$light;
-
     &:hover {
       color: vars.$dark-blue;
       background: vars.$light;
@@ -34,7 +30,6 @@
 
   #lang-btn.dark {
     border: 1px solid vars.$light;
-
     &:hover {
       color: inherit;
       background: inherit;
@@ -51,16 +46,12 @@
 
   .project-card__link.dark {
     border: 1px solid vars.$light;
-
-    &:hover {
-      background-color: vars.$light;
-      color: vars.$dark-blue;
-    }
+    color: vars.$light;
   }
 
   header.main p:has(.highlight.heading:hover) {
     .highlight.heading.dark:hover {
-      color: vars.$light-selected;
+      color: vars.$light-selected; 
     }
   }
 
@@ -69,17 +60,7 @@
     border-bottom: 1px solid vars.$light;
   }
 
-  :is(button.filter, button#reset-filter).dark {
-    background: vars.$light;
-
-    &:hover {
-      background-color: vars.$hover-blue;
-    }
-
-    &:active {
-      background-color: vars.$light-selected;
-    }
-  }
+  :is(button.filter, button#reset-filter).dark { @include mixin.filter-btns-dark; }
 
   .selected.dark {
     background-color: vars.$light-selected !important;
@@ -113,12 +94,8 @@
       }
     }
 
-    .radio-label.dark:not(:last-of-type) { border-right: 1px solid vars.$light; }
-  }
-
-  footer {
-    .footer-icon.dark {
-      color: vars.$light;
+    .radio-label.dark:not(:last-of-type) {
+      border-right: 1px solid vars.$light;
     }
   }
 }

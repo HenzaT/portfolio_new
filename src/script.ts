@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // section specific
-const skillsIconsContainer: HTMLElement | null = document.querySelector('.skills-container');
 const projectsContainer: HTMLElement | null = document.querySelector('.projects-container');
 const sectionTitles: NodeListOf<HTMLElement> = document.querySelectorAll('.section-title');
 
@@ -103,23 +102,3 @@ function ElementSlideUpDark(entries: IntersectionObserverEntry[]): void {
     }
   });
 };
-
-// const mobileChevronObserver = new IntersectionObserver(ElementSlideUpDark);
-// mobileChevrons.forEach((chevron) => {
-//   if (chevron) {
-//     mobileChevronObserver.observe(chevron);
-//   }
-// });
-
-// intersection observer - element OUT of viewport
-// clear skills container
-function clear(entries: IntersectionObserverEntry[]): void {
-  entries.forEach((entry)=> {
-    if (!entry.isIntersecting) {
-      // clearFadeExpand()
-    }
-  })
-};
-
-const skillsObserver = new IntersectionObserver(clear);
-if (skillsIconsContainer) skillsObserver.observe(skillsIconsContainer);

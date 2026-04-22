@@ -17,7 +17,10 @@ export function projectCards() {
     const linksDiv      = clone.querySelector('.project-card__links');
 
     // top-level info
-    if (card) card.id = project['articleId'];
+    if (card) {
+      card.id = project['articleId']
+      // card.classList.add('hidden')
+    };
     if (title) title.textContent = project['title'];
     if (taglineEn) taglineEn.textContent = project['taglineEn'];
     if (taglineJa) taglineJa.textContent = project['taglineJa'];

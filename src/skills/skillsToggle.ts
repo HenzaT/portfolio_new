@@ -32,14 +32,16 @@ export function skillsToggle() {
   ];
 
   const iconGroups = {
-    languages: languageIcons,
+    languages:  languageIcons,
     frameworks: frameworkIcons,
-    tools: toolIcons,
-    databases: dbIcons
+    tools:      toolIcons,
+    databases:  dbIcons
   };
 
-  // skills icons toggle
-  function clearFadeExpand(): void {
+  const skillsRadioButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.skills-radio');
+  const skillsIconsContainer: HTMLElement | null = document.querySelector('.skills-icons');
+
+  const clearFadeExpand = () => {
     Object.values(iconGroups).forEach(group => {
       group.forEach((icon) => {
         if (!icon) return;
@@ -49,9 +51,6 @@ export function skillsToggle() {
     });
   };
 
-  // radio buttons
-  const skillsRadioButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.skills-radio');
-
   interface RadioButtons {
     languages:  HTMLInputElement
     frameworks: HTMLInputElement
@@ -60,10 +59,10 @@ export function skillsToggle() {
   };
 
   const radioButtons: RadioButtons = {
-    languages: document.getElementById('languages') as HTMLInputElement,
+    languages:  document.getElementById('languages') as HTMLInputElement,
     frameworks: document.getElementById('frameworks') as HTMLInputElement,
-    tools: document.getElementById('tools') as HTMLInputElement,
-    databases: document.getElementById('databases') as HTMLInputElement
+    tools:      document.getElementById('tools') as HTMLInputElement,
+    databases:  document.getElementById('databases') as HTMLInputElement
   };
 
   skillsRadioButtons.forEach((button) => {
@@ -72,20 +71,22 @@ export function skillsToggle() {
       const selected = (Object.keys(radioButtons) as Array<keyof RadioButtons>)
       .find(buttonName => radioButtons[buttonName]?.checked);
       Object.entries(iconGroups).forEach(([group, icons]) => {
-        if (group !== selected) {
-          icons.forEach((icon) => {
-            if (icon) {
-              icon.classList.add('fade')
-            }
-          });
-        } else if (group === selected) {
-          icons.forEach((icon) => {
-            if (icon) {
-              icon.classList.add('expand')
-            }
-          });
-        };
+        icons.forEach(icon => {
+          group !== selected ? icon?.classList.add('fade') : icon?.classList.add('expand');
+        })
       });
     });
   });
+
+  // reset icons if out of viewport
+  const clear = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry)=> {
+      if (!entry.isIntersecting) {
+        clearFadeExpand()
+      }
+    })
+  };
+
+  const skillsObserver = new IntersectionObserver(clear);
+  if (skillsIconsContainer) skillsObserver.observe(skillsIconsContainer);
 }

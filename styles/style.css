@@ -88,11 +88,6 @@ a {
 
 @media (min-width: 768px) {
   header.main, main, footer, .hr-div {
-    padding: 0 10rem;
-  }
-}
-@media (min-width: 1024px) {
-  header.main, main, footer, .hr-div {
     padding: 0 17rem;
   }
 }

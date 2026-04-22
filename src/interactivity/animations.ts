@@ -1,9 +1,32 @@
+import { getSections } from "../getSections.js";
+import { getProjectCards } from "../projects/getProjectCards.js";
+
 export function animations() {
+  const sections = getSections();
+  const projects = getProjectCards();
+
   const headerElements = {
     name:  document.getElementById('name'),
     title: document.getElementById('job-title'),
     about: document.getElementById('about-me')
   };
+
+  const projectElements = {
+    header: document.querySelector('header.projects') as HTMLHeadElement,
+    filterBtns: document.querySelector('.filter-btns') as HTMLDivElement,
+  }
+
+  const skillsElements = {
+    header: document.getElementById('skills-header'),
+  }
+
+  const allElements = [
+    sections.nav,
+    Object.values(headerElements),
+    Object.values(projectElements),
+    Object.values(skillsElements),
+    // Object.values(projects),
+  ].flat()
 
   const addSlideUpDark = (element: HTMLElement) => {
     element.classList.remove('hidden');
@@ -11,7 +34,7 @@ export function animations() {
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    Object.values(headerElements).forEach((el, index) => {
+    allElements.forEach((el, index) => {
       if (el) {
         setTimeout(() => {
           addSlideUpDark(el)

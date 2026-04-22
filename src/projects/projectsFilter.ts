@@ -1,17 +1,9 @@
 import { getProjectIcons } from './getProjectIcons.js'
+import { getProjectCards } from './getProjectCards.js';
 
 export function projectsFilter() {
   const projectIcons = getProjectIcons();
-
-  const projects = {
-    therapy:    document.getElementById('therapy-site'),
-    song:       document.getElementById('song-site'),
-    weather:    document.getElementById('weather-site'),
-    aptist:     document.getElementById('aptist-site'),
-    portfolio:  document.getElementById('portfolio-site'),
-    countries:  document.getElementById('countries-site'),
-    jlptrainer: document.getElementById('kanji-site'),
-  };
+  const projects = getProjectCards();
 
   const projectCategories = {
     typescript: [ projects.therapy, projects.weather, projects.aptist, projects.portfolio, projects.countries ],

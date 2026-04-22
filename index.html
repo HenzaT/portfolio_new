@@ -21,21 +21,21 @@
   </head>
   <body>
     <!-- nav -->
-    <nav id="nav">
+    <nav id="nav" class="hidden">
       <button id="theme-btn" type="button"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
       <button id="lang-btn" type="button">日本語</button>
     </nav>
     <!-- main header -->
     <header class="main" id="main-header">
-      <h1 id="name hidden">
+      <h1 id="name" class="hidden">
         <span class="lang-en" id="fullname">Henry Thomas</span>
         <span class="lang-ja">トーマス ヘンリー</span>
       </h1>
-      <h1 id="job-title hidden">
+      <h1 id="job-title" class="hidden">
         <span class="lang-en">Software Engineer</span>
         <span class="lang-ja">ソフトウェア・エンジニア</span>
       </h1>
-      <p id="about-me hidden">
+      <p id="about-me" class="hidden">
         <span class="lang-en">
           With a background in <span class="highlight heading">education</span>, I'm currently working at an
           electronic mailing list company. My daily work ranges from managing <span class="highlight heading">Perl</span> and
@@ -66,7 +66,7 @@
     <main>
       <!-- Project Section -->
       <section id="projects">
-        <header class="projects">
+        <header class="projects hidden">
           <h2>
             <span class="lang-en">Projects</span>
             <span class="lang-ja">プロジェクト一覧</span>
@@ -82,7 +82,7 @@
             </button>
           </div>
         </header>
-        <div class="filter-btns box">
+        <div class="filter-btns box hidden">
           <button id="ts-btn" class="filter">TypeScript</button>
           <button id="js-btn" class="filter">JavaScript</button>
           <button id="react-btn" class="filter">React</button>
@@ -126,7 +126,7 @@
       </section>
       <!-- Skills section -->
       <section id="skills">
-        <h2>Skills</h2>
+        <h2 id="skills-header" class="hidden">Skills</h2>
         <div class="card-and-button-container" id="skills-card-button">
           <div class="skills-icons"></div>
           <template id="skills-template">

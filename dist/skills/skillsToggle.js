@@ -33,8 +33,9 @@ export function skillsToggle() {
         tools: toolIcons,
         databases: dbIcons
     };
-    // skills icons toggle
-    function clearFadeExpand() {
+    const skillsRadioButtons = document.querySelectorAll('.skills-radio');
+    const skillsIconsContainer = document.querySelector('.skills-icons');
+    const clearFadeExpand = () => {
         Object.values(iconGroups).forEach(group => {
             group.forEach((icon) => {
                 if (!icon)
@@ -43,10 +44,7 @@ export function skillsToggle() {
                 icon.classList.remove('expand');
             });
         });
-    }
-    ;
-    // radio buttons
-    const skillsRadioButtons = document.querySelectorAll('.skills-radio');
+    };
     ;
     const radioButtons = {
         languages: document.getElementById('languages'),
@@ -60,22 +58,21 @@ export function skillsToggle() {
             const selected = Object.keys(radioButtons)
                 .find(buttonName => radioButtons[buttonName]?.checked);
             Object.entries(iconGroups).forEach(([group, icons]) => {
-                if (group !== selected) {
-                    icons.forEach((icon) => {
-                        if (icon) {
-                            icon.classList.add('fade');
-                        }
-                    });
-                }
-                else if (group === selected) {
-                    icons.forEach((icon) => {
-                        if (icon) {
-                            icon.classList.add('expand');
-                        }
-                    });
-                }
-                ;
+                icons.forEach(icon => {
+                    group !== selected ? icon?.classList.add('fade') : icon?.classList.add('expand');
+                });
             });
         });
     });
+    // reset icons if out of viewport
+    const clear = (entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                clearFadeExpand();
+            }
+        });
+    };
+    const skillsObserver = new IntersectionObserver(clear);
+    if (skillsIconsContainer)
+        skillsObserver.observe(skillsIconsContainer);
 }

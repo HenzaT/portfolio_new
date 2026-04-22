@@ -1,12 +1,7 @@
+import { getSections } from "../getSections.js";
+
 export function intersectionObserver() {
-  // section variables
-  const sections = {
-    nav:      document.getElementById('nav'),
-    header:   document.getElementById('main-header'),
-    projects: document.getElementById('projects'),
-    skills:   document.getElementById('skills'),
-    footer:   document.getElementById('footer'),
-  };
+  const sections = getSections()
   const mainContent = [ sections.projects, sections.skills, sections.footer ];
 
   const homeArrowIcon: HTMLElement | null = document.getElementById('arrow-icon');

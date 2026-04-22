@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleLang();
 });
 // section specific
-const skillsIconsContainer = document.querySelector('.skills-container');
 const projectsContainer = document.querySelector('.projects-container');
 const sectionTitles = document.querySelectorAll('.section-title');
 // skills
@@ -100,22 +99,3 @@ function ElementSlideUpDark(entries) {
     });
 }
 ;
-// const mobileChevronObserver = new IntersectionObserver(ElementSlideUpDark);
-// mobileChevrons.forEach((chevron) => {
-//   if (chevron) {
-//     mobileChevronObserver.observe(chevron);
-//   }
-// });
-// intersection observer - element OUT of viewport
-// clear skills container
-function clear(entries) {
-    entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-            // clearFadeExpand()
-        }
-    });
-}
-;
-const skillsObserver = new IntersectionObserver(clear);
-if (skillsIconsContainer)
-    skillsObserver.observe(skillsIconsContainer);

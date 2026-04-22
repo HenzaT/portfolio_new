@@ -88,12 +88,6 @@ a {
 
 @media (min-width: 768px) {
   header.main, main, footer, .hr-div {
-    padding: vars.$page-padding-md;
-  }
-}
-
-@media (min-width: 1024px) {
-  header.main, main, footer, .hr-div {
     padding: vars.$page-padding-lg;
   }
 }

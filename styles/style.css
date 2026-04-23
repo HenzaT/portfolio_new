@@ -20,7 +20,7 @@ body.ja-mode .lang-ja {
   display: inline;
 }
 
-header.main, main, footer, .hr-div {
+header.main, main, footer {
   padding: 0 1rem;
 }
 
@@ -86,54 +86,26 @@ a {
   border-bottom: 1px solid #030e2a;
 }
 
-@media (min-width: 768px) {
-  header.main, main, footer, .hr-div {
-    padding: 0 17rem;
-  }
-}
-@media (min-width: 1200px) {
-  header.main, main, footer, .hr-div {
-    padding: 0 22rem;
-  }
-}
-.brighten {
-  animation: brighten 0.6s ease;
-}
-
 .hidden {
   opacity: 0;
 }
 
+@media (min-width: 768px) {
+  header.main, main, footer {
+    padding: 0 17rem;
+  }
+}
+@media (min-width: 1200px) {
+  header.main, main, footer {
+    padding: 0 22rem;
+  }
+}
 .slide-up {
   animation: slideUp 1.2s ease;
 }
 
 .slide-up-dark {
   animation: slideUpDark 0.8s ease;
-}
-
-.slide-up-expand {
-  animation: slideUpExpand 1.2s ease;
-}
-
-.slide-up-fade {
-  animation: slideUpFade 1.2s ease;
-}
-
-.slide-right {
-  animation: slideRight 3s ease;
-}
-
-.slide-left {
-  animation: slideLeft 3s ease;
-}
-
-.slide-right-center {
-  animation: slideRightCenter 3s ease;
-}
-
-.slide-left-center {
-  animation: slideLeftCenter 3s ease;
 }
 
 .fade {
@@ -146,42 +118,6 @@ a {
   color: #0470db;
 }
 
-/* darken element */
-@keyframes darken {
-  0% {
-    filter: brightness(1);
-  }
-  25% {
-    filter: brightness(0.8);
-  }
-  50% {
-    filter: brightness(0.6);
-  }
-  75% {
-    filter: brightness(0.4);
-  }
-  100% {
-    filter: brightness(0.2);
-  }
-}
-/* brighten element */
-@keyframes brighten {
-  0% {
-    filter: brightness(0.2);
-  }
-  25% {
-    filter: brightness(0.4);
-  }
-  50% {
-    filter: brightness(0.6);
-  }
-  75% {
-    filter: brightness(0.8);
-  }
-  100% {
-    filter: brightness(1);
-  }
-}
 /* slide element up */
 @keyframes slideUp {
   from {
@@ -203,68 +139,12 @@ a {
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes slideUpExpand {
+@keyframes shake {
   from {
-    opacity: 0;
-    transform: translate3d(0, 10%, 0) scale(1);
+    transform: rotate(-15deg);
   }
   to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1.1);
-  }
-}
-@keyframes slideUpFade {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 10%, 0);
-  }
-  to {
-    opacity: 0.2;
-    transform: translate3d(0, 0, 0);
-  }
-}
-/* slide element to right */
-@keyframes slideRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-900px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(-154px);
-  }
-}
-/* slide element to right mobile */
-@keyframes slideRightCenter {
-  0% {
-    opacity: 0;
-    transform: translateX(-900px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-/* slide element to left */
-@keyframes slideLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(900px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(192);
-  }
-}
-/* slide element to left mobile */
-@keyframes slideLeftCenter {
-  0% {
-    opacity: 0;
-    transform: translateX(900px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+    transform: rotate(15deg);
   }
 }
 nav button {
@@ -546,7 +426,7 @@ section#skills .radio-input:checked + .radio-label {
   border-radius: 10px;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1350px) {
   .project-card {
     display: flex;
     flex-direction: row;
@@ -572,12 +452,14 @@ hr {
   border: none;
 }
 
-hr.inbetween {
-  margin: 1rem auto;
-}
-
 .project-card__tech-icons-container i {
   font-size: 3rem;
+}
+.project-card__tech-icons-container i:hover {
+  animation-name: shake;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .project-card__links i, nav button i {
@@ -611,8 +493,8 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 2rem;
+  gap: 1rem;
 }
 footer .footer-left, footer .footer-right {
   display: flex;
@@ -706,7 +588,7 @@ section#projects #back-to-projects {
 section#skills {
   margin: 5rem 0;
 }
-section#skills .card-and-button-container {
+section#skills #skills-card-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -725,7 +607,7 @@ section#skills div.skills-icons {
 }
 
 @media (min-width: 768px) {
-  section#skills .card-and-button-container .skills-icons {
+  section#skills #skills-card-buttons .skills-icons {
     grid-template-columns: repeat(4, 1fr);
   }
 }

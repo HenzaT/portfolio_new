@@ -1,4 +1,5 @@
 import { getProjectIcons } from "./projects/getProjectIcons.js";
+// dark mode
 export function darkMode() {
     const projectIcons = getProjectIcons();
     const hrLine = document.getElementsByTagName('hr');

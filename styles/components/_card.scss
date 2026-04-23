@@ -65,7 +65,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1350px) {
   .project-card {
     @include mixin.flex-row;
     gap: 2rem;

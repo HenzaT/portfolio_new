@@ -1,5 +1,6 @@
 import { getProjectIcons } from './getProjectIcons.js';
 import { getProjectCards } from './getProjectCards.js';
+// filter projects using buttons
 export function projectsFilter() {
     const projectIcons = getProjectIcons();
     const projects = getProjectCards();
@@ -27,9 +28,8 @@ export function projectsFilter() {
         reset: document.getElementById('reset-filter'),
     };
     const resetFilterBtn = buttonCategories.reset;
-    let projectCount = document.querySelectorAll('.project-count');
-    let projectSubHeaderEn = document.querySelector('.lang-en.project-subheader-en');
-    let projectSubHeaderJa = document.querySelector('.lang-ja.project-subheader-ja');
+    let projectCountEn = document.querySelector('.lang-en.project-count');
+    let projectCountJa = document.querySelector('.lang-ja.project-count');
     const highlightButton = (btn) => {
         Object.values(buttonCategories).forEach(button => {
             button === buttonCategories[btn] ? buttonCategories[btn]?.classList.add('selected') : button?.classList.remove('selected');
@@ -42,10 +42,14 @@ export function projectsFilter() {
         Object.values(projectCategories).forEach(projectArray => {
             projectArray.forEach(project => {
                 if (project) {
-                    projectCount.forEach(count => {
-                        count.textContent = `${projectCategories[techStack].length}`;
-                    });
-                    projectCategories[techStack].length > 1 ? projectSubHeaderEn.textContent = 'projects' : 'project';
+                    const count = projectCategories[techStack].length;
+                    projectCountJa.textContent = `プロジェクト数: ${count}`;
+                    if (count > 1) {
+                        projectCountEn.textContent = `${count} projects`;
+                    }
+                    else {
+                        projectCountEn.textContent = `${count} project`;
+                    }
                     projectCategories[techStack].includes(project) ? project.style.display = 'flex' : project.style.display = 'none';
                 }
             });
@@ -101,8 +105,8 @@ export function projectsFilter() {
                         if (project) {
                             project.style.display = 'flex';
                         }
-                        projectSubHeaderEn.textContent = `${Object.values(projects).length} projects`;
-                        projectSubHeaderJa.textContent = `プロジェクト数：${Object.values(projects).length}`;
+                        projectCountEn.textContent = `${Object.values(projects).length} projects`;
+                        projectCountJa.textContent = `プロジェクト数：${Object.values(projects).length}`;
                     });
                     Object.values(projectIcons).forEach(icons => {
                         icons.forEach(icon => {

@@ -1,4 +1,5 @@
 import { projectsData } from "./projectsData.js";
+// create project cards with template
 export function projectCards() {
     const projectsTemplate = document.getElementById('projects-template');
     const projectsGrid = document.querySelector('.grid');

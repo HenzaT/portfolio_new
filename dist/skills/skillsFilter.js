@@ -1,5 +1,5 @@
 // filter icons using buttons
-export function skillsToggle() {
+export function skillsFilter() {
     const languageIcons = [
         document.getElementById('ruby'),
         document.getElementById('ts'),

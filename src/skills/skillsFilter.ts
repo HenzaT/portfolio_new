@@ -1,4 +1,5 @@
-export function skillsToggle() {
+// filter icons using buttons
+export function skillsFilter() {
   const languageIcons = [
     document.getElementById('ruby'),
     document.getElementById('ts'),
@@ -83,6 +84,9 @@ export function skillsToggle() {
     entries.forEach((entry)=> {
       if (!entry.isIntersecting) {
         clearFadeExpand()
+        skillsRadioButtons.forEach(button => {
+          button.removeAttribute('checked');
+        })
       }
     })
   };

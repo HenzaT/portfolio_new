@@ -22,7 +22,7 @@ body.ja-mode .lang-ja {
   display: inline;
 }
 
-header.main, main, footer, .hr-div {
+header.main, main, footer {
   padding: vars.$page-padding-xs;
 }
 
@@ -86,14 +86,18 @@ a {
   border-bottom: 1px solid vars.$dark-blue;
 }
 
+.hidden {
+  opacity: 0;
+}
+
 @media (min-width: 768px) {
-  header.main, main, footer, .hr-div {
+  header.main, main, footer {
     padding: vars.$page-padding-lg;
   }
 }
 
 @media (min-width: 1200px) {
-  header.main, main, footer, .hr-div {
+  header.main, main, footer {
     padding: vars.$page-padding-xl;
   }
 }

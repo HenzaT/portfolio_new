@@ -4,7 +4,7 @@
 section#skills {
   margin: 5rem 0;
 
-  .card-and-button-container {
+  #skills-card-buttons {
     @include mixin.flex-col;
     gap: 2rem;
   }
@@ -24,7 +24,7 @@ section#skills {
 
 @media (min-width: 768px) {
   section#skills {
-    .card-and-button-container {
+    #skills-card-buttons {
       .skills-icons {
         grid-template-columns: repeat(4, 1fr);
       }

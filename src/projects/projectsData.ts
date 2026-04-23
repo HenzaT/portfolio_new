@@ -48,7 +48,8 @@ export const projectsData = [
       },
     ],
     'description':
-      `I worked collaboratively with a client, working on the design together and focusing on space and layout.
+      `I <span class="highlight">worked collaboratively with a client</span>,
+      working on the design together and focusing on space and layout.
       Integrated <span class="highlight">Netlify Forms</span> for form-handling, and
       <span class="highlight">Decap CMS</span> to allow the client to edit content easily. (This is a private repo).`,
     'links': [
@@ -96,10 +97,6 @@ export const projectsData = [
          'title': 'javascript icon',
       },
       {
-        'class': 'devicon-html5-plain-wordmark html-icon',
-         'title': 'html5 icon',
-      },
-      {
         'class': 'devicon-sass-original sass-icon',
         'title': 'sass icon',
       },
@@ -113,8 +110,9 @@ export const projectsData = [
       },
     ],
     'description':
-      `Built to help musicians overcome writer's block by generating random song elements.
-      I focused on database schema design and relationships using <span class="highlight">PostgreSQL</span>
+      `Built <span class="highlight">to help musicians overcome writer's block</span>
+      by generating random song elements. I focused on database <span class="highlight">schema design</span>
+      and relationships using <span class="highlight">PostgreSQL</span>
       and extensive use of <span class="highlight">Stimulus JS</span> for local memory storage.`,
     'links': [
       {
@@ -227,23 +225,22 @@ export const projectsData = [
     ],
     'icons': [
       {
-        'class': 'devicon-html5-plain-wordmark html-icon',
-        'title': 'html5 icon',
+        'class': 'devicon-typescript-plain ts-icon',
+        'title': 'typescript',
       },
       {
         'class': 'devicon-sass-original sass-icon',
         'title': 'sass icon',
       },
       {
-        'class': 'devicon-typescript-plain ts-icon',
-        'title': 'typescript',
+        'class': 'devicon-html5-plain-wordmark html-icon',
+        'title': 'html5 icon',
       },
     ],
     'description':
-      `I focused on design, animation, and JavaScript DOM manipulation,
-      while also applying newly learned <span class="highlight">TypeScript</span> concepts.
-      I returned to this portfolio after working on a number of other projects,
-      separating concerns better and replacing CSS with <span class="highlight">SCSS</span>.`,
+      `I focused on <span class="highlight">design, animation</span> and <span class="highlight">DOM manipulation</span>.
+      I returned to this portfolio after working on other projects, adding a dark mode and option to
+      switch language to Japanese, separating concerns better and replacing CSS with <span class="highlight">SCSS</span>.`,
     'links': [
       {
         'url': 'https://github.com/HenzaT/portfolio',
@@ -352,10 +349,6 @@ export const projectsData = [
          'title': 'typescript icon',
       },
       {
-        'class': 'devicon-html5-plain-wordmark html-icon',
-         'title': 'html5 icon',
-      },
-      {
         'class': 'devicon-sass-original sass-icon',
         'title': 'sass icon',
       },
@@ -370,7 +363,7 @@ export const projectsData = [
     ],
     'description':
       `I wanted to integrate multiple <span class="highlight">third-party APIs</span>:
-      some of the APIs I used were the Unsplash and Claude API.
+      some of the APIs I used were the <span class="highlight">Unsplash</span> and <span class="highlight">Claude API</span>.
       After receiving user feedback, I am currently in the middle of an aesthetic
       redesign, which has helped me to better understand modern design trends.`,
     'links': [

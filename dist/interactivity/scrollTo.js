@@ -1,6 +1,7 @@
+// scroll to element when clicked
 export function scrollToView() {
     const projectArticles = document.querySelectorAll('.project-card');
-    const skillsContainer = document.querySelector('.card-and-button-container');
+    const skillsContainer = document.getElementById('skills-card-buttons');
     const goToElement = (element) => {
         element.addEventListener('click', () => {
             element.scrollIntoView({

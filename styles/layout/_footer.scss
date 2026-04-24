@@ -3,6 +3,7 @@
 
 footer {
   @include mixin.flex-row;
+  justify-content: space-between;
   margin-bottom: 2rem;
   gap: 1rem;
 
@@ -10,14 +11,17 @@ footer {
     @include mixin.flex-row;
   }
 
-  .footer-left  { gap: 1rem; }
-  .footer-right {
-    gap: 0.5rem;
+  .footer-left  {
+    gap: 1rem;
   }
 
   .footer-right {
-    width: 210px;
     justify-content: space-between;
+
+    .email {
+      @include mixin.flex-row;
+      gap: vars.$gap-point-5;
+    }
 
     button {
       justify-self: start;

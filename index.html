@@ -20,11 +20,11 @@
     <script type="module" src="dist/script.js"></script>
   </head>
   <body>
-    <!-- nav -->
-    <nav id="nav" class="hidden">
+    <!-- header -->
+    <header id="global-btns" class="hidden">
       <button id="theme-btn" type="button"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
       <button id="lang-btn" type="button">日本語</button>
-    </nav>
+    </header>
     <!-- main header -->
     <header class="main" id="main-header">
       <h1 id="name" class="hidden">
@@ -135,15 +135,27 @@
           <div class="skills-radio">
             <div class="top">
               <input id="languages" class="radio-input" type="radio" name="about" value="languages">
-              <label for="languages" class="radio-label lang">Languages</label>
+              <label for="languages" class="radio-label lang">
+                <span class="lang-en">Languages</span>
+                <span class="lang-ja">言語</span>
+              </label>
               <input id="frameworks" class="radio-input" type="radio" name="about" value="frameworks">
-              <label for="frameworks" class="radio-label fworks">Frameworks</label>
+              <label for="frameworks" class="radio-label fworks">
+                <span class="lang-en">Frameworks</span>
+                <span class="lang-ja">フレームワーク</span>
+              </label>
             </div>
             <div class="bottom">
               <input id="tools" class="radio-input" type="radio" name="about" value="tools">
-              <label for="tools" class="radio-label tools">Tools</label>
+              <label for="tools" class="radio-label tools">
+                <span class="lang-en">Tools</span>
+                <span class="lang-ja">ツール</span>
+              </label>
               <input id="databases" class="radio-input" type="radio" name="about" value="databases">
-              <label for="databases" class="radio-label db">Databases</label>
+              <label for="databases" class="radio-label db">
+                <span class="lang-en">Databases</span>
+                <span class="lang-ja">データベース</span>
+              </label>
             </div>
           </div>
         </div>
@@ -161,12 +173,14 @@
         </a>
       </div>
       <div class="footer-right">
-        <button type="button" id="copy-btn" title="copy email">
-          <i id="copy-icon" class="fa-regular fa-copy footer-icon"></i>
-        </button>
-        <a href="mailto:henrykun95@gmail.com" title="Send me an email" id="email-address">
-          henrykun95@gmail.com
-        </a>
+        <div class="email">
+          <button type="button" id="copy-btn" title="copy email">
+            <i id="copy-icon" class="fa-regular fa-copy footer-icon"></i>
+          </button>
+          <a href="mailto:henrykun95@gmail.com" title="Send me an email" id="email-address">
+            henrykun95@gmail.com
+          </a>
+        </div>
         <p></p>
       </div>
     </footer>

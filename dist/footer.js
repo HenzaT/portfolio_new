@@ -5,7 +5,7 @@ export function footer() {
     copyBtn?.addEventListener('click', () => {
         const emailText = emailAddress.textContent;
         if (copyIcon.className === 'fa-regular fa-copy footer-icon') {
-            copyIcon.className = 'fa-solid fa-check footer-icon';
+            copyIcon.className = 'fa-solid fa-check';
             emailAddress.textContent = 'email copied';
             copyBtn.setAttribute('disabled', '');
             emailAddress.style.pointerEvents = 'none';

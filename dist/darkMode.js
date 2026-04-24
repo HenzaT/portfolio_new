@@ -10,6 +10,7 @@ export function darkMode() {
     const highlighted = document.querySelectorAll('.highlight');
     const radioLabels = document.querySelectorAll('.radio-label');
     const footerIcons = document.querySelectorAll('.footer-icon');
+    const globalHeader = document.getElementById('global-btns');
     const themeBtn = document.getElementById('theme-btn');
     const themeIcon = document.getElementById('theme-icon');
     const langBtn = document.getElementById('lang-btn');
@@ -17,8 +18,9 @@ export function darkMode() {
     const arrowBtn = document.getElementById('arrow-icon');
     const skillsCard = document.querySelector('.skills-icons');
     const skillsRadio = document.querySelector('.skills-radio');
+    const topRadioGroup = document.querySelector('.top');
     const resetFilter = document.getElementById('reset-filter');
-    const elements = [themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio, resetFilter, linkBtn];
+    const elements = [globalHeader, themeBtn, langBtn, arrowBtn, skillsCard, skillsRadio, resetFilter, linkBtn, topRadioGroup];
     const elementsList = (elements) => {
         elements.forEach(el => {
             el.classList.toggle('dark');

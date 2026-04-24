@@ -1,11 +1,9 @@
 @use '../abstracts/mixins' as mixin;
 @use '../abstracts/variables' as vars;
 
-nav {
-  // height: 20dvh;
+header#global-btns {
   @include mixin.flex-row;
   justify-content: center;
   gap: 1rem;
   margin: 1rem 0;
-  background: transparent;
 }

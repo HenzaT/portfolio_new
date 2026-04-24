@@ -1,5 +1,5 @@
 export const getSections = () => ({
-  nav:      document.getElementById('nav'),
+  nav:      document.getElementById('global-btns'),
   header:   document.getElementById('main-header'),
   projects: document.getElementById('projects'),
   skills:   document.getElementById('skills'),

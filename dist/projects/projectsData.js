@@ -4,7 +4,7 @@ export const projectsData = [
         'articleId': 'therapy-site',
         'title': 'Therapy Website',
         'taglineEn': 'professional website for client',
-        'taglineJa': '音楽ポートフォリオ',
+        'taglineJa': 'セラピー・サイト',
         'spliderId': 'therapy-slider',
         'aria-label': 'therapy website image slides',
         'spliderLi': [
@@ -132,7 +132,7 @@ export const projectsData = [
         'articleId': 'weather-site',
         'title': 'React Weather',
         'taglineEn': 'flask & react weather app',
-        'taglineJa': '音楽ポートフォリオ',
+        'taglineJa': '天気予報アプリ',
         'spliderId': 'weather-slider',
         'aria-label': 'React Weather website image slides',
         'spliderLi': [
@@ -313,7 +313,7 @@ export const projectsData = [
         'articleId': 'countries-site',
         'title': 'The Country Club',
         'taglineEn': 'app for exploring countries (in progress)',
-        'taglineJa': '作曲の手伝いアプリ',
+        'taglineJa': 'トラベルアプリ',
         'spliderId': 'country-slider',
         'aria-label': 'The Country Club website image slides',
         'spliderLi': [
@@ -380,7 +380,7 @@ export const projectsData = [
         'articleId': 'kanji-site',
         'title': 'JLPTrainer API',
         'taglineEn': 'kanji learning api (in progress)',
-        'taglineJa': '作曲の手伝いアプリ',
+        'taglineJa': 'JLPT用の漢字API',
         'spliderId': 'kanji-slider',
         'aria-label': 'JLPTrainer API image slides',
         'spliderLi': [
@@ -411,7 +411,7 @@ export const projectsData = [
                 'title': 'postgresql icon',
             },
         ],
-        'description': `I used the kanjiapi.dev API to create this backend-only <span class="highlight">Rails</span> project.
+        'description': `I used the kanjiapi.dev API to create this <span class="highlight">backend-only Rails</span> project.
       I focused on meaningful routes and following <span class="highlight">RESTful</span> principles.
       One of the route controllers is mostly RESTful, with additional functionality through custom routes.`,
         'links': [

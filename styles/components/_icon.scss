@@ -1,20 +1,17 @@
 @use '../abstracts/mixins' as mixin;
 @use '../abstracts/variables' as vars;
-@use '../base/animations';
 
 .project-card__tech-icons-container {
   i {
     font-size: 3rem;
+
     &:hover {
-      animation-name: shake;
-      animation-duration: 0.5s;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
+      @include mixin.icon-hover;
     }
   }
 }
 
-.project-card__links, nav button {
+.project-card__links, header#global-btns button {
   i {
     font-size: 1.5rem;
   }
@@ -22,6 +19,14 @@
 
 footer {
   .footer-icon {
+    font-size: 2rem;
+    color: vars.$dark-blue;
+
+    &:hover {
+      @include mixin.icon-hover;
+    }
+  }
+  .fa-solid.fa-check {
     font-size: 2rem;
     color: vars.$dark-blue;
   }

@@ -12,5 +12,10 @@ $hover-btn: #046fdb37;
 // padding / margin
 $page-padding-xs: 0 1rem;
 $page-padding-md: 0 10rem;
-$page-padding-lg: 0 17rem;
+$page-padding-lg: 0 14rem;
 $page-padding-xl: 0 22rem;
+$gap-point-5: 0.5rem;
+
+// transitions
+$transition-fast: all 0.2s ease-in-out;
+$transition-slow: all 0.3s ease-in-out;

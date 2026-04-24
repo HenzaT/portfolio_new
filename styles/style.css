@@ -53,6 +53,22 @@ p {
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
   line-height: 1.6;
+  transition: all 0.3s ease-in-out;
+}
+
+.highlight {
+  cursor: default;
+  transition: all 0.3s ease-in-out;
+}
+
+p:has(.highlight:hover) {
+  color: rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+p:has(.highlight:hover) .highlight:hover {
+  opacity: 1;
+  filter: none;
+  color: #0470db;
 }
 
 button, .radio-label {
@@ -86,13 +102,13 @@ a {
   border-bottom: 1px solid #030e2a;
 }
 
-.hidden {
+.hidden, .hide {
   opacity: 0;
 }
 
 @media (min-width: 768px) {
   header.main, main, footer {
-    padding: 0 17rem;
+    padding: 0 14rem;
   }
 }
 @media (min-width: 1200px) {
@@ -141,13 +157,13 @@ a {
 }
 @keyframes shake {
   from {
-    transform: rotate(-15deg);
+    transform: rotate(-10deg);
   }
   to {
-    transform: rotate(15deg);
+    transform: rotate(10deg);
   }
 }
-nav button {
+header#global-btns button {
   cursor: pointer;
   margin: 1rem;
   padding: 0.5rem 1rem;
@@ -159,19 +175,19 @@ nav button {
   padding: 0;
   transition: all 0.3s ease-in-out;
 }
-nav #theme-btn {
+header#global-btns #theme-btn {
   width: 60px;
 }
-nav #theme-btn:hover {
+header#global-btns #theme-btn:hover {
   border-radius: 50%;
   color: rgb(247, 253, 255);
   background-color: #030e2a;
 }
-nav #lang-btn {
+header#global-btns #lang-btn {
   font-size: 1.5rem;
   width: 120px;
 }
-nav #lang-btn:hover {
+header#global-btns #lang-btn:hover {
   border-radius: 30px;
   font-weight: 800;
 }
@@ -184,7 +200,7 @@ nav #lang-btn:hover {
   color: #030e2a;
   border: 1px solid #030e2a;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 .link-btn:hover {
   border-radius: 50%;
@@ -334,8 +350,7 @@ section#skills .radio-input:checked + .radio-label {
   section#skills .radio-label.lang {
     border-radius: 18px 0 0 18px;
   }
-  section#skills .radio-label.fworks,
-  section#skills .radio-label.tools {
+  section#skills .radio-label.fworks, section#skills .radio-label.tools {
     border-radius: 0px;
   }
   section#skills .radio-label.db {
@@ -462,11 +477,21 @@ hr {
   animation-direction: alternate;
 }
 
-.project-card__links i, nav button i {
+.project-card__links i, header#global-btns button i {
   font-size: 1.5rem;
 }
 
 footer .footer-icon {
+  font-size: 2rem;
+  color: #030e2a;
+}
+footer .footer-icon:hover {
+  animation-name: shake;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+footer .fa-solid.fa-check {
   font-size: 2rem;
   color: #030e2a;
 }
@@ -493,6 +518,7 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 2rem;
   gap: 1rem;
 }
@@ -505,11 +531,13 @@ footer .footer-left {
   gap: 1rem;
 }
 footer .footer-right {
-  gap: 0.5rem;
-}
-footer .footer-right {
-  width: 210px;
   justify-content: space-between;
+}
+footer .footer-right .email {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }
 footer .footer-right button {
   justify-self: start;
@@ -525,30 +553,15 @@ header.main {
 }
 header.main p {
   margin: 1rem 0;
-  transition: all 0.3s ease-in-out;
-}
-header.main .highlight.heading {
-  cursor: default;
-  transition: all 0.3s ease-in-out;
-}
-header.main p:has(.highlight.heading:hover) {
-  color: rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-}
-header.main p:has(.highlight.heading:hover) .highlight.heading:hover {
-  opacity: 1;
-  filter: none;
-  color: #0470db;
 }
 
-nav {
+header#global-btns {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   margin: 1rem 0;
-  background: transparent;
 }
 
 section#projects {
@@ -616,6 +629,9 @@ section#skills div.skills-icons {
     color: rgb(247, 253, 255);
     background-color: #030e2a;
   }
+  header#global-btns.dark {
+    background: #030e2a;
+  }
   :is(hr, .link-btn).dark {
     background-color: rgb(247, 253, 255);
   }
@@ -651,7 +667,7 @@ section#skills div.skills-icons {
     border: 1px solid rgb(247, 253, 255);
     color: rgb(247, 253, 255);
   }
-  header.main p:has(.highlight.heading:hover) .highlight.heading.dark:hover {
+  p:has(.highlight:hover) .highlight.dark:hover {
     color: #80befd;
   }
   .box.dark {
@@ -693,17 +709,14 @@ section#skills div.skills-icons {
     border-right: 1px solid rgb(247, 253, 255);
   }
 }
+@media (prefers-color-scheme: dark) and (min-width: 768px) {
+  section#skills .top.dark {
+    border-right: 1px solid rgb(247, 253, 255);
+  }
+}
 body.light {
   background-color: rgb(247, 253, 255);
   color: #030e2a;
-}
-
-.section-title {
-  font-size: 3rem;
-}
-
-.hide {
-  opacity: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

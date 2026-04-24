@@ -55,6 +55,23 @@ p {
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
   line-height: 1.6;
+  transition: vars.$transition-slow;
+}
+
+.highlight {
+  cursor: default;
+  transition: vars.$transition-slow;
+}
+
+p:has(.highlight:hover) {
+  color: rgba(0, 0, 0, 0.1);
+  transition: vars.$transition-slow;
+
+  .highlight:hover {
+    opacity: 1;
+    filter: none;
+    color: vars.$selected;
+  }
 }
 
 button, .radio-label {
@@ -86,7 +103,7 @@ a {
   border-bottom: 1px solid vars.$dark-blue;
 }
 
-.hidden {
+.hidden, .hide {
   opacity: 0;
 }
 

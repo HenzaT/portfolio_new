@@ -47,3 +47,10 @@
   &:hover  { background-color: vars.$hover-blue; }
   &:active { background-color: vars.$light-selected; }
 }
+
+@mixin icon-hover {
+  animation-name: shake;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

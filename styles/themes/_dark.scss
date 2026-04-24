@@ -7,6 +7,10 @@
     background-color: vars.$dark-blue;
   }
 
+  header#global-btns.dark {
+    background: vars.$dark-blue;
+  }
+
   :is(hr, .link-btn).dark {
     background-color: vars.$light;
   }
@@ -49,9 +53,9 @@
     color: vars.$light;
   }
 
-  header.main p:has(.highlight.heading:hover) {
-    .highlight.heading.dark:hover {
-      color: vars.$light-selected; 
+  p:has(.highlight:hover) {
+    .highlight.dark:hover {
+      color: vars.$light-selected;
     }
   }
 
@@ -95,6 +99,12 @@
     }
 
     .radio-label.dark:not(:last-of-type) {
+      border-right: 1px solid vars.$light;
+    }
+  }
+
+  @media (min-width: 768px) {
+    section#skills .top.dark{
       border-right: 1px solid vars.$light;
     }
   }

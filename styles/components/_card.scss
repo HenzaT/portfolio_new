@@ -3,9 +3,9 @@
 
 .project-card {
   @include mixin.flex-col;
-  gap: 0.5rem;
+  gap: vars.$gap-point-5;
   border-radius: 10px;
-  transition: all 0.3s ease-in-out;
+  transition: vars.$transition-slow;
 
   &__top-and-image, &__top, &__text {
     @include mixin.flex-col;
@@ -18,12 +18,12 @@
   }
 
   &__top, &__text {
-    gap: 0.5rem;
+    gap: vars.$gap-point-5;
   }
 
   &__tech-icons-container {
     @include mixin.flex-row;
-    gap: 0.5rem;
+    gap: vars.$gap-point-5;
     padding: 1rem 0 0.5rem 0;
   }
 
@@ -41,8 +41,7 @@
   &__link {
     @include mixin.btn-style;
     margin: 0;
-    // height: 50px;
-    transition: all 0.3s ease-in-out;
+    transition: vars.$transition-slow;
 
     &:hover {
       border-radius: 50%;

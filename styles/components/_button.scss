@@ -3,12 +3,12 @@
 
 // project-card buttons (links) are in _card.scss
 
-nav {
+header#global-btns {
   button {
     @include mixin.btn-style;
     height: 50px;
     padding: 0;
-    transition: all 0.3s ease-in-out;
+    transition: vars.$transition-slow;
   }
 
   #theme-btn {
@@ -34,8 +34,7 @@ nav {
 
 .link-btn {
   @include mixin.btn-style;
-  // background: vars.$light;
-  transition: all 0.3s ease;
+  transition: vars.$transition-slow;
 
   &:hover {
     border-radius: 50%;
@@ -80,7 +79,7 @@ a#arrow-icon {
     padding: 0.6rem 0;
     font-size: 0.8rem;
     text-align: center;
-    transition: all 0.2s ease-in-out;
+    transition: vars.$transition-fast;
 
     &:hover {
       @include mixin.btn-hover;
@@ -97,7 +96,7 @@ button#reset-filter {
   @include mixin.btn-style;
   align-self: flex-end;
   margin: 0;
-  transition: all 0.2s ease-in-out;
+  transition: vars.$transition-fast;
 
   &:hover {
     @include mixin.btn-hover;
@@ -134,7 +133,7 @@ section#skills {
     width: 50%;
     font-size: 1rem;
     text-align: center;
-    transition: all 0.2s ease-in-out;
+    transition: vars.$transition-fast;
 
     &:hover {
       @include mixin.btn-hover;
@@ -178,10 +177,15 @@ section#skills {
       border-right: 1px solid vars.$dark-blue;
     }
 
-    .radio-label.lang   { border-radius: 18px 0 0 18px; }
-    .radio-label.fworks,
-    .radio-label.tools  { border-radius: 0px; }
-    .radio-label.db     { border-radius: 0 18px 18px 0; }
+    .radio-label.lang {
+      border-radius: 18px 0 0 18px;
+    }
+    .radio-label.fworks, .radio-label.tools {
+      border-radius: 0px;
+    }
+    .radio-label.db {
+      border-radius: 0 18px 18px 0; 
+    }
   }
 }
 
@@ -200,7 +204,9 @@ section#skills {
       align-items: center;
     }
 
-    .radio-label.fworks { border-right: 1px solid vars.$dark-blue; }
+    .radio-label.fworks {
+      border-right: 1px solid vars.$dark-blue;
+    }
 
 
     // .radio-label.lang   { border-radius: 18px 18px 0 0; }

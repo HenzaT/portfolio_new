@@ -15,7 +15,7 @@
 // layout
 @use 'layout/footer';
 @use 'layout/header';
-@use 'layout/navbar';
+@use 'layout/global-header';
 @use 'layout/projects';
 @use 'layout/skills';
 
@@ -23,7 +23,5 @@
 @use 'themes/dark';
 @use 'themes/light';
 
+// splide styling
 @import "../node_modules/@splidejs/splide/dist/css/splide.min.css";
-.section-title {font-size: 3rem;}
-
-.hide {opacity: 0;}

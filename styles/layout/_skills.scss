@@ -2,7 +2,7 @@
 @use '../abstracts/variables' as vars;
 
 section#skills {
-  margin: 5rem 0;
+  margin: 10rem 0;
 
   #skills-card-buttons {
     @include mixin.flex-col;

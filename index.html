@@ -64,6 +64,42 @@
     </header>
     <!-- main content -->
     <main>
+      <!-- Skills section -->
+      <section id="skills">
+        <h2 id="skills-header">Skills</h2>
+        <div id="skills-card-buttons">
+          <div class="skills-icons"></div>
+          <template id="skills-template">
+            <i class="template-icon-class"></i>
+          </template>
+          <div class="skills-radio">
+            <div class="top">
+              <input id="languages" class="radio-input" type="radio" name="about" value="languages">
+              <label for="languages" class="radio-label lang">
+                <span class="lang-en">Languages</span>
+                <span class="lang-ja">言語</span>
+              </label>
+              <input id="frameworks" class="radio-input" type="radio" name="about" value="frameworks">
+              <label for="frameworks" class="radio-label fworks">
+                <span class="lang-en">Frameworks</span>
+                <span class="lang-ja">フレームワーク</span>
+              </label>
+            </div>
+            <div class="bottom">
+              <input id="tools" class="radio-input" type="radio" name="about" value="tools">
+              <label for="tools" class="radio-label tools">
+                <span class="lang-en">Tools</span>
+                <span class="lang-ja">ツール</span>
+              </label>
+              <input id="databases" class="radio-input" type="radio" name="about" value="databases">
+              <label for="databases" class="radio-label db">
+                <span class="lang-en">Databases</span>
+                <span class="lang-ja">データベース</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- Project Section -->
       <section id="projects">
         <header class="projects">
@@ -122,42 +158,6 @@
         </div>
         <div id="back-to-projects" class="box">
           <a href="#projects" class="link-btn" title="back to projects">Back to Projects</a>
-        </div>
-      </section>
-      <!-- Skills section -->
-      <section id="skills">
-        <h2 id="skills-header">Skills</h2>
-        <div id="skills-card-buttons">
-          <div class="skills-icons"></div>
-          <template id="skills-template">
-            <i class="template-icon-class"></i>
-          </template>
-          <div class="skills-radio">
-            <div class="top">
-              <input id="languages" class="radio-input" type="radio" name="about" value="languages">
-              <label for="languages" class="radio-label lang">
-                <span class="lang-en">Languages</span>
-                <span class="lang-ja">言語</span>
-              </label>
-              <input id="frameworks" class="radio-input" type="radio" name="about" value="frameworks">
-              <label for="frameworks" class="radio-label fworks">
-                <span class="lang-en">Frameworks</span>
-                <span class="lang-ja">フレームワーク</span>
-              </label>
-            </div>
-            <div class="bottom">
-              <input id="tools" class="radio-input" type="radio" name="about" value="tools">
-              <label for="tools" class="radio-label tools">
-                <span class="lang-en">Tools</span>
-                <span class="lang-ja">ツール</span>
-              </label>
-              <input id="databases" class="radio-input" type="radio" name="about" value="databases">
-              <label for="databases" class="radio-label db">
-                <span class="lang-en">Databases</span>
-                <span class="lang-ja">データベース</span>
-              </label>
-            </div>
-          </div>
         </div>
       </section>
       <a id="arrow-icon" class="link-btn" href="#"><i class="fa-solid fa-arrow-up" alt="arrow up icon"></i></a>

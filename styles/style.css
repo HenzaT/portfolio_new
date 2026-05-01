@@ -565,7 +565,7 @@ header#global-btns {
 }
 
 section#projects {
-  margin: 5rem 0;
+  margin: 2rem 0;
 }
 section#projects header.projects {
   display: flex;
@@ -599,7 +599,7 @@ section#projects #back-to-projects {
 }
 
 section#skills {
-  margin: 5rem 0;
+  margin: 10rem 0;
 }
 section#skills #skills-card-buttons {
   display: flex;

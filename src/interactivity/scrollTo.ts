@@ -14,5 +14,5 @@ export function scrollToView() {
   }
 
   projectArticles.forEach(article => { goToElement(article); })
-  if (skillsContainer) { goToElement(skillsContainer); }
+  if (skillsContainer) goToElement(skillsContainer);
 }

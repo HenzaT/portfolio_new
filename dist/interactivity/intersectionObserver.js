@@ -6,10 +6,11 @@ export function intersectionObserver() {
     const projects = getProjectCards();
     const homeArrowIcon = document.getElementById('arrow-icon');
     const projectsHeader = document.querySelector('header.projects');
+    const skillsHeader = document.getElementById('skills-header');
     const filterBtns = document.querySelector('.filter-btns');
     const backToProjects = document.getElementById('back-to-projects');
     const skillsCard = document.getElementById('skills-card-buttons');
-    const elements = [projectsHeader, filterBtns, backToProjects, skillsCard, Object.values(projects)].flat();
+    const elements = [projectsHeader, skillsHeader, filterBtns, backToProjects, skillsCard, Object.values(projects)].flat();
     // show home arrow button when sections in view
     const homeArrowInView = (entries) => {
         entries.forEach((entry) => {
@@ -24,8 +25,8 @@ export function intersectionObserver() {
         });
     };
     const arrowObserver = new IntersectionObserver(homeArrowInView);
-    if (sections.projects)
-        arrowObserver.observe(sections.projects);
+    if (sections.skills)
+        arrowObserver.observe(sections.skills);
     const onScroll = (ev) => {
         window.addEventListener(ev, () => {
             if (ev === 'scroll') {
@@ -49,13 +50,13 @@ export function intersectionObserver() {
             }
         });
     };
-    const observe = (element) => {
-        // const options = { threshold: 0.5 };
-        new IntersectionObserver(ElementSlideUp)?.observe(element);
-    };
+    // const options = {
+    //   threshold: 0.5,
+    // };
+    const observer = new IntersectionObserver(ElementSlideUp);
     // loop through elements and apply slideUp to each one when in viewport
     elements.forEach(el => {
         if (el)
-            observe(el);
+            observer.observe(el);
     });
 }

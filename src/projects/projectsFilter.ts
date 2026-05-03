@@ -31,7 +31,7 @@ export function projectsFilter() {
     reset:      document.getElementById('reset-filter'),
   };
 
-  const resetFilterBtn   = buttonCategories.reset as HTMLButtonElement;
+  const resetFilterBtn = buttonCategories.reset as HTMLButtonElement;
   let projectCountEn = document.querySelector('.lang-en.project-count') as HTMLHeadingElement;
   let projectCountJa = document.querySelector('.lang-ja.project-count') as HTMLHeadingElement;
 
@@ -108,7 +108,7 @@ export function projectsFilter() {
             button?.classList.remove('selected');
           })
           Object.values(projects).forEach(project => {
-            if (project) { project.style.display = 'flex'; }
+            if (project) project.style.display = 'flex';
             projectCountEn.textContent = `${Object.values(projects).length} projects`;
             projectCountJa.textContent = `プロジェクト数：${Object.values(projects).length}`;
           });
@@ -117,7 +117,7 @@ export function projectsFilter() {
               icon.classList.remove('highlight');
             });
           });
-          if (resetFilterBtn) { resetFilterBtn.style.display = 'none'; }
+          if (resetFilterBtn) resetFilterBtn.style.display = 'none';
           break;
       }
     })

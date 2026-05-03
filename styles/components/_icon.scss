@@ -32,12 +32,10 @@ footer {
   }
 }
 
-section#skills {
-  .skills-icons {
-    font-size: 2.5rem;
-    color: vars.$dark-blue;
-    transition: all 0.5s ease-in-out;
-  }
+.template-icon-class {
+  font-size: 2.5rem;
+  color: vars.$dark-blue;
+  transition: all 0.3s ease-in-out;
 }
 
 .fa-copy {
@@ -45,10 +43,8 @@ section#skills {
 }
 
 @media (min-width: 1200px) {
-  section#skills {
-    .skills-icons {
-      font-size: 3rem;
-    }
+  .template-icon-class {
+    font-size: 3rem;
   }
 
   .project-card__tech-icons-container {

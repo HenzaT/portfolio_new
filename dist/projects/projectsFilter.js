@@ -102,9 +102,8 @@ export function projectsFilter() {
                         button?.classList.remove('selected');
                     });
                     Object.values(projects).forEach(project => {
-                        if (project) {
+                        if (project)
                             project.style.display = 'flex';
-                        }
                         projectCountEn.textContent = `${Object.values(projects).length} projects`;
                         projectCountJa.textContent = `プロジェクト数：${Object.values(projects).length}`;
                     });
@@ -113,9 +112,8 @@ export function projectsFilter() {
                             icon.classList.remove('highlight');
                         });
                     });
-                    if (resetFilterBtn) {
+                    if (resetFilterBtn)
                         resetFilterBtn.style.display = 'none';
-                    }
                     break;
             }
         });

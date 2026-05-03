@@ -15,11 +15,8 @@ export function projectCards() {
         const iconContainer = clone.querySelector('.project-card__tech-icons-container');
         const linksDiv = clone.querySelector('.project-card__links');
         // top-level info
-        if (card) {
+        if (card)
             card.id = project['articleId'];
-            // card.classList.add('hidden')
-        }
-        ;
         if (title)
             title.textContent = project['title'];
         if (taglineEn)

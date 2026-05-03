@@ -12,8 +12,8 @@
   filter: blur(1px);
 }
 .expand {
+  color: vars.$selected !important;
   transform: scale(1.3);
-  color: vars.$selected;
 }
 
 /* slide element up */

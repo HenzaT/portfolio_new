@@ -20,7 +20,7 @@
     &:hover { color: vars.$light-selected; }
   }
 
-  :is(#theme-btn, #lang-btn, footer.footer-icon).dark {
+  :is(#theme-btn, #lang-btn, .footer-icon).dark {
     color: vars.$light;
   }
 
@@ -88,7 +88,14 @@
 
     .skills-icons.dark {
       box-shadow: vars.$dark-shadow;
+    }
+
+    .template-icon-class.dark {
       color: vars.$light;
+    }
+
+    .template-icon-class.dark.expand {
+      color: vars.$light-selected;
     }
 
     .radio-label.dark {
@@ -103,8 +110,14 @@
     }
   }
 
+  @media (max-width: 767px) {
+    section#skills .top.dark {
+      border-bottom: 1px solid vars.$light;
+    }
+  }
+
   @media (min-width: 768px) {
-    section#skills .top.dark{
+    section#skills .top.dark {
       border-right: 1px solid vars.$light;
     }
   }

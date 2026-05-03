@@ -12,7 +12,6 @@ export function scrollToView() {
         });
     };
     projectArticles.forEach(article => { goToElement(article); });
-    if (skillsContainer) {
+    if (skillsContainer)
         goToElement(skillsContainer);
-    }
 }

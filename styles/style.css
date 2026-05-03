@@ -130,8 +130,8 @@ a {
 }
 
 .expand {
+  color: #0470db !important;
   transform: scale(1.3);
-  color: #0470db;
 }
 
 /* slide element up */
@@ -496,10 +496,10 @@ footer .fa-solid.fa-check {
   color: #030e2a;
 }
 
-section#skills .skills-icons {
+.template-icon-class {
   font-size: 2.5rem;
   color: #030e2a;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .fa-copy {
@@ -507,7 +507,7 @@ section#skills .skills-icons {
 }
 
 @media (min-width: 1200px) {
-  section#skills .skills-icons {
+  .template-icon-class {
     font-size: 3rem;
   }
   .project-card__tech-icons-container i {
@@ -641,7 +641,7 @@ section#skills div.skills-icons {
   span.highlight.dark:hover {
     color: #80befd;
   }
-  :is(#theme-btn, #lang-btn, footer.footer-icon).dark {
+  :is(#theme-btn, #lang-btn, .footer-icon).dark {
     color: rgb(247, 253, 255);
   }
   #theme-btn.dark {
@@ -699,7 +699,12 @@ section#skills div.skills-icons {
   }
   section#skills .skills-icons.dark {
     box-shadow: 0 0px 20px rgba(247, 253, 255, 0.179);
+  }
+  section#skills .template-icon-class.dark {
     color: rgb(247, 253, 255);
+  }
+  section#skills .template-icon-class.dark.expand {
+    color: #80befd;
   }
   section#skills .radio-label.dark:hover {
     background-color: #abd5ff;
@@ -707,6 +712,11 @@ section#skills div.skills-icons {
   }
   section#skills .radio-label.dark:not(:last-of-type) {
     border-right: 1px solid rgb(247, 253, 255);
+  }
+}
+@media (prefers-color-scheme: dark) and (max-width: 767px) {
+  section#skills .top.dark {
+    border-bottom: 1px solid rgb(247, 253, 255);
   }
 }
 @media (prefers-color-scheme: dark) and (min-width: 768px) {

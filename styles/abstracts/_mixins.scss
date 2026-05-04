@@ -43,7 +43,6 @@
 }
 
 @mixin filter-btns-dark {
-  background: vars.$light;
   &:hover  { background-color: vars.$hover-blue; }
   &:active { background-color: vars.$light-selected; }
 }

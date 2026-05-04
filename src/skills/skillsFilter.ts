@@ -40,6 +40,7 @@ export function skillsFilter() {
   };
 
   const skillsRadioButtons: NodeListOf<HTMLElement> = document.querySelectorAll('.skills-radio');
+  const skillsRadioLabels: NodeListOf<HTMLElement> = document.querySelectorAll('.radio-label');
   const skillsIconsContainer: HTMLElement | null = document.querySelector('.skills-icons');
 
   const clearFadeExpand = () => {
@@ -84,8 +85,9 @@ export function skillsFilter() {
     entries.forEach((entry)=> {
       if (!entry.isIntersecting) {
         clearFadeExpand()
-        skillsRadioButtons.forEach(button => {
-          button.removeAttribute('checked');
+        skillsRadioLabels.forEach(label => {
+          label.style.background = 'transparent';
+          label.style.color = 'vars.$dark-blue';
         })
       }
     })

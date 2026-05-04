@@ -64,7 +64,10 @@
     border-bottom: 1px solid vars.$light;
   }
 
-  :is(button.filter, button#reset-filter).dark { @include mixin.filter-btns-dark; }
+  :is(button.filter, button#reset-filter).dark {
+    background: vars.$light;
+    @include mixin.filter-btns-dark;
+  }
 
   .selected.dark {
     background-color: vars.$light-selected !important;
@@ -95,18 +98,23 @@
     }
 
     .template-icon-class.dark.expand {
-      color: vars.$light-selected;
+      color: vars.$light-selected !important;
     }
 
     .radio-label.dark {
+      @include mixin.filter-btns-dark;
       &:hover {
-        background-color: vars.$hover-blue;
         color: vars.$dark-blue;
       }
     }
 
     .radio-label.dark:not(:last-of-type) {
       border-right: 1px solid vars.$light;
+    }
+
+    .radio-input:checked + .radio-label.dark  {
+      background: vars.$light-selected !important;
+      color: vars.$dark-blue !important;
     }
   }
 

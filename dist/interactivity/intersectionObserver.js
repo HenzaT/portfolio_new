@@ -25,8 +25,10 @@ export function intersectionObserver() {
         });
     };
     const arrowObserver = new IntersectionObserver(homeArrowInView);
-    if (sections.skills)
-        arrowObserver.observe(sections.skills);
+    [sections.skills, sections.projects, sections.footer].forEach(section => {
+        if (section)
+            arrowObserver.observe(section);
+    });
     const onScroll = (ev) => {
         window.addEventListener(ev, () => {
             if (ev === 'scroll') {

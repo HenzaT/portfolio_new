@@ -4,8 +4,7 @@ import { getProjectIcons } from "./projects/getProjectIcons.js";
 export function darkMode() {
   const projectIcons  = getProjectIcons();
   const hrLine        = document.getElementsByTagName('hr');
-  const themeBtn = document.getElementById('theme-btn') as HTMLButtonElement;
-  const themeIcon = document.getElementById('theme-icon') as HTMLElement;
+  const themeIcon     = document.getElementById('theme-icon') as HTMLElement;
 
   const groupsOf = {
     boxDiv:       document.querySelectorAll('.box'),
@@ -19,29 +18,31 @@ export function darkMode() {
   };
 
   interface ElementTypes {
-    globalHeader: HTMLElement | null,
-    langBtn: HTMLElement | null,
-    linkBtn: HTMLElement | null,
-    resetFilter: HTMLElement | null,
-    arrowBtn: HTMLElement | null,
-    skillsCard: HTMLElement | null,
-    skillsRadio: HTMLElement | null,
+    globalHeader:  HTMLElement | null,
+    langBtn:       HTMLElement | null,
+    themeBtn:      HTMLElement | null,
+    linkBtn:       HTMLElement | null,
+    resetFilter:   HTMLElement | null,
+    arrowBtn:      HTMLElement | null,
+    skillsCard:    HTMLElement | null,
+    skillsRadio:   HTMLElement | null,
     topRadioGroup: HTMLElement | null,
   };
 
   const singleElement: ElementTypes = {
-    globalHeader: document.getElementById('global-btns'),
-    langBtn: document.getElementById('lang-btn'),
-    linkBtn: document.querySelector('.link-btn'),
-    resetFilter: document.getElementById('reset-filter'),
-    arrowBtn: document.getElementById('arrow-icon'),
-    skillsCard: document.querySelector('.skills-icons'),
-    skillsRadio: document.querySelector('.skills-radio'),
+    globalHeader:  document.getElementById('global-btns'),
+    langBtn:       document.getElementById('lang-btn'),
+    themeBtn:      document.getElementById('theme-btn'),
+    linkBtn:       document.querySelector('.link-btn'),
+    resetFilter:   document.getElementById('reset-filter'),
+    arrowBtn:      document.getElementById('arrow-icon'),
+    skillsCard:    document.querySelector('.skills-icons'),
+    skillsRadio:   document.querySelector('.skills-radio'),
     topRadioGroup: document.querySelector('.top') ,
   };
 
   // light & dark mode toggle
-  themeBtn?.addEventListener('click', () => {
+  singleElement.themeBtn?.addEventListener('click', () => {
     Array.from(hrLine).forEach(line => {
       line.classList.toggle('dark');
     })

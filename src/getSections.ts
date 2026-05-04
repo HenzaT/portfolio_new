@@ -1,7 +1,7 @@
 export const getSections = () => ({
   nav:      document.getElementById('global-btns'),
   header:   document.getElementById('main-header'),
-  projects: document.getElementById('projects'),
   skills:   document.getElementById('skills'),
+  projects: document.getElementById('projects'),
   footer:   document.getElementById('footer'),
 });

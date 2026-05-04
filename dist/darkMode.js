@@ -3,7 +3,6 @@ import { getProjectIcons } from "./projects/getProjectIcons.js";
 export function darkMode() {
     const projectIcons = getProjectIcons();
     const hrLine = document.getElementsByTagName('hr');
-    const themeBtn = document.getElementById('theme-btn');
     const themeIcon = document.getElementById('theme-icon');
     const groupsOf = {
         boxDiv: document.querySelectorAll('.box'),
@@ -19,6 +18,7 @@ export function darkMode() {
     const singleElement = {
         globalHeader: document.getElementById('global-btns'),
         langBtn: document.getElementById('lang-btn'),
+        themeBtn: document.getElementById('theme-btn'),
         linkBtn: document.querySelector('.link-btn'),
         resetFilter: document.getElementById('reset-filter'),
         arrowBtn: document.getElementById('arrow-icon'),
@@ -27,7 +27,7 @@ export function darkMode() {
         topRadioGroup: document.querySelector('.top'),
     };
     // light & dark mode toggle
-    themeBtn?.addEventListener('click', () => {
+    singleElement.themeBtn?.addEventListener('click', () => {
         Array.from(hrLine).forEach(line => {
             line.classList.toggle('dark');
         });

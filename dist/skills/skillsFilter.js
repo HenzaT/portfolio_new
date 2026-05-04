@@ -35,6 +35,7 @@ export function skillsFilter() {
         databases: dbIcons
     };
     const skillsRadioButtons = document.querySelectorAll('.skills-radio');
+    const skillsRadioLabels = document.querySelectorAll('.radio-label');
     const skillsIconsContainer = document.querySelector('.skills-icons');
     const clearFadeExpand = () => {
         Object.values(iconGroups).forEach(group => {
@@ -70,8 +71,9 @@ export function skillsFilter() {
         entries.forEach((entry) => {
             if (!entry.isIntersecting) {
                 clearFadeExpand();
-                skillsRadioButtons.forEach(button => {
-                    button.removeAttribute('checked');
+                skillsRadioLabels.forEach(label => {
+                    label.style.background = 'transparent';
+                    label.style.color = 'vars.$dark-blue';
                 });
             }
         });

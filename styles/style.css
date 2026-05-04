@@ -678,7 +678,7 @@ section#skills div.skills-icons {
     background: rgb(247, 253, 255);
   }
   :is(button.filter, button#reset-filter).dark:hover {
-    background-color: #abd5ff;
+    background-color: #cee6ff;
   }
   :is(button.filter, button#reset-filter).dark:active {
     background-color: #80befd;
@@ -704,14 +704,23 @@ section#skills div.skills-icons {
     color: rgb(247, 253, 255);
   }
   section#skills .template-icon-class.dark.expand {
-    color: #80befd;
+    color: #80befd !important;
   }
   section#skills .radio-label.dark:hover {
-    background-color: #abd5ff;
+    background-color: #cee6ff;
+  }
+  section#skills .radio-label.dark:active {
+    background-color: #80befd;
+  }
+  section#skills .radio-label.dark:hover {
     color: #030e2a;
   }
   section#skills .radio-label.dark:not(:last-of-type) {
     border-right: 1px solid rgb(247, 253, 255);
+  }
+  section#skills .radio-input:checked + .radio-label.dark {
+    background: #80befd !important;
+    color: #030e2a !important;
   }
 }
 @media (prefers-color-scheme: dark) and (max-width: 767px) {

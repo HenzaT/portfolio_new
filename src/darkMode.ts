@@ -2,9 +2,9 @@ import { getProjectIcons } from "./projects/getProjectIcons.js";
 
 // dark mode
 export function darkMode() {
-  const projectIcons  = getProjectIcons();
-  const hrLine        = document.getElementsByTagName('hr');
-  const themeIcon     = document.getElementById('theme-icon') as HTMLElement;
+  const projectIcons = getProjectIcons();
+  const hrLine       = document.getElementsByTagName('hr');
+  const themeIcon    = document.getElementById('theme-icon') as HTMLElement;
 
   const groupsOf = {
     boxDiv:       document.querySelectorAll('.box'),
@@ -60,12 +60,13 @@ export function darkMode() {
       element?.classList.toggle('dark');
     })
 
+    const htmlLang = document.documentElement;
     if (themeIcon.className === 'fa-solid fa-moon') {
       themeIcon.className = 'fa-solid fa-sun';
-      document.body.className = 'dark';
+      document.body.className = htmlLang.getAttribute('lang') === 'ja' ? 'dark ja-mode' : 'dark';
     } else {
       themeIcon.className = 'fa-solid fa-moon';
-      document.body.className = 'light';
+      document.body.className = htmlLang.getAttribute('lang') === 'ja' ? 'light ja-mode' : 'light';
     }
   });
 }

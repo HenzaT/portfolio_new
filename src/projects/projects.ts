@@ -53,7 +53,7 @@ export function projectCards() {
       aTag.setAttribute('title', linkObj['title']);
       const linkIcon = document.createElement('i');
       linkIcon.className = linkObj['class'];
-      linkIcon.setAttribute('title', linkObj['iTitle']);
+      linkIcon.setAttribute('title', linkObj['title']);
       aTag?.appendChild(linkIcon);
       linksDiv?.appendChild(aTag);
     })

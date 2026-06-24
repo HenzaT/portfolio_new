@@ -56,6 +56,8 @@ export function skillsFilter() {
     };
     skillsRadioButtons.forEach((button) => {
         button.addEventListener('click', () => {
+            skillsRadioButtons.forEach(b => b.checked = false);
+            button.checked = true;
             clearFadeExpand();
             const selected = Object.keys(radioButtons)
                 .find(buttonName => radioButtons[buttonName]?.checked);

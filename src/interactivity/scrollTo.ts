@@ -1,7 +1,8 @@
 // scroll to element when clicked
 export function scrollToView() {
-  const projectArticles = document.querySelectorAll('.project-card');
   const skillsContainer = document.getElementById('skills-card-buttons');
+  const projectArticles = document.querySelectorAll('.project-card');
+  const projectFilters  = document.querySelector('.filter-btns');
 
   const goToElement = (element: Element) => {
     element.addEventListener('click', () => {
@@ -13,6 +14,7 @@ export function scrollToView() {
     })
   }
 
-  projectArticles.forEach(article => { goToElement(article); })
   if (skillsContainer) goToElement(skillsContainer);
+  if (projectFilters) goToElement(projectFilters);
+  projectArticles.forEach(article => goToElement(article));
 }

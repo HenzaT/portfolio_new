@@ -359,7 +359,7 @@ section#skills .radio-input:checked + .radio-label {
 }
 @media (min-width: 1200px) {
   section#skills .skills-radio {
-    width: 90%;
+    width: 100%;
   }
   section#skills .top, section#skills .bottom {
     width: 100%;
@@ -599,7 +599,7 @@ section#projects #back-to-projects {
 }
 
 section#skills {
-  margin: 10rem 0;
+  margin-bottom: 10rem;
 }
 section#skills #skills-card-buttons {
   display: flex;

@@ -44,13 +44,14 @@ export function darkMode() {
         Object.values(singleElement).forEach(element => {
             element?.classList.toggle('dark');
         });
+        const htmlLang = document.documentElement;
         if (themeIcon.className === 'fa-solid fa-moon') {
             themeIcon.className = 'fa-solid fa-sun';
-            document.body.className = 'dark';
+            document.body.className = htmlLang.getAttribute('lang') === 'ja' ? 'dark ja-mode' : 'dark';
         }
         else {
             themeIcon.className = 'fa-solid fa-moon';
-            document.body.className = 'light';
+            document.body.className = htmlLang.getAttribute('lang') === 'ja' ? 'light ja-mode' : 'light';
         }
     });
 }
